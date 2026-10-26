@@ -4086,3 +4086,1398 @@ body.dark-mode .tm-resources-cta .tm-cta-secondary:hover {
     border-color: var(--color-secondary);
     color: var(--bg);
 }
+
+/* =====================================================
+   TRADEMASTERS RESOURCES PAGE
+   RESPONSIVE MEDIA QUERIES
+===================================================== */
+
+
+/* =====================================================
+   EXTRA SMALL MOBILE — MAX 359px
+===================================================== */
+
+@media screen and (max-width: 359px) {
+
+    /* RESOURCES HERO */
+
+    .tm-resources-hero {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+        padding: 45px 5%;
+    }
+
+    .tm-resources-hero-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .tm-resources-hero-content {
+        height: auto;
+    }
+
+    .tm-resources-hero-tagline {
+        font-size: 10px;
+        letter-spacing: 1px;
+        gap: 6px;
+    }
+
+    .tm-resources-hero-tagline svg,
+    .tm-resources-hero-tagline i {
+        width: 16px;
+        height: 16px;
+    }
+
+    .tm-resources-hero-title {
+        font-size: 32px;
+        letter-spacing: -0.7px;
+        margin-bottom: 16px;
+    }
+
+    .tm-resources-hero-description {
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 22px;
+    }
+
+    .tm-resources-hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    .tm-resources-hero-btn {
+        width: 100%;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .tm-resources-hero-categories {
+        gap: 14px;
+        flex-direction: column;
+    }
+
+    .tm-resources-hero-category {
+        font-size: 12px;
+    }
+
+    .tm-resources-image-frame {
+        width: 100%;
+        height: 260px;
+        max-height: none;
+    }
+
+
+    /* BEGINNER'S LEARNING LIBRARY */
+
+    .tm-beginner-library {
+        padding: 55px 5%;
+    }
+
+    .tm-library-header {
+        margin-bottom: 30px;
+    }
+
+    .tm-library-tagline {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .tm-library-heading {
+        font-size: 29px;
+        letter-spacing: -0.5px;
+    }
+
+    .tm-library-description {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .tm-library-resources {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .tm-library-card {
+        min-height: 0;
+        padding: 20px 16px;
+    }
+
+    .tm-library-card-top {
+        gap: 8px;
+        margin-bottom: 22px;
+    }
+
+    .tm-library-card-content h3 {
+        font-size: 18px;
+    }
+
+
+    /* TECHNICAL ANALYSIS RESOURCES */
+
+    .tm-analysis-resources {
+        padding: 55px 5%;
+    }
+
+    .tm-analysis-header {
+        margin-bottom: 30px;
+    }
+
+    .tm-analysis-eyebrow {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .tm-analysis-heading {
+        font-size: 29px;
+        letter-spacing: -0.5px;
+    }
+
+    .tm-analysis-description {
+        font-size: 14px;
+        line-height: 1.7;
+        margin-top: 15px;
+    }
+
+    .tm-analysis-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .tm-analysis-card-image {
+        height: 190px;
+    }
+
+    .tm-analysis-card-content {
+        padding: 20px 16px;
+    }
+
+    .tm-analysis-card-content h3 {
+        font-size: 19px;
+    }
+
+    .tm-analysis-cta {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+        padding: 20px 16px;
+    }
+
+    .tm-analysis-cta-text {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .tm-analysis-cta-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .tm-analysis-cta-text h3 {
+        font-size: 17px;
+    }
+
+    .tm-analysis-cta-button {
+        width: 100%;
+        white-space: normal;
+        text-align: center;
+    }
+
+
+    /* TRADING TOOLS */
+
+    .tm-tools {
+        padding: 55px 5%;
+    }
+
+    .tm-tools-heading {
+        margin-bottom: 30px;
+    }
+
+    .tm-tools-label {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .tm-tools-heading h2 {
+        font-size: 29px;
+        letter-spacing: -0.5px;
+    }
+
+    .tm-tools-heading > p {
+        font-size: 14px;
+        line-height: 1.7;
+        margin-top: 15px;
+    }
+
+    .tm-tools-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .tm-tool-card {
+        min-height: 0;
+        padding: 21px 16px;
+    }
+
+    .tm-tool-icon {
+        width: 47px;
+        height: 47px;
+    }
+
+    .tm-tool-card h3 {
+        font-size: 20px;
+    }
+
+    .tm-tool-card > p {
+        font-size: 14px;
+    }
+
+    .tm-tool-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .tm-tool-button {
+        width: 100%;
+    }
+
+
+    /* PORTFOLIO MODAL */
+
+    .tm-portfolio-modal {
+        padding: 10px;
+    }
+
+    .tm-portfolio-dialog {
+        padding: 20px 14px;
+        max-height: 92vh;
+        border-radius: 14px;
+    }
+
+    .tm-portfolio-header {
+        gap: 10px;
+    }
+
+    .tm-portfolio-header h2 {
+        font-size: 23px;
+    }
+
+    .tm-portfolio-close {
+        width: 35px;
+        height: 35px;
+    }
+
+    .tm-portfolio-summary {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .tm-summary-card {
+        padding: 15px;
+    }
+
+    .tm-summary-card strong {
+        font-size: 19px;
+    }
+
+    .tm-portfolio-form {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 15px;
+        padding: 16px;
+    }
+
+
+    /* VIDEO LEARNING LIBRARY */
+
+    .tm-video-library {
+        padding: 55px 5%;
+    }
+
+    .tm-video-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+    }
+
+    .tm-video-heading {
+        font-size: 29px;
+    }
+
+    .tm-video-description {
+        font-size: 14px;
+    }
+
+    .tm-video-visual {
+        height: auto;
+    }
+
+    .tm-video-frame {
+        min-height: 210px;
+    }
+
+    .tm-video-footer {
+        gap: 10px;
+        padding-top: 15px;
+    }
+
+    .tm-video-footer h3 {
+        font-size: 15px;
+    }
+
+    .tm-video-item {
+        gap: 10px;
+        padding: 12px 10px;
+    }
+
+    .tm-video-item-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .tm-video-item-content strong {
+        font-size: 13px;
+    }
+
+    .tm-video-item-content small {
+        font-size: 11px;
+    }
+
+    .tm-video-button {
+        width: 100%;
+    }
+
+
+    /* RESOURCE FAQ */
+
+    .tm-resource-faq {
+        padding: 55px 5%;
+    }
+
+    .tm-resource-faq-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+    }
+
+    .tm-resource-faq-title {
+        font-size: 29px;
+    }
+
+    .tm-resource-faq-description {
+        font-size: 14px;
+    }
+
+    .tm-resource-faq-help {
+        padding: 17px 13px;
+        gap: 12px;
+    }
+
+    .tm-resource-faq-help-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .tm-resource-faq-question {
+        grid-template-columns: 28px minmax(0, 1fr) 30px;
+        gap: 8px;
+        padding: 16px 10px;
+    }
+
+    .tm-resource-faq-number {
+        width: 28px;
+        height: 28px;
+    }
+
+    .tm-resource-faq-question-text {
+        font-size: 13px;
+    }
+
+    .tm-resource-faq-toggle {
+        width: 30px;
+        height: 30px;
+    }
+
+    .tm-resource-faq-answer-inner {
+        padding: 0 12px 20px;
+    }
+
+
+    /* RESOURCES CTA */
+
+    .tm-resources-cta {
+        padding: 42px 5%;
+    }
+
+    .tm-resources-cta h2 {
+        font-size: 29px;
+        letter-spacing: -0.5px;
+    }
+
+    .tm-resources-cta-description {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .tm-resources-cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .tm-resources-cta .tm-cta-btn {
+        width: 100%;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .tm-resources-cta-note {
+        align-items: flex-start;
+        font-size: 12px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE — 360px TO 740px
+===================================================== */
+
+@media screen and (min-width: 360px) and (max-width: 740px) {
+
+    /* RESOURCES HERO */
+
+    .tm-resources-hero {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+        padding: 55px 6%;
+    }
+
+    .tm-resources-hero-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 35px;
+    }
+
+    .tm-resources-hero-content {
+        height: auto;
+    }
+
+    .tm-resources-hero-title {
+        font-size: clamp(34px, 8vw, 43px);
+        letter-spacing: -0.8px;
+    }
+
+    .tm-resources-hero-description {
+        font-size: 15px;
+    }
+
+    .tm-resources-hero-actions {
+        gap: 12px;
+        margin-bottom: 27px;
+    }
+
+    .tm-resources-hero-btn {
+        padding: 12px 18px;
+    }
+
+    .tm-resources-hero-categories {
+        gap: 15px 18px;
+    }
+
+    .tm-resources-hero-category {
+        font-size: 12px;
+    }
+
+    .tm-resources-image-frame {
+        height: 320px;
+        max-height: none;
+    }
+
+
+    /* BEGINNER'S LEARNING LIBRARY */
+
+    .tm-beginner-library {
+        padding: 65px 6%;
+    }
+
+    .tm-library-header {
+        margin-bottom: 35px;
+    }
+
+    .tm-library-heading {
+        font-size: clamp(31px, 7vw, 39px);
+    }
+
+    .tm-library-description {
+        font-size: 15px;
+    }
+
+    .tm-library-resources {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .tm-library-card {
+        min-height: 0;
+        padding: 24px 21px;
+    }
+
+
+    /* TECHNICAL ANALYSIS RESOURCES */
+
+    .tm-analysis-resources {
+        padding: 65px 6%;
+    }
+
+    .tm-analysis-header {
+        margin-bottom: 35px;
+    }
+
+    .tm-analysis-heading {
+        font-size: clamp(31px, 7vw, 40px);
+    }
+
+    .tm-analysis-description {
+        font-size: 15px;
+    }
+
+    .tm-analysis-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .tm-analysis-card-image {
+        height: 225px;
+    }
+
+    .tm-analysis-card-content {
+        padding: 23px 21px;
+    }
+
+    .tm-analysis-cta {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+        padding: 24px 20px;
+    }
+
+    .tm-analysis-cta-button {
+        width: 100%;
+        white-space: normal;
+    }
+
+
+    /* TRADING TOOLS */
+
+    .tm-tools {
+        padding: 65px 6%;
+    }
+
+    .tm-tools-heading {
+        margin-bottom: 35px;
+    }
+
+    .tm-tools-heading h2 {
+        font-size: clamp(31px, 7vw, 40px);
+    }
+
+    .tm-tools-heading > p {
+        font-size: 15px;
+    }
+
+    .tm-tools-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .tm-tool-card {
+        min-height: 0;
+        padding: 25px 22px;
+    }
+
+    .tm-tool-bottom {
+        gap: 14px;
+    }
+
+
+    /* PORTFOLIO MODAL */
+
+    .tm-portfolio-modal {
+        padding: 16px;
+    }
+
+    .tm-portfolio-dialog {
+        padding: 24px 18px;
+        max-height: 92vh;
+    }
+
+    .tm-portfolio-header h2 {
+        font-size: 26px;
+    }
+
+    .tm-portfolio-summary {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .tm-summary-card {
+        padding: 17px;
+    }
+
+    .tm-portfolio-form {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 19px;
+        gap: 16px;
+    }
+
+
+    /* VIDEO LEARNING LIBRARY */
+
+    .tm-video-library {
+        padding: 65px 6%;
+    }
+
+    .tm-video-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .tm-video-heading {
+        font-size: clamp(31px, 7vw, 40px);
+    }
+
+    .tm-video-visual {
+        height: auto;
+    }
+
+    .tm-video-frame {
+        min-height: 250px;
+    }
+
+    .tm-video-item {
+        gap: 12px;
+        padding: 13px;
+    }
+
+    .tm-video-button {
+        width: fit-content;
+        max-width: 100%;
+    }
+
+
+    /* RESOURCE FAQ */
+
+    .tm-resource-faq {
+        padding: 65px 6%;
+    }
+
+    .tm-resource-faq-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+    }
+
+    .tm-resource-faq-title {
+        font-size: clamp(31px, 7vw, 40px);
+    }
+
+    .tm-resource-faq-description {
+        font-size: 15px;
+    }
+
+    .tm-resource-faq-question {
+        grid-template-columns: 32px minmax(0, 1fr) 32px;
+        gap: 10px;
+        padding: 18px 13px;
+    }
+
+    .tm-resource-faq-number {
+        width: 32px;
+        height: 32px;
+    }
+
+    .tm-resource-faq-toggle {
+        width: 32px;
+        height: 32px;
+    }
+
+    .tm-resource-faq-answer-inner {
+        padding: 0 15px 22px;
+    }
+
+
+    /* RESOURCES CTA */
+
+    .tm-resources-cta {
+        padding: 50px 6%;
+    }
+
+    .tm-resources-cta h2 {
+        font-size: clamp(31px, 7vw, 40px);
+    }
+
+    .tm-resources-cta-description {
+        font-size: 15px;
+    }
+
+    .tm-resources-cta-buttons {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .tm-resources-cta .tm-cta-btn {
+        max-width: 100%;
+        white-space: normal;
+    }
+}
+
+
+/* =====================================================
+   LARGE MOBILE — 741px TO 767px
+===================================================== */
+
+@media screen and (min-width: 741px) and (max-width: 767px) {
+
+    .tm-resources-hero,
+    .tm-beginner-library,
+    .tm-analysis-resources,
+    .tm-tools,
+    .tm-video-library,
+    .tm-resource-faq {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .tm-resources-hero {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .tm-resources-hero-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 35px;
+    }
+
+    .tm-resources-hero-content {
+        height: auto;
+    }
+
+    .tm-resources-hero-title {
+        max-width: 650px;
+        font-size: 44px;
+    }
+
+    .tm-resources-image-frame {
+        height: 350px;
+        max-height: none;
+    }
+
+    .tm-library-resources,
+    .tm-analysis-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tm-library-card {
+        min-height: 330px;
+    }
+
+    .tm-analysis-card-image {
+        height: 190px;
+    }
+
+    .tm-tools-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tm-tool-card {
+        padding: 23px;
+    }
+
+    .tm-video-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .tm-video-frame {
+        min-height: 350px;
+    }
+
+    .tm-resource-faq-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 35px;
+    }
+
+    .tm-analysis-cta {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .tm-analysis-cta-button {
+        width: fit-content;
+        max-width: 100%;
+    }
+}
+
+
+/* =====================================================
+   IPAD MINI — 768px TO 820px
+===================================================== */
+
+@media screen and (min-width: 768px) and (max-width: 820px) {
+
+    /* RESOURCES HERO */
+
+    .tm-resources-hero {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+        padding: 60px 5%;
+    }
+
+    .tm-resources-hero-container {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+        gap: 28px;
+    }
+
+    .tm-resources-hero-content {
+        height: auto;
+    }
+
+    .tm-resources-hero-title {
+        font-size: 38px;
+        letter-spacing: -0.8px;
+    }
+
+    .tm-resources-hero-description {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .tm-resources-hero-actions {
+        gap: 10px;
+    }
+
+    .tm-resources-hero-btn {
+        padding: 12px 16px;
+        font-size: 13px;
+    }
+
+    .tm-resources-hero-categories {
+        gap: 14px;
+    }
+
+    .tm-resources-hero-category {
+        font-size: 12px;
+    }
+
+    .tm-resources-image-frame {
+        height: 350px;
+        max-height: none;
+    }
+
+
+    /* BEGINNER'S LEARNING LIBRARY */
+
+    .tm-beginner-library {
+        padding: 70px 5%;
+    }
+
+    .tm-library-resources {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .tm-library-card {
+        min-height: 330px;
+        padding: 22px 18px;
+    }
+
+    .tm-library-heading {
+        font-size: 39px;
+    }
+
+
+    /* TECHNICAL ANALYSIS RESOURCES */
+
+    .tm-analysis-resources {
+        padding: 70px 5%;
+    }
+
+    .tm-analysis-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .tm-analysis-card-image {
+        height: 190px;
+    }
+
+    .tm-analysis-card-content {
+        padding: 21px 18px;
+    }
+
+    .tm-analysis-card-content h3 {
+        font-size: 20px;
+    }
+
+    .tm-analysis-cta {
+        gap: 18px;
+        padding: 22px;
+    }
+
+    .tm-analysis-cta-text {
+        gap: 12px;
+    }
+
+    .tm-analysis-cta-button {
+        padding: 12px 17px;
+        font-size: 13px;
+    }
+
+
+    /* TRADING TOOLS */
+
+    .tm-tools {
+        padding: 70px 5%;
+    }
+
+    .tm-tools-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .tm-tool-card {
+        padding: 24px 20px;
+    }
+
+    .tm-tool-card h3 {
+        font-size: 21px;
+    }
+
+    .tm-tool-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .tm-tool-button {
+        max-width: 100%;
+    }
+
+
+    /* PORTFOLIO MODAL */
+
+    .tm-portfolio-dialog {
+        max-width: 740px;
+        padding: 27px;
+    }
+
+    .tm-portfolio-summary {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .tm-summary-card {
+        padding: 15px 12px;
+    }
+
+    .tm-summary-card strong {
+        font-size: 18px;
+    }
+
+    .tm-portfolio-form {
+        gap: 15px;
+        padding: 20px;
+    }
+
+
+    /* VIDEO LEARNING LIBRARY */
+
+    .tm-video-library {
+        padding: 70px 5%;
+    }
+
+    .tm-video-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .tm-video-frame {
+        min-height: 380px;
+    }
+
+    .tm-video-content {
+        width: 100%;
+    }
+
+
+    /* RESOURCE FAQ */
+
+    .tm-resource-faq {
+        padding: 70px 5%;
+    }
+
+    .tm-resource-faq-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 35px;
+    }
+
+    .tm-resource-faq-title {
+        font-size: 39px;
+    }
+
+
+    /* RESOURCES CTA */
+
+    .tm-resources-cta {
+        padding: 48px 5%;
+    }
+
+    .tm-resources-cta h2 {
+        font-size: 39px;
+    }
+}
+
+
+/* =====================================================
+   IPAD PRO — 821px TO 1024px
+===================================================== */
+
+@media screen and (min-width: 821px) and (max-width: 1024px) {
+
+    /* RESOURCES HERO */
+
+    .tm-resources-hero {
+        height: auto;
+        min-height: 650px;
+        max-height: none;
+        padding: 55px 5%;
+    }
+
+    .tm-resources-hero-container {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+        gap: 30px;
+    }
+
+    .tm-resources-hero-content {
+        height: auto;
+    }
+
+    .tm-resources-hero-title {
+        font-size: clamp(39px, 4.2vw, 46px);
+    }
+
+    .tm-resources-hero-description {
+        font-size: 15px;
+    }
+
+    .tm-resources-image-frame {
+        height: 400px;
+        max-height: none;
+    }
+
+
+    /* BEGINNER'S LEARNING LIBRARY */
+
+    .tm-beginner-library {
+        padding: 75px 5%;
+    }
+
+    .tm-library-resources {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .tm-library-card {
+        min-height: 330px;
+    }
+
+
+    /* TECHNICAL ANALYSIS RESOURCES */
+
+    .tm-analysis-resources {
+        padding: 75px 5%;
+    }
+
+    .tm-analysis-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .tm-analysis-card-image {
+        height: 220px;
+    }
+
+
+    /* TRADING TOOLS */
+
+    .tm-tools {
+        padding: 75px 5%;
+    }
+
+    .tm-tools-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .tm-tool-card {
+        padding: 26px;
+    }
+
+
+    /* PORTFOLIO MODAL */
+
+    .tm-portfolio-dialog {
+        max-width: 900px;
+        padding: 28px;
+    }
+
+    .tm-portfolio-summary {
+        gap: 12px;
+    }
+
+    .tm-summary-card {
+        padding: 17px;
+    }
+
+
+    /* VIDEO LEARNING LIBRARY */
+
+    .tm-video-library {
+        padding: 75px 5%;
+    }
+
+    .tm-video-container {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 28px;
+    }
+
+    .tm-video-frame {
+        min-height: 320px;
+    }
+
+    .tm-video-item {
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .tm-video-item-icon {
+        width: 39px;
+        height: 39px;
+    }
+
+
+    /* RESOURCE FAQ */
+
+    .tm-resource-faq {
+        padding: 75px 5%;
+    }
+
+    .tm-resource-faq-container {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 32px;
+    }
+
+    .tm-resource-faq-question {
+        grid-template-columns: 34px minmax(0, 1fr) 32px;
+        gap: 10px;
+        padding: 19px 13px;
+    }
+
+    .tm-resource-faq-number {
+        width: 34px;
+        height: 34px;
+    }
+
+    .tm-resource-faq-toggle {
+        width: 32px;
+        height: 32px;
+    }
+
+
+    /* RESOURCES CTA */
+
+    .tm-resources-cta {
+        padding: 50px 5%;
+    }
+}
+
+
+/* =====================================================
+   NEST HUB — 1024px × 600px
+===================================================== */
+
+@media screen and (min-width: 1000px) and (max-width: 1100px)
+and (min-height: 550px) and (max-height: 650px) {
+
+    .tm-resources-hero {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .tm-resources-hero-container {
+        gap: 28px;
+    }
+
+    .tm-resources-hero-title {
+        font-size: 38px;
+        margin-bottom: 15px;
+    }
+
+    .tm-resources-hero-description {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 18px;
+    }
+
+    .tm-resources-hero-actions {
+        margin-bottom: 20px;
+    }
+
+    .tm-resources-image-frame {
+        height: 340px;
+    }
+
+    .tm-beginner-library,
+    .tm-analysis-resources,
+    .tm-tools,
+    .tm-video-library,
+    .tm-resource-faq {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .tm-library-header,
+    .tm-analysis-header,
+    .tm-tools-heading {
+        margin-bottom: 35px;
+    }
+
+    .tm-library-card {
+        min-height: 320px;
+    }
+
+    .tm-analysis-card-image {
+        height: 185px;
+    }
+
+    .tm-tool-card {
+        min-height: 260px;
+        padding: 24px;
+    }
+
+    .tm-video-frame {
+        min-height: 280px;
+    }
+
+    .tm-resource-faq-container {
+        gap: 30px;
+    }
+}
+
+
+/* =====================================================
+   LARGE DESKTOP — 1920px AND ABOVE
+===================================================== */
+
+@media screen and (min-width: 1920px) {
+
+    .tm-resources-hero {
+        padding-left: 6.5%;
+        padding-right: 6.5%;
+    }
+
+    .tm-resources-hero-container {
+        max-width: 1600px;
+        gap: 60px;
+    }
+
+    .tm-resources-hero-title {
+        font-size: 58px;
+        max-width: 720px;
+    }
+
+    .tm-resources-hero-description {
+        font-size: 18px;
+        max-width: 620px;
+    }
+
+    .tm-resources-image-frame {
+        max-width: 650px;
+    }
+
+
+    .tm-beginner-library,
+    .tm-analysis-resources,
+    .tm-tools,
+    .tm-video-library,
+    .tm-resource-faq {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .tm-beginner-library-container {
+        max-width: 1600px;
+    }
+
+    .tm-library-card {
+        padding: 28px 25px;
+    }
+
+    .tm-analysis-container {
+        max-width: 1700px;
+    }
+
+    .tm-analysis-grid {
+        gap: 28px;
+    }
+
+    .tm-analysis-card-image {
+        height: 240px;
+    }
+
+    .tm-tools-container {
+        max-width: 1550px;
+    }
+
+    .tm-video-container {
+        max-width: 1600px;
+        gap: 65px;
+    }
+
+    .tm-resource-faq-container {
+        max-width: 1600px;
+    }
+
+    .tm-resource-faq-container {
+        gap: 80px;
+    }
+}
+
+
+/* =====================================================
+   ACCESSIBILITY — REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .tm-resources-hero *,
+    .tm-beginner-library *,
+    .tm-analysis-resources *,
+    .tm-tools *,
+    .tm-video-library *,
+    .tm-resource-faq *,
+    .tm-resources-cta * {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

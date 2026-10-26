@@ -401,7 +401,7 @@
 .tm-courses-btn-secondary {
     background: transparent;
 
-    color: var(--text-heading, var(--text));
+    color: var(--color-secondary);
 
     border-color: var(--color-primary);
 }
@@ -4484,4 +4484,1657 @@ html[dir="rtl"] .tm-cta-decoration-two {
 .tm-courses-cta a:focus-visible {
     outline: 2px solid var(--color-secondary);
     outline-offset: 4px;
+}
+
+/* =====================================================
+   TRADEMASTERS — COURSES PAGE
+   RESPONSIVE MEDIA QUERIES
+===================================================== */
+
+
+/* =====================================================
+   SMALL MOBILE DEVICES
+   Samsung Galaxy S8+ / Mobile
+   360px - 740px
+===================================================== */
+
+@media screen and (min-width: 360px) and (max-width: 740px) {
+
+    /* =========================
+       SECTION 1: COURSES HERO
+    ========================= */
+
+    .tm-courses-hero {
+        height: auto;
+        min-height: 0;
+        padding: 45px 6.5%;
+        overflow: hidden;
+    }
+
+    .tm-courses-hero-container {
+        height: auto;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .tm-courses-visual {
+        width: 100%;
+        height: 270px;
+        min-width: 0;
+    }
+
+    .tm-courses-image-frame {
+        width: 90%;
+        height: 90%;
+        border-radius: 22px 40px 22px 40px;
+        transform: rotate(-2deg);
+    }
+
+    .tm-courses-hero-image {
+        transform: scale(1.03);
+    }
+
+    .tm-courses-visual:hover .tm-courses-image-frame {
+        transform: rotate(0deg);
+    }
+
+    .tm-courses-visual:hover .tm-courses-hero-image {
+        transform: scale(1.06);
+    }
+
+    .tm-courses-decoration-top {
+        width: 55px;
+        height: 55px;
+        top: 0;
+        right: 0;
+    }
+
+    .tm-courses-decoration-bottom {
+        width: 65px;
+        height: 48px;
+        bottom: 0;
+        left: 0;
+    }
+
+    .tm-courses-image-accent {
+        width: 65px;
+        height: 9px;
+        right: 3%;
+        bottom: 5%;
+    }
+
+    .tm-courses-content {
+        align-items: flex-start;
+    }
+
+    .tm-courses-tagline {
+        gap: 7px;
+        margin-bottom: 13px;
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .tm-courses-tagline i {
+        width: 16px;
+        height: 16px;
+    }
+
+    .tm-courses-content h1 {
+        max-width: 100%;
+        font-size: clamp(29px, 7.5vw, 36px);
+        line-height: 1.2;
+        letter-spacing: -0.5px;
+        overflow-wrap: break-word;
+    }
+
+    .tm-courses-description {
+        max-width: 100%;
+        margin-top: 13px;
+    }
+
+    .tm-courses-description p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .tm-courses-actions {
+        width: 100%;
+        gap: 10px;
+        margin-top: 19px;
+    }
+
+    .tm-courses-btn-primary,
+    .tm-courses-btn-secondary {
+        min-height: 42px;
+        padding: 10px 14px;
+        font-size: 12px;
+    }
+
+    .tm-courses-categories {
+        margin-top: 21px;
+    }
+
+    .tm-categories-title {
+        font-size: 11px;
+    }
+
+    .tm-categories-list {
+        gap: 8px;
+    }
+
+    .tm-category-item {
+        min-height: 32px;
+        padding: 7px 10px;
+        font-size: 11px;
+    }
+
+
+    /* =========================
+       SECTION 2: BEGINNER COURSES
+    ========================= */
+
+    .tm-beginner-courses {
+        padding: 48px 6.5%;
+    }
+
+    .tm-beginner-container {
+        width: 100%;
+    }
+
+    .tm-beginner-header {
+        margin-bottom: 27px;
+    }
+
+    .tm-beginner-label {
+        margin-bottom: 13px;
+        gap: 7px;
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .tm-beginner-label i {
+        width: 16px;
+        height: 16px;
+    }
+
+    .tm-beginner-header h2 {
+        font-size: clamp(27px, 7vw, 35px);
+        line-height: 1.25;
+        letter-spacing: -0.5px;
+    }
+
+    .tm-beginner-header > p {
+        margin-top: 12px;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .tm-beginner-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 17px;
+    }
+
+    .tm-beginner-card {
+        padding: 21px 18px 18px;
+        border-radius: var(--radius-lg, 20px);
+    }
+
+    .tm-beginner-card-top {
+        margin-bottom: 17px;
+    }
+
+    .tm-beginner-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .tm-beginner-icon i {
+        width: 21px;
+        height: 21px;
+    }
+
+    .tm-beginner-number {
+        font-size: 28px;
+    }
+
+    .tm-beginner-level {
+        font-size: 10px;
+    }
+
+    .tm-beginner-card h3 {
+        font-size: 21px;
+        line-height: 1.35;
+    }
+
+    .tm-beginner-description {
+        margin: 10px 0 17px;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .tm-beginner-topics {
+        padding-top: 15px;
+    }
+
+    .tm-beginner-topics h4 {
+        margin-bottom: 11px;
+        font-size: 13px;
+    }
+
+    .tm-beginner-topics ul {
+        gap: 10px;
+    }
+
+    .tm-beginner-topics li {
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+    .tm-beginner-card-footer {
+        margin-top: 21px;
+        padding-top: 15px;
+    }
+
+    .tm-beginner-button {
+        min-height: 43px;
+        padding: 11px 14px;
+        font-size: 12px;
+    }
+
+
+    /* =========================
+       SECTION 3: INTERMEDIATE
+    ========================= */
+
+    .tm-intermediate-courses {
+        padding: 45px 6.5%;
+    }
+
+    .tm-intermediate-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 27px;
+    }
+
+    .tm-intermediate-intro {
+        width: 100%;
+    }
+
+    .tm-intermediate-label {
+        margin-bottom: 13px;
+        gap: 7px;
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .tm-intermediate-label i {
+        width: 16px;
+        height: 16px;
+    }
+
+    .tm-intermediate-heading {
+        margin-bottom: 12px;
+        font-size: clamp(27px, 7vw, 35px);
+        line-height: 1.25;
+        letter-spacing: -0.5px;
+    }
+
+    .tm-intermediate-description {
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .tm-intermediate-highlights {
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .tm-intermediate-highlight {
+        gap: 11px;
+    }
+
+    .tm-intermediate-highlight-icon {
+        width: 39px;
+        height: 39px;
+    }
+
+    .tm-intermediate-highlight-icon i {
+        width: 18px;
+        height: 18px;
+    }
+
+    .tm-intermediate-highlight h4 {
+        font-size: 13px;
+    }
+
+    .tm-intermediate-highlight p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .tm-intermediate-button {
+        margin-top: 21px;
+        padding: 11px 17px;
+        font-size: 13px;
+    }
+
+    .tm-intermediate-list {
+        gap: 13px;
+    }
+
+    .tm-intermediate-card {
+        grid-template-columns: 36px minmax(0, 1fr);
+        gap: 11px;
+        padding: 16px 14px;
+    }
+
+    .tm-intermediate-card-header {
+        gap: 8px;
+    }
+
+    .tm-intermediate-card-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .tm-intermediate-card-icon i {
+        width: 18px;
+        height: 18px;
+    }
+
+    .tm-intermediate-card-number {
+        font-size: 12px;
+    }
+
+    .tm-intermediate-course-label {
+        font-size: 9px;
+        letter-spacing: 0.8px;
+    }
+
+    .tm-intermediate-card-content h3 {
+        font-size: 18px;
+        line-height: 1.35;
+    }
+
+    .tm-intermediate-card-description {
+        font-size: 12px;
+        line-height: 1.65;
+    }
+
+    .tm-intermediate-divider {
+        margin: 10px 0;
+    }
+
+    .tm-intermediate-topic-list {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 8px;
+    }
+
+    .tm-intermediate-topic-list li {
+        font-size: 12px;
+    }
+
+
+    /* =========================
+       SECTION 4: ADVANCED COURSES
+    ========================= */
+
+    .tm-advanced-courses {
+        padding: 45px 6.5%;
+    }
+
+    .tm-advanced-container {
+        width: 100%;
+    }
+
+    .tm-advanced-header {
+        margin-bottom: 25px;
+    }
+
+    .tm-advanced-label {
+        margin-bottom: 13px;
+        gap: 7px;
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .tm-advanced-label i {
+        width: 16px;
+        height: 16px;
+    }
+
+    .tm-advanced-heading {
+        margin-bottom: 12px;
+        font-size: clamp(27px, 7vw, 35px);
+        line-height: 1.25;
+        letter-spacing: -0.5px;
+    }
+
+    .tm-advanced-description {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .tm-advanced-path {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 15px;
+    }
+
+    .tm-advanced-path-line {
+        display: none;
+    }
+
+    .tm-advanced-card {
+        padding: 19px 17px 17px;
+    }
+
+    .tm-advanced-card-top {
+        gap: 10px;
+        margin-bottom: 13px;
+    }
+
+    .tm-advanced-number {
+        gap: 8px;
+    }
+
+    .tm-advanced-number > span {
+        font-size: 24px;
+    }
+
+    .tm-advanced-number > i {
+        width: 15px;
+        height: 15px;
+    }
+
+    .tm-advanced-card-icon {
+        width: 39px;
+        height: 39px;
+    }
+
+    .tm-advanced-card-icon i {
+        width: 20px;
+        height: 20px;
+    }
+
+    .tm-advanced-course-label {
+        font-size: 9px;
+        letter-spacing: 0.8px;
+    }
+
+    .tm-advanced-card-body h3 {
+        font-size: 19px;
+        line-height: 1.35;
+    }
+
+    .tm-advanced-card-body > p {
+        min-height: 0;
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .tm-advanced-topics-title {
+        gap: 7px;
+        margin-top: 12px;
+        padding-top: 11px;
+        font-size: 10px;
+    }
+
+    .tm-advanced-topics {
+        gap: 8px;
+    }
+
+    .tm-advanced-topics li {
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+    .tm-advanced-card-index {
+        font-size: 11px;
+    }
+
+    .tm-advanced-footer {
+        margin-top: 22px;
+    }
+
+    .tm-advanced-disclaimer {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .tm-advanced-disclaimer-icon {
+        flex-shrink: 0;
+    }
+
+    .tm-advanced-disclaimer p {
+        font-size: 12px;
+        line-height: 1.65;
+    }
+
+    .tm-advanced-button {
+        padding: 11px 16px;
+        font-size: 12px;
+    }
+
+
+    /* =========================
+       SECTION 5: RISK MANAGEMENT
+    ========================= */
+
+    .tm-risk-section {
+        padding: 45px 6.5%;
+    }
+
+    .tm-risk-container {
+        width: 100%;
+    }
+
+    .tm-risk-header {
+        margin-bottom: 25px;
+    }
+
+    .tm-risk-label {
+        margin-bottom: 13px;
+        gap: 7px;
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .tm-risk-label i {
+        width: 16px;
+        height: 16px;
+    }
+
+    .tm-risk-heading {
+        font-size: clamp(27px, 7vw, 35px);
+        line-height: 1.25;
+        letter-spacing: -0.5px;
+    }
+
+    .tm-risk-description {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .tm-risk-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 17px;
+    }
+
+    .tm-risk-card {
+        min-width: 0;
+    }
+
+    .tm-risk-content {
+        padding: 18px 16px;
+    }
+
+    .tm-risk-card-heading {
+        gap: 10px;
+    }
+
+    .tm-risk-number {
+        font-size: 25px;
+    }
+
+    .tm-risk-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .tm-risk-icon i {
+        width: 20px;
+        height: 20px;
+    }
+
+    .tm-risk-card-heading h3 {
+        font-size: 19px;
+        line-height: 1.35;
+    }
+
+    .tm-risk-card-description {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .tm-risk-topics {
+        gap: 9px;
+    }
+
+    .tm-risk-topics li {
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+    .tm-risk-image-wrap {
+        min-height: 180px;
+    }
+
+    .tm-risk-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .tm-risk-image-overlay {
+        padding: 13px;
+    }
+
+    .tm-risk-footer {
+        margin-top: 22px;
+    }
+
+    .tm-risk-button {
+        padding: 11px 16px;
+        font-size: 12px;
+    }
+
+
+    /* =========================
+       SECTION 6: HOW IT WORKS
+    ========================= */
+
+    .tm-how-section {
+        padding: 45px 6.5%;
+    }
+
+    .tm-how-container {
+        width: 100%;
+    }
+
+    .tm-how-header {
+        margin-bottom: 26px;
+    }
+
+    .tm-how-label {
+        margin-bottom: 13px;
+        gap: 7px;
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .tm-how-label i {
+        width: 16px;
+        height: 16px;
+    }
+
+    .tm-how-heading {
+        font-size: clamp(27px, 7vw, 35px);
+        line-height: 1.25;
+        letter-spacing: -0.5px;
+    }
+
+    .tm-how-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 27px;
+    }
+
+    .tm-how-visual {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .tm-how-image-decoration {
+        max-width: 100%;
+    }
+
+    .tm-how-image-wrap {
+        width: 100%;
+        min-width: 0;
+        overflow: hidden;
+        border-radius: var(--radius-lg, 20px);
+    }
+
+    .tm-how-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+    .tm-how-image-caption {
+        gap: 10px;
+        padding: 13px;
+    }
+
+    .tm-how-caption-icon {
+        width: 38px;
+        height: 38px;
+        flex-shrink: 0;
+    }
+
+    .tm-how-caption-icon i {
+        width: 19px;
+        height: 19px;
+    }
+
+    .tm-how-caption-content strong {
+        font-size: 13px;
+    }
+
+    .tm-how-caption-content span {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .tm-how-chart-decoration {
+        max-width: 100%;
+    }
+
+    .tm-how-steps {
+        gap: 18px;
+    }
+
+    .tm-how-steps::before {
+        left: 19px;
+    }
+
+    .tm-how-step {
+        gap: 12px;
+        padding: 0;
+    }
+
+    .tm-how-step-number {
+        width: 39px;
+        height: 39px;
+        flex-shrink: 0;
+        font-size: 12px;
+    }
+
+    .tm-how-step-icon {
+        width: 39px;
+        height: 39px;
+        flex-shrink: 0;
+    }
+
+    .tm-how-step-icon i {
+        width: 19px;
+        height: 19px;
+    }
+
+    .tm-how-step-content h3 {
+        font-size: 17px;
+        line-height: 1.4;
+    }
+
+    .tm-how-step-content p {
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+
+    /* =========================
+       SECTION 7: FAQ
+    ========================= */
+
+    .tm-courses-faq {
+        padding: 45px 6.5%;
+    }
+
+    .tm-courses-faq-container {
+        width: 100%;
+    }
+
+    .tm-courses-faq-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+    }
+
+    .tm-faq-section {
+        min-width: 0;
+    }
+
+    .tm-faq-header {
+        margin-bottom: 22px;
+    }
+
+    .tm-faq-label {
+        margin-bottom: 12px;
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .tm-faq-label svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .tm-faq-heading {
+        font-size: clamp(27px, 7vw, 35px);
+        line-height: 1.25;
+        letter-spacing: -0.5px;
+    }
+
+    .tm-faq-description {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .tm-faq-list {
+        gap: 11px;
+    }
+
+    .tm-faq-item {
+        min-width: 0;
+        border-radius: var(--radius-lg, 16px);
+    }
+
+    .tm-faq-question {
+        gap: 10px;
+        padding: 14px 12px;
+    }
+
+    .tm-faq-question-number {
+        flex-shrink: 0;
+        font-size: 12px;
+    }
+
+    .tm-faq-question-text {
+        min-width: 0;
+        font-size: 13px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+
+    .tm-faq-toggle {
+        width: 29px;
+        height: 29px;
+        flex-shrink: 0;
+    }
+
+    .tm-faq-toggle svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .tm-faq-answer-inner {
+        padding: 0 13px 15px;
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .tm-faq-footer {
+        gap: 9px;
+        padding: 14px;
+    }
+
+    .tm-faq-footer > svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+    }
+
+    .tm-faq-footer p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+
+    /* =========================
+       COURSES CTA
+    ========================= */
+
+    .tm-courses-cta {
+        padding: 35px 6.5%;
+    }
+
+    .tm-courses-cta-content {
+        width: 100%;
+        padding: 25px 17px;
+    }
+
+    .tm-cta-decoration {
+        max-width: 100%;
+    }
+
+    .tm-cta-decoration-one,
+    .tm-cta-decoration-two {
+        max-width: 100%;
+    }
+
+    .tm-cta-icon {
+        width: 47px;
+        height: 47px;
+        margin-bottom: 14px;
+    }
+
+    .tm-cta-icon svg {
+        width: 23px;
+        height: 23px;
+    }
+
+    .tm-courses-cta-label {
+        margin-bottom: 12px;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .tm-courses-cta-heading {
+        font-size: clamp(26px, 6.8vw, 34px);
+        line-height: 1.25;
+        letter-spacing: -0.4px;
+    }
+
+    .tm-courses-cta-description {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .tm-courses-cta-actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .tm-courses-cta-primary,
+    .tm-courses-cta-secondary {
+        width: 100%;
+        min-height: 43px;
+        justify-content: center;
+        padding: 11px 14px;
+        font-size: 12px;
+    }
+
+    .tm-courses-cta-bottom {
+        gap: 9px;
+        margin-top: 20px;
+        padding-top: 15px;
+    }
+
+    .tm-cta-bottom-icon {
+        width: 30px;
+        height: 30px;
+        flex-shrink: 0;
+    }
+
+    .tm-cta-bottom-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .tm-courses-cta-bottom p {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .tm-courses-cta-bottom strong {
+        font-size: 11px;
+    }
+
+
+    /* =========================
+       RTL SUPPORT
+    ========================= */
+
+    html[dir="rtl"] .tm-courses-decoration-top {
+        right: auto;
+        left: 0;
+    }
+
+    html[dir="rtl"] .tm-courses-decoration-bottom {
+        left: auto;
+        right: 0;
+    }
+
+    html[dir="rtl"] .tm-courses-image-accent {
+        right: auto;
+        left: 3%;
+    }
+
+    html[dir="rtl"] .tm-how-steps::before {
+        left: auto;
+        right: 19px;
+    }
+}
+
+
+/* =====================================================
+   EXTRA SMALL MOBILE DEVICES
+   Up to 359px
+===================================================== */
+
+@media screen and (max-width: 359px) {
+
+    .tm-courses-hero,
+    .tm-beginner-courses,
+    .tm-intermediate-courses,
+    .tm-advanced-courses,
+    .tm-risk-section,
+    .tm-how-section,
+    .tm-courses-faq {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .tm-courses-hero-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+
+    .tm-courses-visual {
+        height: 225px;
+    }
+
+    .tm-courses-content h1,
+    .tm-beginner-header h2,
+    .tm-intermediate-heading,
+    .tm-advanced-heading,
+    .tm-risk-heading,
+    .tm-how-heading,
+    .tm-faq-heading,
+    .tm-courses-cta-heading {
+        font-size: 26px;
+        letter-spacing: -0.3px;
+    }
+
+    .tm-courses-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .tm-courses-btn-primary,
+    .tm-courses-btn-secondary {
+        width: 100%;
+    }
+
+    .tm-category-item {
+        gap: 5px;
+        padding: 6px 8px;
+        font-size: 10px;
+    }
+
+    .tm-beginner-card,
+    .tm-intermediate-card,
+    .tm-advanced-card {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+    .tm-intermediate-card {
+        grid-template-columns: 32px minmax(0, 1fr);
+        gap: 9px;
+    }
+
+    .tm-intermediate-card-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .tm-faq-question {
+        gap: 7px;
+        padding: 12px 9px;
+    }
+
+    .tm-faq-question-text {
+        font-size: 12px;
+    }
+
+    .tm-courses-cta-content {
+        padding: 22px 13px;
+    }
+
+    .tm-courses-cta-actions {
+        flex-direction: column;
+    }
+}
+
+
+/* =====================================================
+   SMALL TABLETS / LARGE MOBILE
+   741px - 767px
+===================================================== */
+
+@media screen and (min-width: 741px) and (max-width: 767px) {
+
+    .tm-courses-hero {
+        height: auto;
+        min-height: 0;
+        padding: 45px 6.5%;
+    }
+
+    .tm-courses-hero-container {
+        height: auto;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .tm-courses-visual {
+        height: 340px;
+    }
+
+    .tm-courses-content h1 {
+        font-size: 38px;
+    }
+
+    .tm-beginner-courses,
+    .tm-intermediate-courses,
+    .tm-advanced-courses,
+    .tm-risk-section,
+    .tm-how-section,
+    .tm-courses-faq {
+        padding: 55px 6.5%;
+    }
+
+    .tm-beginner-grid,
+    .tm-advanced-path,
+    .tm-risk-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 17px;
+    }
+
+    .tm-intermediate-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+    }
+
+    .tm-how-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+    }
+
+    .tm-courses-faq-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+    }
+
+    .tm-courses-cta {
+        padding: 40px 6.5%;
+    }
+
+    .tm-courses-cta-content {
+        padding: 30px 24px;
+    }
+}
+
+
+/* =====================================================
+   iPAD MINI
+   768px - 820px
+===================================================== */
+
+@media screen and (min-width: 768px) and (max-width: 820px) {
+
+    /* COURSES HERO */
+
+    .tm-courses-hero {
+        height: auto;
+        min-height: 0;
+        padding: 45px 6.5%;
+    }
+
+    .tm-courses-hero-container {
+        height: auto;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 4%;
+    }
+
+    .tm-courses-visual {
+        height: 330px;
+    }
+
+    .tm-courses-image-frame {
+        height: 85%;
+        border-radius: 25px 45px 25px 45px;
+        transform: rotate(-3deg);
+    }
+
+    .tm-courses-content h1 {
+        font-size: clamp(29px, 4vw, 34px);
+        line-height: 1.2;
+    }
+
+    .tm-courses-tagline {
+        font-size: 11px;
+        letter-spacing: 1px;
+        margin-bottom: 13px;
+    }
+
+    .tm-courses-description p {
+        font-size: 13px;
+    }
+
+    .tm-courses-actions {
+        gap: 8px;
+    }
+
+    .tm-courses-btn-primary,
+    .tm-courses-btn-secondary {
+        padding: 10px 12px;
+        font-size: 11px;
+    }
+
+    .tm-category-item {
+        padding: 6px 9px;
+        font-size: 10px;
+    }
+
+
+    /* BEGINNER COURSES */
+
+    .tm-beginner-courses,
+    .tm-intermediate-courses,
+    .tm-advanced-courses,
+    .tm-risk-section,
+    .tm-how-section,
+    .tm-courses-faq {
+        padding-top: 55px;
+        padding-bottom: 60px;
+    }
+
+    .tm-beginner-header h2,
+    .tm-intermediate-heading,
+    .tm-advanced-heading,
+    .tm-risk-heading,
+    .tm-how-heading,
+    .tm-faq-heading {
+        font-size: 34px;
+    }
+
+    .tm-beginner-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .tm-beginner-card {
+        padding: 20px 17px;
+    }
+
+    .tm-beginner-card h3 {
+        font-size: 20px;
+    }
+
+
+    /* INTERMEDIATE COURSES */
+
+    .tm-intermediate-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+    }
+
+    .tm-intermediate-description {
+        max-width: 650px;
+    }
+
+    .tm-intermediate-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .tm-intermediate-card {
+        grid-template-columns: 38px minmax(0, 1fr);
+        gap: 10px;
+        padding: 16px 13px;
+    }
+
+    .tm-intermediate-topic-list {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+
+    /* ADVANCED COURSES */
+
+    .tm-advanced-path {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .tm-advanced-card {
+        padding: 19px 17px;
+    }
+
+    .tm-advanced-card-body h3 {
+        font-size: 20px;
+    }
+
+
+    /* RISK MANAGEMENT */
+
+    .tm-risk-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 17px;
+    }
+
+
+    /* HOW IT WORKS */
+
+    .tm-how-layout {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 25px;
+    }
+
+    .tm-how-image {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+    }
+
+    .tm-how-step {
+        gap: 10px;
+    }
+
+    .tm-how-step-content h3 {
+        font-size: 16px;
+    }
+
+    .tm-how-step-content p {
+        font-size: 12px;
+    }
+
+
+    /* FAQ */
+
+    .tm-courses-faq-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 27px;
+    }
+
+
+    /* CTA */
+
+    .tm-courses-cta-content {
+        padding: 35px 25px;
+    }
+}
+
+
+/* =====================================================
+   iPAD PRO 11" / TABLETS
+   821px - 1024px
+===================================================== */
+
+@media screen and (min-width: 821px) and (max-width: 1024px) {
+
+    /* COURSES HERO */
+
+    .tm-courses-hero {
+        padding: 35px 6.5%;
+    }
+
+    .tm-courses-hero-container {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 4%;
+    }
+
+    .tm-courses-visual {
+        height: 360px;
+    }
+
+    .tm-courses-content h1 {
+        font-size: clamp(32px, 3.5vw, 38px);
+    }
+
+    .tm-courses-tagline {
+        font-size: 12px;
+        letter-spacing: 1.1px;
+    }
+
+    .tm-courses-description p {
+        font-size: 13px;
+    }
+
+    .tm-courses-btn-primary,
+    .tm-courses-btn-secondary {
+        padding: 10px 14px;
+        font-size: 12px;
+    }
+
+    .tm-category-item {
+        font-size: 10px;
+    }
+
+
+    /* BEGINNER COURSES */
+
+    .tm-beginner-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .tm-beginner-card {
+        padding: 22px 19px;
+    }
+
+    .tm-beginner-header h2,
+    .tm-intermediate-heading,
+    .tm-advanced-heading,
+    .tm-risk-heading,
+    .tm-how-heading,
+    .tm-faq-heading {
+        font-size: 37px;
+    }
+
+
+    /* INTERMEDIATE COURSES */
+
+    .tm-intermediate-container {
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+        gap: 25px;
+    }
+
+    .tm-intermediate-list {
+        gap: 12px;
+    }
+
+    .tm-intermediate-card {
+        grid-template-columns: 38px minmax(0, 1fr);
+        gap: 12px;
+        padding: 17px 15px;
+    }
+
+    .tm-intermediate-topic-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px 10px;
+    }
+
+
+    /* ADVANCED COURSES */
+
+    .tm-advanced-path {
+        gap: 16px;
+    }
+
+    .tm-advanced-card {
+        padding: 20px 18px;
+    }
+
+
+    /* RISK MANAGEMENT */
+
+    .tm-risk-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+
+    /* HOW IT WORKS */
+
+    .tm-how-layout {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 28px;
+    }
+
+    .tm-how-image {
+        width: 100%;
+        height: 330px;
+        object-fit: cover;
+    }
+
+
+    /* FAQ */
+
+    .tm-courses-faq-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+    }
+}
+
+
+/* =====================================================
+   NEST HUB
+   1024px WIDE × 600px HIGH
+===================================================== */
+
+@media screen and (width: 1024px) and (height: 600px) {
+
+    .tm-courses-hero {
+        height: auto;
+        min-height: 0;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .tm-courses-hero-container {
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+        gap: 4%;
+    }
+
+    .tm-courses-visual {
+        height: 300px;
+    }
+
+    .tm-courses-content h1 {
+        font-size: 31px;
+        line-height: 1.15;
+    }
+
+    .tm-courses-tagline {
+        margin-bottom: 10px;
+        font-size: 11px;
+    }
+
+    .tm-courses-description {
+        margin-top: 10px;
+    }
+
+    .tm-courses-description p {
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+    .tm-courses-actions {
+        margin-top: 12px;
+    }
+
+    .tm-courses-categories {
+        margin-top: 13px;
+    }
+
+    .tm-category-item {
+        min-height: 29px;
+        padding: 5px 8px;
+        font-size: 10px;
+    }
+
+    .tm-beginner-courses,
+    .tm-intermediate-courses,
+    .tm-advanced-courses,
+    .tm-risk-section,
+    .tm-how-section,
+    .tm-courses-faq {
+        padding-top: 40px;
+        padding-bottom: 45px;
+    }
+}
+
+
+/* =====================================================
+   LARGE DESKTOPS
+   1920px AND ABOVE
+===================================================== */
+
+@media screen and (min-width: 1920px) {
+
+    .tm-courses-hero {
+        padding-left: 6.5%;
+        padding-right: 6.5%;
+    }
+
+    .tm-courses-hero-container {
+        max-width: 1600px;
+    }
+
+    .tm-courses-visual {
+        height: 500px;
+    }
+
+    .tm-courses-content h1 {
+        max-width: 760px;
+        font-size: 48px;
+    }
+
+    .tm-courses-description p {
+        font-size: 16px;
+    }
+
+    .tm-beginner-container,
+    .tm-intermediate-container,
+    .tm-advanced-container,
+    .tm-risk-container,
+    .tm-how-container,
+    .tm-courses-faq-container {
+        max-width: 1600px;
+    }
+
+    .tm-beginner-grid {
+        gap: 26px;
+    }
+
+    .tm-beginner-card {
+        padding: 29px 26px 24px;
+    }
+
+    .tm-intermediate-container {
+        gap: 55px;
+    }
+
+    .tm-intermediate-card {
+        padding: 22px 24px;
+    }
+
+    .tm-advanced-path {
+        gap: 24px;
+    }
+
+    .tm-advanced-card {
+        padding: 27px 26px 23px;
+    }
+
+    .tm-risk-grid {
+        gap: 25px;
+    }
+
+    .tm-how-layout {
+        gap: 55px;
+    }
+
+    .tm-courses-cta-content {
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* =====================================================
+   ACCESSIBILITY: REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .tm-courses-hero *,
+    .tm-beginner-courses *,
+    .tm-intermediate-courses *,
+    .tm-advanced-courses *,
+    .tm-risk-section *,
+    .tm-how-section *,
+    .tm-courses-faq *,
+    .tm-courses-cta * {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
