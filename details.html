@@ -1,0 +1,1201 @@
+    
+    <!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TradeMasters | Stock Market Trading Academy</title>
+
+    <meta name="description"
+        content="TradeMasters Stock Market Trading Academy provides stock market education, trading courses, and learning resources.">
+
+    <meta name="keywords"
+        content="TradeMasters, stock market academy, trading courses, technical analysis, trading education">
+
+    <meta name="author" content="TradeMasters">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@0.542.0/dist/umd/lucide.min.js" defer></script>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="details.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header" id="siteHeader">
+
+        <div class="header-container">
+
+            <!-- BRAND -->
+            <a href="index.html" class="brand" aria-label="TradeMasters Home">
+
+                <img src="logo_light.png" alt="TradeMasters Logo" class="brand-logo" id="brandLogo">
+
+                <span class="brand-text">
+                    <span class="brand-title">
+                        <span class="brand-trade">TRADE</span><span class="brand-masters">MASTERS</span>
+                    </span>
+
+                    <span class="brand-subtitle">
+                        STOCK MARKET TRADING ACADEMY
+                    </span>
+                </span>
+
+            </a>
+
+
+            <!-- CENTER NAVIGATION -->
+            <div class="header-nav" id="mainNavigation">
+
+                <nav class="navbar" aria-label="Main navigation">
+
+                    <ul class="nav-list">
+
+                        <!-- HOME DROPDOWN -->
+                        <li class="nav-item dropdown">
+
+                            <button class="nav-link dropdown-toggle" id="homeDropdownToggle" type="button"
+                                aria-expanded="false" aria-controls="homeDropdownMenu">
+
+                                <span>Home</span>
+                                <i data-lucide="chevron-down"></i>
+
+                            </button>
+
+                            <ul class="dropdown-menu" id="homeDropdownMenu">
+
+                                <li>
+                                    <a href="index.html" class="dropdown-link">Home 1</a>
+                                </li>
+
+                                <li>
+                                    <a href="home2.html" class="dropdown-link">Home 2</a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+
+                        <!-- ABOUT -->
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">About</a>
+                        </li>
+
+
+                        <!-- COURSES -->
+                        <li class="nav-item">
+                            <a href="courses.html" class="nav-link">Courses</a>
+                        </li>
+
+
+                        <!-- RESOURCES -->
+                        <li class="nav-item">
+                            <a href="resources.html" class="nav-link">Resources</a>
+                        </li>
+
+
+                        <!-- CONTACT -->
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">Contact</a>
+                        </li>
+
+
+                        <!-- DASHBOARD -->
+                        <li class="nav-item">
+                            <a href="dashboard.html" class="nav-link">Dashboard</a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+
+                <!-- MOBILE LOGIN -->
+                <a href="login.html" class="login-button mobile-login">
+
+                    <i data-lucide="user-round"></i>
+                    <span>Login</span>
+
+                </a>
+
+            </div>
+
+
+            <!-- DESKTOP HEADER ACTIONS -->
+            <div class="header-actions">
+
+                <button type="button" class="icon-button js-rtl-toggle" aria-label="Switch text direction"
+                    title="Switch text direction">
+
+                    <i data-lucide="arrow-left-right"></i>
+
+                </button>
+
+
+                <button type="button" class="icon-button js-theme-toggle" aria-label="Switch to dark mode"
+                    title="Toggle dark mode">
+
+                    <i data-lucide="moon"></i>
+
+                </button>
+
+
+                <a href="login.html" class="login-button desktop-login">
+
+                    <i data-lucide="user-round"></i>
+                    <span>Login</span>
+
+                </a>
+
+            </div>
+
+
+            <!-- MOBILE HEADER ACTIONS -->
+            <div class="mobile-actions">
+
+                <button type="button" class="icon-button js-rtl-toggle" aria-label="Switch text direction"
+                    title="Switch text direction">
+
+                    <i data-lucide="arrow-left-right"></i>
+
+                </button>
+
+
+                <button type="button" class="icon-button js-theme-toggle" aria-label="Switch to dark mode"
+                    title="Toggle dark mode">
+
+                    <i data-lucide="moon"></i>
+
+                </button>
+
+
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button"
+                    aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNavigation">
+
+                    <i data-lucide="menu"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="page-content" id="mainContent">
+        <!-- =====================================================
+     TRADEMASTERS — DETAILING PAGE
+     SECTIONS ONLY — NO HEADER / NO FOOTER
+===================================================== -->
+
+
+<!-- =====================================================
+     SECTION 1: HERO
+===================================================== -->
+
+<section class="tm-detail-hero" id="detail-home">
+
+    <div class="tm-detail-hero-content">
+
+        <div class="tm-detail-tagline">
+            <i data-lucide="trending-up"></i>
+            <span>LEARN • PRACTICE • GROW</span>
+        </div>
+
+        <h1>
+            Master the Stock Market
+            <span>with TradeMasters.</span>
+        </h1>
+
+        <p>
+            Gain practical knowledge, build your understanding of financial
+            markets, and develop the skills needed to approach trading
+            with greater confidence. TradeMasters brings structured
+            education, learning resources, and guided practice together
+            in one learning environment.
+        </p>
+
+        <div class="tm-detail-hero-points">
+
+            <div>
+                <i data-lucide="book-open"></i>
+                <span>Structured Education</span>
+            </div>
+
+            <div>
+                <i data-lucide="chart-no-axes-combined"></i>
+                <span>Market Understanding</span>
+            </div>
+
+            <div>
+                <i data-lucide="graduation-cap"></i>
+                <span>Continuous Learning</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="tm-detail-hero-visual">
+
+        <div class="tm-detail-hero-image">
+            <img
+                src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=85"
+                alt="Stock market charts displayed on a trading screen">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 2: COURSES
+===================================================== -->
+
+<section class="tm-detail-courses" id="detail-courses">
+
+    <div class="tm-detail-courses-layout">
+
+        <div class="tm-detail-section-intro">
+
+            <div class="tm-detail-tagline">
+                <i data-lucide="graduation-cap"></i>
+                <span>OUR COURSES</span>
+            </div>
+
+            <h2>
+                Structured Learning for
+                <span>Real Market Knowledge.</span>
+            </h2>
+
+            <p>
+                Understanding financial markets begins with a clear
+                foundation. Our learning approach introduces essential
+                concepts step by step, helping learners understand
+                market terminology, trading instruments, price movements,
+                and the factors that influence financial decisions.
+            </p>
+
+            <p>
+                From the basics of stock exchanges to technical analysis
+                and derivatives, each subject builds on concepts
+                introduced earlier. This structured progression helps
+                learners organise their knowledge instead of trying
+                to understand every market concept at once.
+            </p>
+
+            <p>
+                Practical examples and guided exercises can help connect
+                theoretical knowledge with market situations. Learners
+                can revisit important concepts, examine different
+                scenarios, and develop a more systematic approach
+                to financial market education.
+            </p>
+
+            <p>
+                Course selection should depend on your current
+                understanding, learning objectives, and familiarity
+                with financial markets. Beginners can start with
+                foundational concepts before exploring more specialised
+                subjects.
+            </p>
+
+        </div>
+
+        <div class="tm-detail-course-grid">
+
+            <article class="tm-detail-course-card">
+
+                <div class="tm-detail-course-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?auto=format&fit=crop&w=700&q=85"
+                        alt="Financial market chart"
+                        loading="lazy">
+                </div>
+
+                <div class="tm-detail-course-content">
+
+                    <span class="tm-detail-card-index">
+                        01 / FOUNDATION
+                    </span>
+
+                    <h3>Stock Market Basics</h3>
+
+                    <p>
+                        Learn how stock markets operate, how shares
+                        are traded, and how exchanges, indices,
+                        brokers, and market participants contribute
+                        to the financial ecosystem.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="tm-detail-course-card">
+
+                <div class="tm-detail-course-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=85"
+                        alt="Financial analysis on a computer screen"
+                        loading="lazy">
+                </div>
+
+                <div class="tm-detail-course-content">
+
+                    <span class="tm-detail-card-index">
+                        02 / ANALYSIS
+                    </span>
+
+                    <h3>Technical Analysis</h3>
+
+                    <p>
+                        Explore charts, price patterns, trends,
+                        support and resistance, and technical
+                        indicators to understand market behaviour
+                        and price movements.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="tm-detail-course-card">
+
+                <div class="tm-detail-course-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=85"
+                        alt="Market data and analytical charts"
+                        loading="lazy">
+                </div>
+
+                <div class="tm-detail-course-content">
+
+                    <span class="tm-detail-card-index">
+                        03 / DERIVATIVES
+                    </span>
+
+                    <h3>Options and Risk</h3>
+
+                    <p>
+                        Understand calls and puts, strike prices,
+                        expiry dates, option premiums, and the
+                        importance of risk management when studying
+                        derivatives markets.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="tm-detail-course-card">
+
+                <div class="tm-detail-course-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=700&q=85"
+                        alt="People collaborating during a learning session"
+                        loading="lazy">
+                </div>
+
+                <div class="tm-detail-course-content">
+
+                    <span class="tm-detail-card-index">
+                        04 / APPLICATION
+                    </span>
+
+                    <h3>Advanced Strategies</h3>
+
+                    <p>
+                        Study strategy evaluation, trading discipline,
+                        position sizing, market scenarios, and
+                        methods for reviewing decisions through
+                        structured practice.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 3: WHY CHOOSE TRADEMASTERS
+     CONTENT LEFT — IMAGE RIGHT
+===================================================== -->
+
+<section class="tm-detail-advantages" id="detail-advantages">
+
+    <div class="tm-detail-advantages-content">
+
+        <div class="tm-detail-tagline">
+            <i data-lucide="star"></i>
+            <span>THE TRADEMASTERS ADVANTAGE</span>
+        </div>
+
+        <h2>
+            Your Learning Journey.
+            <span>Our Commitment.</span>
+        </h2>
+
+        <p class="tm-detail-advantages-description">
+            Financial education becomes more meaningful when concepts
+            are explained clearly and learners have opportunities to
+            revisit information, examine examples, and develop
+            consistent learning habits.
+        </p>
+
+        <p class="tm-detail-advantages-description">
+            TradeMasters focuses on structured educational content,
+            practical examples, and a progressive learning experience
+            that helps students build their market knowledge.
+            The aim is to understand how markets work before
+            approaching trading decisions.
+        </p>
+
+        <div class="tm-detail-advantage-list">
+
+            <article class="tm-detail-advantage-item">
+
+                <div class="tm-detail-feature-icon">
+                    <i data-lucide="book-open-check"></i>
+                </div>
+
+                <div>
+                    <h3>Structured Learning Paths</h3>
+                    <p>
+                        Progress from fundamental concepts to more
+                        advanced topics through an organised
+                        educational sequence.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="tm-detail-advantage-item">
+
+                <div class="tm-detail-feature-icon">
+                    <i data-lucide="graduation-cap"></i>
+                </div>
+
+                <div>
+                    <h3>Guided Education</h3>
+                    <p>
+                        Learn through explanations, examples, and
+                        instructional material designed to make
+                        market concepts easier to understand.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="tm-detail-advantage-item">
+
+                <div class="tm-detail-feature-icon">
+                    <i data-lucide="chart-no-axes-combined"></i>
+                </div>
+
+                <div>
+                    <h3>Practical Market Examples</h3>
+                    <p>
+                        Explore charts and market scenarios to connect
+                        theoretical concepts with observable market
+                        behaviour.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="tm-detail-advantage-item">
+
+                <div class="tm-detail-feature-icon">
+                    <i data-lucide="shield-check"></i>
+                </div>
+
+                <div>
+                    <h3>Responsible Learning</h3>
+                    <p>
+                        Understand risk awareness, independent
+                        research, and disciplined decision-making
+                        as essential parts of market education.
+                    </p>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+    <div class="tm-detail-advantages-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85"
+            alt="Financial analysis workspace with market data"
+            loading="lazy">
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 4: LEARNING PROCESS
+     NO CHANGES
+===================================================== -->
+
+<section class="tm-detail-process" id="detail-process">
+
+    <div class="tm-detail-process-header">
+
+        <div class="tm-detail-tagline">
+            <i data-lucide="route"></i>
+            <span>OUR LEARNING PROCESS</span>
+        </div>
+
+        <h2>
+            From Understanding
+            <span>to Practical Knowledge.</span>
+        </h2>
+
+        <p>
+            A clear learning process helps you build knowledge gradually,
+            apply concepts through practice, and review your understanding
+            as you progress through the learning material.
+        </p>
+
+    </div>
+
+    <div class="tm-detail-process-layout">
+
+        <article class="tm-detail-process-card">
+
+            <div class="tm-detail-process-number">01</div>
+
+            <div class="tm-detail-process-icon">
+                <i data-lucide="book-open"></i>
+            </div>
+
+            <h3>Learn the Fundamentals</h3>
+
+            <p>
+                Begin with essential market terminology, exchange
+                operations, financial instruments, and the basic
+                principles of stock market participation.
+            </p>
+
+            <div class="tm-detail-process-meta">
+                <span>BUILD YOUR FOUNDATION</span>
+            </div>
+
+        </article>
+
+
+        <div class="tm-detail-process-connector">
+            <i data-lucide="arrow-right"></i>
+        </div>
+
+
+        <article class="tm-detail-process-card">
+
+            <div class="tm-detail-process-number">02</div>
+
+            <div class="tm-detail-process-icon">
+                <i data-lucide="chart-no-axes-combined"></i>
+            </div>
+
+            <h3>Explore and Practise</h3>
+
+            <p>
+                Study market charts, examine example scenarios, and
+                use educational exercises or simulated portfolios
+                where available to practise your understanding
+                without committing real money.
+            </p>
+
+            <div class="tm-detail-process-meta">
+                <span>APPLY YOUR KNOWLEDGE</span>
+            </div>
+
+        </article>
+
+
+        <div class="tm-detail-process-connector">
+            <i data-lucide="arrow-right"></i>
+        </div>
+
+
+        <article class="tm-detail-process-card">
+
+            <div class="tm-detail-process-number">03</div>
+
+            <div class="tm-detail-process-icon">
+                <i data-lucide="target"></i>
+            </div>
+
+            <h3>Review and Improve</h3>
+
+            <p>
+                Revisit lessons, review practice activities, identify
+                gaps in your understanding, and continue developing
+                your market knowledge through consistent study.
+            </p>
+
+            <div class="tm-detail-process-meta">
+                <span>KEEP DEVELOPING</span>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 5: LEARNING RESOURCES
+===================================================== -->
+
+<section class="tm-detail-resources" id="detail-resources">
+
+    <div class="tm-detail-resources-layout">
+
+        <div class="tm-detail-resources-intro">
+
+            <div class="tm-detail-tagline">
+                <i data-lucide="library-big"></i>
+                <span>LEARNING RESOURCES</span>
+            </div>
+
+            <h2>
+                Knowledge Beyond
+                <span>the Classroom.</span>
+            </h2>
+
+            <p>
+                Learning resources help reinforce important concepts
+                and support independent study. They provide additional
+                ways to revisit lessons, understand financial
+                terminology, and organise your learning journey.
+            </p>
+
+            <p>
+                Different resource formats support different learning
+                needs. Recorded lessons help learners review explanations,
+                written materials provide quick references, and market
+                examples help demonstrate how financial concepts
+                can appear in real situations.
+            </p>
+
+            <p>
+                Practice exercises can also help identify topics that
+                require further attention. Reviewing mistakes and
+                revisiting challenging concepts can improve understanding
+                more effectively than simply memorising terminology.
+            </p>
+
+            <p>
+                Educational resources should be used to develop
+                knowledge and critical thinking. They are not a
+                substitute for independent research, personalised
+                financial advice, or an understanding of the risks
+                associated with financial markets.
+            </p>
+
+        </div>
+
+        <div class="tm-detail-resources-grid">
+
+            <article class="tm-detail-resource-card">
+
+                <div class="tm-detail-resource-icon">
+                    <i data-lucide="video"></i>
+                </div>
+
+                <span class="tm-detail-card-index">RESOURCE 01</span>
+
+                <h3>Recorded Lessons</h3>
+
+                <p>
+                    Revisit explanations of important market concepts,
+                    review challenging topics, and reinforce
+                    previously covered course material.
+                </p>
+
+                <div class="tm-detail-resource-footer">
+                    <span>VIDEO LEARNING</span>
+                    <i data-lucide="play-circle"></i>
+                </div>
+
+            </article>
+
+
+            <article class="tm-detail-resource-card">
+
+                <div class="tm-detail-resource-icon">
+                    <i data-lucide="file-text"></i>
+                </div>
+
+                <span class="tm-detail-card-index">RESOURCE 02</span>
+
+                <h3>Study Materials</h3>
+
+                <p>
+                    Use notes, terminology guides, topic summaries,
+                    and educational documents to organise
+                    information and strengthen understanding.
+                </p>
+
+                <div class="tm-detail-resource-footer">
+                    <span>REFERENCE MATERIAL</span>
+                    <i data-lucide="book-marked"></i>
+                </div>
+
+            </article>
+
+
+            <article class="tm-detail-resource-card">
+
+                <div class="tm-detail-resource-icon">
+                    <i data-lucide="chart-no-axes-combined"></i>
+                </div>
+
+                <span class="tm-detail-card-index">RESOURCE 03</span>
+
+                <h3>Market Analysis</h3>
+
+                <p>
+                    Learn how charts, market indicators, economic
+                    information, and company announcements can be
+                    examined as part of financial market study.
+                </p>
+
+                <div class="tm-detail-resource-footer">
+                    <span>MARKET EDUCATION</span>
+                    <i data-lucide="activity"></i>
+                </div>
+
+            </article>
+
+
+            <article class="tm-detail-resource-card">
+
+                <div class="tm-detail-resource-icon">
+                    <i data-lucide="clipboard-check"></i>
+                </div>
+
+                <span class="tm-detail-card-index">RESOURCE 04</span>
+
+                <h3>Practice Exercises</h3>
+
+                <p>
+                    Use topic-based questions, learning activities,
+                    and simulated examples to review progress
+                    and identify areas needing further study.
+                </p>
+
+                <div class="tm-detail-resource-footer">
+                    <span>SKILL DEVELOPMENT</span>
+                    <i data-lucide="check-circle"></i>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 6: ABOUT ACADEMY
+     FLOATING IMAGE CARD REMOVED
+===================================================== -->
+
+<section class="tm-detail-academy" id="detail-academy">
+
+    <div class="tm-detail-academy-content">
+
+        <div class="tm-detail-tagline">
+            <i data-lucide="building-2"></i>
+            <span>ABOUT OUR ACADEMY</span>
+        </div>
+
+        <h2>
+            Building Better
+            <span>Market Understanding.</span>
+        </h2>
+
+        <p>
+            TradeMasters Stock Market Trading Academy is designed
+            around the idea that understanding financial markets
+            begins with education. Learning about market terminology,
+            financial instruments, price behaviour, and risk can
+            help students build a more informed foundation.
+        </p>
+
+        <p>
+            A structured educational experience gives learners a
+            clearer path through different subjects. Rather than
+            approaching every market topic at once, students can
+            begin with fundamental concepts and gradually explore
+            more specialised areas of financial market analysis.
+        </p>
+
+        <p>
+            Educational examples, topic summaries, and guided
+            exercises can help learners connect theory with
+            practical scenarios. Revisiting material and reviewing
+            previous learning are also important parts of
+            developing a lasting understanding of financial markets.
+        </p>
+
+        <p>
+            TradeMasters emphasises the importance of continuous
+            learning, critical thinking, and responsible study.
+            Financial markets involve uncertainty, and education
+            cannot guarantee profits or eliminate investment risk.
+        </p>
+
+        <div class="tm-detail-academy-principles">
+
+            <div>
+                <i data-lucide="book-open-check"></i>
+                <span>Clear Educational Content</span>
+            </div>
+
+            <div>
+                <i data-lucide="users-round"></i>
+                <span>Student-Focused Learning</span>
+            </div>
+
+            <div>
+                <i data-lucide="shield-check"></i>
+                <span>Risk-Aware Education</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="tm-detail-academy-visual">
+
+        <div class="tm-detail-academy-image">
+            <img
+                src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=85"
+                alt="Students participating in a classroom learning session"
+                loading="lazy">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 7: CONTACT CTA
+     NO CHANGES
+===================================================== -->
+
+<section class="tm-detail-contact" id="detail-contact">
+
+    <div class="tm-detail-contact-card">
+
+        <div class="tm-detail-contact-content">
+
+            <div class="tm-detail-tagline">
+                <i data-lucide="messages-square"></i>
+                <span>LET'S CONNECT</span>
+            </div>
+
+            <h2>
+                Your Questions Matter.
+                <span>Your Learning Matters More.</span>
+            </h2>
+
+            <p>
+                Whether you are beginning to explore the stock market
+                or looking for a structured educational program,
+                TradeMasters is ready to help you understand the
+                available learning options and find the information
+                you need.
+            </p>
+
+            <div class="tm-detail-contact-support">
+                <i data-lucide="graduation-cap"></i>
+
+                <span>
+                    Learn with clarity. Practice with discipline.
+                    Grow your knowledge with TradeMasters.
+                </span>
+            </div>
+
+        </div>
+
+        <div class="tm-detail-contact-action">
+
+            <a href="#send-message" class="tm-detail-contact-button">
+                Contact Us
+                <i data-lucide="arrow-up-right"></i>
+            </a>
+
+            <p>
+                We're here to help with your learning enquiries.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-main">
+
+            <div class="footer-container">
+
+                <!-- BRAND COLUMN -->
+                <div class="footer-column footer-brand-column">
+
+                    <a href="index.html" class="brand footer-brand">
+
+                        <img src="./images/logo_light.png" alt="TradeMasters Logo" class="footer-brand-logo"
+                            id="footerBrandLogo">
+
+                        <span class="brand-text">
+
+                            <span class="brand-title">
+                                <span class="brand-trade">TRADE</span><span class="brand-masters">MASTERS</span>
+                            </span>
+
+                            <span class="brand-subtitle">
+                                STOCK MARKET TRADING ACADEMY
+                            </span>
+
+                        </span>
+
+                    </a>
+
+
+                    <p class="footer-description">
+                        Empowering learners with stock market knowledge,
+                        trading education, and a disciplined approach
+                        to financial markets.
+                    </p>
+
+
+                    <div class="social-links">
+
+                        <a href="#" class="social-link" aria-label="Instagram" title="Instagram">
+                            <i data-lucide="instagram"></i>
+                        </a>
+
+                        <a href="#" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+                            <i data-lucide="linkedin"></i>
+                        </a>
+
+                        <a href="#" class="social-link" aria-label="YouTube" title="YouTube">
+                            <i data-lucide="youtube"></i>
+                        </a>
+
+                        <a href="#" class="social-link" aria-label="Facebook" title="Facebook">
+                            <i data-lucide="facebook"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK LINKS -->
+                <div class="footer-column">
+
+                    <h3 class="footer-heading">Quick Links</h3>
+
+                    <ul class="footer-links">
+
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Our Courses</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- LEARNING -->
+                <div class="footer-column">
+
+                    <h3 class="footer-heading">Learning</h3>
+
+                    <ul class="footer-links">
+
+                        <li><a href="courses.html">Trading Basics</a></li>
+                        <li><a href="courses.html">Technical Analysis</a></li>
+                        <li><a href="courses.html">Market Strategies</a></li>
+                        <li><a href="courses.html">Risk Management</a></li>
+                        <li><a href="dashboard.html">Student Dashboard</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- ADDITIONAL PAGES -->
+                <div class="footer-column">
+
+                    <h3 class="footer-heading">Additional Pages</h3>
+
+                    <ul class="footer-links">
+
+                        <li><a href="404.html">404 Error</a></li>
+                        <li><a href="coming-soon.html">Coming Soon</a></li>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- GET IN TOUCH -->
+                <div class="footer-column footer-contact-column">
+
+                    <h3 class="footer-heading">Get in Touch</h3>
+
+                    <ul class="footer-contact-list">
+
+                        <li>
+
+                            <span class="footer-contact-icon">
+                                <i data-lucide="mail"></i>
+                            </span>
+
+                            <a href="mailto:support@yourdomain.com">
+                                support@yourdomain.com
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="footer-contact-icon">
+                                <i data-lucide="phone"></i>
+                            </span>
+
+                            <a href="tel:+910000000000">
+                                +91 00000 00000
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="footer-contact-icon">
+                                <i data-lucide="clock"></i>
+                            </span>
+
+                            <span>
+                                Monday – Saturday<br>
+                                9:00 AM – 6:00 PM
+                            </span>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+        <div class="footer-bottom">
+
+            <div class="footer-container footer-bottom-container">
+
+                <p class="copyright">
+                    &copy; <span id="currentYear"></span>
+                    TradeMasters. All rights reserved.
+                </p>
+
+
+                <div class="footer-bottom-actions">
+
+                    <div class="legal-links">
+
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms &amp; Conditions</a>
+
+                    </div>
+
+
+                    <button type="button" class="back-to-top" id="backToTop" aria-label="Go to top"
+                        title="Go to top">
+
+                        <i data-lucide="arrow-up"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>

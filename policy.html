@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TradeMasters | Privacy Policy</title>
+
+    <meta name="description" content="TradeMasters Privacy Policy explains how we collect, use, store, and protect user information.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@0.542.0/dist/umd/lucide.min.js" defer></script>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="policy.css">
+</head>
+
+<body>
+
+    <div class="top-actions">
+        <button type="button" class="icon-button js-rtl-toggle"
+            aria-label="Switch text direction" title="Switch text direction">
+            <i data-lucide="arrow-left-right"></i>
+        </button>
+
+        <button type="button" class="icon-button js-theme-toggle"
+            aria-label="Switch to dark mode" title="Toggle dark mode">
+            <i data-lucide="moon"></i>
+        </button>
+    </div>
+
+    <section class="policy-page">
+        <div class="container">
+            <div class="policy-card">
+
+                <div class="brand-row">
+                    <a href="index.html" class="brand policy-brand" aria-label="TradeMasters Home">
+                        <img
+                            src="logo_light.png"
+                            alt="TradeMasters Logo"
+                            class="brand-logo"
+                            id="brandLogo"
+                        >
+
+                        <span class="brand-text">
+                            <span class="brand-title">
+                                <span class="brand-trade">TRADE</span><span class="brand-masters">MASTERS</span>
+                            </span>
+
+                            <span class="brand-subtitle">
+                                STOCK MARKET TRADING ACADEMY
+                            </span>
+                        </span>
+                    </a>
+                </div>
+
+                <span class="policy-tag">TradeMasters Policy</span>
+
+                <h1>Privacy Policy</h1>
+
+                <p class="intro">
+                    This Privacy Policy explains how TradeMasters collects, uses, stores,
+                    and protects user information when you visit our website or use our
+                    stock market education services.
+                </p>
+
+                <div class="policy-section">
+                    <h2>1. Information We Collect</h2>
+                    <p>
+                        We may collect your name, phone number, email address, course enrolment
+                        details, and any information you submit through contact forms or
+                        registration sections.
+                    </p>
+                </div>
+
+                <div class="policy-section">
+                    <h2>2. How We Use Your Information</h2>
+                    <p>
+                        Your information is used to respond to enquiries, manage student
+                        accounts, provide course access, improve our services, and send updates
+                        related to classes, learning resources, or support.
+                    </p>
+                </div>
+
+                <div class="policy-section">
+                    <h2>3. Data Protection</h2>
+                    <p>
+                        We take reasonable measures to keep your information secure and protected
+                        from unauthorized access, misuse, or disclosure.
+                    </p>
+                </div>
+
+                <div class="policy-section">
+                    <h2>4. Third-Party Services</h2>
+                    <p>
+                        Some parts of our website may use third-party tools such as analytics,
+                        payment services, or embedded content. These services may collect limited
+                        technical data based on their own policies.
+                    </p>
+                </div>
+
+                <div class="policy-section">
+                    <h2>5. Your Rights</h2>
+                    <p>
+                        You may request updates or removal of your personal information by
+                        contacting us directly through the support details available on our
+                        website.
+                    </p>
+                </div>
+
+                <div class="policy-section">
+                    <h2>6. Policy Updates</h2>
+                    <p>
+                        We may update this Privacy Policy from time to time. Changes will be
+                        posted on this page with the revised effective date.
+                    </p>
+                </div>
+
+                <p class="effective-date">Effective Date: 30 July 2026</p>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    /* main.js handles:
+       - RTL/LTR toggle
+       - Dark/light theme toggle
+       - Logo light/dark switching
+       - localStorage sync
+       - Lucide icons
+    */
+
+    function refreshIcons() {
+        if (window.lucide && typeof window.lucide.createIcons === "function") {
+            window.lucide.createIcons();
+        }
+    }
+
+    refreshIcons();
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coming Soon | TradeMasters</title>
+
+    <meta name="description" content="This TradeMasters page is coming soon. Please check back later or return to the homepage.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@0.542.0/dist/umd/lucide.min.js" defer></script>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="soon.css">
+</head>
+
+<body>
+    <main class="page">
+        <div class="top-actions">
+            <button type="button" class="icon-button js-rtl-toggle"
+                aria-label="Switch text direction" title="Switch text direction">
+                <i data-lucide="arrow-left-right"></i>
+            </button>
+
+            <button type="button" class="icon-button js-theme-toggle"
+                aria-label="Switch to dark mode" title="Toggle dark mode">
+                <i data-lucide="moon"></i>
+            </button>
+        </div>
+
+        <section class="card" aria-labelledby="comingSoonTitle">
+            <a href="index.html" class="brand coming-soon-brand" aria-label="TradeMasters Home">
+                <img
+                    src="logo_light.png"
+                    alt="TradeMasters Logo"
+                    class="brand-logo"
+                    id="brandLogo"
+                >
+
+                <span class="brand-text">
+                    <span class="brand-title">
+                        <span class="brand-trade">TRADE</span><span class="brand-masters">MASTERS</span>
+                    </span>
+
+                    <span class="brand-subtitle">
+                        STOCK MARKET TRADING ACADEMY
+                    </span>
+                </span>
+            </a>
+
+            <div class="badge">Launching Soon</div>
+
+            <h2 id="comingSoonTitle">Something Great is Coming Soon</h2>
+
+            <p>
+                We are working on this page right now. Please check back soon or
+                return to the homepage for more updates.
+            </p>
+
+            <div class="actions">
+                <a href="index.html" class="btn btn-primary">
+                    Go Home
+                    <i data-lucide="arrow-right"></i>
+                </a>
+
+                <a href="contact.html" class="btn btn-secondary">
+                    Contact Us
+                    <i data-lucide="mail"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    /* main.js handles:
+       - RTL/LTR toggle
+       - Dark/light theme toggle
+       - Logo light/dark switching
+       - localStorage sync
+       - Lucide icons
+    */
+
+    function refreshIcons() {
+        if (window.lucide && typeof window.lucide.createIcons === "function") {
+            window.lucide.createIcons();
+        }
+    }
+
+    refreshIcons();
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+/* =========================================================
+   TRADEMASTERS — COMING SOON PAGE
+========================================================= */
+
+body {
+    overflow: hidden;
+}
+
+/* =========================================================
+   PAGE — CARD KONCHEM PAIKI
+========================================================= */
+
+.page {
+    display: grid;
+    place-items: center;
+    min-height: 100dvh;
+    padding: 20px;
+    padding-bottom: 70px;
+}
+
+/* =========================================================
+   TOP-RIGHT TOGGLES
+========================================================= */
+
+.top-actions {
+    position: fixed;
+    top: 18px;
+    right: var(--container-padding);
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+html[dir="rtl"] .top-actions {
+    right: auto;
+    left: var(--container-padding);
+}
+
+/* =========================================================
+   COMING SOON CARD
+========================================================= */
+
+.card {
+    width: min(100%, 520px);
+    padding: 34px 28px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-card);
+    text-align: center;
+    transition:
+        background-color var(--transition-normal),
+        border-color var(--transition-normal),
+        color var(--transition-normal);
+}
+
+/* =========================================================
+   LOGO + TITLE — EXACT CENTER
+========================================================= */
+
+.coming-soon-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.coming-soon-brand .brand-logo {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+}
+
+.coming-soon-brand .brand-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.coming-soon-brand .brand-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.1;
+}
+
+.coming-soon-brand .brand-subtitle {
+    display: block;
+    width: 100%;
+    margin-top: 3px;
+    text-align: left;
+    font-size: 6px;
+    letter-spacing: 0.7px;
+}
+
+/* =========================================================
+   BADGE — LOGO KINDA CORRECT CENTER
+========================================================= */
+
+.badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto 16px;
+    padding: 8px 14px;
+    border-radius: var(--radius-pill);
+    background-color: rgba(181, 138, 69, 0.14);
+    color: var(--color-primary);
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.card h2 {
+    margin-bottom: 12px;
+    font-family: var(--font-heading);
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--color-heading);
+}
+
+.card p {
+    max-width: 400px;
+    margin: 0 auto 24px;
+    color: var(--color-text-muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 46px;
+    padding: 12px 20px;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-content);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background-color var(--transition-fast),
+        border-color var(--transition-fast),
+        color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    border-color: var(--color-secondary);
+    background-color: var(--color-secondary);
+}
+
+body.dark-mode .btn-primary {
+    color: var(--color-background);
+}
+
+.btn-secondary {
+    border: 1px solid var(--color-border);
+    background-color: transparent;
+    color: var(--color-text);
+}
+
+.btn-secondary:hover {
+    border-color: var(--color-secondary);
+    background-color: var(--color-surface-alt);
+    color: var(--color-primary);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media screen and (max-width: 540px) {
+    .page {
+        padding: 16px;
+        padding-bottom: 60px;
+    }
+
+    .top-actions {
+        top: 14px;
+        right: 14px;
+        gap: 7px;
+    }
+
+    html[dir="rtl"] .top-actions {
+        right: auto;
+        left: 14px;
+    }
+
+    .icon-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .icon-button svg {
+        width: 17px;
+        height: 17px;
+    }
+
+    .card {
+        padding: 28px 20px;
+        border-radius: var(--radius-lg);
+    }
+
+    .coming-soon-brand {
+        gap: 8px;
+    }
+
+    .coming-soon-brand .brand-logo {
+        width: 44px;
+        height: 44px;
+    }
+
+    .coming-soon-brand .brand-title {
+        font-size: 17px;
+    }
+
+    .coming-soon-brand .brand-subtitle {
+        font-size: 5px;
+    }
+
+    .badge {
+        margin-bottom: 14px;
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+
+    .card h2 {
+        font-size: 28px;
+    }
+
+    .card p {
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+
+    .btn {
+        min-height: 44px;
+        padding: 11px 18px;
+        font-size: 13px;
+    }
+}

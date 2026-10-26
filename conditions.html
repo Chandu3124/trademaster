@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TradeMasters | Terms &amp; Conditions</title>
+
+    <meta name="description" content="TradeMasters Terms and Conditions for using our stock market education website and services.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@0.542.0/dist/umd/lucide.min.js" defer></script>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="conditions.css">
+</head>
+
+<body>
+
+    <div class="top-actions">
+        <button type="button" class="icon-button js-rtl-toggle"
+            aria-label="Switch text direction" title="Switch text direction">
+            <i data-lucide="arrow-left-right"></i>
+        </button>
+
+        <button type="button" class="icon-button js-theme-toggle"
+            aria-label="Switch to dark mode" title="Toggle dark mode">
+            <i data-lucide="moon"></i>
+        </button>
+    </div>
+
+    <section class="terms-page">
+        <div class="container">
+            <div class="terms-card">
+
+                <div class="brand-row">
+                    <a href="index.html" class="brand terms-brand" aria-label="TradeMasters Home">
+                        <img
+                            src="logo_light.png"
+                            alt="TradeMasters Logo"
+                            class="brand-logo"
+                            id="brandLogo"
+                        >
+
+                        <span class="brand-text">
+                            <span class="brand-title">
+                                <span class="brand-trade">TRADE</span><span class="brand-masters">MASTERS</span>
+                            </span>
+
+                            <span class="brand-subtitle">
+                                STOCK MARKET TRADING ACADEMY
+                            </span>
+                        </span>
+                    </a>
+                </div>
+
+                <span class="terms-tag">TradeMasters Policy</span>
+
+                <h1>Terms &amp; Conditions</h1>
+
+                <p class="intro">
+                    These Terms and Conditions explain the rules for using the TradeMasters
+                    website, courses, learning resources, and related services. By using our
+                    website, you agree to these terms.
+                </p>
+
+                <div class="terms-section">
+                    <h2>1. Educational Purpose</h2>
+                    <p>
+                        TradeMasters provides stock market education and learning resources for
+                        educational purposes only. Our content does not constitute financial,
+                        investment, or trading advice.
+                    </p>
+                </div>
+
+                <div class="terms-section">
+                    <h2>2. Student Account</h2>
+                    <p>
+                        You are responsible for maintaining the confidentiality of your account
+                        details and password. Do not share your account with others.
+                    </p>
+                </div>
+
+                <div class="terms-section">
+                    <h2>3. Course Access</h2>
+                    <p>
+                        Course access, recorded classes, schedules, and learning materials are
+                        provided only to enrolled students. Access details may change based on
+                        your course or subscription.
+                    </p>
+                </div>
+
+                <div class="terms-section">
+                    <h2>4. Mock Portfolio</h2>
+                    <p>
+                        Any mock portfolio, virtual balance, or practice trading feature is for
+                        educational simulation only. It does not involve real money and does not
+                        guarantee future market results.
+                    </p>
+                </div>
+
+                <div class="terms-section">
+                    <h2>5. Acceptable Use</h2>
+                    <p>
+                        You agree not to misuse the website, copy or redistribute course content
+                        without permission, attempt unauthorized access, or use the platform for
+                        any unlawful activity.
+                    </p>
+                </div>
+
+                <div class="terms-section">
+                    <h2>6. Payments</h2>
+                    <p>
+                        If applicable, course fees and payment details will be shown before
+                        enrolment. Payment processing may be handled by a third-party payment
+                        provider.
+                    </p>
+                </div>
+
+                <div class="terms-section">
+                    <h2>7. Limitation of Liability</h2>
+                    <p>
+                        TradeMasters is not liable for any financial loss, trading decision, or
+                        outcome resulting from the use of educational content, market analysis,
+                        or practice tools.
+                    </p>
+                </div>
+
+                <div class="terms-section">
+                    <h2>8. Changes to Terms</h2>
+                    <p>
+                        We may update these Terms and Conditions from time to time. Updated terms
+                        will be posted on this page with the revised effective date.
+                    </p>
+                </div>
+
+                <p class="effective-date">Effective Date: 30 July 2026</p>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    /* main.js handles:
+       - RTL/LTR toggle
+       - Dark/light theme toggle
+       - Logo light/dark switching
+       - localStorage sync
+       - Lucide icons
+    */
+
+    function refreshIcons() {
+        if (window.lucide && typeof window.lucide.createIcons === "function") {
+            window.lucide.createIcons();
+        }
+    }
+
+    refreshIcons();
+});
+    </script>
+</body>
+</html>

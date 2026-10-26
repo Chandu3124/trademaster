@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TradeMasters | Stock Market Trading Academy</title>
+
+    <meta name="description"
+        content="TradeMasters Stock Market Trading Academy provides stock market education, trading courses, and learning resources.">
+
+    <meta name="keywords"
+        content="TradeMasters, stock market academy, trading courses, technical analysis, trading education">
+
+    <meta name="author" content="TradeMasters">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@0.542.0/dist/umd/lucide.min.js" defer></script>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header" id="siteHeader">
+
+        <div class="header-container">
+
+            <!-- BRAND -->
+            <a href="index.html" class="brand" aria-label="TradeMasters Home">
+
+                <img src="logo_light.png" alt="TradeMasters Logo" class="brand-logo" id="brandLogo">
+
+                <span class="brand-text">
+                    <span class="brand-title">
+                        <span class="brand-trade">TRADE</span><span class="brand-masters">MASTERS</span>
+                    </span>
+
+                    <span class="brand-subtitle">
+                        STOCK MARKET TRADING ACADEMY
+                    </span>
+                </span>
+
+            </a>
+
+
+            <!-- CENTER NAVIGATION -->
+            <div class="header-nav" id="mainNavigation">
+
+                <nav class="navbar" aria-label="Main navigation">
+
+                    <ul class="nav-list">
+
+                        <!-- HOME DROPDOWN -->
+                        <li class="nav-item dropdown">
+
+                            <button class="nav-link dropdown-toggle" id="homeDropdownToggle" type="button"
+                                aria-expanded="false" aria-controls="homeDropdownMenu">
+
+                                <span>Home</span>
+                                <i data-lucide="chevron-down"></i>
+
+                            </button>
+
+                            <ul class="dropdown-menu" id="homeDropdownMenu">
+
+                                <li>
+                                    <a href="index.html" class="dropdown-link">Home 1</a>
+                                </li>
+
+                                <li>
+                                    <a href="home2.html" class="dropdown-link">Home 2</a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+
+                        <!-- ABOUT -->
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">About</a>
+                        </li>
+
+
+                        <!-- COURSES -->
+                        <li class="nav-item">
+                            <a href="courses.html" class="nav-link">Courses</a>
+                        </li>
+
+
+                        <!-- RESOURCES -->
+                        <li class="nav-item">
+                            <a href="resources.html" class="nav-link">Resources</a>
+                        </li>
+
+
+                        <!-- CONTACT -->
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">Contact</a>
+                        </li>
+
+
+                        <!-- DASHBOARD -->
+                        <li class="nav-item">
+                            <a href="dashboard.html" class="nav-link">Dashboard</a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+
+                <!-- MOBILE LOGIN -->
+                <a href="login.html" class="login-button mobile-login">
+
+                    <i data-lucide="user-round"></i>
+                    <span>Login</span>
+
+                </a>
+
+            </div>
+
+
+            <!-- DESKTOP HEADER ACTIONS -->
+            <div class="header-actions">
+
+                <button type="button" class="icon-button js-rtl-toggle" aria-label="Switch text direction"
+                    title="Switch text direction">
+
+                    <i data-lucide="arrow-left-right"></i>
+
+                </button>
+
+
+                <button type="button" class="icon-button js-theme-toggle" aria-label="Switch to dark mode"
+                    title="Toggle dark mode">
+
+                    <i data-lucide="moon"></i>
+
+                </button>
+
+
+                <a href="login.html" class="login-button desktop-login">
+
+                    <i data-lucide="user-round"></i>
+                    <span>Login</span>
+
+                </a>
+
+            </div>
+
+
+            <!-- MOBILE HEADER ACTIONS -->
+            <div class="mobile-actions">
+
+                <button type="button" class="icon-button js-rtl-toggle" aria-label="Switch text direction"
+                    title="Switch text direction">
+
+                    <i data-lucide="arrow-left-right"></i>
+
+                </button>
+
+
+                <button type="button" class="icon-button js-theme-toggle" aria-label="Switch to dark mode"
+                    title="Toggle dark mode">
+
+                    <i data-lucide="moon"></i>
+
+                </button>
+
+
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button"
+                    aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNavigation">
+
+                    <i data-lucide="menu"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="page-content" id="mainContent">
+<!-- ==========================================
+     TRADEMASTERS — SECTION 1: CONTACT HERO
+========================================== -->
+
+<section class="tm-contact-hero" id="contact-hero">
+
+    <!-- LEFT CIRCULAR IMAGE -->
+    <div class="tm-contact-visual">
+
+        <div class="tm-contact-image-circle">
+            <img
+                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1100&q=85"
+                alt="Student support representative helping learners"
+                class="tm-contact-image"
+            >
+        </div>
+
+        <!-- TOP LEFT SUPPORT CARD -->
+        <div class="tm-contact-float-card tm-contact-card-top">
+
+            <div class="tm-contact-card-icon">
+                <i data-lucide="headset"></i>
+            </div>
+
+            <div class="tm-contact-card-content">
+                <span class="tm-contact-card-title">We're Here</span>
+                <span class="tm-contact-card-text">Student Support</span>
+            </div>
+
+        </div>
+
+       
+
+    </div>
+
+
+    <!-- RIGHT CONTENT -->
+    <div class="tm-contact-content">
+
+        <!-- TAGLINE -->
+        <div class="tm-contact-tagline">
+            <i data-lucide="users-round"></i>
+            <span>WE'RE HERE TO HELP</span>
+        </div>
+
+        <!-- HEADING -->
+        <h1 class="tm-contact-heading">
+            Let's Talk About Your
+            <span>Learning Journey.</span>
+        </h1>
+
+        <!-- DESCRIPTION -->
+        <div class="tm-contact-description">
+
+            <p>
+                Have questions about courses, enrollment, recorded
+                classes, or your student dashboard? The TradeMasters
+                team is here to help you find the information you need.
+            </p>
+
+            <p>
+                Reach out to us and we'll guide you toward the
+                appropriate support channel.
+            </p>
+
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="tm-contact-buttons">
+
+            <a href="#contact-form"
+               class="tm-contact-btn tm-contact-btn-primary">
+
+                <span>Send an Enquiry</span>
+                <i data-lucide="arrow-up-right"></i>
+
+            </a>
+
+            <a href="#courses"
+               class="tm-contact-btn tm-contact-btn-secondary">
+
+                <span>Explore Courses</span>
+                <i data-lucide="arrow-right"></i>
+
+            </a>
+
+        </div>
+
+        <!-- SUPPORTING TEXT -->
+        <div class="tm-contact-supporting-text">
+
+            <i data-lucide="info"></i>
+
+            <p>
+                Course enquiries, enrollment assistance, and student
+                support—all in one place.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TRADEMASTERS — SECTION 2: CONTACT INFORMATION
+===================================================== -->
+
+<section class="tm-contact-info" id="contact-information">
+
+    <!-- SECTION HEADER -->
+    <div class="tm-contact-info-header">
+
+        <div class="tm-contact-info-tagline">
+            <i data-lucide="messages-square"></i>
+            <span>GET IN TOUCH</span>
+        </div>
+
+        <h2 class="tm-contact-info-heading">
+            Connect with <span>TradeMasters.</span>
+        </h2>
+
+        <p class="tm-contact-info-description">
+            Choose the appropriate contact option for your enquiry.
+        </p>
+
+    </div>
+
+
+    <!-- CONTACT CARDS -->
+    <div class="tm-contact-info-grid">
+
+        <!-- CARD 1 -->
+        <article class="tm-contact-info-card">
+
+            <div class="tm-contact-info-card-top">
+
+                <div class="tm-contact-info-icon">
+                    <i data-lucide="mail"></i>
+                </div>
+
+                <span class="tm-contact-info-number">01</span>
+
+            </div>
+
+            <h3>General Enquiries</h3>
+
+            <p class="tm-contact-info-card-description">
+                Have a question about our academy, learning programs,
+                or educational resources?
+            </p>
+
+            <div class="tm-contact-info-email">
+                <i data-lucide="at-sign"></i>
+
+                <a href="mailto:support@yourdomain.com">
+                    support@yourdomain.com
+                </a>
+            </div>
+
+            <a
+                href="mailto:support@yourdomain.com"
+                class="tm-contact-info-button"
+            >
+                <span>Send an Email</span>
+                <i data-lucide="arrow-up-right"></i>
+            </a>
+
+        </article>
+
+
+        <!-- CARD 2 -->
+        <article class="tm-contact-info-card">
+
+            <div class="tm-contact-info-card-top">
+
+                <div class="tm-contact-info-icon">
+                    <i data-lucide="book-open"></i>
+                </div>
+
+                <span class="tm-contact-info-number">02</span>
+
+            </div>
+
+            <h3>Course Enquiries</h3>
+
+            <p class="tm-contact-info-card-description">
+                Need help choosing a course or understanding its
+                syllabus, format, or prerequisites?
+            </p>
+
+            <div class="tm-contact-info-email">
+                <i data-lucide="at-sign"></i>
+
+                <a href="mailto:courses@yourdomain.com">
+                    courses@yourdomain.com
+                </a>
+            </div>
+
+            <a
+                href="mailto:courses@yourdomain.com"
+                class="tm-contact-info-button"
+            >
+                <span>Ask About Courses</span>
+                <i data-lucide="arrow-up-right"></i>
+            </a>
+
+        </article>
+
+
+        <!-- CARD 3 -->
+        <article class="tm-contact-info-card">
+
+            <div class="tm-contact-info-card-top">
+
+                <div class="tm-contact-info-icon">
+                    <i data-lucide="graduation-cap"></i>
+                </div>
+
+                <span class="tm-contact-info-number">03</span>
+
+            </div>
+
+            <h3>Student Support</h3>
+
+            <p class="tm-contact-info-card-description">
+                Need assistance with enrollment, recorded classes,
+                or dashboard access?
+            </p>
+
+            <div class="tm-contact-info-email">
+                <i data-lucide="at-sign"></i>
+
+                <a href="mailto:students@yourdomain.com">
+                    students@yourdomain.com
+                </a>
+            </div>
+
+            <a
+                href="mailto:students@yourdomain.com"
+                class="tm-contact-info-button"
+            >
+                <span>Contact Student Support</span>
+                <i data-lucide="arrow-up-right"></i>
+            </a>
+
+        </article>
+
+
+        <!-- CARD 4 -->
+        <article class="tm-contact-info-card">
+
+            <div class="tm-contact-info-card-top">
+
+                <div class="tm-contact-info-icon">
+                    <i data-lucide="handshake"></i>
+                </div>
+
+                <span class="tm-contact-info-number">04</span>
+
+            </div>
+
+            <h3>Business Enquiries</h3>
+
+            <p class="tm-contact-info-card-description">
+                Interested in educational partnerships, workshops,
+                or collaborations?
+            </p>
+
+            <div class="tm-contact-info-email">
+                <i data-lucide="at-sign"></i>
+
+                <a href="mailto:partnerships@yourdomain.com">
+                    partnerships@yourdomain.com
+                </a>
+            </div>
+
+            <a
+                href="mailto:partnerships@yourdomain.com"
+                class="tm-contact-info-button"
+            >
+                <span>Discuss a Partnership</span>
+                <i data-lucide="arrow-up-right"></i>
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TRADEMASTERS — SECTION 3: SEND US A MESSAGE
+===================================================== -->
+
+<section class="tm-contact-form-section" id="send-message">
+
+    <div class="tm-contact-form-layout">
+
+        <!-- LEFT: ENQUIRY FORM -->
+        <div class="tm-contact-form-content">
+
+            <div class="tm-contact-form-header">
+
+                <div class="tm-contact-form-tagline">
+                    <i data-lucide="message-circle"></i>
+                    <span>WE'D LOVE TO HEAR FROM YOU</span>
+                </div>
+
+                <h2>
+                    Tell Us How We Can
+                    <span>Help.</span>
+                </h2>
+
+                <p>
+                    Use the enquiry form to send your questions directly
+                    to our team. Share your requirements, and we'll help
+                    you find the right information for your learning journey.
+                </p>
+
+            </div>
+
+
+            <!-- ENQUIRY FORM -->
+            <form class="tm-enquiry-form" id="tmEnquiryForm" novalidate>
+
+                <!-- FULL NAME + EMAIL -->
+                <div class="tm-form-row">
+
+                    <div class="tm-form-group">
+                        <label for="tmFullName">
+                            Full Name <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="tmFullName"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+
+                        <small class="tm-field-error"></small>
+                    </div>
+
+
+                    <div class="tm-form-group">
+                        <label for="tmEmail">
+                            Email Address <span>*</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="tmEmail"
+                            name="email"
+                            placeholder="Enter your email address"
+                            autocomplete="email"
+                            required
+                        >
+
+                        <small class="tm-field-error"></small>
+                    </div>
+
+                </div>
+
+
+                <!-- PHONE + ENQUIRY TYPE -->
+                <div class="tm-form-row">
+
+                    <div class="tm-form-group">
+                        <label for="tmPhone">
+                            Phone Number
+                            <span class="tm-optional-label">(Optional)</span>
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="tmPhone"
+                            name="phone"
+                            placeholder="Enter your phone number"
+                            autocomplete="tel"
+                            inputmode="tel"
+                        >
+
+                        <small class="tm-field-error"></small>
+                    </div>
+
+
+                    <div class="tm-form-group">
+                        <label for="tmEnquiryType">
+                            Enquiry Type <span>*</span>
+                        </label>
+
+                        <select
+                            id="tmEnquiryType"
+                            name="enquiryType"
+                            required
+                        >
+                            <option value="" selected disabled>
+                                Select enquiry type
+                            </option>
+
+                            <option value="General Enquiry">
+                                General Enquiry
+                            </option>
+
+                            <option value="Course Information">
+                                Course Information
+                            </option>
+
+                            <option value="Enrollment Assistance">
+                                Enrollment Assistance
+                            </option>
+
+                            <option value="Student Dashboard Support">
+                                Student Dashboard Support
+                            </option>
+
+                            <option value="Recorded Class Access">
+                                Recorded Class Access
+                            </option>
+
+                            <option value="Partnership Enquiry">
+                                Partnership Enquiry
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+                        </select>
+
+                        <small class="tm-field-error"></small>
+                    </div>
+
+                </div>
+
+
+                <!-- COURSE OF INTEREST -->
+                <div class="tm-form-group">
+                    <label for="tmCourse">
+                        Course of Interest
+                    </label>
+
+                    <select id="tmCourse" name="course">
+
+                        <option value="" selected>
+                            Select a course (optional)
+                        </option>
+
+                        <option value="Stock Market Fundamentals">
+                            Stock Market Fundamentals
+                        </option>
+
+                        <option value="Technical Analysis">
+                            Technical Analysis
+                        </option>
+
+                        <option value="Fundamental Analysis">
+                            Fundamental Analysis
+                        </option>
+
+                        <option value="Options Trading">
+                            Options Trading
+                        </option>
+
+                        <option value="Advanced Trading Strategies">
+                            Advanced Trading Strategies
+                        </option>
+
+                        <option value="Not Sure Yet">
+                            Not Sure Yet
+                        </option>
+
+                    </select>
+
+                    <small class="tm-field-error"></small>
+                </div>
+
+
+                <!-- SUBJECT -->
+                <div class="tm-form-group">
+                    <label for="tmSubject">
+                        Subject
+                    </label>
+
+                    <input
+                        type="text"
+                        id="tmSubject"
+                        name="subject"
+                        placeholder="Briefly describe your enquiry"
+                    >
+
+                    <small class="tm-field-error"></small>
+                </div>
+
+
+                <!-- MESSAGE -->
+                <div class="tm-form-group">
+                    <label for="tmMessage">
+                        Your Message <span>*</span>
+                    </label>
+
+                    <textarea
+                        id="tmMessage"
+                        name="message"
+                        rows="4"
+                        placeholder="Tell us how we can help you..."
+                        required
+                    ></textarea>
+
+                    <small class="tm-field-error"></small>
+                </div>
+
+
+                <!-- PRIVACY CONSENT -->
+                <div class="tm-form-consent">
+
+                    <input
+                        type="checkbox"
+                        id="tmPrivacyConsent"
+                        name="privacyConsent"
+                        required
+                    >
+
+                    <label for="tmPrivacyConsent">
+                        I agree to the
+                        <a href="/privacy-policy" target="_blank">
+                            Privacy Policy
+                        </a>
+                        and consent to the processing of my information.
+                    </label>
+
+                </div>
+
+                <small
+                    class="tm-field-error tm-consent-error"
+                    id="tmConsentError"
+                ></small>
+
+
+                <!-- PRIVACY NOTE -->
+                <p class="tm-form-privacy-note">
+                    Your information will be handled according to the
+                    academy's
+                    <a href="/privacy-policy" target="_blank">
+                        Privacy Policy
+                    </a>.
+                </p>
+
+
+                <!-- SUBMIT -->
+                <button
+                    type="submit"
+                    class="tm-enquiry-submit"
+                    id="tmEnquirySubmit"
+                >
+                    <span>Submit Enquiry</span>
+                    <i data-lucide="arrow-up-right"></i>
+                </button>
+
+
+                <!-- SUCCESS MESSAGE -->
+                <div
+                    class="tm-form-success"
+                    id="tmFormSuccess"
+                    role="status"
+                    aria-live="polite"
+                    hidden
+                >
+                    <strong>
+                        Thank you for contacting TradeMasters!
+                    </strong>
+
+                    <p>
+                        Your enquiry has been submitted successfully.
+                        Our team will respond using the contact details
+                        you provided.
+                    </p>
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <!-- RIGHT: IMAGE PANEL -->
+        <aside class="tm-contact-form-visual">
+
+            <img
+                class="tm-contact-form-image"
+                src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=85"
+                alt="Financial market charts and trading analysis workspace"
+                loading="lazy"
+            >
+
+            <div class="tm-contact-form-image-overlay"></div>
+
+
+            <!-- IMAGE CONTENT -->
+            <div class="tm-contact-form-visual-content">
+
+                <div class="tm-contact-visual-tagline">
+                    <i data-lucide="trending-up"></i>
+                    <span>YOUR LEARNING JOURNEY MATTERS</span>
+                </div>
+
+                <h3>
+                    Every Great Trade
+                    <span>Starts with Knowledge.</span>
+                </h3>
+
+                <p>
+                    Whether you're taking your first step into the market
+                    or developing your trading skills, we're here to help
+                    you move forward with clarity and confidence.
+                </p>
+
+                <div class="tm-contact-visual-divider"></div>
+
+                <div class="tm-contact-visual-bottom">
+
+                    <div class="tm-contact-visual-mark">
+                        TM
+                    </div>
+
+                    <div class="tm-contact-visual-brand">
+                        <strong>TradeMasters Academy</strong>
+                        <span>Learn smarter. Trade wiser.</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TRADEMASTERS — SECTION 4: VISIT OUR ACADEMY
+===================================================== -->
+
+<section class="tm-visit-academy" id="visit-academy">
+
+    <div class="tm-visit-layout">
+
+        <!-- LEFT SIDE: GOOGLE MAP -->
+        <div class="tm-visit-map-wrapper">
+
+            <iframe
+                class="tm-visit-map"
+                src="https://maps.google.com/maps?q=India&t=&z=5&ie=UTF8&iwloc=&output=embed"
+                title="TradeMasters Academy map location"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+            ></iframe>
+
+            <div class="tm-map-caption">
+                <span class="tm-map-caption-icon">
+                    <i data-lucide="map-pin"></i>
+                </span>
+
+                <div>
+                    <strong>Find TradeMasters</strong>
+                    <span>Academy location will be updated soon</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE: ACADEMY DETAILS -->
+        <div class="tm-visit-content">
+
+            <!-- TAGLINE -->
+            <div class="tm-visit-tagline">
+                <i data-lucide="map-pin"></i>
+                <span>FIND US</span>
+            </div>
+
+
+            <!-- HEADING -->
+            <h2>
+                Your Learning Journey
+                <span>Starts Here.</span>
+            </h2>
+
+
+            <!-- DESCRIPTION -->
+            <p class="tm-visit-description">
+                Visit our academy to learn more about available programs,
+                enrollment procedures, and educational services.
+                Our team is here to help you take the next step in
+                your stock market learning journey.
+            </p>
+
+
+            <!-- ACADEMY INFORMATION -->
+            <div class="tm-visit-details">
+
+                <!-- ACADEMY NAME -->
+                <div class="tm-visit-detail">
+
+                    <div class="tm-visit-detail-icon">
+                        <i data-lucide="graduation-cap"></i>
+                    </div>
+
+                    <div class="tm-visit-detail-text">
+                        <span>Academy Name</span>
+                        <h3>
+                            TradeMasters Stock Market Trading Academy
+                        </h3>
+                    </div>
+
+                </div>
+
+
+                <!-- ADDRESS -->
+                <div class="tm-visit-detail">
+
+                    <div class="tm-visit-detail-icon">
+                        <i data-lucide="map-pin"></i>
+                    </div>
+
+                    <div class="tm-visit-detail-text">
+                        <span>Address</span>
+                        <p>Hyderabad,Telangana,India</p>
+                    </div>
+
+                </div>
+
+
+                <!-- OFFICE HOURS -->
+                <div class="tm-visit-detail">
+
+                    <div class="tm-visit-detail-icon">
+                        <i data-lucide="clock-3"></i>
+                    </div>
+
+                    <div class="tm-visit-detail-text">
+                        <span>Office Hours</span>
+                        <p>9:00 Am - 6:00 Pm</p>
+                    </div>
+
+                </div>
+
+
+                <!-- PHONE -->
+                <div class="tm-visit-detail">
+
+                    <div class="tm-visit-detail-icon">
+                        <i data-lucide="phone"></i>
+                    </div>
+
+                    <div class="tm-visit-detail-text">
+                        <span>Phone</span>
+                        <p>+91 10000 00000</p>
+                    </div>
+
+                </div>
+
+
+                <!-- EMAIL -->
+                <div class="tm-visit-detail">
+
+                    <div class="tm-visit-detail-icon">
+                        <i data-lucide="mail"></i>
+                    </div>
+
+                    <div class="tm-visit-detail-text">
+                        <span>Email</span>
+                        <p>Trademasters@gmail.com</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DIRECTIONS BUTTON -->
+            <a
+                href="https://www.google.com/maps"
+                class="tm-visit-directions-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span>Get Directions</span>
+                <i data-lucide="arrow-up-right"></i>
+            </a>
+
+
+            <!-- LOCATION NOTE -->
+            <p class="tm-visit-note">
+                Please confirm the academy's address before planning
+                an in-person visit.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+        
+
+<!-- =====================================================
+     TRADEMASTERS — SECTION 5: FREQUENTLY ASKED QUESTIONS
+===================================================== -->
+
+<section class="tm-faq" id="frequently-asked-questions">
+
+    <div class="tm-faq-container">
+
+        <!-- Section Header -->
+        <div class="tm-faq-header">
+
+            <div class="tm-faq-tagline">
+                <i data-lucide="circle-help"></i>
+                <span>QUICK SUPPORT</span>
+            </div>
+
+            <h2>
+                Find Answers Before
+                <span>You Reach Out.</span>
+            </h2>
+
+            <p>
+                Have questions about our courses, enrollment, or student
+                services? Find helpful answers to common questions below.
+            </p>
+
+        </div>
+
+        <!-- FAQ Grid -->
+        <div class="tm-faq-grid">
+
+            <!-- FAQ 01 -->
+            <article class="tm-faq-card">
+
+                <button class="tm-faq-question"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="tm-faq-answer-1"
+                        id="tm-faq-question-1">
+
+                    <span class="tm-faq-number">01</span>
+
+                    <span class="tm-faq-question-text">
+                        How can I enroll in a course?
+                    </span>
+
+                    <span class="tm-faq-toggle">
+                        <i data-lucide="plus"></i>
+                    </span>
+
+                </button>
+
+                <div class="tm-faq-answer"
+                     id="tm-faq-answer-1"
+                     role="region"
+                     aria-labelledby="tm-faq-question-1"
+                     hidden>
+
+                    <p>
+                        Visit the Courses page, review the available
+                        programs, and follow the enrollment instructions
+                        provided for your selected course.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <!-- FAQ 02 -->
+            <article class="tm-faq-card">
+
+                <button class="tm-faq-question"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="tm-faq-answer-2"
+                        id="tm-faq-question-2">
+
+                    <span class="tm-faq-number">02</span>
+
+                    <span class="tm-faq-question-text">
+                        How do I access my student dashboard?
+                    </span>
+
+                    <span class="tm-faq-toggle">
+                        <i data-lucide="plus"></i>
+                    </span>
+
+                </button>
+
+                <div class="tm-faq-answer"
+                     id="tm-faq-answer-2"
+                     role="region"
+                     aria-labelledby="tm-faq-question-2"
+                     hidden>
+
+                    <p>
+                        Use the Login option to sign in with your
+                        registered credentials.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <!-- FAQ 03 -->
+            <article class="tm-faq-card">
+
+                <button class="tm-faq-question"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="tm-faq-answer-3"
+                        id="tm-faq-question-3">
+
+                    <span class="tm-faq-number">03</span>
+
+                    <span class="tm-faq-question-text">
+                        I cannot access my recorded classes. What should I do?
+                    </span>
+
+                    <span class="tm-faq-toggle">
+                        <i data-lucide="plus"></i>
+                    </span>
+
+                </button>
+
+                <div class="tm-faq-answer"
+                     id="tm-faq-answer-3"
+                     role="region"
+                     aria-labelledby="tm-faq-question-3"
+                     hidden>
+
+                    <p>
+                        Contact student support with your registered
+                        email address and the name of the affected course.
+                        Never send your password.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <!-- FAQ 04 -->
+            <article class="tm-faq-card">
+
+                <button class="tm-faq-question"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="tm-faq-answer-4"
+                        id="tm-faq-question-4">
+
+                    <span class="tm-faq-number">04</span>
+
+                    <span class="tm-faq-question-text">
+                        How can I learn about course fees?
+                    </span>
+
+                    <span class="tm-faq-toggle">
+                        <i data-lucide="plus"></i>
+                    </span>
+
+                </button>
+
+                <div class="tm-faq-answer"
+                     id="tm-faq-answer-4"
+                     role="region"
+                     aria-labelledby="tm-faq-question-4"
+                     hidden>
+
+                    <p>
+                        Review the course details or contact the
+                        course-enquiry team for current pricing and
+                        payment information.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <!-- FAQ 05 -->
+            <article class="tm-faq-card">
+
+                <button class="tm-faq-question"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="tm-faq-answer-5"
+                        id="tm-faq-question-5">
+
+                    <span class="tm-faq-number">05</span>
+
+                    <span class="tm-faq-question-text">
+                        Can I request a demo session?
+                    </span>
+
+                    <span class="tm-faq-toggle">
+                        <i data-lucide="plus"></i>
+                    </span>
+
+                </button>
+
+                <div class="tm-faq-answer"
+                     id="tm-faq-answer-5"
+                     role="region"
+                     aria-labelledby="tm-faq-question-5"
+                     hidden>
+
+                    <p>
+                        Demo sessions may be available depending on
+                        the academy's schedule and course offerings.
+                        Contact the team to check availability.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <!-- FAQ 06 -->
+            <article class="tm-faq-card">
+
+                <button class="tm-faq-question"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="tm-faq-answer-6"
+                        id="tm-faq-question-6">
+
+                    <span class="tm-faq-number">06</span>
+
+                    <span class="tm-faq-question-text">
+                        How long will it take to receive a response?
+                    </span>
+
+                    <span class="tm-faq-toggle">
+                        <i data-lucide="plus"></i>
+                    </span>
+
+                </button>
+
+                <div class="tm-faq-answer"
+                     id="tm-faq-answer-6"
+                     role="region"
+                     aria-labelledby="tm-faq-question-6"
+                     hidden>
+
+                    <p>
+                        Our response time depends on the type of enquiry
+                        and the team's availability. Please use the
+                        contact options above for assistance.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TRADEMASTERS — SECTION 6: FINAL CONTACT CTA
+===================================================== -->
+
+<section class="tm-contact-cta" id="contact-cta">
+
+    <div class="tm-contact-cta-card">
+
+        <!-- LEFT CONTENT -->
+        <div class="tm-contact-cta-content">
+
+            <div class="tm-contact-cta-tagline">
+                <i data-lucide="message-circle"></i>
+                <span>LET'S TAKE THE NEXT STEP</span>
+            </div>
+
+            <h2>
+                Your Questions Matter.
+                <span>Your Learning Matters More.</span>
+            </h2>
+
+            <p class="tm-contact-cta-description">
+                Whether you're just beginning to explore the stock market
+                or looking for a structured learning program, TradeMasters
+                is ready to help you take the next step.
+            </p>
+
+            <div class="tm-contact-cta-support">
+                <i data-lucide="graduation-cap"></i>
+
+                <p>
+                    Learn with clarity. Practice with discipline.
+                    Grow your knowledge with TradeMasters.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- RIGHT BUTTONS -->
+        <div class="tm-contact-cta-actions">
+
+            <a href="courses.html" class="tm-contact-cta-primary">
+                Explore Courses
+                <i data-lucide="arrow-up-right"></i>
+            </a>
+
+            <a href="#send-message" class="tm-contact-cta-secondary">
+                Send an Enquiry
+                <i data-lucide="message-square"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+         </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-main">
+
+            <div class="footer-container">
+
+                <!-- BRAND COLUMN -->
+                <div class="footer-column footer-brand-column">
+
+                    <a href="index.html" class="brand footer-brand">
+
+                        <img src="./images/logo_light.png" alt="TradeMasters Logo" class="footer-brand-logo"
+                            id="footerBrandLogo">
+
+                        <span class="brand-text">
+
+                            <span class="brand-title">
+                                <span class="brand-trade">TRADE</span><span class="brand-masters">MASTERS</span>
+                            </span>
+
+                            <span class="brand-subtitle">
+                                STOCK MARKET TRADING ACADEMY
+                            </span>
+
+                        </span>
+
+                    </a>
+
+
+                    <p class="footer-description">
+                        Empowering learners with stock market knowledge,
+                        trading education, and a disciplined approach
+                        to financial markets.
+                    </p>
+
+
+                    <div class="social-links">
+
+                        <a href="#" class="social-link" aria-label="Instagram" title="Instagram">
+                            <i data-lucide="instagram"></i>
+                        </a>
+
+                        <a href="#" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+                            <i data-lucide="linkedin"></i>
+                        </a>
+
+                        <a href="#" class="social-link" aria-label="YouTube" title="YouTube">
+                            <i data-lucide="youtube"></i>
+                        </a>
+
+                        <a href="#" class="social-link" aria-label="Facebook" title="Facebook">
+                            <i data-lucide="facebook"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK LINKS -->
+                <div class="footer-column">
+
+                    <h3 class="footer-heading">Quick Links</h3>
+
+                    <ul class="footer-links">
+
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Our Courses</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- LEARNING -->
+                <div class="footer-column">
+
+                    <h3 class="footer-heading">Learning</h3>
+
+                    <ul class="footer-links">
+
+                        <li><a href="courses.html">Trading Basics</a></li>
+                        <li><a href="courses.html">Technical Analysis</a></li>
+                        <li><a href="courses.html">Market Strategies</a></li>
+                        <li><a href="courses.html">Risk Management</a></li>
+                        <li><a href="dashboard.html">Student Dashboard</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- ADDITIONAL PAGES -->
+                <div class="footer-column">
+
+                    <h3 class="footer-heading">Additional Pages</h3>
+
+                    <ul class="footer-links">
+
+                        <li><a href="404.html">404 Error</a></li>
+                        <li><a href="coming-soon.html">Coming Soon</a></li>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- GET IN TOUCH -->
+                <div class="footer-column footer-contact-column">
+
+                    <h3 class="footer-heading">Get in Touch</h3>
+
+                    <ul class="footer-contact-list">
+
+                        <li>
+
+                            <span class="footer-contact-icon">
+                                <i data-lucide="mail"></i>
+                            </span>
+
+                            <a href="mailto:support@yourdomain.com">
+                                support@yourdomain.com
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="footer-contact-icon">
+                                <i data-lucide="phone"></i>
+                            </span>
+
+                            <a href="tel:+910000000000">
+                                +91 00000 00000
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="footer-contact-icon">
+                                <i data-lucide="clock"></i>
+                            </span>
+
+                            <span>
+                                Monday – Saturday<br>
+                                9:00 AM – 6:00 PM
+                            </span>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+        <div class="footer-bottom">
+
+            <div class="footer-container footer-bottom-container">
+
+                <p class="copyright">
+                    &copy; <span id="currentYear"></span>
+                    TradeMasters. All rights reserved.
+                </p>
+
+
+                <div class="footer-bottom-actions">
+
+                    <div class="legal-links">
+
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms &amp; Conditions</a>
+
+                    </div>
+
+
+                    <button type="button" class="back-to-top" id="backToTop" aria-label="Go to top"
+                        title="Go to top">
+
+                        <i data-lucide="arrow-up"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="main.js"></script>
+<script src="contact.js"></script>
+</body>
+
+</html>

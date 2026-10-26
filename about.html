@@ -1,0 +1,1853 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TradeMasters | Stock Market Trading Academy</title>
+
+    <meta name="description"
+        content="TradeMasters Stock Market Trading Academy provides stock market education, trading courses, and learning resources.">
+
+    <meta name="keywords"
+        content="TradeMasters, stock market academy, trading courses, technical analysis, trading education">
+
+    <meta name="author" content="TradeMasters">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@0.542.0/dist/umd/lucide.min.js" defer></script>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header" id="siteHeader">
+
+        <div class="header-container">
+
+            <!-- BRAND -->
+            <a href="index.html" class="brand" aria-label="TradeMasters Home">
+
+                <img src="logo_light.png" alt="TradeMasters Logo" class="brand-logo" id="brandLogo">
+
+                <span class="brand-text">
+                    <span class="brand-title">
+                        <span class="brand-trade">TRADE</span><span class="brand-masters">MASTERS</span>
+                    </span>
+
+                    <span class="brand-subtitle">
+                        STOCK MARKET TRADING ACADEMY
+                    </span>
+                </span>
+
+            </a>
+
+
+            <!-- CENTER NAVIGATION -->
+            <div class="header-nav" id="mainNavigation">
+
+                <nav class="navbar" aria-label="Main navigation">
+
+                    <ul class="nav-list">
+
+                        <!-- HOME DROPDOWN -->
+                        <li class="nav-item dropdown">
+
+                            <button class="nav-link dropdown-toggle" id="homeDropdownToggle" type="button"
+                                aria-expanded="false" aria-controls="homeDropdownMenu">
+
+                                <span>Home</span>
+                                <i data-lucide="chevron-down"></i>
+
+                            </button>
+
+                            <ul class="dropdown-menu" id="homeDropdownMenu">
+
+                                <li>
+                                    <a href="index.html" class="dropdown-link">Home 1</a>
+                                </li>
+
+                                <li>
+                                    <a href="home2.html" class="dropdown-link">Home 2</a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+
+                        <!-- ABOUT -->
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">About</a>
+                        </li>
+
+
+                        <!-- COURSES -->
+                        <li class="nav-item">
+                            <a href="courses.html" class="nav-link">Courses</a>
+                        </li>
+
+
+                        <!-- RESOURCES -->
+                        <li class="nav-item">
+                            <a href="resources.html" class="nav-link">Resources</a>
+                        </li>
+
+
+                        <!-- CONTACT -->
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">Contact</a>
+                        </li>
+
+
+                        <!-- DASHBOARD -->
+                        <li class="nav-item">
+                            <a href="dashboard.html" class="nav-link">Dashboard</a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+
+                <!-- MOBILE LOGIN -->
+                <a href="login.html" class="login-button mobile-login">
+
+                    <i data-lucide="user-round"></i>
+                    <span>Login</span>
+
+                </a>
+
+            </div>
+
+
+            <!-- DESKTOP HEADER ACTIONS -->
+            <div class="header-actions">
+
+                <button type="button" class="icon-button js-rtl-toggle" aria-label="Switch text direction"
+                    title="Switch text direction">
+
+                    <i data-lucide="arrow-left-right"></i>
+
+                </button>
+
+
+                <button type="button" class="icon-button js-theme-toggle" aria-label="Switch to dark mode"
+                    title="Toggle dark mode">
+
+                    <i data-lucide="moon"></i>
+
+                </button>
+
+
+                <a href="login.html" class="login-button desktop-login">
+
+                    <i data-lucide="user-round"></i>
+                    <span>Login</span>
+
+                </a>
+
+            </div>
+
+
+            <!-- MOBILE HEADER ACTIONS -->
+            <div class="mobile-actions">
+
+                <button type="button" class="icon-button js-rtl-toggle" aria-label="Switch text direction"
+                    title="Switch text direction">
+
+                    <i data-lucide="arrow-left-right"></i>
+
+                </button>
+
+
+                <button type="button" class="icon-button js-theme-toggle" aria-label="Switch to dark mode"
+                    title="Toggle dark mode">
+
+                    <i data-lucide="moon"></i>
+
+                </button>
+
+
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button"
+                    aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNavigation">
+
+                    <i data-lucide="menu"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="page-content" id="mainContent">
+        <!-- =====================================================
+     TRADEMASTERS — ABOUT HERO
+===================================================== -->
+
+<section class="tm-about-hero" id="about-hero">
+
+    <div class="tm-about-hero-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="tm-about-hero-content">
+
+            <div class="tm-about-hero-label">
+                <i data-lucide="book-open"></i>
+                <span>THE STORY BEHIND TRADEMASTERS</span>
+            </div>
+
+            <h1 class="tm-about-hero-title">
+                Empowering Learners
+                <span>Through Stock Market</span>
+                Education.
+            </h1>
+
+            <div class="tm-about-hero-description">
+                <p>
+                    TradeMasters is a stock market trading academy focused
+                    on making financial market education more accessible,
+                    structured, and practical.
+                </p>
+
+                <p>
+                    Our learning experience combines foundational concepts,
+                    technical analysis education, instructor-led lessons,
+                    and simulated trading exercises to help learners
+                    understand market behavior and develop informed
+                    decision-making habits.
+                </p>
+            </div>
+
+            <div class="tm-about-hero-actions">
+
+                <a href="#courses" class="tm-about-btn tm-about-btn-primary">
+                    <span>Explore Our Courses</span>
+                    <i data-lucide="arrow-up-right"></i>
+                </a>
+
+                <a href="#instructors" class="tm-about-btn tm-about-btn-secondary">
+                    <span>Meet Our Instructors</span>
+                    <i data-lucide="arrow-right"></i>
+                </a>
+
+            </div>
+
+            <div class="tm-about-hero-note">
+                <i data-lucide="graduation-cap"></i>
+                <span>Learn with purpose. Practice with confidence.</span>
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT IMAGE -->
+        <div class="tm-about-hero-visual">
+
+            <div class="tm-about-image-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=85"
+                    alt="Learners collaborating and sharing knowledge"
+                    loading="eager"
+                >
+
+                <div class="tm-about-image-overlay"></div>
+
+                <div class="tm-about-image-caption">
+
+                    <div class="tm-about-caption-icon">
+                        <i data-lucide="book-open-check"></i>
+                    </div>
+
+                    <div class="tm-about-caption-content">
+                        <span>OUR APPROACH</span>
+                        <h3>Learn. Analyze. Practice.</h3>
+                        <p>Build your market knowledge step by step.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TRADEMASTERS — SECTION 2: WHO WE ARE
+===================================================== -->
+
+<section class="tm-identity" id="who-we-are">
+
+    <div class="tm-identity-container">
+
+        <div class="tm-identity-layout">
+
+            <!-- LEFT: IMAGE -->
+            <div class="tm-identity-visual">
+
+                <img
+                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1400&q=85"
+                    alt="Students learning and developing their skills"
+                    class="tm-identity-image"
+                    loading="lazy"
+                >
+
+                <div class="tm-identity-image-overlay"></div>
+
+                <div class="tm-identity-image-icon">
+                    <i data-lucide="graduation-cap"></i>
+                </div>
+
+                <div class="tm-identity-image-caption">
+
+                    <span class="tm-identity-image-label">
+                        THE TRADEMASTERS APPROACH
+                    </span>
+
+                    <h3>
+                        Learn with clarity.<br>
+                        Grow with confidence.
+                    </h3>
+
+                    <p>
+                        Building market understanding through
+                        structured financial education.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT: CONTENT -->
+            <div class="tm-identity-content">
+
+                <!-- SECTION LABEL -->
+                <div class="tm-identity-label">
+                    <i data-lucide="compass"></i>
+                    <span>OUR IDENTITY</span>
+                </div>
+
+
+                <!-- MAIN HEADING -->
+                <h2 class="tm-identity-heading">
+                    Education First.
+                    <span>Understanding Always.</span>
+                </h2>
+
+
+                <!-- REDUCED INTRO CONTENT -->
+                <div class="tm-identity-description">
+
+                    <p>
+                        TradeMasters makes financial market education
+                        clear, structured, and accessible to learners
+                        at every stage.
+                    </p>
+
+                    <p>
+                        Through guided courses, practical examples,
+                        recorded lessons, and simulated portfolio
+                        practice, students can build market knowledge
+                        and develop responsible learning habits.
+                    </p>
+
+                </div>
+
+
+                <!-- PRINCIPLES HEADING -->
+                <div class="tm-identity-principles-heading">
+
+                    <div class="tm-identity-principles-title">
+
+                        <i data-lucide="target"></i>
+
+                        <span>WHAT GUIDES US</span>
+
+                    </div>
+
+                    <h3>
+                        Our Core <span>Principles</span>
+                    </h3>
+
+                </div>
+
+
+                <!-- PRINCIPLE CARDS -->
+                <div class="tm-identity-principles-grid">
+
+                    <!-- CARD 1 -->
+                    <article class="tm-identity-principle">
+
+                        <div class="tm-identity-principle-top">
+
+                            <span class="tm-identity-principle-number">
+                                01
+                            </span>
+
+                            <div class="tm-identity-principle-icon">
+                                <i data-lucide="book-open"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="tm-identity-principle-content">
+
+                            <h4>Clear &amp; Structured Education</h4>
+
+                            <p>
+                                Learn concepts through organized
+                                learning paths.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CARD 2 -->
+                    <article class="tm-identity-principle">
+
+                        <div class="tm-identity-principle-top">
+
+                            <span class="tm-identity-principle-number">
+                                02
+                            </span>
+
+                            <div class="tm-identity-principle-icon">
+                                <i data-lucide="chart-no-axes-combined"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="tm-identity-principle-content">
+
+                            <h4>Practical Market Examples</h4>
+
+                            <p>
+                                Connect market concepts with
+                                practical learning examples.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CARD 3 -->
+                    <article class="tm-identity-principle">
+
+                        <div class="tm-identity-principle-top">
+
+                            <span class="tm-identity-principle-number">
+                                03
+                            </span>
+
+                            <div class="tm-identity-principle-icon">
+                                <i data-lucide="shield-check"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="tm-identity-principle-content">
+
+                            <h4>Responsible Financial Learning</h4>
+
+                            <p>
+                                Understand risk awareness,
+                                discipline, and informed decisions.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CARD 4 -->
+                    <article class="tm-identity-principle">
+
+                        <div class="tm-identity-principle-top">
+
+                            <span class="tm-identity-principle-number">
+                                04
+                            </span>
+
+                            <div class="tm-identity-principle-icon">
+                                <i data-lucide="trending-up"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="tm-identity-principle-content">
+
+                            <h4>Continuous Skill Development</h4>
+
+                            <p>
+                                Strengthen your knowledge
+                                and progress at your own pace.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- BOTTOM NOTE -->
+                <div class="tm-identity-bottom-note">
+
+                    <i data-lucide="book-open-check"></i>
+
+                    <p>
+                        Learn with purpose. Progress with understanding.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TRADEMASTERS — SECTION 3: OUR MISSION & VISION
+===================================================== -->
+
+<section class="tm-mission" id="mission-vision">
+
+    <div class="tm-mission-container">
+
+        <!-- CENTERED SECTION HEADER -->
+        <div class="tm-mission-header">
+
+            <div class="tm-mission-label">
+                <i data-lucide="compass"></i>
+                <span>WHAT DRIVES US</span>
+            </div>
+
+            <h2 class="tm-mission-heading">
+                Learning with Purpose.
+                <span>Growing with Responsibility.</span>
+            </h2>
+
+            <p class="tm-mission-description">
+                Our mission, vision, and promise shape how we approach
+                financial education — keeping learning clear, practical,
+                and focused on responsible market understanding.
+            </p>
+
+        </div>
+
+
+        <!-- MISSION, VISION AND PROMISE CARDS -->
+        <div class="tm-mission-grid">
+
+            <!-- MISSION CARD -->
+            <article class="tm-mission-card tm-mission-card-primary">
+
+                <div class="tm-mission-card-top">
+
+                    <div class="tm-mission-icon">
+                        <i data-lucide="target"></i>
+                    </div>
+
+                    <span class="tm-mission-number">01</span>
+
+                </div>
+
+                <span class="tm-mission-card-label">
+                    OUR PURPOSE
+                </span>
+
+                <h3>Our Mission</h3>
+
+                <p>
+                    To make stock market education easier to understand
+                    through structured courses, accessible learning
+                    resources, and practical educational exercises.
+                </p>
+
+                <div class="tm-mission-card-bottom">
+
+                    <span>Clear Learning</span>
+
+                    <i data-lucide="arrow-up-right"></i>
+
+                </div>
+
+            </article>
+
+
+            <!-- VISION CARD -->
+            <article class="tm-mission-card tm-mission-card-secondary">
+
+                <div class="tm-mission-card-top">
+
+                    <div class="tm-mission-icon">
+                        <i data-lucide="telescope"></i>
+                    </div>
+
+                    <span class="tm-mission-number">02</span>
+
+                </div>
+
+                <span class="tm-mission-card-label">
+                    OUR DIRECTION
+                </span>
+
+                <h3>Our Vision</h3>
+
+                <p>
+                    To become a trusted learning destination for
+                    individuals developing their understanding of
+                    financial markets through disciplined, responsible,
+                    and continuous learning.
+                </p>
+
+                <div class="tm-mission-card-bottom">
+
+                    <span>Continuous Growth</span>
+
+                    <i data-lucide="arrow-up-right"></i>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROMISE CARD -->
+            <article class="tm-mission-card tm-mission-card-promise">
+
+                <div class="tm-mission-card-top">
+
+                    <div class="tm-mission-icon">
+                        <i data-lucide="shield-check"></i>
+                    </div>
+
+                    <span class="tm-mission-number">03</span>
+
+                </div>
+
+                <span class="tm-mission-card-label">
+                    OUR COMMITMENT
+                </span>
+
+                <h3>Our Promise</h3>
+
+                <p>
+                    We help learners understand concepts rather than
+                    promise financial results. Every learning journey
+                    encourages curiosity, informed thinking, and
+                    awareness of risk.
+                </p>
+
+                <div class="tm-mission-card-bottom">
+
+                    <span>Responsible Education</span>
+
+                    <i data-lucide="arrow-up-right"></i>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- BOTTOM LEARNING MESSAGE -->
+        <div class="tm-mission-footer">
+
+            <div class="tm-mission-footer-icon">
+                <i data-lucide="book-open-check"></i>
+            </div>
+
+            <div class="tm-mission-footer-content">
+
+                <h4>Knowledge Before Decisions.</h4>
+
+                <p>
+                    Build understanding, practice thoughtfully,
+                    and keep learning at your own pace.
+                </p>
+
+            </div>
+
+            <div class="tm-mission-footer-mark">
+                <i data-lucide="trending-up"></i>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TRADEMASTERS — SECTION 4: WHAT MAKES US DIFFERENT
+===================================================== -->
+
+<section class="tm-different" id="learning-approach">
+
+    <div class="tm-different-container">
+
+        <!-- CENTERED SECTION HEADER -->
+        <div class="tm-different-header">
+
+            <div class="tm-different-label">
+                <i data-lucide="sparkles"></i>
+                <span>OUR LEARNING APPROACH</span>
+            </div>
+
+            <h2 class="tm-different-heading">
+                More Than Information.
+                <span>A Structured Learning Experience.</span>
+            </h2>
+
+            <p class="tm-different-description">
+                Explore a learning environment designed to make market
+                concepts easier to understand, practice, and revisit
+                throughout your educational journey.
+            </p>
+
+        </div>
+
+
+        <!-- MAIN CONTENT -->
+        <div class="tm-different-layout">
+
+            <!-- LEFT FEATURE PANEL -->
+            <div class="tm-different-feature-panel">
+
+                <div class="tm-different-panel-top">
+
+                    <div class="tm-different-panel-icon">
+                        <i data-lucide="graduation-cap"></i>
+                    </div>
+
+                    <span class="tm-different-panel-number">
+                        THE TM APPROACH
+                    </span>
+
+                </div>
+
+                <div class="tm-different-panel-content">
+
+                    <span class="tm-different-panel-eyebrow">
+                        LEARN AT YOUR OWN PACE
+                    </span>
+
+                    <h3>
+                        Build Knowledge.
+                        <span>Step by Step.</span>
+                    </h3>
+
+                    <p>
+                        Start with the fundamentals, strengthen your
+                        understanding through examples, and progress
+                        through organized learning materials at a pace
+                        that works for you.
+                    </p>
+
+                </div>
+
+
+                <!-- LEARNING JOURNEY -->
+                <div class="tm-different-journey">
+
+                    <div class="tm-different-journey-item">
+
+                        <span class="tm-different-journey-dot">
+                            <i data-lucide="book-open"></i>
+                        </span>
+
+                        <div>
+                            <h4>Understand</h4>
+                            <p>Build your foundations.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="tm-different-journey-line"></div>
+
+
+                    <div class="tm-different-journey-item">
+
+                        <span class="tm-different-journey-dot">
+                            <i data-lucide="chart-no-axes-combined"></i>
+                        </span>
+
+                        <div>
+                            <h4>Explore</h4>
+                            <p>Learn through examples.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="tm-different-journey-line"></div>
+
+
+                    <div class="tm-different-journey-item">
+
+                        <span class="tm-different-journey-dot">
+                            <i data-lucide="trending-up"></i>
+                        </span>
+
+                        <div>
+                            <h4>Develop</h4>
+                            <p>Keep improving your knowledge.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="tm-different-panel-footer">
+
+                    <i data-lucide="shield-check"></i>
+
+                    <p>
+                        Education first. Responsible learning always.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT: SIX LEARNING FEATURES -->
+            <div class="tm-different-features">
+
+                <!-- FEATURE 1 -->
+                <article class="tm-different-card">
+
+                    <div class="tm-different-card-top">
+
+                        <div class="tm-different-card-icon">
+                            <i data-lucide="book-open-text"></i>
+                        </div>
+
+                        <span class="tm-different-card-number">01</span>
+
+                    </div>
+
+                    <h3>Beginner-Friendly Explanations</h3>
+
+                    <p>
+                        Understand complex market terminology through
+                        organized lessons and clear explanations.
+                    </p>
+
+                </article>
+
+
+                <!-- FEATURE 2 -->
+                <article class="tm-different-card">
+
+                    <div class="tm-different-card-top">
+
+                        <div class="tm-different-card-icon">
+                            <i data-lucide="route"></i>
+                        </div>
+
+                        <span class="tm-different-card-number">02</span>
+
+                    </div>
+
+                    <h3>Progressive Learning Paths</h3>
+
+                    <p>
+                        Build foundational knowledge before progressing
+                        to more advanced topics.
+                    </p>
+
+                </article>
+
+
+                <!-- FEATURE 3 -->
+                <article class="tm-different-card">
+
+                    <div class="tm-different-card-top">
+
+                        <div class="tm-different-card-icon">
+                            <i data-lucide="chart-no-axes-combined"></i>
+                        </div>
+
+                        <span class="tm-different-card-number">03</span>
+
+                    </div>
+
+                    <h3>Practical Educational Examples</h3>
+
+                    <p>
+                        Explore historical charts and simulated
+                        exercises to connect concepts with scenarios.
+                    </p>
+
+                </article>
+
+
+                <!-- FEATURE 4 -->
+                <article class="tm-different-card">
+
+                    <div class="tm-different-card-top">
+
+                        <div class="tm-different-card-icon">
+                            <i data-lucide="clock-3"></i>
+                        </div>
+
+                        <span class="tm-different-card-number">04</span>
+
+                    </div>
+
+                    <h3>Flexible Learning Access</h3>
+
+                    <p>
+                        Revisit available recorded lessons and learning
+                        materials according to your course access.
+                    </p>
+
+                </article>
+
+
+                <!-- FEATURE 5 -->
+                <article class="tm-different-card">
+
+                    <div class="tm-different-card-top">
+
+                        <div class="tm-different-card-icon">
+                            <i data-lucide="layout-dashboard"></i>
+                        </div>
+
+                        <span class="tm-different-card-number">05</span>
+
+                    </div>
+
+                    <h3>Dashboard-Based Organization</h3>
+
+                    <p>
+                        Access enrolled courses, class schedules,
+                        recordings, and simulated portfolio activity
+                        from your student dashboard.
+                    </p>
+
+                </article>
+
+
+                <!-- FEATURE 6 -->
+                <article class="tm-different-card">
+
+                    <div class="tm-different-card-top">
+
+                        <div class="tm-different-card-icon">
+                            <i data-lucide="shield-check"></i>
+                        </div>
+
+                        <span class="tm-different-card-number">06</span>
+
+                    </div>
+
+                    <h3>Responsible Trading Education</h3>
+
+                    <p>
+                        Learn about risk awareness, realistic
+                        expectations, and the difference between
+                        trading education and financial outcomes.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTTOM MESSAGE -->
+        <div class="tm-different-bottom">
+
+            <div class="tm-different-bottom-icon">
+                <i data-lucide="lightbulb"></i>
+            </div>
+
+            <p>
+                <strong>Every learner starts somewhere.</strong>
+                Build your understanding one concept at a time.
+            </p>
+
+            <div class="tm-different-bottom-mark">
+                <i data-lucide="arrow-up-right"></i>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TRADEMASTERS — SECTION 5: MEET OUR INSTRUCTORS
+===================================================== -->
+
+<section class="tm-instructors" id="meet-instructors">
+
+    <div class="tm-instructors-container">
+
+        <!-- Section Heading -->
+        <div class="tm-instructors-header">
+
+            <div class="tm-instructors-label">
+                <i data-lucide="users-round"></i>
+                <span>THE PEOPLE BEHIND THE LEARNING</span>
+            </div>
+
+            <h2 class="tm-instructors-heading">
+                Learn from Educators Who Make
+                <span>Complex Concepts Easier to Understand.</span>
+            </h2>
+
+            <p class="tm-instructors-description">
+                Explore market fundamentals, chart analysis, trading
+                strategies, and risk management through structured,
+                accessible financial education.
+            </p>
+
+        </div>
+
+
+        <!-- Instructor Profiles -->
+        <div class="tm-instructors-grid">
+
+            <!-- Instructor 1 -->
+            <article class="tm-instructor-card">
+
+                <div class="tm-instructor-profile">
+
+                    <div class="tm-instructor-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=85"
+                            alt="Instructor profile portrait"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <h3 class="tm-instructor-name">
+                        Instructor One
+                    </h3>
+
+                    <p class="tm-instructor-role">
+                        Stock Market Educator
+                    </p>
+
+                </div>
+
+
+                <div class="tm-instructor-divider"></div>
+
+
+                <!-- Background -->
+                <div class="tm-instructor-detail">
+
+                    <div class="tm-instructor-detail-icon">
+                        <i data-lucide="briefcase-business"></i>
+                    </div>
+
+                    <div class="tm-instructor-detail-content">
+
+                        <h4>Professional Background</h4>
+
+                        <p>
+                            Add verified experience, qualifications,
+                            certifications, and teaching background.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Expertise -->
+                <div class="tm-instructor-detail">
+
+                    <div class="tm-instructor-detail-icon">
+                        <i data-lucide="graduation-cap"></i>
+                    </div>
+
+                    <div class="tm-instructor-detail-content">
+
+                        <h4>Areas of Expertise</h4>
+
+                        <ul class="tm-instructor-expertise">
+                            <li>Market Fundamentals</li>
+                            <li>Technical Analysis</li>
+                            <li>Risk Management</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Teaching Approach -->
+                <div class="tm-instructor-detail">
+
+                    <div class="tm-instructor-detail-icon">
+                        <i data-lucide="target"></i>
+                    </div>
+
+                    <div class="tm-instructor-detail-content">
+
+                        <h4>Teaching Approach</h4>
+
+                        <p>
+                            Clear explanations, practical examples,
+                            and disciplined learning methods.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <a href="#instructor-one"
+                   class="tm-instructor-button">
+
+                    <span>View Instructor Details</span>
+                    <i data-lucide="arrow-up-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- Instructor 2 -->
+            <article class="tm-instructor-card">
+
+                <div class="tm-instructor-profile">
+
+                    <div class="tm-instructor-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=85"
+                            alt="Instructor profile portrait"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <h3 class="tm-instructor-name">
+                        Instructor Two
+                    </h3>
+
+                    <p class="tm-instructor-role">
+                        Stock Market Educator
+                    </p>
+
+                </div>
+
+
+                <div class="tm-instructor-divider"></div>
+
+
+                <!-- Background -->
+                <div class="tm-instructor-detail">
+
+                    <div class="tm-instructor-detail-icon">
+                        <i data-lucide="briefcase-business"></i>
+                    </div>
+
+                    <div class="tm-instructor-detail-content">
+
+                        <h4>Professional Background</h4>
+
+                        <p>
+                            Add verified market experience, relevant
+                            certifications, and education details.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Expertise -->
+                <div class="tm-instructor-detail">
+
+                    <div class="tm-instructor-detail-icon">
+                        <i data-lucide="graduation-cap"></i>
+                    </div>
+
+                    <div class="tm-instructor-detail-content">
+
+                        <h4>Areas of Expertise</h4>
+
+                        <ul class="tm-instructor-expertise">
+                            <li>Technical Analysis</li>
+                            <li>Trading Strategies</li>
+                            <li>Trading Psychology</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Teaching Approach -->
+                <div class="tm-instructor-detail">
+
+                    <div class="tm-instructor-detail-icon">
+                        <i data-lucide="target"></i>
+                    </div>
+
+                    <div class="tm-instructor-detail-content">
+
+                        <h4>Teaching Approach</h4>
+
+                        <p>
+                            Concept-based learning with chart examples
+                            and structured practice exercises.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <a href="#instructor-two"
+                   class="tm-instructor-button">
+
+                    <span>View Instructor Details</span>
+                    <i data-lucide="arrow-up-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- Instructor 3 -->
+            <article class="tm-instructor-card">
+
+                <div class="tm-instructor-profile">
+
+                    <div class="tm-instructor-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=85"
+                            alt="Instructor profile portrait"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <h3 class="tm-instructor-name">
+                        Instructor Three
+                    </h3>
+
+                    <p class="tm-instructor-role">
+                        Stock Market Educator
+                    </p>
+
+                </div>
+
+
+                <div class="tm-instructor-divider"></div>
+
+
+                <!-- Background -->
+                <div class="tm-instructor-detail">
+
+                    <div class="tm-instructor-detail-icon">
+                        <i data-lucide="briefcase-business"></i>
+                    </div>
+
+                    <div class="tm-instructor-detail-content">
+
+                        <h4>Professional Background</h4>
+
+                        <p>
+                            Add verified professional experience,
+                            qualifications, and teaching history.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Expertise -->
+                <div class="tm-instructor-detail">
+
+                    <div class="tm-instructor-detail-icon">
+                        <i data-lucide="graduation-cap"></i>
+                    </div>
+
+                    <div class="tm-instructor-detail-content">
+
+                        <h4>Areas of Expertise</h4>
+
+                        <ul class="tm-instructor-expertise">
+                            <li>Trading Strategies</li>
+                            <li>Risk Management</li>
+                            <li>Market Psychology</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Teaching Approach -->
+                <div class="tm-instructor-detail">
+
+                    <div class="tm-instructor-detail-icon">
+                        <i data-lucide="target"></i>
+                    </div>
+
+                    <div class="tm-instructor-detail-content">
+
+                        <h4>Teaching Approach</h4>
+
+                        <p>
+                            Practical learning focused on risk awareness,
+                            patience, and informed decision-making.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <a href="#instructor-three"
+                   class="tm-instructor-button">
+
+                    <span>View Instructor Details</span>
+                    <i data-lucide="arrow-up-right"></i>
+
+                </a>
+
+            </article>
+
+        </div>
+
+
+        <!-- Bottom Note -->
+        <div class="tm-instructors-note">
+
+            <i data-lucide="book-open-check"></i>
+
+            <p>
+                Learn from experience. Build understanding.
+                Practice responsible market education.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TRADEMASTERS — SECTION 6: LEARNING METHODOLOGY
+===================================================== -->
+
+<section class="tm-methodology" id="learning-methodology">
+
+    <div class="tm-methodology-container">
+
+        <!-- Section Header -->
+        <header class="tm-methodology-header">
+
+            <div class="tm-methodology-label">
+                <i data-lucide="route"></i>
+                <span>HOW WE HELP YOU LEARN</span>
+            </div>
+
+            <h2 class="tm-methodology-heading">
+                A Clear Path from
+                <span>Concepts to Practice.</span>
+            </h2>
+
+            <p class="tm-methodology-description">
+                Follow a structured learning journey that helps you
+                understand market concepts, practice your knowledge,
+                and build confidence step by step.
+            </p>
+
+        </header>
+
+
+        <!-- Learning Flowchart -->
+        <div class="tm-methodology-timeline">
+
+            <!-- Center Line -->
+            <div
+                class="tm-methodology-line"
+                aria-hidden="true">
+            </div>
+
+
+            <!-- STEP 1: LEFT -->
+            <article class="tm-method-step tm-step-left">
+
+                <div class="tm-method-content">
+
+                    <span class="tm-method-number">STEP 01</span>
+
+                    <h3>Understand</h3>
+
+                    <p>
+                        Begin with foundational concepts and
+                        essential market terminology.
+                    </p>
+
+                </div>
+
+                <div class="tm-method-marker">
+                    <i data-lucide="book-open"></i>
+                </div>
+
+            </article>
+
+
+            <!-- STEP 2: RIGHT -->
+            <article class="tm-method-step tm-step-right">
+
+                <div class="tm-method-marker">
+                    <i data-lucide="chart-no-axes-combined"></i>
+                </div>
+
+                <div class="tm-method-content">
+
+                    <span class="tm-method-number">STEP 02</span>
+
+                    <h3>Analyze</h3>
+
+                    <p>
+                        Explore charts, price patterns, indicators,
+                        and historical market examples.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- STEP 3: LEFT -->
+            <article class="tm-method-step tm-step-left">
+
+                <div class="tm-method-content">
+
+                    <span class="tm-method-number">STEP 03</span>
+
+                    <h3>Practice</h3>
+
+                    <p>
+                        Apply your understanding through educational
+                        exercises and simulated trading activities.
+                    </p>
+
+                </div>
+
+                <div class="tm-method-marker">
+                    <i data-lucide="chart-no-axes-column-increasing"></i>
+                </div>
+
+            </article>
+
+
+            <!-- STEP 4: RIGHT -->
+            <article class="tm-method-step tm-step-right">
+
+                <div class="tm-method-marker">
+                    <i data-lucide="clipboard-check"></i>
+                </div>
+
+                <div class="tm-method-content">
+
+                    <span class="tm-method-number">STEP 04</span>
+
+                    <h3>Review</h3>
+
+                    <p>
+                        Revisit recorded lessons, review practice
+                        history, and identify areas for improvement.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- STEP 5: LEFT -->
+            <article class="tm-method-step tm-step-left">
+
+                <div class="tm-method-content">
+
+                    <span class="tm-method-number">STEP 05</span>
+
+                    <h3>Progress</h3>
+
+                    <p>
+                        Continue through progressively advanced
+                        topics as your understanding develops.
+                    </p>
+
+                </div>
+
+                <div class="tm-method-marker tm-method-marker-final">
+                    <i data-lucide="trending-up"></i>
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- Supporting Message -->
+        <div class="tm-methodology-note">
+
+            <div class="tm-methodology-note-icon">
+                <i data-lucide="lightbulb"></i>
+            </div>
+
+            <p>
+                Every learner progresses differently.
+                <span>
+                    Focus on understanding the process instead of
+                    rushing toward results.
+                </span>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TRADEMASTERS — SECTION 7: ABOUT PAGE CTA
+     ASYMMETRICAL LAYOUT
+===================================================== -->
+
+<section class="tm-about-cta" id="about-cta">
+
+    <div class="tm-about-cta-container">
+
+        <!-- Top Accent -->
+        <div class="tm-about-cta-accent"></div>
+
+        <!-- Main Content -->
+        <div class="tm-about-cta-main">
+
+            <!-- Left: Heading -->
+            <div class="tm-about-cta-heading">
+
+                <div class="tm-about-cta-label">
+                    <i data-lucide="trending-up"></i>
+                    <span>TAKE THE NEXT STEP</span>
+                </div>
+
+                <h2>
+                    Build Your Market
+                    Knowledge with
+                    <span>TradeMasters.</span>
+                </h2>
+
+            </div>
+
+            <!-- Right: Description and Actions -->
+            <div class="tm-about-cta-details">
+
+                <p class="tm-about-cta-description">
+                    Discover structured courses, explore free educational
+                    resources, and start developing a more informed
+                    understanding of financial markets. Build your
+                    knowledge step by step through structured lessons
+                    and practical learning experiences.
+                </p>
+
+                <div class="tm-about-cta-actions">
+
+                    <a href="#courses" class="tm-about-cta-primary">
+                        Explore Courses
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                    <a href="#contact" class="tm-about-cta-secondary">
+                        Contact Our Team
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Bottom Disclaimer -->
+        <div class="tm-about-cta-footer">
+
+            <div class="tm-about-cta-footer-label">
+                <i data-lucide="info"></i>
+                <span>IMPORTANT NOTE</span>
+            </div>
+
+            <p>
+                Our educational content is intended to support learning
+                and does not constitute personalized investment advice
+                or a recommendation to buy or sell securities.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+</main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-main">
+
+            <div class="footer-container">
+
+                <!-- BRAND COLUMN -->
+                <div class="footer-column footer-brand-column">
+
+                    <a href="index.html" class="brand footer-brand">
+
+                        <img src="./images/logo_light.png" alt="TradeMasters Logo" class="footer-brand-logo"
+                            id="footerBrandLogo">
+
+                        <span class="brand-text">
+
+                            <span class="brand-title">
+                                <span class="brand-trade">TRADE</span><span class="brand-masters">MASTERS</span>
+                            </span>
+
+                            <span class="brand-subtitle">
+                                STOCK MARKET TRADING ACADEMY
+                            </span>
+
+                        </span>
+
+                    </a>
+
+
+                    <p class="footer-description">
+                        Empowering learners with stock market knowledge,
+                        trading education, and a disciplined approach
+                        to financial markets.
+                    </p>
+
+
+                    <div class="social-links">
+
+                        <a href="#" class="social-link" aria-label="Instagram" title="Instagram">
+                            <i data-lucide="instagram"></i>
+                        </a>
+
+                        <a href="#" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+                            <i data-lucide="linkedin"></i>
+                        </a>
+
+                        <a href="#" class="social-link" aria-label="YouTube" title="YouTube">
+                            <i data-lucide="youtube"></i>
+                        </a>
+
+                        <a href="#" class="social-link" aria-label="Facebook" title="Facebook">
+                            <i data-lucide="facebook"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK LINKS -->
+                <div class="footer-column">
+
+                    <h3 class="footer-heading">Quick Links</h3>
+
+                    <ul class="footer-links">
+
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Our Courses</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- LEARNING -->
+                <div class="footer-column">
+
+                    <h3 class="footer-heading">Learning</h3>
+
+                    <ul class="footer-links">
+
+                        <li><a href="courses.html">Trading Basics</a></li>
+                        <li><a href="courses.html">Technical Analysis</a></li>
+                        <li><a href="courses.html">Market Strategies</a></li>
+                        <li><a href="courses.html">Risk Management</a></li>
+                        <li><a href="dashboard.html">Student Dashboard</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- ADDITIONAL PAGES -->
+                <div class="footer-column">
+
+                    <h3 class="footer-heading">Additional Pages</h3>
+
+                    <ul class="footer-links">
+
+                        <li><a href="404.html">404 Error</a></li>
+                        <li><a href="coming-soon.html">Coming Soon</a></li>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- GET IN TOUCH -->
+                <div class="footer-column footer-contact-column">
+
+                    <h3 class="footer-heading">Get in Touch</h3>
+
+                    <ul class="footer-contact-list">
+
+                        <li>
+
+                            <span class="footer-contact-icon">
+                                <i data-lucide="mail"></i>
+                            </span>
+
+                            <a href="mailto:support@yourdomain.com">
+                                support@yourdomain.com
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="footer-contact-icon">
+                                <i data-lucide="phone"></i>
+                            </span>
+
+                            <a href="tel:+910000000000">
+                                +91 00000 00000
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="footer-contact-icon">
+                                <i data-lucide="clock"></i>
+                            </span>
+
+                            <span>
+                                Monday – Saturday<br>
+                                9:00 AM – 6:00 PM
+                            </span>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+        <div class="footer-bottom">
+
+            <div class="footer-container footer-bottom-container">
+
+                <p class="copyright">
+                    &copy; <span id="currentYear"></span>
+                    TradeMasters. All rights reserved.
+                </p>
+
+
+                <div class="footer-bottom-actions">
+
+                    <div class="legal-links">
+
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms &amp; Conditions</a>
+
+                    </div>
+
+
+                    <button type="button" class="back-to-top" id="backToTop" aria-label="Go to top"
+                        title="Go to top">
+
+                        <i data-lucide="arrow-up"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="main.js"></script>
+<script src="about.js"></script>
+</body>
+
+</html>

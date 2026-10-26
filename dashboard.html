@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TradeMasters | Student Dashboard</title>
+
+    <meta name="description" content="TradeMasters student dashboard for courses, classes, progress, and practice portfolio.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@0.542.0/dist/umd/lucide.min.js" defer></script>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="Dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+
+        <a href="index.html" class="dashboard-brand" aria-label="TradeMasters Home">
+            <img
+                src="logo_light.png"
+                alt="TradeMasters Logo"
+                class="dashboard-brand-logo"
+                id="brandLogo"
+            >
+
+            <span class="dashboard-brand-text">
+                <span class="dashboard-brand-title">
+                    <span class="brand-trade">TRADE</span><span class="brand-masters">MASTERS</span>
+                </span>
+
+                <span class="dashboard-brand-subtitle">
+                    STOCK MARKET TRADING ACADEMY
+                </span>
+            </span>
+        </a>
+
+        <p class="sidebar-label">LEARNING SPACE</p>
+
+        <nav class="sidebar-nav" aria-label="Dashboard learning navigation">
+            <button class="nav-link active" data-section="overview" type="button">
+                <i data-lucide="layout-dashboard"></i> Overview
+            </button>
+
+            <button class="nav-link" data-section="courses" type="button">
+                <i data-lucide="book-open"></i> My Courses
+            </button>
+
+            <button class="nav-link" data-section="recordings" type="button">
+                <i data-lucide="play-square"></i> Recorded Classes
+            </button>
+
+            <button class="nav-link" data-section="schedule" type="button">
+                <i data-lucide="calendar-days"></i> Class Schedule
+            </button>
+
+            <button class="nav-link" data-section="portfolio" type="button">
+                <i data-lucide="chart-no-axes-combined"></i> Mock Portfolio
+            </button>
+
+            <button class="nav-link" data-section="progress" type="button">
+                <i data-lucide="trending-up"></i> Learning Progress
+            </button>
+        </nav>
+
+        <div class="sidebar-help">
+            <i data-lucide="messages-square"></i>
+
+            <h3>Need a hand?</h3>
+            <p>Our learning support team is here to help.</p>
+
+            <button class="support-button" data-section="support" type="button">
+                Get Support <i data-lucide="arrow-up-right"></i>
+            </button>
+        </div>
+
+        <div class="sidebar-footer">
+            &copy; <span id="dashboardYear"></span> TradeMasters
+        </div>
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div class="topbar-title">
+                <button class="icon-button mobile-menu" id="menuToggle" type="button"
+                    aria-label="Open sidebar menu" aria-expanded="false" aria-controls="sidebar">
+                    <i data-lucide="menu"></i>
+                </button>
+
+                <div>
+                    <p class="eyebrow">STUDENT WORKSPACE</p>
+                    <h1 id="pageTitle">Overview</h1>
+                </div>
+            </div>
+
+            <div class="topbar-actions">
+                <button type="button" class="icon-button js-rtl-toggle"
+                    aria-label="Switch text direction" title="Switch text direction">
+                    <i data-lucide="arrow-left-right"></i>
+                </button>
+
+                <button type="button" class="icon-button js-theme-toggle"
+                    aria-label="Switch to dark mode" title="Toggle dark mode">
+                    <i data-lucide="moon"></i>
+                </button>
+
+                <button type="button" class="icon-button" id="notificationBtn"
+                    aria-label="Notifications" title="Notifications">
+                    <i data-lucide="bell"></i>
+                </button>
+
+                <div class="profile-menu">
+                    <button type="button" class="profile-button" id="profileTrigger"
+                        aria-expanded="false" aria-controls="profileDropdown">
+                        <img src="https://i.pravatar.cc/100?img=12" alt="Student profile">
+
+                        <span class="profile-details">
+                            <strong id="studentName">Chandra Shekar</strong>
+                            <small>Student Account</small>
+                        </span>
+
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <button type="button" class="profile-dropdown-link" data-section="profile">
+                            <i data-lucide="user-round"></i> My Profile
+                        </button>
+
+                        <button type="button" class="profile-dropdown-link" data-section="settings">
+                            <i data-lucide="settings"></i> Settings
+                        </button>
+
+                        <button type="button" class="profile-dropdown-link logout" id="profileLogoutBtn">
+                            <i data-lucide="log-out"></i> Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ================= OVERVIEW ================= -->
+        <section class="content-section active" id="overview">
+            <div class="welcome-banner">
+                <div class="welcome-content">
+                    <span class="tagline">
+                        <i data-lucide="sparkles"></i> YOUR LEARNING JOURNEY
+                    </span>
+
+                    <h2>Welcome back, <span>Chandra</span>!</h2>
+
+                    <p>
+                        Continue learning, review your upcoming classes, and keep track
+                        of your simulated trading activity.
+                    </p>
+
+                    <button class="primary-button" data-section="courses" type="button">
+                        Continue Learning <i data-lucide="arrow-up-right"></i>
+                    </button>
+                </div>
+
+                <div class="welcome-chart">
+                    <span>MARKET PRACTICE</span>
+                    <h3>Learn. Practice. Improve.</h3>
+
+                    <svg viewBox="0 0 350 140" preserveAspectRatio="none" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#D6B56D" stop-opacity=".4"/>
+                                <stop offset="100%" stop-color="#D6B56D" stop-opacity="0"/>
+                            </linearGradient>
+                        </defs>
+
+                        <path d="M0 115 L35 90 L65 100 L95 65 L125 78 L160 45 L195 65 L225 32 L260 50 L290 20 L320 35 L350 8 L350 140 L0 140Z" fill="url(#chartGradient)"/>
+                        <polyline points="0,115 35,90 65,100 95,65 125,78 160,45 195,65 225,32 260,50 290,20 320,35 350,8" fill="none" stroke="#D6B56D" stroke-width="3"/>
+                    </svg>
+
+                    <p>
+                        <span>Learning progress</span>
+                        <span>Practice mode</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR SNAPSHOT</p>
+                    <h2>Learning at a glance</h2>
+                </div>
+
+                <span class="status-label">Personal Dashboard</span>
+            </div>
+
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <span class="stat-icon"><i data-lucide="book-open-check"></i></span>
+                    <p>Enrolled Courses</p>
+                    <h3>3</h3>
+                    <small>Active learning paths</small>
+                </article>
+
+                <article class="stat-card">
+                    <span class="stat-icon blue"><i data-lucide="check-check"></i></span>
+                    <p>Lessons Completed</p>
+                    <h3>18</h3>
+                    <small>Across your courses</small>
+                </article>
+
+                <article class="stat-card">
+                    <span class="stat-icon purple"><i data-lucide="chart-no-axes-combined"></i></span>
+                    <p>Learning Progress</p>
+                    <h3>64%</h3>
+                    <small>Overall completion</small>
+                </article>
+
+                <article class="stat-card">
+                    <span class="stat-icon orange"><i data-lucide="target"></i></span>
+                    <p>Practice Sessions</p>
+                    <h3>12</h3>
+                    <small>Simulated exercises</small>
+                </article>
+            </div>
+
+            <div class="content-grid">
+                <article class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">PICK UP WHERE YOU LEFT OFF</p>
+                            <h2>Continue Learning</h2>
+                        </div>
+
+                        <button class="text-button" data-section="courses" type="button">
+                            All Courses <i data-lucide="arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="course-item">
+                        <div class="course-art">
+                            <i data-lucide="chart-no-axes-combined"></i>
+                            <span>LEVEL 02</span>
+                        </div>
+
+                        <div class="course-details">
+                            <small>TECHNICAL ANALYSIS</small>
+                            <h3>Technical Analysis Essentials</h3>
+                            <p>Instructor: Ananya Rao</p>
+
+                            <div class="progress-label">
+                                <span>12 of 20 lessons</span>
+                                <strong>60%</strong>
+                            </div>
+
+                            <div class="progress-track"><span style="width:60%"></span></div>
+                            <small class="last-accessed">Last accessed: Today</small>
+                        </div>
+
+                        <button class="round-button" data-section="courses" type="button" aria-label="Continue course">
+                            <i data-lucide="arrow-up-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="course-item">
+                        <div class="course-art second-art">
+                            <i data-lucide="landmark"></i>
+                            <span>LEVEL 01</span>
+                        </div>
+
+                        <div class="course-details">
+                            <small>MARKET FOUNDATIONS</small>
+                            <h3>Stock Market Fundamentals</h3>
+                            <p>Instructor: Rahul Mehta</p>
+
+                            <div class="progress-label">
+                                <span>6 of 10 lessons</span>
+                                <strong>60%</strong>
+                            </div>
+
+                            <div class="progress-track"><span style="width:60%"></span></div>
+                            <small class="last-accessed">Last accessed: Yesterday</small>
+                        </div>
+
+                        <button class="round-button" data-section="courses" type="button" aria-label="Continue course">
+                            <i data-lucide="arrow-up-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <article class="panel next-class">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">COMING UP</p>
+                            <h2>Next Class</h2>
+                        </div>
+
+                        <i data-lucide="calendar-clock"></i>
+                    </div>
+
+                    <div class="class-date">
+                        <strong>24</strong>
+                        <span>OCT<br>2026</span>
+                    </div>
+
+                    <h3>Reading Candlestick Patterns</h3>
+
+                    <p class="muted"><i data-lucide="clock"></i> 6:30 PM – 7:30 PM IST</p>
+                    <p class="muted"><i data-lucide="user-round"></i> Ananya Rao</p>
+
+                    <span class="class-status">Scheduled</span>
+
+                    <button class="outline-button full-width" data-section="schedule" type="button">
+                        View Full Schedule <i data-lucide="arrow-right"></i>
+                    </button>
+                </article>
+            </div>
+
+            <div class="content-grid">
+                <article class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">SIMULATED TRADING</p>
+                            <h2>Your Practice Portfolio</h2>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-value">
+                        <div>
+                            <small>Current Simulated Value</small>
+                            <h3>₹1,08,450</h3>
+                        </div>
+
+                        <span class="profit">+8.45%</span>
+                    </div>
+
+                    <div class="portfolio-mini-chart">
+                        <svg viewBox="0 0 500 100" preserveAspectRatio="none" aria-hidden="true">
+                            <polyline points="0,80 40,60 80,72 120,40 160,55 200,30 240,45 280,18 320,35 360,15 400,28 450,8 500,18" fill="none" stroke="#B58A45" stroke-width="3"/>
+                        </svg>
+                    </div>
+
+                    <p class="muted">Virtual balance · ₹1,00,000</p>
+
+                    <button class="primary-button full-width" data-section="portfolio" type="button">
+                        Open Mock Portfolio <i data-lucide="arrow-right"></i>
+                    </button>
+
+                    <p class="disclaimer">
+                        Simulated educational activity only. Not a real investment.
+                    </p>
+                </article>
+
+                <article class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">YOUR LATEST ACTIVITY</p>
+                            <h2>Recent Activity</h2>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <span class="activity-icon"><i data-lucide="check-circle"></i></span>
+
+                        <div>
+                            <strong>Support and Resistance</strong>
+                            <small>Technical Analysis Essentials</small>
+                        </div>
+
+                        <time>Today</time>
+                    </div>
+
+                    <div class="activity-item">
+                        <span class="activity-icon blue"><i data-lucide="play-circle"></i></span>
+
+                        <div>
+                            <strong>Market Structure Basics</strong>
+                            <small>Recorded class · 32 min</small>
+                        </div>
+
+                        <time>Yesterday</time>
+                    </div>
+
+                    <div class="activity-item">
+                        <span class="activity-icon orange"><i data-lucide="target"></i></span>
+
+                        <div>
+                            <strong>Candlestick Identification</strong>
+                            <small>Practice exercise · 8/10</small>
+                        </div>
+
+                        <time>20 Oct</time>
+                    </div>
+
+                    <button class="text-button" data-section="progress" type="button">
+                        View Activity History <i data-lucide="arrow-right"></i>
+                    </button>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= COURSES ================= -->
+        <section class="content-section" id="courses">
+            <div class="page-intro">
+                <p class="eyebrow">YOUR LEARNING PATH</p>
+                <h2>My Courses</h2>
+                <p>Continue your courses and track your lesson completion.</p>
+            </div>
+
+            <div class="course-cards">
+                <article class="panel course-card">
+                    <div class="course-art large-art">
+                        <i data-lucide="chart-no-axes-combined"></i>
+                    </div>
+
+                    <small>TECHNICAL ANALYSIS</small>
+                    <h3>Technical Analysis Essentials</h3>
+                    <p>Instructor: Ananya Rao</p>
+
+                    <div class="progress-label">
+                        <span>12 of 20 lessons</span>
+                        <strong>60%</strong>
+                    </div>
+
+                    <div class="progress-track"><span style="width:60%"></span></div>
+
+                    <button class="primary-button course-continue" type="button">
+                        Continue Learning <i data-lucide="arrow-right"></i>
+                    </button>
+                </article>
+
+                <article class="panel course-card">
+                    <div class="course-art large-art second-art">
+                        <i data-lucide="landmark"></i>
+                    </div>
+
+                    <small>MARKET FOUNDATIONS</small>
+                    <h3>Stock Market Fundamentals</h3>
+                    <p>Instructor: Rahul Mehta</p>
+
+                    <div class="progress-label">
+                        <span>6 of 10 lessons</span>
+                        <strong>60%</strong>
+                    </div>
+
+                    <div class="progress-track"><span style="width:60%"></span></div>
+
+                    <button class="primary-button course-continue" type="button">
+                        Continue Learning <i data-lucide="arrow-right"></i>
+                    </button>
+                </article>
+
+                <article class="panel course-card">
+                    <div class="course-art large-art third-art">
+                        <i data-lucide="shield-check"></i>
+                    </div>
+
+                    <small>RISK MANAGEMENT</small>
+                    <h3>Trading Risk Management</h3>
+                    <p>Instructor: Priya Sharma</p>
+
+                    <div class="progress-label">
+                        <span>0 of 12 lessons</span>
+                        <strong>0%</strong>
+                    </div>
+
+                    <div class="progress-track"><span style="width:0%"></span></div>
+
+                    <button class="primary-button course-continue" type="button">
+                        Start Learning <i data-lucide="arrow-right"></i>
+                    </button>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= RECORDINGS ================= -->
+        <section class="content-section" id="recordings">
+            <div class="page-intro">
+                <p class="eyebrow">LEARN AT YOUR OWN PACE</p>
+                <h2>Your Learning Library</h2>
+                <p>Revisit recordings available through your enrolled courses.</p>
+            </div>
+
+            <div class="panel list-panel">
+                <div class="list-item">
+                    <span class="list-icon"><i data-lucide="play-circle"></i></span>
+
+                    <div>
+                        <h3>Understanding Market Structure</h3>
+                        <p>Technical Analysis Essentials · Ananya Rao</p>
+                        <small>Recorded 20 Oct 2026 · 42 minutes</small>
+                    </div>
+
+                    <span class="status-pill">Watched</span>
+
+                    <button class="outline-button watch-button" type="button">Watch Recording</button>
+                </div>
+
+                <div class="list-item">
+                    <span class="list-icon"><i data-lucide="play-circle"></i></span>
+
+                    <div>
+                        <h3>Support and Resistance</h3>
+                        <p>Technical Analysis Essentials · Ananya Rao</p>
+                        <small>Recorded 18 Oct 2026 · 36 minutes</small>
+                    </div>
+
+                    <span class="status-pill pending">In progress</span>
+
+                    <button class="outline-button watch-button" type="button">Resume Learning</button>
+                </div>
+
+                <div class="list-item">
+                    <span class="list-icon"><i data-lucide="play-circle"></i></span>
+
+                    <div>
+                        <h3>Introduction to the Stock Market</h3>
+                        <p>Stock Market Fundamentals · Rahul Mehta</p>
+                        <small>Recorded 16 Oct 2026 · 48 minutes</small>
+                    </div>
+
+                    <span class="status-pill">Watched</span>
+
+                    <button class="outline-button watch-button" type="button">Watch Recording</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SCHEDULE ================= -->
+        <section class="content-section" id="schedule">
+            <div class="page-intro">
+                <p class="eyebrow">PLAN YOUR LEARNING</p>
+                <h2>Class Schedule</h2>
+                <p>Keep track of upcoming live classes and learning sessions.</p>
+            </div>
+
+            <div class="panel list-panel">
+                <div class="list-item">
+                    <span class="date-box"><strong>24</strong><small>OCT</small></span>
+
+                    <div>
+                        <h3>Reading Candlestick Patterns</h3>
+                        <p>Ananya Rao · Technical Analysis Essentials</p>
+                        <small>6:30 PM – 7:30 PM IST</small>
+                    </div>
+
+                    <span class="status-pill pending">Upcoming</span>
+
+                    <button class="outline-button meeting-button" type="button">View Details</button>
+                </div>
+
+                <div class="list-item">
+                    <span class="date-box"><strong>26</strong><small>OCT</small></span>
+
+                    <div>
+                        <h3>Risk and Reward Strategies</h3>
+                        <p>Priya Sharma · Trading Risk Management</p>
+                        <small>5:00 PM – 6:00 PM IST</small>
+                    </div>
+
+                    <span class="status-pill pending">Upcoming</span>
+
+                    <button class="outline-button meeting-button" type="button">View Details</button>
+                </div>
+
+                <div class="list-item">
+                    <span class="date-box"><strong>28</strong><small>OCT</small></span>
+
+                    <div>
+                        <h3>Market Fundamentals Q&A</h3>
+                        <p>Rahul Mehta · Stock Market Fundamentals</p>
+                        <small>6:00 PM – 6:45 PM IST</small>
+                    </div>
+
+                    <span class="status-pill pending">Upcoming</span>
+
+                    <button class="outline-button meeting-button" type="button">View Details</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PORTFOLIO ================= -->
+        <section class="content-section" id="portfolio">
+            <div class="page-intro">
+                <p class="eyebrow">PRACTICE WITHOUT REAL-MONEY RISK</p>
+                <h2>Your Practice Portfolio</h2>
+                <p>Explore hypothetical holdings and simulated portfolio performance.</p>
+            </div>
+
+            <div class="stats-grid portfolio-stats">
+                <article class="stat-card">
+                    <p>Virtual Starting Balance</p>
+                    <h3>₹1,00,000</h3>
+                    <small>Practice funds</small>
+                </article>
+
+                <article class="stat-card">
+                    <p>Current Simulated Value</p>
+                    <h3>₹1,08,450</h3>
+                    <small class="profit">+8.45% hypothetical</small>
+                </article>
+
+                <article class="stat-card">
+                    <p>Hypothetical Profit/Loss</p>
+                    <h3 class="profit">+₹8,450</h3>
+                    <small>Simulated result</small>
+                </article>
+
+                <article class="stat-card">
+                    <p>Practice Trades</p>
+                    <h3>12</h3>
+                    <small>Simulated transactions</small>
+                </article>
+            </div>
+
+            <article class="panel chart-panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">PORTFOLIO OVER TIME</p>
+                        <h2>Simulated Performance</h2>
+                    </div>
+
+                    <span class="status-label">DEMO DATA</span>
+                </div>
+
+                <div class="big-chart">
+                    <svg viewBox="0 0 700 220" preserveAspectRatio="none" aria-hidden="true">
+                        <g stroke="currentColor" stroke-opacity=".12" stroke-dasharray="4 5">
+                            <path d="M0 30H700M0 80H700M0 130H700M0 180H700"/>
+                        </g>
+
+                        <polyline points="0,190 50,160 100,175 150,125 200,145 250,100 300,115 350,70 400,95 450,60 500,80 550,45 600,58 650,20 700,35" fill="none" stroke="#B58A45" stroke-width="3"/>
+                    </svg>
+                </div>
+            </article>
+
+            <article class="panel holdings-panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">SIMULATED HOLDINGS</p>
+                        <h2>Practice Positions</h2>
+                    </div>
+                </div>
+
+                <div class="holding-row">
+                    <strong>Reliance Industries</strong>
+                    <span>10 shares · ₹29,450</span>
+                </div>
+
+                <div class="holding-row">
+                    <strong>Infosys</strong>
+                    <span>15 shares · ₹24,000</span>
+                </div>
+
+                <div class="holding-row">
+                    <strong>HDFC Bank</strong>
+                    <span>20 shares · ₹35,000</span>
+                </div>
+            </article>
+
+            <p class="disclaimer">
+                Portfolio data represents simulated educational activity, not real investments
+                or guaranteed future results. All figures are sample data.
+            </p>
+        </section>
+
+        <!-- ================= PROGRESS ================= -->
+        <section class="content-section" id="progress">
+            <div class="page-intro">
+                <p class="eyebrow">YOUR CONSISTENCY COUNTS</p>
+                <h2>Learning Progress</h2>
+                <p>Review your weekly goals, completed lessons, and topics to revisit.</p>
+            </div>
+
+            <article class="panel goal-panel">
+                <h2>Small Steps. Consistent Progress.</h2>
+
+                <div class="goal-row">
+                    <span>Complete 3 lessons this week</span>
+                    <strong>2/3</strong>
+                </div>
+
+                <div class="progress-track"><span style="width:67%"></span></div>
+
+                <div class="goal-row">
+                    <span>Watch 1 recorded class</span>
+                    <strong>1/1</strong>
+                </div>
+
+                <div class="progress-track"><span style="width:100%"></span></div>
+
+                <div class="goal-row">
+                    <span>Finish 2 practice exercises</span>
+                    <strong>1/2</strong>
+                </div>
+
+                <div class="progress-track"><span style="width:50%"></span></div>
+            </article>
+
+            <article class="panel revise-panel">
+                <h2>Topics to Revise</h2>
+
+                <div class="activity-item">
+                    <span class="activity-icon"><i data-lucide="book-marked"></i></span>
+
+                    <div>
+                        <strong>Risk-to-reward ratio</strong>
+                        <small>Risk Management · 2 lessons remaining</small>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <span class="activity-icon blue"><i data-lucide="chart-no-axes-combined"></i></span>
+
+                    <div>
+                        <strong>Trend confirmation</strong>
+                        <small>Technical Analysis · revisit lesson 8</small>
+                    </div>
+                </div>
+
+                <button class="primary-button" data-section="courses" type="button">
+                    Review My Goals <i data-lucide="arrow-right"></i>
+                </button>
+            </article>
+        </section>
+
+        <!-- ================= PROFILE ================= -->
+        <section class="content-section" id="profile">
+            <div class="page-intro">
+                <p class="eyebrow">YOUR ACCOUNT</p>
+                <h2>My Profile</h2>
+                <p>Manage the personal details connected to your learning account.</p>
+            </div>
+
+            <form class="panel profile-form" id="profileForm">
+                <label>
+                    Full Name
+                    <input type="text" id="profileName" value="Chandra Shekar" required>
+                </label>
+
+                <label>
+                    Email Address
+                    <input type="email" value="student@example.com" required>
+                </label>
+
+                <label>
+                    Phone Number
+                    <input type="tel" placeholder="Enter your phone number">
+                </label>
+
+                <label>
+                    Learning Level
+                    <select>
+                        <option>Beginner</option>
+                        <option selected>Intermediate</option>
+                        <option>Advanced</option>
+                    </select>
+                </label>
+
+                <button class="primary-button" type="submit">Save Profile</button>
+            </form>
+        </section>
+
+        <!-- ================= SETTINGS ================= -->
+        <section class="content-section" id="settings">
+            <div class="page-intro">
+                <p class="eyebrow">MAKE IT YOUR OWN</p>
+                <h2>Settings</h2>
+                <p>Customize the appearance of your learning dashboard.</p>
+            </div>
+
+            <article class="panel settings-panel">
+                <div class="setting-row">
+                    <div>
+                        <h3>Dark Mode</h3>
+                        <p>Switch between light and dark themes.</p>
+                    </div>
+
+                    <button type="button" class="switch" id="themeSetting" aria-label="Toggle dark mode">
+                        <span></span>
+                    </button>
+                </div>
+
+                <div class="setting-row">
+                    <div>
+                        <h3>Right-to-left Layout</h3>
+                        <p>Preview the dashboard in RTL direction.</p>
+                    </div>
+
+                    <button type="button" class="switch" id="rtlSetting" aria-label="Toggle RTL layout">
+                        <span></span>
+                    </button>
+                </div>
+            </article>
+        </section>
+
+        <!-- ================= SUPPORT ================= -->
+        <section class="content-section" id="support">
+            <div class="page-intro">
+                <p class="eyebrow">WE'RE HERE TO HELP</p>
+                <h2>Learning Support</h2>
+                <p>Need help with course access, recordings, or your learning plan?</p>
+            </div>
+
+            <article class="panel support-panel">
+                <i data-lucide="messages-square"></i>
+
+                <h2>Let's get you back on track.</h2>
+
+                <p>Contact your academy support team for assistance with your student account.</p>
+
+                <a class="primary-button" href="mailto:support@trademasters.example">
+                    Contact Support <i data-lucide="arrow-up-right"></i>
+                </a>
+            </article>
+        </section>
+
+        <footer class="main-footer">
+            <span>&copy; <span id="dashboardFooterYear"></span> TradeMasters Student Portal</span>
+            <span>Learn the market. Practice with purpose.</span>
+        </footer>
+    </main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="main.js"></script>
+<script src="Dashboard.js"></script>
+</body>
+</html>

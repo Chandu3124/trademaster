@@ -1,0 +1,1837 @@
+ 
+ <!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TradeMasters | Stock Market Trading Academy</title>
+
+    <meta name="description"
+        content="TradeMasters Stock Market Trading Academy provides stock market education, trading courses, and learning resources.">
+
+    <meta name="keywords"
+        content="TradeMasters, stock market academy, trading courses, technical analysis, trading education">
+
+    <meta name="author" content="TradeMasters">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@0.542.0/dist/umd/lucide.min.js" defer></script>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="resources.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header" id="siteHeader">
+
+        <div class="header-container">
+
+            <!-- BRAND -->
+            <a href="index.html" class="brand" aria-label="TradeMasters Home">
+
+                <img src="logo_light.png" alt="TradeMasters Logo" class="brand-logo" id="brandLogo">
+
+                <span class="brand-text">
+                    <span class="brand-title">
+                        <span class="brand-trade">TRADE</span><span class="brand-masters">MASTERS</span>
+                    </span>
+
+                    <span class="brand-subtitle">
+                        STOCK MARKET TRADING ACADEMY
+                    </span>
+                </span>
+
+            </a>
+
+
+            <!-- CENTER NAVIGATION -->
+            <div class="header-nav" id="mainNavigation">
+
+                <nav class="navbar" aria-label="Main navigation">
+
+                    <ul class="nav-list">
+
+                        <!-- HOME DROPDOWN -->
+                        <li class="nav-item dropdown">
+
+                            <button class="nav-link dropdown-toggle" id="homeDropdownToggle" type="button"
+                                aria-expanded="false" aria-controls="homeDropdownMenu">
+
+                                <span>Home</span>
+                                <i data-lucide="chevron-down"></i>
+
+                            </button>
+
+                            <ul class="dropdown-menu" id="homeDropdownMenu">
+
+                                <li>
+                                    <a href="index.html" class="dropdown-link">Home 1</a>
+                                </li>
+
+                                <li>
+                                    <a href="home2.html" class="dropdown-link">Home 2</a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+
+                        <!-- ABOUT -->
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">About</a>
+                        </li>
+
+
+                        <!-- COURSES -->
+                        <li class="nav-item">
+                            <a href="courses.html" class="nav-link">Courses</a>
+                        </li>
+
+
+                        <!-- RESOURCES -->
+                        <li class="nav-item">
+                            <a href="resources.html" class="nav-link">Resources</a>
+                        </li>
+
+
+                        <!-- CONTACT -->
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">Contact</a>
+                        </li>
+
+
+                        <!-- DASHBOARD -->
+                        <li class="nav-item">
+                            <a href="dashboard.html" class="nav-link">Dashboard</a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+
+                <!-- MOBILE LOGIN -->
+                <a href="login.html" class="login-button mobile-login">
+
+                    <i data-lucide="user-round"></i>
+                    <span>Login</span>
+
+                </a>
+
+            </div>
+
+
+            <!-- DESKTOP HEADER ACTIONS -->
+            <div class="header-actions">
+
+                <button type="button" class="icon-button js-rtl-toggle" aria-label="Switch text direction"
+                    title="Switch text direction">
+
+                    <i data-lucide="arrow-left-right"></i>
+
+                </button>
+
+
+                <button type="button" class="icon-button js-theme-toggle" aria-label="Switch to dark mode"
+                    title="Toggle dark mode">
+
+                    <i data-lucide="moon"></i>
+
+                </button>
+
+
+                <a href="login.html" class="login-button desktop-login">
+
+                    <i data-lucide="user-round"></i>
+                    <span>Login</span>
+
+                </a>
+
+            </div>
+
+
+            <!-- MOBILE HEADER ACTIONS -->
+            <div class="mobile-actions">
+
+                <button type="button" class="icon-button js-rtl-toggle" aria-label="Switch text direction"
+                    title="Switch text direction">
+
+                    <i data-lucide="arrow-left-right"></i>
+
+                </button>
+
+
+                <button type="button" class="icon-button js-theme-toggle" aria-label="Switch to dark mode"
+                    title="Toggle dark mode">
+
+                    <i data-lucide="moon"></i>
+
+                </button>
+
+
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button"
+                    aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNavigation">
+
+                    <i data-lucide="menu"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="page-content" id="mainContent">
+
+        <!-- =====================================================
+     TRADEMASTERS — RESOURCES HERO
+===================================================== -->
+
+<section class="tm-resources-hero" id="resources">
+
+    <div class="tm-resources-hero-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="tm-resources-hero-content">
+
+            <!-- Tagline -->
+            <div class="tm-resources-hero-tagline">
+                <i data-lucide="book-open"></i>
+                <span>KNOWLEDGE STARTS HERE</span>
+            </div>
+
+            <!-- Heading -->
+            <h1 class="tm-resources-hero-title">
+                Free Resources to
+                <span>Strengthen Your Market Understanding.</span>
+            </h1>
+
+            <!-- Description -->
+            <p class="tm-resources-hero-description">
+                Explore practical learning resources designed to help you
+                understand stock market concepts, develop analytical skills,
+                and build your financial market knowledge at your own pace.
+            </p>
+
+            <!-- Buttons -->
+            <div class="tm-resources-hero-actions">
+
+                <a href="#all-resources"
+                   class="tm-resources-hero-btn tm-resources-hero-btn-primary">
+                    Explore All Resources
+                    <i data-lucide="arrow-up-right"></i>
+                </a>
+
+                <a href="#beginner-guides"
+                   class="tm-resources-hero-btn tm-resources-hero-btn-secondary">
+                    View Beginner Guides
+                    <i data-lucide="book-open"></i>
+                </a>
+
+            </div>
+
+            <!-- Resource Categories -->
+            <div class="tm-resources-hero-categories">
+
+                <div class="tm-resources-hero-category">
+                    <span class="tm-resources-hero-category-icon">
+                        <i data-lucide="graduation-cap"></i>
+                    </span>
+                    <span>Beginner Guides</span>
+                </div>
+
+                <div class="tm-resources-hero-category">
+                    <span class="tm-resources-hero-category-icon">
+                        <i data-lucide="chart-no-axes-combined"></i>
+                    </span>
+                    <span>Technical Analysis</span>
+                </div>
+
+                <div class="tm-resources-hero-category">
+                    <span class="tm-resources-hero-category-icon">
+                        <i data-lucide="files"></i>
+                    </span>
+                    <span>Trading Tools &amp; Templates</span>
+                </div>
+
+                <div class="tm-resources-hero-category">
+                    <span class="tm-resources-hero-category-icon">
+                        <i data-lucide="book-marked"></i>
+                    </span>
+                    <span>Market Glossary</span>
+                </div>
+
+                <div class="tm-resources-hero-category">
+                    <span class="tm-resources-hero-category-icon">
+                        <i data-lucide="play-circle"></i>
+                    </span>
+                    <span>Educational Videos</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="tm-resources-hero-visual">
+
+            <div class="tm-resources-image-frame">
+                <img
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85"
+                    alt="Stock market learning and financial data analysis"
+                >
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TRADEMASTERS — SECTION 2: BEGINNER'S LEARNING LIBRARY
+===================================================== -->
+
+<section class="tm-beginner-library" id="beginner-library">
+
+    <div class="tm-beginner-library-container">
+
+        <!-- SECTION HEADER -->
+        <div class="tm-library-header">
+
+            <div class="tm-library-tagline">
+                <i data-lucide="book-open"></i>
+                <span>START YOUR LEARNING JOURNEY</span>
+            </div>
+
+            <h2 class="tm-library-heading">
+                Understand the Basics,
+                <span>One Concept at a Time.</span>
+            </h2>
+
+            <p class="tm-library-description">
+                Build a strong foundation in stock market education with
+                beginner-friendly guides, essential terminology, and
+                straightforward explanations of important market concepts.
+            </p>
+
+        </div>
+
+        <!-- RESOURCE CARDS -->
+        <div class="tm-library-resources">
+
+            <!-- RESOURCE 01 -->
+            <article class="tm-library-card">
+
+                <div class="tm-library-card-top">
+
+                    <span class="tm-library-number">01</span>
+
+                    <div class="tm-library-card-icon">
+                        <i data-lucide="chart-no-axes-combined"></i>
+                    </div>
+
+                    <span class="tm-library-level">
+                        <i data-lucide="signal"></i>
+                        Beginner
+                    </span>
+
+                </div>
+
+                <div class="tm-library-card-content">
+
+                    <span class="tm-library-format">
+                        EDUCATIONAL GUIDE
+                    </span>
+
+                    <h3>Stock Market Basics Guide</h3>
+
+                    <p>
+                        A beginner-friendly introduction to shares,
+                        stock exchanges, market participants, and
+                        essential terminology.
+                    </p>
+
+                    <a href="#" class="tm-library-card-link">
+                        Read the Guide
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+            <!-- RESOURCE 02 -->
+            <article class="tm-library-card">
+
+                <div class="tm-library-card-top">
+
+                    <span class="tm-library-number">02</span>
+
+                    <div class="tm-library-card-icon">
+                        <i data-lucide="scale"></i>
+                    </div>
+
+                    <span class="tm-library-level">
+                        <i data-lucide="signal"></i>
+                        Beginner
+                    </span>
+
+                </div>
+
+                <div class="tm-library-card-content">
+
+                    <span class="tm-library-format">
+                        LEARNING ARTICLE
+                    </span>
+
+                    <h3>Investing vs. Trading</h3>
+
+                    <p>
+                        Learn about the general differences between
+                        investing and trading, including their objectives,
+                        time horizons, and risk considerations.
+                    </p>
+
+                    <a href="#" class="tm-library-card-link">
+                        Explore the Topic
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+            <!-- RESOURCE 03 -->
+            <article class="tm-library-card">
+
+                <div class="tm-library-card-top">
+
+                    <span class="tm-library-number">03</span>
+
+                    <div class="tm-library-card-icon">
+                        <i data-lucide="wallet"></i>
+                    </div>
+
+                    <span class="tm-library-level">
+                        <i data-lucide="signal"></i>
+                        Beginner
+                    </span>
+
+                </div>
+
+                <div class="tm-library-card-content">
+
+                    <span class="tm-library-format">
+                        EDUCATIONAL GUIDE
+                    </span>
+
+                    <h3>Demat &amp; Trading Account Basics</h3>
+
+                    <p>
+                        Understand the general purpose of Demat and
+                        trading accounts and how they fit into the
+                        securities market.
+                    </p>
+
+                    <a href="#" class="tm-library-card-link">
+                        Learn the Basics
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+            <!-- RESOURCE 04 -->
+            <article class="tm-library-card">
+
+                <div class="tm-library-card-top">
+
+                    <span class="tm-library-number">04</span>
+
+                    <div class="tm-library-card-icon">
+                        <i data-lucide="book-text"></i>
+                    </div>
+
+                    <span class="tm-library-level">
+                        <i data-lucide="signal"></i>
+                        Beginner
+                    </span>
+
+                </div>
+
+                <div class="tm-library-card-content">
+
+                    <span class="tm-library-format">
+                        GLOSSARY
+                    </span>
+
+                    <h3>Common Stock Market Terms</h3>
+
+                    <p>
+                        Explore commonly used terms such as equity,
+                        volume, volatility, liquidity, market
+                        capitalization, and index.
+                    </p>
+
+                    <a href="#" class="tm-library-card-link">
+                        Browse the Glossary
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TRADEMASTERS — SECTION 3: TECHNICAL ANALYSIS RESOURCES
+===================================================== -->
+
+<section class="tm-analysis-resources" id="technical-resources">
+
+    <div class="tm-analysis-container">
+
+        <!-- Section Header -->
+        <div class="tm-analysis-header">
+
+            <div class="tm-analysis-eyebrow">
+                <i data-lucide="chart-no-axes-combined"></i>
+                <span>UNDERSTAND THE CHARTS</span>
+            </div>
+
+            <h2 class="tm-analysis-heading">
+                Make Chart Learning
+                <span>More Structured.</span>
+            </h2>
+
+            <p class="tm-analysis-description">
+                Explore beginner-friendly resources that help you understand
+                chart patterns, price levels, technical indicators, and
+                the fundamentals of educational chart analysis.
+            </p>
+
+        </div>
+
+
+        <!-- Resource Cards -->
+        <div class="tm-analysis-grid">
+
+            <!-- Card 1 -->
+            <article class="tm-analysis-card">
+
+                <div class="tm-analysis-card-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=85"
+                        alt="Candlestick charts showing stock market price movements"
+                        loading="lazy"
+                    >
+
+                    <span class="tm-analysis-image-number">01</span>
+                </div>
+
+                <div class="tm-analysis-card-content">
+
+                    <div class="tm-analysis-card-label">
+                        <i data-lucide="book-open"></i>
+                        <span>BEGINNER GUIDE</span>
+                    </div>
+
+                    <h3>Candlestick Pattern Handbook</h3>
+
+                    <p>
+                        An introduction to commonly studied candlestick
+                        formations and the importance of interpreting
+                        them in context.
+                    </p>
+
+                    <a href="#candlestick-guide" class="tm-analysis-link">
+                        <span>Explore the Guide</span>
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- Card 2 -->
+            <article class="tm-analysis-card">
+
+                <div class="tm-analysis-card-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?auto=format&fit=crop&w=800&q=85"
+                        alt="Stock market price chart for studying support and resistance"
+                        loading="lazy"
+                    >
+
+                    <span class="tm-analysis-image-number">02</span>
+                </div>
+
+                <div class="tm-analysis-card-content">
+
+                    <div class="tm-analysis-card-label">
+                        <i data-lucide="layers"></i>
+                        <span>CHART BASICS</span>
+                    </div>
+
+                    <h3>Support &amp; Resistance Guide</h3>
+
+                    <p>
+                        Learn the basic concepts behind identifying
+                        potential support and resistance zones
+                        on historical charts.
+                    </p>
+
+                    <a href="#support-resistance-guide" class="tm-analysis-link">
+                        <span>Explore the Guide</span>
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- Card 3 -->
+            <article class="tm-analysis-card">
+
+                <div class="tm-analysis-card-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=800&q=85"
+                        alt="Financial market charts and technical analysis indicators"
+                        loading="lazy"
+                    >
+
+                    <span class="tm-analysis-image-number">03</span>
+                </div>
+
+                <div class="tm-analysis-card-content">
+
+                    <div class="tm-analysis-card-label">
+                        <i data-lucide="chart-no-axes-combined"></i>
+                        <span>INDICATOR GUIDE</span>
+                    </div>
+
+                    <h3>Technical Indicators Explained</h3>
+
+                    <p>
+                        Understand the purpose, interpretation,
+                        and limitations of popular technical
+                        indicators used in chart analysis.
+                    </p>
+
+                    <a href="#indicators-guide" class="tm-analysis-link">
+                        <span>Explore the Guide</span>
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- Card 4 -->
+            <article class="tm-analysis-card">
+
+                <div class="tm-analysis-card-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=85"
+                        alt="Notebook and documents used for chart analysis planning"
+                        loading="lazy"
+                    >
+
+                    <span class="tm-analysis-image-number">04</span>
+                </div>
+
+                <div class="tm-analysis-card-content">
+
+                    <div class="tm-analysis-card-label">
+                        <i data-lucide="clipboard-check"></i>
+                        <span>PRACTICAL CHECKLIST</span>
+                    </div>
+
+                    <h3>Chart Analysis Checklist</h3>
+
+                    <p>
+                        A checklist for reviewing trends, price levels,
+                        volume, indicators, and risk considerations
+                        during educational chart analysis.
+                    </p>
+
+                    <a href="#chart-checklist" class="tm-analysis-link">
+                        <span>Explore the Guide</span>
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- Bottom CTA -->
+        <div class="tm-analysis-cta">
+
+            <div class="tm-analysis-cta-text">
+                <span class="tm-analysis-cta-icon">
+                    <i data-lucide="graduation-cap"></i>
+                </span>
+
+                <div>
+                    <h3>Ready to Understand the Charts?</h3>
+                    <p>
+                        Build your knowledge one concept at a time.
+                    </p>
+                </div>
+            </div>
+
+            <a href="#courses" class="tm-analysis-cta-button">
+                <span>Explore Technical Analysis</span>
+                <i data-lucide="arrow-up-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TRADEMASTERS — SECTION 4: TRADING TOOLS & TEMPLATES
+===================================================== -->
+
+<section class="tm-tools" id="trading-tools">
+
+    <div class="tm-tools-container">
+
+        <!-- SECTION HEADING -->
+        <div class="tm-tools-heading">
+
+            <span class="tm-tools-label">
+                <i data-lucide="book-open-check"></i>
+                ORGANIZE YOUR LEARNING
+            </span>
+
+            <h2>
+                Practical Tools for
+                <span>Better Learning Habits.</span>
+            </h2>
+
+            <p>
+                Use simple, practical tools to organize your trading
+                education, record your ideas, and track your learning
+                progress in one place.
+            </p>
+
+        </div>
+
+
+        <!-- RESOURCE CARDS -->
+        <div class="tm-tools-grid">
+
+            <!-- CARD 1 -->
+            <article class="tm-tool-card">
+
+                <div class="tm-tool-top">
+
+                    <div class="tm-tool-icon">
+                        <i data-lucide="notebook-pen"></i>
+                    </div>
+
+                    <span class="tm-tool-number">01</span>
+
+                </div>
+
+                <h3>Trading Journal Template</h3>
+
+                <p>
+                    Record simulated trade ideas, entry and exit
+                    assumptions, reasons behind decisions, and
+                    lessons learned from each practice session.
+                </p>
+
+                <div class="tm-tool-bottom">
+
+                    <span class="tm-tool-type">
+                        <i data-lucide="file-spreadsheet"></i>
+                        Downloadable CSV
+                    </span>
+
+                    <button
+                        type="button"
+                        class="tm-tool-button"
+                        id="downloadJournal">
+
+                        Access Journal Template
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- CARD 2 -->
+            <article class="tm-tool-card">
+
+                <div class="tm-tool-top">
+
+                    <div class="tm-tool-icon">
+                        <i data-lucide="chart-no-axes-combined"></i>
+                    </div>
+
+                    <span class="tm-tool-number">02</span>
+
+                </div>
+
+                <h3>Mock Portfolio Tracker</h3>
+
+                <p>
+                    Track virtual holdings, hypothetical purchase
+                    prices, current values, and simulated profit
+                    or loss without using real money.
+                </p>
+
+                <div class="tm-tool-bottom">
+
+                    <span class="tm-tool-type">
+                        <i data-lucide="layout-dashboard"></i>
+                        Interactive Tool
+                    </span>
+
+                    <button
+                        type="button"
+                        class="tm-tool-button"
+                        id="openPortfolio">
+
+                        Explore Portfolio Tracker
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- CARD 3 -->
+            <article class="tm-tool-card">
+
+                <div class="tm-tool-top">
+
+                    <div class="tm-tool-icon">
+                        <i data-lucide="clipboard-list"></i>
+                    </div>
+
+                    <span class="tm-tool-number">03</span>
+
+                </div>
+
+                <h3>Trading Plan Worksheet</h3>
+
+                <p>
+                    Organize your learning objectives, strategy
+                    rules, risk considerations, and review criteria
+                    in a structured planning worksheet.
+                </p>
+
+                <div class="tm-tool-bottom">
+
+                    <span class="tm-tool-type">
+                        <i data-lucide="file-spreadsheet"></i>
+                        Downloadable CSV
+                    </span>
+
+                    <button
+                        type="button"
+                        class="tm-tool-button"
+                        id="downloadPlan">
+
+                        Access Planning Worksheet
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- CARD 4 -->
+            <article class="tm-tool-card">
+
+                <div class="tm-tool-top">
+
+                    <div class="tm-tool-icon">
+                        <i data-lucide="list-checks"></i>
+                    </div>
+
+                    <span class="tm-tool-number">04</span>
+
+                </div>
+
+                <h3>Course Progress Checklist</h3>
+
+                <p>
+                    Keep track of completed lessons, topics that
+                    need revision, and practical exercises as
+                    you progress through your learning journey.
+                </p>
+
+                <div class="tm-tool-bottom">
+
+                    <span class="tm-tool-type">
+                        <i data-lucide="file-spreadsheet"></i>
+                        Downloadable CSV
+                    </span>
+
+                    <button
+                        type="button"
+                        class="tm-tool-button"
+                        id="downloadChecklist">
+
+                        View Learning Checklist
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MOCK PORTFOLIO TRACKER MODAL
+===================================================== -->
+
+<div
+    class="tm-portfolio-modal"
+    id="portfolioModal"
+    aria-hidden="true">
+
+    <div
+        class="tm-portfolio-overlay"
+        id="closePortfolioOverlay">
+    </div>
+
+    <div
+        class="tm-portfolio-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="portfolioTitle">
+
+        <!-- MODAL HEADER -->
+        <div class="tm-portfolio-header">
+
+            <div>
+                <span class="tm-portfolio-eyebrow">
+                    PRACTICE WITHOUT REAL MONEY
+                </span>
+
+                <h2 id="portfolioTitle">
+                    Mock Portfolio Tracker
+                </h2>
+            </div>
+
+            <button
+                type="button"
+                class="tm-portfolio-close"
+                id="closePortfolio"
+                aria-label="Close portfolio tracker">
+
+                <i data-lucide="x"></i>
+
+            </button>
+
+        </div>
+
+
+        <p class="tm-portfolio-description">
+            Add hypothetical holdings and enter your own assumed
+            prices to explore portfolio values and simulated profit
+            or loss. This tool does not use live market prices.
+        </p>
+
+
+        <!-- PORTFOLIO SUMMARY -->
+        <div class="tm-portfolio-summary">
+
+            <div class="tm-summary-card">
+                <span>Total Invested</span>
+                <strong id="totalInvested">₹0.00</strong>
+            </div>
+
+            <div class="tm-summary-card">
+                <span>Current Value</span>
+                <strong id="currentValue">₹0.00</strong>
+            </div>
+
+            <div class="tm-summary-card">
+                <span>Simulated P/L</span>
+                <strong id="portfolioProfit">₹0.00</strong>
+            </div>
+
+        </div>
+
+
+        <!-- ADD HOLDING FORM -->
+        <form
+            class="tm-portfolio-form"
+            id="portfolioForm">
+
+            <div class="tm-form-field">
+                <label for="stockName">Asset Name</label>
+
+                <input
+                    type="text"
+                    id="stockName"
+                    placeholder="e.g. Example Company"
+                    required>
+            </div>
+
+            <div class="tm-form-field">
+                <label for="stockQuantity">Quantity</label>
+
+                <input
+                    type="number"
+                    id="stockQuantity"
+                    min="0.01"
+                    step="any"
+                    placeholder="10"
+                    required>
+            </div>
+
+            <div class="tm-form-field">
+                <label for="purchasePrice">
+                    Purchase Price (₹)
+                </label>
+
+                <input
+                    type="number"
+                    id="purchasePrice"
+                    min="0"
+                    step="any"
+                    placeholder="100"
+                    required>
+            </div>
+
+            <div class="tm-form-field">
+                <label for="currentStockPrice">
+                    Assumed Current Price (₹)
+                </label>
+
+                <input
+                    type="number"
+                    id="currentStockPrice"
+                    min="0"
+                    step="any"
+                    placeholder="110"
+                    required>
+            </div>
+
+            <button
+                type="submit"
+                class="tm-portfolio-add">
+
+                <i data-lucide="plus"></i>
+                Add Holding
+
+            </button>
+
+        </form>
+
+
+        <!-- PORTFOLIO TABLE -->
+        <div class="tm-portfolio-table-wrap">
+
+            <table class="tm-portfolio-table">
+
+                <thead>
+                    <tr>
+                        <th>Asset</th>
+                        <th>Quantity</th>
+                        <th>Buy Price</th>
+                        <th>Assumed Price</th>
+                        <th>Simulated P/L</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="portfolioTableBody"></tbody>
+
+            </table>
+
+            <div
+                class="tm-portfolio-empty"
+                id="portfolioEmpty">
+
+                <i data-lucide="chart-no-axes-combined"></i>
+
+                <p>No holdings added yet.</p>
+
+                <span>
+                    Add a hypothetical holding to get started.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- DISCLAIMER -->
+        <div class="tm-portfolio-footer">
+
+            <i data-lucide="info"></i>
+
+            <p>
+                Educational use only. Values are based on the prices
+                you enter and do not represent actual investments,
+                live market data, or financial advice.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TRADEMASTERS — SECTION 5: VIDEO LEARNING LIBRARY
+===================================================== -->
+
+<section class="tm-video-library" id="video-library">
+    <div class="tm-video-container">
+
+        <!-- LEFT: VIDEO PLAYER -->
+        <div class="tm-video-visual">
+
+            <div class="tm-video-frame">
+
+                <iframe
+                    id="tmMainVideo"
+                    src="https://www.youtube-nocookie.com/embed/VIDEO_ID"
+                    title="TradeMasters Video Learning Library"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+
+                <span class="tm-video-corner tm-video-corner-top"></span>
+                <span class="tm-video-corner tm-video-corner-bottom"></span>
+
+            </div>
+
+            <div class="tm-video-footer">
+
+                <div class="tm-video-status">
+                    <span class="tm-video-status-dot"></span>
+                    <span>VIDEO LEARNING LIBRARY</span>
+                </div>
+
+                <h3 id="tmCurrentVideoTitle">
+                    How the Stock Market Works
+                </h3>
+
+                <i data-lucide="play-circle"></i>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT: VIDEO CONTENT -->
+        <div class="tm-video-content">
+
+            <div class="tm-video-label">
+                <i data-lucide="graduation-cap"></i>
+                <span>WATCH. UNDERSTAND. REVISE.</span>
+            </div>
+
+            <h2 class="tm-video-heading">
+                Learn Important Concepts Through
+                <span>Visual Explanations.</span>
+            </h2>
+
+            <p class="tm-video-description">
+                Explore educational videos that explain stock market
+                concepts, chart patterns, and trading terminology.
+                Learn at your own pace and strengthen your market knowledge
+                through clear visual explanations.
+            </p>
+
+
+            <!-- VIDEO LESSONS -->
+            <div class="tm-video-list">
+
+                <button
+                    class="tm-video-item active"
+                    type="button"
+                    data-video-id="VIDEO_ID"
+                    data-video-title="How the Stock Market Works">
+
+                    <span class="tm-video-item-icon">
+                        <i data-lucide="chart-no-axes-combined"></i>
+                    </span>
+
+                    <span class="tm-video-item-content">
+                        <strong>How the Stock Market Works</strong>
+                        <small>
+                            Understand market structure and the securities
+                            traded in the market.
+                        </small>
+                    </span>
+
+                    <span class="tm-video-item-play">
+                        <i data-lucide="play"></i>
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="tm-video-item"
+                    type="button"
+                    data-video-id="VIDEO_ID"
+                    data-video-title="Understanding Candlestick Charts">
+
+                    <span class="tm-video-item-icon">
+                        <i data-lucide="candlestick-chart"></i>
+                    </span>
+
+                    <span class="tm-video-item-content">
+                        <strong>Understanding Candlestick Charts</strong>
+                        <small>
+                            Learn how candlesticks represent price movements
+                            over a selected period.
+                        </small>
+                    </span>
+
+                    <span class="tm-video-item-play">
+                        <i data-lucide="play"></i>
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="tm-video-item"
+                    type="button"
+                    data-video-id="VIDEO_ID"
+                    data-video-title="Introduction to Support and Resistance">
+
+                    <span class="tm-video-item-icon">
+                        <i data-lucide="chart-no-axes-column-increasing"></i>
+                    </span>
+
+                    <span class="tm-video-item-content">
+                        <strong>Introduction to Support and Resistance</strong>
+                        <small>
+                            Explore historical price levels and potential
+                            market-interest areas.
+                        </small>
+                    </span>
+
+                    <span class="tm-video-item-play">
+                        <i data-lucide="play"></i>
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="tm-video-item"
+                    type="button"
+                    data-video-id="VIDEO_ID"
+                    data-video-title="Risk Management Fundamentals">
+
+                    <span class="tm-video-item-icon">
+                        <i data-lucide="shield-check"></i>
+                    </span>
+
+                    <span class="tm-video-item-content">
+                        <strong>Risk Management Fundamentals</strong>
+                        <small>
+                            Understand risk assessment, position sizing,
+                            and disciplined planning.
+                        </small>
+                    </span>
+
+                    <span class="tm-video-item-play">
+                        <i data-lucide="play"></i>
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- CTA BUTTON -->
+            <a href="#video-resources" class="tm-video-button">
+                <span>Explore Video Resources</span>
+                <i data-lucide="arrow-up-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =====================================================
+     TRADEMASTERS — SECTION 6: FAQ
+===================================================== -->
+
+<section class="tm-resource-faq" id="resource-faq">
+
+    <div class="tm-resource-faq-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="tm-resource-faq-intro">
+
+            <div class="tm-resource-faq-tagline">
+                <i data-lucide="circle-help"></i>
+                <span>RESOURCE HELP CENTER</span>
+            </div>
+
+            <h2 class="tm-resource-faq-title">
+                Everything You Need to Know About Our
+                <span>Free Resources.</span>
+            </h2>
+
+            <p class="tm-resource-faq-description">
+                Have questions about our learning materials?
+                Find answers about accessing resources, using templates,
+                and making the most of your learning experience.
+            </p>
+
+            <!-- Help Card -->
+            <div class="tm-resource-faq-help">
+
+                <div class="tm-resource-faq-help-icon">
+                    <i data-lucide="message-circle-question"></i>
+                </div>
+
+                <div class="tm-resource-faq-help-content">
+                    <h3>Still have questions?</h3>
+                    <p>
+                        We're here to help you find the right learning resources.
+                    </p>
+
+                    <a href="#contact" class="tm-resource-faq-help-link">
+                        Contact Our Team
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Bottom Note -->
+            <div class="tm-resource-faq-note">
+                <i data-lucide="shield-check"></i>
+                <p>
+                    Our resources are designed for educational purposes
+                    and market knowledge development.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- RIGHT FAQ ACCORDION -->
+        <div class="tm-resource-faq-list">
+
+            <!-- FAQ 1 -->
+            <div class="tm-resource-faq-item active">
+
+                <button
+                    class="tm-resource-faq-question"
+                    type="button"
+                    aria-expanded="true"
+                >
+                    <span class="tm-resource-faq-number">01</span>
+
+                    <span class="tm-resource-faq-question-text">
+                        Are the resources free?
+                    </span>
+
+                    <span class="tm-resource-faq-toggle">
+                        <i data-lucide="plus"></i>
+                    </span>
+                </button>
+
+                <div class="tm-resource-faq-answer">
+                    <div class="tm-resource-faq-answer-inner">
+                        <p>
+                            Resources labeled free can be accessed without
+                            purchasing a course, subject to any stated
+                            access requirements.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="tm-resource-faq-item">
+
+                <button
+                    class="tm-resource-faq-question"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span class="tm-resource-faq-number">02</span>
+
+                    <span class="tm-resource-faq-question-text">
+                        Do I need to register?
+                    </span>
+
+                    <span class="tm-resource-faq-toggle">
+                        <i data-lucide="plus"></i>
+                    </span>
+                </button>
+
+                <div class="tm-resource-faq-answer">
+                    <div class="tm-resource-faq-answer-inner">
+                        <p>
+                            Some resources may be available publicly,
+                            while others may require a student account.
+                            Clearly label any registration requirements.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="tm-resource-faq-item">
+
+                <button
+                    class="tm-resource-faq-question"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span class="tm-resource-faq-number">03</span>
+
+                    <span class="tm-resource-faq-question-text">
+                        Can beginners use these resources?
+                    </span>
+
+                    <span class="tm-resource-faq-toggle">
+                        <i data-lucide="plus"></i>
+                    </span>
+                </button>
+
+                <div class="tm-resource-faq-answer">
+                    <div class="tm-resource-faq-answer-inner">
+                        <p>
+                            Yes. The beginner guides are designed to
+                            introduce fundamental concepts in an
+                            accessible format.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="tm-resource-faq-item">
+
+                <button
+                    class="tm-resource-faq-question"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span class="tm-resource-faq-number">04</span>
+
+                    <span class="tm-resource-faq-question-text">
+                        Are the templates suitable for real trading?
+                    </span>
+
+                    <span class="tm-resource-faq-toggle">
+                        <i data-lucide="plus"></i>
+                    </span>
+                </button>
+
+                <div class="tm-resource-faq-answer">
+                    <div class="tm-resource-faq-answer-inner">
+                        <p>
+                            The templates are educational tools. Users
+                            should understand their limitations and assess
+                            their financial circumstances and risks before
+                            making actual trading decisions.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="tm-resource-faq-item">
+
+                <button
+                    class="tm-resource-faq-question"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span class="tm-resource-faq-number">05</span>
+
+                    <span class="tm-resource-faq-question-text">
+                        Can I use the resources alongside a course?
+                    </span>
+
+                    <span class="tm-resource-faq-toggle">
+                        <i data-lucide="plus"></i>
+                    </span>
+                </button>
+
+                <div class="tm-resource-faq-answer">
+                    <div class="tm-resource-faq-answer-inner">
+                        <p>
+                            Yes. They can complement course lessons and
+                            help you revise key concepts.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="tm-resource-faq-item">
+
+                <button
+                    class="tm-resource-faq-question"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    <span class="tm-resource-faq-number">06</span>
+
+                    <span class="tm-resource-faq-question-text">
+                        Do the resources provide investment recommendations?
+                    </span>
+
+                    <span class="tm-resource-faq-toggle">
+                        <i data-lucide="plus"></i>
+                    </span>
+                </button>
+
+                <div class="tm-resource-faq-answer">
+                    <div class="tm-resource-faq-answer-inner">
+                        <p>
+                            No. Educational materials explain concepts
+                            and should not be treated as personalized
+                            investment advice or buy/sell recommendations.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     TRADEMASTERS — SECTION 7: RESOURCES CTA
+========================================== -->
+
+<section class="tm-resources-cta" id="resources-cta">
+
+    <div class="tm-resources-cta-content">
+
+        <span class="tm-resources-cta-tagline">
+            <i data-lucide="book-open"></i>
+            YOUR NEXT STEP STARTS HERE
+        </span>
+
+        <h2>
+            Keep Learning.
+            <span>Keep Exploring.</span>
+        </h2>
+
+        <p class="tm-resources-cta-description">
+            Build your understanding with free educational guides,
+            chart-analysis references, and learning tools.
+            When you're ready to go deeper, explore our structured
+            courses and continue your journey through TradeMasters.
+        </p>
+
+        <div class="tm-resources-cta-buttons">
+
+            <a href="#courses" class="tm-cta-btn tm-cta-primary">
+                Explore Courses
+                <i data-lucide="arrow-up-right"></i>
+            </a>
+
+            <a href="#all-resources" class="tm-cta-btn tm-cta-secondary">
+                Browse Free Resources
+                <i data-lucide="arrow-right"></i>
+            </a>
+
+        </div>
+
+        <div class="tm-resources-cta-note">
+            <i data-lucide="lightbulb"></i>
+            <span>A stronger understanding begins with a single concept.</span>
+        </div>
+
+    </div>
+
+</section>
+ </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-main">
+
+            <div class="footer-container">
+
+                <!-- BRAND COLUMN -->
+                <div class="footer-column footer-brand-column">
+
+                    <a href="index.html" class="brand footer-brand">
+
+                        <img src="./images/logo_light.png" alt="TradeMasters Logo" class="footer-brand-logo"
+                            id="footerBrandLogo">
+
+                        <span class="brand-text">
+
+                            <span class="brand-title">
+                                <span class="brand-trade">TRADE</span><span class="brand-masters">MASTERS</span>
+                            </span>
+
+                            <span class="brand-subtitle">
+                                STOCK MARKET TRADING ACADEMY
+                            </span>
+
+                        </span>
+
+                    </a>
+
+
+                    <p class="footer-description">
+                        Empowering learners with stock market knowledge,
+                        trading education, and a disciplined approach
+                        to financial markets.
+                    </p>
+
+
+                    <div class="social-links">
+
+                        <a href="#" class="social-link" aria-label="Instagram" title="Instagram">
+                            <i data-lucide="instagram"></i>
+                        </a>
+
+                        <a href="#" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+                            <i data-lucide="linkedin"></i>
+                        </a>
+
+                        <a href="#" class="social-link" aria-label="YouTube" title="YouTube">
+                            <i data-lucide="youtube"></i>
+                        </a>
+
+                        <a href="#" class="social-link" aria-label="Facebook" title="Facebook">
+                            <i data-lucide="facebook"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK LINKS -->
+                <div class="footer-column">
+
+                    <h3 class="footer-heading">Quick Links</h3>
+
+                    <ul class="footer-links">
+
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Our Courses</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- LEARNING -->
+                <div class="footer-column">
+
+                    <h3 class="footer-heading">Learning</h3>
+
+                    <ul class="footer-links">
+
+                        <li><a href="courses.html">Trading Basics</a></li>
+                        <li><a href="courses.html">Technical Analysis</a></li>
+                        <li><a href="courses.html">Market Strategies</a></li>
+                        <li><a href="courses.html">Risk Management</a></li>
+                        <li><a href="dashboard.html">Student Dashboard</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- ADDITIONAL PAGES -->
+                <div class="footer-column">
+
+                    <h3 class="footer-heading">Additional Pages</h3>
+
+                    <ul class="footer-links">
+
+                        <li><a href="404.html">404 Error</a></li>
+                        <li><a href="coming-soon.html">Coming Soon</a></li>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- GET IN TOUCH -->
+                <div class="footer-column footer-contact-column">
+
+                    <h3 class="footer-heading">Get in Touch</h3>
+
+                    <ul class="footer-contact-list">
+
+                        <li>
+
+                            <span class="footer-contact-icon">
+                                <i data-lucide="mail"></i>
+                            </span>
+
+                            <a href="mailto:support@yourdomain.com">
+                                support@yourdomain.com
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="footer-contact-icon">
+                                <i data-lucide="phone"></i>
+                            </span>
+
+                            <a href="tel:+910000000000">
+                                +91 00000 00000
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="footer-contact-icon">
+                                <i data-lucide="clock"></i>
+                            </span>
+
+                            <span>
+                                Monday – Saturday<br>
+                                9:00 AM – 6:00 PM
+                            </span>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+        <div class="footer-bottom">
+
+            <div class="footer-container footer-bottom-container">
+
+                <p class="copyright">
+                    &copy; <span id="currentYear"></span>
+                    TradeMasters. All rights reserved.
+                </p>
+
+
+                <div class="footer-bottom-actions">
+
+                    <div class="legal-links">
+
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms &amp; Conditions</a>
+
+                    </div>
+
+
+                    <button type="button" class="back-to-top" id="backToTop" aria-label="Go to top"
+                        title="Go to top">
+
+                        <i data-lucide="arrow-up"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="main.js"></script>
+<script src="resources.js"></script>
+</body>
+
+</html>

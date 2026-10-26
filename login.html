@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TradeMasters | Student Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@0.542.0/dist/umd/lucide.min.js" defer></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="page-controls">
+        <button type="button" class="icon-button js-rtl-toggle"
+            aria-label="Switch text direction" title="Switch text direction">
+            <i data-lucide="arrow-left-right"></i>
+        </button>
+
+        <button type="button" class="icon-button js-theme-toggle"
+            aria-label="Switch to dark mode" title="Toggle dark mode">
+            <i data-lucide="moon"></i>
+        </button>
+    </div>
+
+    <div class="container">
+        <div class="form-card">
+            <div class="logo-wrap">
+                <a href="index.html" class="brand login-brand" aria-label="TradeMasters Home">
+                    <img
+                        id="brandLogo"
+                        src="logo_light.png"
+                        alt="TradeMasters Logo"
+                        class="brand-logo"
+                    >
+
+                    <span class="brand-text">
+                        <span class="brand-title">
+                            <span class="brand-trade">TRADE</span><span class="brand-masters">MASTERS</span>
+                        </span>
+
+                        <span class="brand-subtitle">
+                            STOCK MARKET TRADING ACADEMY
+                        </span>
+                    </span>
+                </a>
+            </div>
+
+            <!-- LOGIN FORM -->
+            <form id="loginForm" class="auth-form">
+                <h2 class="form-title">Student Login</h2>
+
+                <div class="form-fields">
+                    <div class="input-box">
+                        <label for="loginEmail" class="input-label">Email Address</label>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            name="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-box">
+                        <label for="loginPassword" class="input-label">Password</label>
+
+                        <div class="password-wrap">
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button type="button" class="password-toggle"
+                                data-target="loginPassword"
+                                aria-label="Show password" aria-pressed="false">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="remember-row">
+                        <label class="remember-me" for="rememberMe">
+                            <input type="checkbox" id="rememberMe" name="rememberMe">
+                            <span>Remember me</span>
+                        </label>
+
+                        <a href="#" class="forgot-link" id="forgotPasswordLink">
+                            Forgot password?
+                        </a>
+                    </div>
+                </div>
+
+                <button type="submit" class="main-btn">Login</button>
+
+                <div class="social-login">
+                    <div class="social-divider">
+                        <span>or continue with</span>
+                    </div>
+
+                    <button type="button" class="social-btn google-btn" id="googleLogin">
+                        <span class="social-icon">
+                            <i class="fa-brands fa-google"></i>
+                        </span>
+                        Continue with Google
+                    </button>
+
+                    <button type="button" class="social-btn apple-btn" id="appleLogin">
+                        <span class="social-icon">
+                            <i class="fa-brands fa-apple"></i>
+                        </span>
+                        Continue with Apple
+                    </button>
+                </div>
+
+                <p class="switch">
+                    New Student?
+                    <button type="button" class="switch-btn" id="showSignupBtn">
+                        Create Account
+                    </button>
+                </p>
+            </form>
+
+            <!-- SIGNUP FORM -->
+            <form id="signupForm" class="auth-form hide">
+                <h2 class="form-title">Create Account</h2>
+
+                <div class="form-fields">
+                    <div class="input-box">
+                        <label for="signupName" class="input-label">Full Name</label>
+
+                        <input
+                            type="text"
+                            id="signupName"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-box">
+                        <label for="signupEmail" class="input-label">Email Address</label>
+
+                        <input
+                            type="email"
+                            id="signupEmail"
+                            name="signupEmail"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-box">
+                            <label for="signupPhone" class="input-label">Phone Number</label>
+
+                            <input
+                                type="tel"
+                                id="signupPhone"
+                                name="phone"
+                                placeholder="Enter phone number"
+                                autocomplete="tel"
+                                required
+                            >
+                        </div>
+
+                        <div class="input-box">
+                            <label for="signupExperience" class="input-label">Experience</label>
+
+                            <select id="signupExperience" name="experience" required>
+                                <option value="">Select</option>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="signupPassword" class="input-label">Create Password</label>
+
+                        <div class="password-wrap">
+                            <input
+                                type="password"
+                                id="signupPassword"
+                                name="signupPassword"
+                                placeholder="Create your password"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <button type="button" class="password-toggle"
+                                data-target="signupPassword"
+                                aria-label="Show password" aria-pressed="false">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="main-btn signup-button">Register</button>
+
+                <div class="social-login">
+                    <div class="social-divider">
+                        <span>or continue with</span>
+                    </div>
+
+                    <button type="button" class="social-btn google-btn" id="googleSignup">
+                        <span class="social-icon">
+                            <i class="fa-brands fa-google"></i>
+                        </span>
+                        Continue with Google
+                    </button>
+
+                    <button type="button" class="social-btn apple-btn" id="appleSignup">
+                        <span class="social-icon">
+                            <i class="fa-brands fa-apple"></i>
+                        </span>
+                        Continue with Apple
+                    </button>
+                </div>
+
+                <p class="switch">
+                    Already have an account?
+                    <button type="button" class="switch-btn" id="showLoginBtn">
+                        Login
+                    </button>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="main.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

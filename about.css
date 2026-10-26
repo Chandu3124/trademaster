@@ -1,0 +1,4456 @@
+/* =====================================================
+   TRADEMASTERS — ABOUT HERO
+===================================================== */
+
+.tm-about-hero,
+.tm-about-hero * {
+    box-sizing: border-box;
+}
+
+.tm-about-hero {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    height: 90vh;
+    min-height: 580px;
+    max-height: 900px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    /* Equal left and right padding */
+    padding: 30px 6.5%;
+
+    background: var(--bg);
+    color: var(--text);
+
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.tm-about-hero-container {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 5%;
+
+    width: 100%;
+    max-width: 1600px;
+    height: 100%;
+
+    margin-inline: auto;
+}
+
+
+/* =====================================================
+   LEFT CONTENT
+===================================================== */
+
+.tm-about-hero-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+    max-width: 690px;
+
+    opacity: 0;
+    transform: translateY(18px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.tm-about-hero.tm-about-visible .tm-about-hero-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   SMALL LABEL
+===================================================== */
+
+.tm-about-hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    width: fit-content;
+    max-width: 100%;
+    margin-bottom: 20px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+
+    color: var(--color-secondary);
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.tm-about-hero-label i {
+    width: 18px;
+    height: 18px;
+
+    flex-shrink: 0;
+
+    color: var(--color-secondary);
+    stroke-width: 1.8;
+}
+
+
+/* =====================================================
+   MAIN HEADING
+===================================================== */
+
+.tm-about-hero-title {
+    margin: 0 0 22px;
+
+    color: var(--text-heading, var(--text));
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(36px, 3.2vw, 52px);
+
+    font-weight: 700;
+    line-height: 1.16;
+    letter-spacing: -1.2px;
+}
+
+.tm-about-hero-title span {
+    display: inline;
+
+    color: var(--color-secondary);
+
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.tm-about-hero-description {
+    width: 100%;
+    max-width: 610px;
+
+    margin-bottom: 27px;
+}
+
+.tm-about-hero-description p {
+    margin: 0 0 13px;
+
+    color: var(--text-muted, var(--text));
+
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+    font-size: 14px;
+
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.tm-about-hero-description p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.tm-about-hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 13px;
+
+    margin-bottom: 25px;
+}
+
+.tm-about-btn {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 48px;
+
+    padding: 13px 21px;
+
+    border: 1px solid transparent;
+    border-radius: var(--radius-pill, 999px);
+
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+    font-size: 13px;
+    font-weight: 700;
+
+    line-height: 1.3;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.tm-about-btn i {
+    width: 16px;
+    height: 16px;
+
+    flex-shrink: 0;
+
+    transition: transform 0.25s ease;
+}
+
+
+/* Primary button */
+
+.tm-about-btn-primary {
+    background: var(--color-primary);
+    color: #ffffff;
+
+    border-color: var(--color-primary);
+}
+
+.tm-about-btn-primary:hover {
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+.tm-about-btn-primary:hover i {
+    transform: translate(2px, -2px);
+}
+
+
+/* Secondary button */
+
+.tm-about-btn-secondary {
+    background: transparent;
+
+    color: var(--text);
+
+    border: 1px solid var(--color-primary);
+}
+
+.tm-about-btn-secondary:hover {
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+.tm-about-btn-secondary:hover i {
+    transform: translateX(3px);
+}
+
+
+/* =====================================================
+   SUPPORTING NOTE
+===================================================== */
+
+.tm-about-hero-note {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--text-muted, var(--text));
+
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.tm-about-hero-note i {
+    width: 19px;
+    height: 19px;
+
+    flex-shrink: 0;
+
+    color: var(--color-secondary);
+    stroke-width: 1.8;
+}
+
+
+/* =====================================================
+   RIGHT IMAGE AREA
+===================================================== */
+
+.tm-about-hero-visual {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+
+    /* Keep image inside the section's right padding */
+    padding: 0;
+
+    opacity: 0;
+    transform: translateY(18px);
+
+    transition:
+        opacity 0.8s ease 0.12s,
+        transform 0.8s ease 0.12s;
+}
+
+.tm-about-hero.tm-about-visible .tm-about-hero-visual {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   MAIN IMAGE CARD
+   Background shape and border removed
+===================================================== */
+
+.tm-about-image-card {
+    position: relative;
+    isolation: isolate;
+
+    /* Slightly increased image size */
+    width: 88%;
+    height: 86%;
+
+    min-height: 440px;
+    max-height: 700px;
+
+    overflow: hidden;
+
+    border: none;
+
+    border-radius: 44% 56% 20px 20px / 28% 30% 20px 20px;
+
+    background: var(--soft-bg, var(--bg));
+
+    box-shadow:
+        0 22px 55px color-mix(
+            in srgb,
+            var(--text) 12%,
+            transparent
+        );
+
+    transform: rotate(-2deg);
+
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+.tm-about-hero-visual:hover .tm-about-image-card {
+    transform: rotate(0deg);
+
+    box-shadow:
+        0 28px 65px color-mix(
+            in srgb,
+            var(--text) 16%,
+            transparent
+        );
+}
+
+
+/* Image */
+
+.tm-about-image-card > img {
+    position: absolute;
+    inset: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transform: scale(1.01);
+
+    transition: transform 0.6s ease;
+}
+
+.tm-about-hero-visual:hover .tm-about-image-card > img {
+    transform: scale(1.045);
+}
+
+
+/* =====================================================
+   IMAGE OVERLAY
+===================================================== */
+
+.tm-about-image-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 45%,
+        color-mix(in srgb, #000000 20%, transparent) 65%,
+        color-mix(in srgb, #000000 78%, transparent) 100%
+    );
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   IMAGE CAPTION
+===================================================== */
+
+.tm-about-image-caption {
+    position: absolute;
+    z-index: 2;
+
+    right: 22px;
+    bottom: 24px;
+    left: 22px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 17px;
+
+    border: 1px solid color-mix(
+        in srgb,
+        #ffffff 24%,
+        transparent
+    );
+
+    border-radius: 14px;
+
+    background: color-mix(
+        in srgb,
+        #111827 72%,
+        transparent
+    );
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+
+/* Caption icon */
+
+.tm-about-caption-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: var(--color-primary);
+    color: #ffffff;
+}
+
+.tm-about-caption-icon i {
+    width: 21px;
+    height: 21px;
+
+    stroke-width: 1.8;
+}
+
+
+/* Caption text */
+
+.tm-about-caption-content {
+    min-width: 0;
+}
+
+.tm-about-caption-content > span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: color-mix(
+        in srgb,
+        #ffffff 78%,
+        transparent
+    );
+
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+    font-size: 10px;
+
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.tm-about-caption-content h3 {
+    margin: 0 0 4px;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 19px;
+
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.tm-about-caption-content p {
+    margin: 0;
+
+    color: color-mix(
+        in srgb,
+        #ffffff 85%,
+        transparent
+    );
+
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode .tm-about-hero {
+    background: var(--bg);
+    color: var(--text);
+}
+
+body.dark-mode .tm-about-hero-title {
+    color: var(--text-heading, var(--text));
+}
+
+body.dark-mode .tm-about-hero-title span {
+    color: var(--color-secondary);
+}
+
+body.dark-mode .tm-about-hero-description p {
+    color: var(--text-muted, var(--text));
+}
+
+body.dark-mode .tm-about-btn-secondary {
+    color: var(--text);
+    border-color: var(--color-primary);
+}
+
+body.dark-mode .tm-about-btn-secondary:hover {
+    color: #ffffff;
+    border-color: var(--color-secondary);
+}
+
+body.dark-mode .tm-about-image-card {
+    background: var(--bg);
+}
+
+body.dark-mode .tm-about-hero-note {
+    color: var(--text-muted, var(--text));
+}
+
+
+/* =====================================================
+   RTL SUPPORT
+===================================================== */
+
+html[dir="rtl"] .tm-about-hero-content {
+    align-items: flex-start;
+    text-align: right;
+}
+
+html[dir="rtl"] .tm-about-hero-label,
+html[dir="rtl"] .tm-about-hero-note {
+    flex-direction: row;
+}
+
+html[dir="rtl"] .tm-about-hero-actions {
+    flex-direction: row;
+}
+
+html[dir="rtl"] .tm-about-btn-primary:hover i {
+    transform: translate(-2px, -2px);
+}
+
+html[dir="rtl"] .tm-about-btn-secondary:hover i {
+    transform: translateX(-3px);
+}
+
+html[dir="rtl"] .tm-about-image-caption {
+    direction: rtl;
+    text-align: right;
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+.tm-about-hero a:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 4px;
+}
+
+/* =====================================================
+   TRADEMASTERS — SECTION 2: WHO WE ARE
+===================================================== */
+
+.tm-identity,
+.tm-identity * {
+    box-sizing: border-box;
+}
+
+.tm-identity {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    padding: 85px 6.5%;
+
+    background: var(--bg);
+    color: var(--text);
+
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.tm-identity-container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   MAIN LAYOUT
+===================================================== */
+
+.tm-identity-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.92fr)
+        minmax(0, 1.08fr);
+
+    align-items: center;
+    gap: 5%;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   LEFT IMAGE
+===================================================== */
+
+.tm-identity-visual {
+    position: relative;
+
+    width: 100%;
+    height: 650px;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    border-radius: 22px;
+
+    background: var(--soft-bg, var(--bg));
+
+    box-shadow:
+        0 18px 45px
+        color-mix(in srgb, var(--text) 10%, transparent);
+
+    opacity: 0;
+    transform: translateY(24px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.tm-identity.tm-identity-visible .tm-identity-visual {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* IMAGE */
+
+.tm-identity-image {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.7s ease;
+}
+
+.tm-identity-visual:hover .tm-identity-image {
+    transform: scale(1.045);
+}
+
+
+/* IMAGE OVERLAY */
+
+.tm-identity-image-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background: linear-gradient(
+        180deg,
+        transparent 30%,
+        color-mix(in srgb, #000000 22%, transparent) 55%,
+        color-mix(in srgb, #000000 85%, transparent) 100%
+    );
+
+    pointer-events: none;
+}
+
+
+/* TOP ICON */
+
+.tm-identity-image-icon {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+
+    z-index: 2;
+
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid
+        color-mix(in srgb, #ffffff 35%, transparent);
+
+    border-radius: 16px;
+
+    background: color-mix(
+        in srgb,
+        #ffffff 15%,
+        transparent
+    );
+
+    color: #ffffff;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.tm-identity-image-icon svg {
+    width: 25px;
+    height: 25px;
+    stroke-width: 1.8;
+}
+
+
+/* IMAGE CAPTION */
+
+.tm-identity-image-caption {
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    bottom: 32px;
+
+    z-index: 2;
+
+    color: #ffffff;
+}
+
+.tm-identity-image-label {
+    display: inline-block;
+
+    margin-bottom: 13px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    line-height: 1.5;
+
+    color: #ffffff;
+}
+
+.tm-identity-image-caption h3 {
+    margin: 0 0 12px;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: clamp(25px, 2.3vw, 34px);
+    font-weight: 700;
+
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+
+    color: #ffffff;
+}
+
+.tm-identity-image-caption p {
+    max-width: 370px;
+
+    margin: 0;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 1.75;
+
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+
+/* =====================================================
+   RIGHT CONTENT
+===================================================== */
+
+.tm-identity-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+    min-width: 0;
+
+    text-align: left;
+
+    opacity: 0;
+    transform: translateY(24px);
+
+    transition:
+        opacity 0.8s ease 0.12s,
+        transform 0.8s ease 0.12s;
+}
+
+.tm-identity.tm-identity-visible .tm-identity-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   SECTION LABEL
+===================================================== */
+
+.tm-identity-label {
+   display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    width: fit-content;
+    max-width: 100%;
+    margin-bottom: 20px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+
+    color: var(--color-secondary);
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.tm-identity-label svg {
+    width: 18px;
+    height: 18px;
+
+    color: var(--color-secondary);
+
+    stroke-width: 2;
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   MAIN HEADING
+===================================================== */
+
+.tm-identity-heading {
+    width: 100%;
+
+    margin: 0 0 17px;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: clamp(34px, 3.2vw, 47px);
+    font-weight: 700;
+
+    line-height: 1.16;
+    letter-spacing: -1.2px;
+
+    color: var(--text-heading, var(--text));
+}
+
+.tm-identity-heading span {
+    display: block;
+
+    color: var(--color-secondary);
+}
+
+
+/* =====================================================
+   INTRO DESCRIPTION — REDUCED CONTENT
+===================================================== */
+
+.tm-identity-description {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.tm-identity-description p {
+    margin: 0 0 10px;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 1.75;
+
+    color: var(--text-muted, var(--text));
+}
+
+.tm-identity-description p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   PRINCIPLES HEADING
+===================================================== */
+
+.tm-identity-principles-heading {
+    width: 100%;
+    margin-bottom: 17px;
+}
+
+.tm-identity-principles-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 9px;
+
+    color: var(--color-secondary);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.6px;
+    line-height: 1.5;
+}
+
+.tm-identity-principles-title svg {
+    width: 17px;
+    height: 17px;
+
+    color: var(--color-secondary);
+
+    stroke-width: 2;
+    flex-shrink: 0;
+}
+
+.tm-identity-principles-heading h3 {
+    margin: 0;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: clamp(25px, 2.2vw, 32px);
+    font-weight: 700;
+
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+
+    color: var(--text-heading, var(--text));
+}
+
+.tm-identity-principles-heading h3 span {
+    color: var(--color-secondary);
+}
+
+
+/* =====================================================
+   PRINCIPLES GRID
+===================================================== */
+
+.tm-identity-principles-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 13px;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   PRINCIPLE CARDS
+===================================================== */
+
+.tm-identity-principle {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-width: 0;
+    min-height: 160px;
+
+    padding: 17px 17px 18px;
+
+    border: 1px solid var(--color-primary);
+
+    border-radius: var(--radius-lg, 14px);
+
+    background: var(--soft-bg, var(--bg));
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* CARD HOVER */
+
+.tm-identity-principle:hover {
+    transform: translateY(-4px);
+
+    border-color: var(--color-secondary);
+
+    box-shadow:
+        0 12px 28px
+        color-mix(in srgb, var(--color-primary) 12%, transparent);
+}
+
+
+/* CARD TOP ROW */
+
+.tm-identity-principle-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    width: 100%;
+    margin-bottom: 14px;
+}
+
+
+/* CARD NUMBER */
+
+.tm-identity-principle-number {
+    display: inline-block;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+    line-height: 1.4;
+
+    color: var(--color-secondary);
+}
+
+
+/* CARD ICON */
+
+.tm-identity-principle-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 39px;
+    height: 39px;
+
+    flex-shrink: 0;
+
+    border: 1px solid var(--color-primary);
+
+    border-radius: 11px;
+
+    background: color-mix(
+        in srgb,
+        var(--color-primary) 8%,
+        var(--bg)
+    );
+
+    color: var(--color-primary);
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.tm-identity-principle-icon svg {
+    width: 20px;
+    height: 20px;
+
+    stroke-width: 1.9;
+}
+
+
+/* ICON HOVER */
+
+.tm-identity-principle:hover .tm-identity-principle-icon {
+    color: var(--color-secondary);
+
+    border-color: var(--color-secondary);
+
+    background: color-mix(
+        in srgb,
+        var(--color-secondary) 10%,
+        var(--bg)
+    );
+}
+
+
+/* CARD TEXT */
+
+.tm-identity-principle-content {
+    width: 100%;
+}
+
+.tm-identity-principle-content h4 {
+    margin: 0 0 8px;
+
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+
+    font-size: 16px;
+    font-weight: 700;
+
+    line-height: 1.4;
+    letter-spacing: -0.15px;
+
+    color: var(--text-heading, var(--text));
+}
+
+.tm-identity-principle-content p {
+    margin: 0;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 1.65;
+
+    color: var(--text-muted, var(--text));
+}
+
+
+/* =====================================================
+   BOTTOM NOTE
+===================================================== */
+
+.tm-identity-bottom-note {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    width: 100%;
+
+    margin-top: 20px;
+    padding-top: 17px;
+
+    border-top: 1px solid
+        color-mix(in srgb, var(--color-primary) 35%, var(--bg));
+}
+
+.tm-identity-bottom-note svg {
+    width: 20px;
+    height: 20px;
+
+    flex-shrink: 0;
+
+    color: var(--color-secondary);
+
+    stroke-width: 1.9;
+}
+
+.tm-identity-bottom-note p {
+    margin: 0;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    line-height: 1.6;
+
+    color: var(--text-heading, var(--text));
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode .tm-identity-principle {
+    background: var(--soft-bg, var(--bg));
+
+    border-color: var(--color-primary);
+}
+
+body.dark-mode .tm-identity-principle:hover {
+    border-color: var(--color-secondary);
+}
+
+body.dark-mode .tm-identity-principle-icon {
+    background: color-mix(
+        in srgb,
+        var(--color-primary) 14%,
+        var(--bg)
+    );
+
+    border-color: var(--color-primary);
+
+    color: var(--color-primary);
+}
+
+body.dark-mode .tm-identity-principle:hover .tm-identity-principle-icon {
+    background: color-mix(
+        in srgb,
+        var(--color-secondary) 12%,
+        var(--bg)
+    );
+
+    border-color: var(--color-secondary);
+
+    color: var(--color-secondary);
+}
+
+body.dark-mode .tm-identity-bottom-note {
+    border-top-color:
+        color-mix(in srgb, var(--color-primary) 55%, var(--bg));
+}
+
+
+/* =====================================================
+   RTL SUPPORT
+===================================================== */
+
+html[dir="rtl"] .tm-identity-content {
+    text-align: right;
+    align-items: flex-start;
+}
+
+html[dir="rtl"] .tm-identity-label,
+html[dir="rtl"] .tm-identity-principles-title {
+    flex-direction: row;
+}
+
+html[dir="rtl"] .tm-identity-heading,
+html[dir="rtl"] .tm-identity-principles-heading h3,
+html[dir="rtl"] .tm-identity-description p,
+html[dir="rtl"] .tm-identity-principle-content h4,
+html[dir="rtl"] .tm-identity-principle-content p,
+html[dir="rtl"] .tm-identity-bottom-note p {
+    text-align: right;
+}
+
+html[dir="rtl"] .tm-identity-image-caption {
+    text-align: right;
+}
+
+html[dir="rtl"] .tm-identity-image-icon {
+    right: auto;
+    left: 24px;
+}
+
+html[dir="rtl"] .tm-identity-bottom-note {
+    flex-direction: row;
+}
+
+/* =====================================================
+   TRADEMASTERS — SECTION 3: OUR MISSION & VISION
+===================================================== */
+
+.tm-mission,
+.tm-mission * {
+    box-sizing: border-box;
+}
+
+.tm-mission {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    padding: 85px 6.5%;
+
+    overflow: hidden;
+
+    background: var(--bg);
+    color: var(--text);
+
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.tm-mission-container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   CENTERED SECTION HEADER
+===================================================== */
+
+.tm-mission-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto 42px;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   SECTION LABEL
+===================================================== */
+
+.tm-mission-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    width: fit-content;
+    max-width: 100%;
+    margin-bottom: 20px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+
+    color: var(--color-secondary);
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.tm-mission-label svg {
+    width: 18px;
+    height: 18px;
+
+    color: var(--color-secondary);
+
+    stroke-width: 2;
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   MAIN HEADING
+===================================================== */
+
+.tm-mission-heading {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 0 17px;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: clamp(34px, 3.2vw, 47px);
+    font-weight: 700;
+
+    line-height: 1.16;
+    letter-spacing: -1.2px;
+
+    text-align: center;
+
+    color: var(--text-heading, var(--text));
+}
+
+.tm-mission-heading span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--color-secondary);
+}
+
+
+/* =====================================================
+   HEADER DESCRIPTION
+===================================================== */
+
+.tm-mission-description {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    font-size: 15px;
+    font-weight: 400;
+
+    line-height: 1.8;
+
+    text-align: center;
+
+    color: var(--text-muted, var(--text));
+}
+
+
+/* =====================================================
+   CARDS GRID
+===================================================== */
+
+.tm-mission-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    align-items: stretch;
+    gap: 20px;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   BASE CARD
+===================================================== */
+
+.tm-mission-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    min-width: 0;
+    min-height: 365px;
+
+    padding: 27px 25px 23px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-lg, 18px);
+
+    background: var(--soft-bg, var(--bg));
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+/* TOP ACCENT */
+
+.tm-mission-card::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: var(--color-primary);
+
+    transition: background-color 0.3s ease;
+}
+
+
+/* CARD HOVER */
+
+.tm-mission-card:hover {
+    transform: translateY(-6px);
+
+    border-color: var(--color-secondary);
+
+    box-shadow:
+        0 18px 38px
+        color-mix(
+            in srgb,
+            var(--color-primary) 12%,
+            transparent
+        );
+}
+
+.tm-mission-card:hover::before {
+    background: var(--color-secondary);
+}
+
+
+/* =====================================================
+   CARD TOP ROW
+===================================================== */
+
+.tm-mission-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    width: 100%;
+    margin-bottom: 27px;
+}
+
+
+/* =====================================================
+   CARD ICON
+===================================================== */
+
+.tm-mission-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 56px;
+    height: 56px;
+
+    flex-shrink: 0;
+
+    border: 1px solid var(--color-primary);
+    border-radius: 16px;
+
+    background: color-mix(
+        in srgb,
+        var(--color-primary) 9%,
+        var(--bg)
+    );
+
+    color: var(--color-primary);
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.tm-mission-icon svg {
+    width: 27px;
+    height: 27px;
+
+    stroke-width: 1.8;
+}
+
+.tm-mission-card:hover .tm-mission-icon {
+    color: var(--color-secondary);
+
+    border-color: var(--color-secondary);
+
+    background: color-mix(
+        in srgb,
+        var(--color-secondary) 10%,
+        var(--bg)
+    );
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   CARD NUMBER
+===================================================== */
+
+.tm-mission-number {
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 37px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    color: var(--color-primary);
+
+    opacity: 0.3;
+}
+
+
+/* =====================================================
+   CARD LABEL
+===================================================== */
+
+.tm-mission-card-label {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    line-height: 1.5;
+    letter-spacing: 1.6px;
+
+    color: var(--color-secondary);
+}
+
+
+/* =====================================================
+   CARD HEADING
+===================================================== */
+
+.tm-mission-card h3 {
+    margin: 0 0 13px;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: clamp(24px, 2vw, 29px);
+    font-weight: 700;
+
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+
+    color: var(--text-heading, var(--text));
+}
+
+
+/* =====================================================
+   CARD DESCRIPTION
+===================================================== */
+
+.tm-mission-card > p {
+    margin: 0 0 25px;
+
+    font-size: 15px;
+    font-weight: 400;
+
+    line-height: 1.8;
+
+    color: var(--text-muted, var(--text));
+}
+
+
+/* =====================================================
+   CARD BOTTOM
+===================================================== */
+
+.tm-mission-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    width: 100%;
+
+    margin-top: auto;
+    padding-top: 17px;
+
+    border-top: 1px solid
+        color-mix(
+            in srgb,
+            var(--color-primary) 30%,
+            var(--bg)
+        );
+
+    color: var(--text-heading, var(--text));
+
+    font-size: 13px;
+    font-weight: 700;
+
+    line-height: 1.5;
+}
+
+.tm-mission-card-bottom span {
+    color: var(--text-heading, var(--text));
+}
+
+.tm-mission-card-bottom svg {
+    width: 19px;
+    height: 19px;
+
+    flex-shrink: 0;
+
+    color: var(--color-primary);
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.tm-mission-card:hover .tm-mission-card-bottom svg {
+    color: var(--color-secondary);
+    transform: translate(3px, -3px);
+}
+
+
+/* =====================================================
+   PROMISE CARD — SPECIAL HIGHLIGHT
+===================================================== */
+
+.tm-mission-card-promise {
+    border-color: var(--color-secondary);
+
+    background: color-mix(
+        in srgb,
+        var(--color-secondary) 5%,
+        var(--bg)
+    );
+}
+
+.tm-mission-card-promise::before {
+    background: var(--color-secondary);
+}
+
+.tm-mission-card-promise .tm-mission-icon {
+    border-color: var(--color-secondary);
+
+    background: color-mix(
+        in srgb,
+        var(--color-secondary) 11%,
+        var(--bg)
+    );
+
+    color: var(--color-secondary);
+}
+
+.tm-mission-card-promise .tm-mission-number {
+    color: var(--color-secondary);
+}
+
+.tm-mission-card-promise .tm-mission-card-bottom {
+    border-top-color:
+        color-mix(
+            in srgb,
+            var(--color-secondary) 35%,
+            var(--bg)
+        );
+}
+
+.tm-mission-card-promise .tm-mission-card-bottom svg {
+    color: var(--color-secondary);
+}
+
+
+/* =====================================================
+   BOTTOM MESSAGE
+===================================================== */
+
+.tm-mission-footer {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+
+    width: 100%;
+
+    margin-top: 28px;
+    padding: 22px 25px;
+
+    border: 1px solid
+        color-mix(
+            in srgb,
+            var(--color-primary) 45%,
+            var(--bg)
+        );
+
+    border-radius: var(--radius-lg, 18px);
+
+    background: var(--soft-bg, var(--bg));
+}
+
+
+/* FOOTER ICON */
+
+.tm-mission-footer-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 49px;
+    height: 49px;
+
+    flex-shrink: 0;
+
+    border-radius: 14px;
+
+    background: var(--color-primary);
+    color: #ffffff;
+}
+
+.tm-mission-footer-icon svg {
+    width: 24px;
+    height: 24px;
+
+    stroke-width: 1.9;
+}
+
+
+/* FOOTER TEXT */
+
+.tm-mission-footer-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.tm-mission-footer-content h4 {
+    margin: 0 0 5px;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    color: var(--text-heading, var(--text));
+}
+
+.tm-mission-footer-content p {
+    margin: 0;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 1.7;
+
+    color: var(--text-muted, var(--text));
+}
+
+
+/* FOOTER DECORATIVE ICON */
+
+.tm-mission-footer-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    color: var(--color-secondary);
+
+    opacity: 0.9;
+}
+
+.tm-mission-footer-mark svg {
+    width: 32px;
+    height: 32px;
+
+    stroke-width: 1.5;
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode .tm-mission-card {
+    background: var(--soft-bg, var(--bg));
+    border-color: var(--color-primary);
+}
+
+body.dark-mode .tm-mission-card:hover {
+    border-color: var(--color-secondary);
+}
+
+body.dark-mode .tm-mission-card-promise {
+    background: color-mix(
+        in srgb,
+        var(--color-secondary) 8%,
+        var(--bg)
+    );
+
+    border-color: var(--color-secondary);
+}
+
+body.dark-mode .tm-mission-card-promise::before {
+    background: var(--color-secondary);
+}
+
+body.dark-mode .tm-mission-icon {
+    background: color-mix(
+        in srgb,
+        var(--color-primary) 15%,
+        var(--bg)
+    );
+}
+
+body.dark-mode .tm-mission-card-promise .tm-mission-icon {
+    background: color-mix(
+        in srgb,
+        var(--color-secondary) 13%,
+        var(--bg)
+    );
+}
+
+body.dark-mode .tm-mission-card-bottom {
+    border-top-color:
+        color-mix(
+            in srgb,
+            var(--color-primary) 45%,
+            var(--bg)
+        );
+}
+
+body.dark-mode .tm-mission-card-promise .tm-mission-card-bottom {
+    border-top-color:
+        color-mix(
+            in srgb,
+            var(--color-secondary) 45%,
+            var(--bg)
+        );
+}
+
+body.dark-mode .tm-mission-footer {
+    border-color:
+        color-mix(
+            in srgb,
+            var(--color-primary) 55%,
+            var(--bg)
+        );
+}
+
+
+/* =====================================================
+   RTL SUPPORT
+===================================================== */
+
+html[dir="rtl"] .tm-mission-header {
+    direction: rtl;
+    text-align: center;
+}
+
+html[dir="rtl"] .tm-mission-label {
+    flex-direction: row;
+}
+
+html[dir="rtl"] .tm-mission-heading,
+html[dir="rtl"] .tm-mission-description {
+    text-align: center;
+}
+
+html[dir="rtl"] .tm-mission-card {
+    text-align: right;
+}
+
+html[dir="rtl"] .tm-mission-card-top,
+html[dir="rtl"] .tm-mission-card-bottom,
+html[dir="rtl"] .tm-mission-footer {
+    direction: rtl;
+}
+
+html[dir="rtl"] .tm-mission-card::before {
+    left: auto;
+    right: 0;
+}
+
+html[dir="rtl"] .tm-mission-card-bottom svg {
+    transform: scaleX(-1);
+}
+
+html[dir="rtl"] .tm-mission-card:hover .tm-mission-card-bottom svg {
+    transform: scaleX(-1) translate(3px, -3px);
+}
+
+html[dir="rtl"] .tm-mission-footer-content {
+    text-align: right;
+}
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+.tm-mission-header,
+.tm-mission-card,
+.tm-mission-footer {
+    opacity: 0;
+    transform: translateY(22px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.tm-mission.tm-mission-visible .tm-mission-header {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tm-mission.tm-mission-visible .tm-mission-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tm-mission.tm-mission-visible .tm-mission-card:nth-child(1) {
+    transition-delay: 0.08s;
+}
+
+.tm-mission.tm-mission-visible .tm-mission-card:nth-child(2) {
+    transition-delay: 0.18s;
+}
+
+.tm-mission.tm-mission-visible .tm-mission-card:nth-child(3) {
+    transition-delay: 0.28s;
+}
+
+.tm-mission.tm-mission-visible .tm-mission-footer {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.35s;
+}
+
+
+/* PRESERVE CARD HOVER AFTER REVEAL */
+
+.tm-mission.tm-mission-visible .tm-mission-card:hover {
+    transform: translateY(-6px);
+}
+
+/* =====================================================
+   TRADEMASTERS — SECTION 4: WHAT MAKES US DIFFERENT
+===================================================== */
+
+.tm-different,
+.tm-different * {
+    box-sizing: border-box;
+}
+
+.tm-different {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    padding: 85px 6.5%;
+
+    overflow: hidden;
+
+    background: var(--bg);
+    color: var(--text);
+
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.tm-different-container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   CENTERED HEADER
+===================================================== */
+
+.tm-different-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    max-width: 920px;
+
+    margin: 0 auto 43px;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   SECTION LABEL
+===================================================== */
+
+.tm-different-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    width: fit-content;
+    max-width: 100%;
+    margin-bottom: 20px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+
+    color: var(--color-secondary);
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.tm-different-label svg {
+    width: 18px;
+    height: 18px;
+
+    color: var(--color-secondary);
+
+    stroke-width: 2;
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   MAIN HEADING
+===================================================== */
+
+.tm-different-heading {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 0 17px;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: clamp(34px, 3.2vw, 47px);
+    font-weight: 700;
+
+    line-height: 1.16;
+    letter-spacing: -1.2px;
+
+    text-align: center;
+
+    color: var(--text-heading, var(--text));
+}
+
+.tm-different-heading span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--color-secondary);
+}
+
+
+/* =====================================================
+   HEADER DESCRIPTION
+===================================================== */
+
+.tm-different-description {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    font-size: 15px;
+    font-weight: 400;
+
+    line-height: 1.8;
+
+    text-align: center;
+
+    color: var(--text-muted, var(--text));
+}
+
+
+/* =====================================================
+   MAIN LAYOUT
+===================================================== */
+
+.tm-different-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.78fr)
+        minmax(0, 1.22fr);
+
+    align-items: stretch;
+    gap: 25px;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   LEFT FEATURE PANEL
+===================================================== */
+
+.tm-different-feature-panel {
+    position: relative;
+    isolation: isolate;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 100%;
+
+    padding: 28px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-lg, 20px);
+
+    background: var(--soft-bg, var(--bg));
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.tm-different-feature-panel:hover {
+    border-color: var(--color-secondary);
+
+    box-shadow:
+        0 18px 38px
+        color-mix(
+            in srgb,
+            var(--color-primary) 10%,
+            transparent
+        );
+}
+
+
+/* =====================================================
+   PANEL TOP
+===================================================== */
+
+.tm-different-panel-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    width: 100%;
+    margin-bottom: 36px;
+}
+
+
+/* PANEL ICON */
+
+.tm-different-panel-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    border: 1px solid var(--color-primary);
+    border-radius: 17px;
+
+    background: color-mix(
+        in srgb,
+        var(--color-primary) 9%,
+        var(--bg)
+    );
+
+    color: var(--color-primary);
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.tm-different-panel-icon svg {
+    width: 29px;
+    height: 29px;
+
+    stroke-width: 1.8;
+}
+
+.tm-different-feature-panel:hover .tm-different-panel-icon {
+    border-color: var(--color-secondary);
+
+    background: color-mix(
+        in srgb,
+        var(--color-secondary) 10%,
+        var(--bg)
+    );
+
+    color: var(--color-secondary);
+}
+
+
+/* PANEL NUMBER LABEL */
+
+.tm-different-panel-number {
+    font-size: 11px;
+    font-weight: 700;
+
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+
+    color: var(--color-secondary);
+}
+
+
+/* =====================================================
+   PANEL CONTENT
+===================================================== */
+
+.tm-different-panel-content {
+    width: 100%;
+    margin-bottom: 28px;
+}
+
+.tm-different-panel-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    line-height: 1.5;
+    letter-spacing: 1.6px;
+
+    color: var(--color-secondary);
+}
+
+.tm-different-panel-content h3 {
+    margin: 0 0 16px;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: clamp(28px, 2.5vw, 37px);
+    font-weight: 700;
+
+    line-height: 1.2;
+    letter-spacing: -0.7px;
+
+    color: var(--text-heading, var(--text));
+}
+
+.tm-different-panel-content h3 span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--color-secondary);
+}
+
+.tm-different-panel-content p {
+    margin: 0;
+
+    font-size: 15px;
+    font-weight: 400;
+
+    line-height: 1.85;
+
+    color: var(--text-muted, var(--text));
+}
+
+
+/* =====================================================
+   LEARNING JOURNEY
+===================================================== */
+
+.tm-different-journey {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    margin-top: auto;
+    padding-top: 22px;
+}
+
+.tm-different-journey-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    width: 100%;
+}
+
+
+/* JOURNEY ICON */
+
+.tm-different-journey-dot {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    border: 1px solid var(--color-primary);
+    border-radius: 13px;
+
+    background: var(--bg);
+
+    color: var(--color-primary);
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.tm-different-journey-dot svg {
+    width: 21px;
+    height: 21px;
+
+    stroke-width: 1.9;
+}
+
+
+/* JOURNEY TEXT */
+
+.tm-different-journey-item h4 {
+    margin: 0 0 3px;
+
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+
+    font-size: 15px;
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    color: var(--text-heading, var(--text));
+}
+
+.tm-different-journey-item p {
+    margin: 0;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    line-height: 1.6;
+
+    color: var(--text-muted, var(--text));
+}
+
+
+/* CONNECTING LINE */
+
+.tm-different-journey-line {
+    width: 1px;
+    height: 19px;
+
+    margin-left: 21px;
+
+    background: color-mix(
+        in srgb,
+        var(--color-primary) 45%,
+        var(--bg)
+    );
+}
+
+
+/* =====================================================
+   PANEL BOTTOM
+===================================================== */
+
+.tm-different-panel-footer {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    width: 100%;
+
+    margin-top: 27px;
+    padding-top: 18px;
+
+    border-top: 1px solid
+        color-mix(
+            in srgb,
+            var(--color-primary) 35%,
+            var(--bg)
+        );
+}
+
+.tm-different-panel-footer svg {
+    width: 20px;
+    height: 20px;
+
+    flex-shrink: 0;
+
+    color: var(--color-secondary);
+}
+
+.tm-different-panel-footer p {
+    margin: 0;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    line-height: 1.6;
+
+    color: var(--text-heading, var(--text));
+}
+
+
+/* =====================================================
+   RIGHT FEATURES GRID
+===================================================== */
+
+.tm-different-features {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    align-content: stretch;
+    gap: 16px;
+
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* =====================================================
+   FEATURE CARD
+===================================================== */
+
+.tm-different-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    min-width: 0;
+    min-height: 220px;
+
+    padding: 21px;
+
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-lg, 16px);
+
+    background: var(--soft-bg, var(--bg));
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+/* CARD HOVER */
+
+.tm-different-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--color-secondary);
+
+    box-shadow:
+        0 13px 28px
+        color-mix(
+            in srgb,
+            var(--color-primary) 10%,
+            transparent
+        );
+}
+
+
+/* =====================================================
+   FEATURE CARD TOP
+===================================================== */
+
+.tm-different-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+/* FEATURE ICON */
+
+.tm-different-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    border: 1px solid var(--color-primary);
+    border-radius: 13px;
+
+    background: color-mix(
+        in srgb,
+        var(--color-primary) 8%,
+        var(--bg)
+    );
+
+    color: var(--color-primary);
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.tm-different-card-icon svg {
+    width: 22px;
+    height: 22px;
+
+    stroke-width: 1.8;
+}
+
+
+/* ICON HOVER */
+
+.tm-different-card:hover .tm-different-card-icon {
+    border-color: var(--color-secondary);
+
+    background: color-mix(
+        in srgb,
+        var(--color-secondary) 10%,
+        var(--bg)
+    );
+
+    color: var(--color-secondary);
+
+    transform: translateY(-2px);
+}
+
+
+/* FEATURE NUMBER */
+
+.tm-different-card-number {
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 25px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    color: var(--color-primary);
+
+    opacity: 0.4;
+}
+
+
+/* =====================================================
+   FEATURE CARD HEADING
+===================================================== */
+
+.tm-different-card h3 {
+    margin: 0 0 9px;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    line-height: 1.35;
+    letter-spacing: -0.3px;
+
+    color: var(--text-heading, var(--text));
+}
+
+
+/* =====================================================
+   FEATURE CARD DESCRIPTION
+===================================================== */
+
+.tm-different-card p {
+    margin: 0;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 1.75;
+
+    color: var(--text-muted, var(--text));
+}
+
+
+/* =====================================================
+   BOTTOM MESSAGE
+===================================================== */
+
+.tm-different-bottom {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    width: 100%;
+
+    margin-top: 28px;
+    padding: 20px 23px;
+
+    border: 1px solid
+        color-mix(
+            in srgb,
+            var(--color-primary) 45%,
+            var(--bg)
+        );
+
+    border-radius: var(--radius-lg, 16px);
+
+    background: var(--soft-bg, var(--bg));
+}
+
+
+/* BOTTOM ICON */
+
+.tm-different-bottom-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    border-radius: 13px;
+
+    background: var(--color-primary);
+    color: #ffffff;
+}
+
+.tm-different-bottom-icon svg {
+    width: 23px;
+    height: 23px;
+
+    stroke-width: 1.9;
+}
+
+
+/* BOTTOM TEXT */
+
+.tm-different-bottom p {
+    flex: 1;
+
+    margin: 0;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 1.7;
+
+    color: var(--text-muted, var(--text));
+}
+
+.tm-different-bottom p strong {
+    font-weight: 700;
+
+    color: var(--text-heading, var(--text));
+}
+
+
+/* BOTTOM DECORATIVE ICON */
+
+.tm-different-bottom-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    color: var(--color-secondary);
+}
+
+.tm-different-bottom-mark svg {
+    width: 25px;
+    height: 25px;
+
+    stroke-width: 1.8;
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode .tm-different-feature-panel,
+body.dark-mode .tm-different-card,
+body.dark-mode .tm-different-bottom {
+    background: var(--soft-bg, var(--bg));
+}
+
+body.dark-mode .tm-different-feature-panel,
+body.dark-mode .tm-different-card {
+    border-color: var(--color-primary);
+}
+
+body.dark-mode .tm-different-feature-panel:hover,
+body.dark-mode .tm-different-card:hover {
+    border-color: var(--color-secondary);
+}
+
+body.dark-mode .tm-different-panel-icon,
+body.dark-mode .tm-different-card-icon {
+    background: color-mix(
+        in srgb,
+        var(--color-primary) 15%,
+        var(--bg)
+    );
+}
+
+body.dark-mode .tm-different-feature-panel:hover
+.tm-different-panel-icon,
+body.dark-mode .tm-different-card:hover
+.tm-different-card-icon {
+    background: color-mix(
+        in srgb,
+        var(--color-secondary) 13%,
+        var(--bg)
+    );
+}
+
+body.dark-mode .tm-different-journey-dot {
+    background: var(--bg);
+    border-color: var(--color-primary);
+}
+
+body.dark-mode .tm-different-panel-footer {
+    border-top-color:
+        color-mix(
+            in srgb,
+            var(--color-primary) 50%,
+            var(--bg)
+        );
+}
+
+body.dark-mode .tm-different-bottom {
+    border-color:
+        color-mix(
+            in srgb,
+            var(--color-primary) 55%,
+            var(--bg)
+        );
+}
+
+
+/* =====================================================
+   RTL SUPPORT
+===================================================== */
+
+html[dir="rtl"] .tm-different-header {
+    direction: rtl;
+    text-align: center;
+}
+
+html[dir="rtl"] .tm-different-heading,
+html[dir="rtl"] .tm-different-description {
+    text-align: center;
+}
+
+html[dir="rtl"] .tm-different-feature-panel,
+html[dir="rtl"] .tm-different-card {
+    text-align: right;
+}
+
+html[dir="rtl"] .tm-different-panel-top,
+html[dir="rtl"] .tm-different-card-top,
+html[dir="rtl"] .tm-different-panel-footer,
+html[dir="rtl"] .tm-different-journey-item,
+html[dir="rtl"] .tm-different-bottom {
+    direction: rtl;
+}
+
+html[dir="rtl"] .tm-different-journey-line {
+    margin-left: 0;
+    margin-right: 21px;
+}
+
+html[dir="rtl"] .tm-different-feature-panel::before,
+html[dir="rtl"] .tm-different-card::before {
+    left: auto;
+    right: 0;
+}
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+.tm-different-header,
+.tm-different-feature-panel,
+.tm-different-card,
+.tm-different-bottom {
+    opacity: 0;
+    transform: translateY(22px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* VISIBLE HEADER */
+
+.tm-different.tm-different-visible .tm-different-header {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* VISIBLE LEFT PANEL */
+
+.tm-different.tm-different-visible .tm-different-feature-panel {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition-delay: 0.08s;
+}
+
+
+/* VISIBLE FEATURE CARDS */
+
+.tm-different.tm-different-visible .tm-different-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tm-different.tm-different-visible .tm-different-card:nth-child(1) {
+    transition-delay: 0.08s;
+}
+
+.tm-different.tm-different-visible .tm-different-card:nth-child(2) {
+    transition-delay: 0.14s;
+}
+
+.tm-different.tm-different-visible .tm-different-card:nth-child(3) {
+    transition-delay: 0.20s;
+}
+
+.tm-different.tm-different-visible .tm-different-card:nth-child(4) {
+    transition-delay: 0.26s;
+}
+
+.tm-different.tm-different-visible .tm-different-card:nth-child(5) {
+    transition-delay: 0.32s;
+}
+
+.tm-different.tm-different-visible .tm-different-card:nth-child(6) {
+    transition-delay: 0.38s;
+}
+
+
+/* VISIBLE BOTTOM MESSAGE */
+
+.tm-different.tm-different-visible .tm-different-bottom {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition-delay: 0.42s;
+}
+
+
+/* PRESERVE HOVER AFTER REVEAL */
+
+.tm-different.tm-different-visible .tm-different-card:hover {
+    transform: translateY(-5px);
+}
+
+/* =====================================================
+   TRADEMASTERS — SECTION 5: MEET OUR INSTRUCTORS
+===================================================== */
+
+.tm-instructors,
+.tm-instructors * {
+    box-sizing: border-box;
+}
+
+.tm-instructors {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+
+    /* Reduced top padding */
+    padding: 40px 6.5% 75px;
+
+    background: var(--bg);
+    color: var(--text);
+
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+}
+
+.tm-instructors-container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   SECTION HEADER
+===================================================== */
+
+.tm-instructors-header {
+    max-width: 950px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+.tm-instructors-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    width: fit-content;
+    max-width: 100%;
+    margin-bottom: 20px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+
+    color: var(--color-secondary);
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.tm-instructors-label i {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.tm-instructors-heading {
+    margin: 0;
+
+    color: var(--text-heading, var(--text));
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(32px, 3.1vw, 46px);
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -1.1px;
+}
+
+.tm-instructors-heading span {
+    display: block;
+    margin-top: 3px;
+
+    color: var(--color-secondary);
+}
+
+.tm-instructors-description {
+    max-width: 690px;
+    margin: 17px auto 0;
+
+    color: var(--text-muted, var(--text));
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.75;
+}
+
+
+/* =====================================================
+   INSTRUCTOR GRID
+===================================================== */
+
+.tm-instructors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    align-items: stretch;
+    gap: 22px;
+}
+
+
+/* =====================================================
+   INSTRUCTOR PROFILE CARD
+===================================================== */
+
+.tm-instructor-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    padding: 25px 23px 22px;
+
+    background: var(--soft-bg, var(--bg));
+
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-lg, 18px);
+
+    transition:
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.tm-instructor-card:hover {
+    border-color: var(--color-secondary);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px color-mix(
+            in srgb,
+            var(--color-primary) 12%,
+            transparent
+        );
+}
+
+
+/* =====================================================
+   CENTERED IMAGE AND NAME
+===================================================== */
+
+.tm-instructor-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.tm-instructor-image {
+    position: relative;
+
+    width: 112px;
+    height: 112px;
+
+    margin-bottom: 12px;
+
+    border: 2px solid var(--color-secondary);
+    border-radius: 50%;
+
+    overflow: hidden;
+    background: var(--bg);
+
+    box-shadow:
+        0 0 0 5px color-mix(
+            in srgb,
+            var(--color-primary) 13%,
+            transparent
+        );
+}
+
+.tm-instructor-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center top;
+
+    transition: transform 0.4s ease;
+}
+
+.tm-instructor-card:hover .tm-instructor-image img {
+    transform: scale(1.06);
+}
+
+.tm-instructor-name {
+    margin: 0;
+
+    color: var(--text-heading, var(--text));
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.tm-instructor-role {
+    margin: 5px 0 0;
+
+    color: var(--color-secondary);
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.tm-instructor-divider {
+    width: 100%;
+    height: 1px;
+
+    margin: 19px 0;
+
+    background: var(--border, var(--color-primary));
+    opacity: 0.8;
+}
+
+
+/* =====================================================
+   DETAIL ROWS
+===================================================== */
+
+.tm-instructor-detail {
+    display: grid;
+    grid-template-columns: 27px minmax(0, 1fr);
+    align-items: start;
+    gap: 12px;
+
+    margin-bottom: 17px;
+}
+
+.tm-instructor-detail-icon {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    padding-top: 1px;
+
+    color: var(--color-secondary);
+}
+
+.tm-instructor-detail-icon i {
+    width: 21px;
+    height: 21px;
+
+    stroke-width: 2.2;
+}
+
+.tm-instructor-detail-content {
+    min-width: 0;
+}
+
+.tm-instructor-detail-content h4 {
+    margin: 0 0 6px;
+
+    color: var(--color-secondary);
+
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.tm-instructor-detail-content p {
+    margin: 0;
+
+    color: var(--text-muted, var(--text));
+
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   EXPERTISE LIST
+===================================================== */
+
+.tm-instructor-expertise {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.tm-instructor-expertise li {
+    position: relative;
+
+    padding-left: 14px;
+
+    color: var(--text-muted, var(--text));
+
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.tm-instructor-expertise li::before {
+    content: "";
+
+    position: absolute;
+    top: 7px;
+    left: 0;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+    background: var(--color-secondary);
+}
+
+
+/* =====================================================
+   INSTRUCTOR BUTTON
+===================================================== */
+
+.tm-instructor-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    width: fit-content;
+    max-width: 100%;
+
+    margin: auto auto 0;
+    padding: 11px 19px;
+
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-pill);
+
+    background: var(--color-primary);
+    color: #ffffff;
+
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.tm-instructor-button i {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+
+    transition: transform 0.3s ease;
+}
+
+.tm-instructor-button:hover {
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+
+    color: #ffffff;
+}
+
+.tm-instructor-button:hover i {
+    transform: translate(2px, -2px);
+}
+
+
+/* =====================================================
+   BOTTOM NOTE
+===================================================== */
+
+.tm-instructors-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+
+    margin-top: 28px;
+
+    text-align: center;
+}
+
+.tm-instructors-note i {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+
+    color: var(--color-secondary);
+}
+
+.tm-instructors-note p {
+    margin: 0;
+
+    color: var(--text-muted, var(--text));
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode .tm-instructors {
+    background: var(--bg);
+    color: var(--text);
+}
+
+body.dark-mode .tm-instructor-card {
+    background: var(--soft-bg, var(--bg));
+    border-color: var(--color-primary);
+}
+
+body.dark-mode .tm-instructor-card:hover {
+    border-color: var(--color-secondary);
+}
+
+body.dark-mode .tm-instructor-name,
+body.dark-mode .tm-instructors-heading {
+    color: var(--text-heading, var(--text));
+}
+
+body.dark-mode .tm-instructor-detail-content p,
+body.dark-mode .tm-instructor-expertise li,
+body.dark-mode .tm-instructors-description,
+body.dark-mode .tm-instructors-note p {
+    color: var(--text-muted, var(--text));
+}
+
+body.dark-mode .tm-instructor-divider {
+    background: var(--border, var(--color-primary));
+}
+
+
+/* =====================================================
+   RTL SUPPORT
+===================================================== */
+
+html[dir="rtl"] .tm-instructor-detail {
+    direction: rtl;
+}
+
+html[dir="rtl"] .tm-instructor-expertise li {
+    padding-left: 0;
+    padding-right: 14px;
+}
+
+html[dir="rtl"] .tm-instructor-expertise li::before {
+    left: auto;
+    right: 0;
+}
+
+html[dir="rtl"] .tm-instructor-button {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .tm-instructor-button:hover i {
+    transform: translate(-2px, -2px);
+}
+
+/* =====================================================
+   TRADEMASTERS — SECTION 6: LEARNING METHODOLOGY
+===================================================== */
+
+.tm-methodology,
+.tm-methodology * {
+    box-sizing: border-box;
+}
+
+.tm-methodology {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    padding: 45px 6.5% 70px;
+
+    background: var(--bg);
+    color: var(--text);
+
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+}
+
+.tm-methodology-container {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   SECTION HEADER
+===================================================== */
+
+.tm-methodology-header {
+    max-width: 850px;
+    margin: 0 auto 48px;
+
+    text-align: center;
+}
+
+.tm-methodology-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    width: fit-content;
+    max-width: 100%;
+    margin-bottom: 20px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+
+    color: var(--color-secondary);
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.tm-methodology-label i {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+}
+
+.tm-methodology-heading {
+    margin: 0;
+
+    color: var(--text-heading, var(--text));
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(32px, 3.2vw, 46px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.tm-methodology-heading span {
+    display: block;
+    margin-top: 3px;
+
+    color: var(--color-secondary);
+}
+
+.tm-methodology-description {
+    max-width: 690px;
+    margin: 16px auto 0;
+
+    color: var(--text-muted, var(--text));
+
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+
+/* =====================================================
+   FLOWCHART TIMELINE
+===================================================== */
+
+.tm-methodology-timeline {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* Center Connecting Line */
+
+.tm-methodology-line {
+    position: absolute;
+
+    top: 48px;
+    bottom: 48px;
+    left: 50%;
+
+    width: 2px;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        var(--color-primary) 5%,
+        var(--color-secondary) 50%,
+        var(--color-primary) 95%,
+        transparent 100%
+    );
+
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   TIMELINE STEP
+===================================================== */
+
+.tm-method-step {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 76px minmax(0, 1fr);
+    align-items: center;
+
+    width: 100%;
+    min-height: 150px;
+}
+
+
+/* =====================================================
+   CONTENT BOX
+===================================================== */
+
+.tm-method-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 390px;
+
+    padding: 21px 25px;
+
+    background: var(--soft-bg, var(--bg));
+
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-lg, 16px);
+
+    transition:
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* LTR: Steps 1, 3, 5 on the LEFT */
+
+.tm-step-left .tm-method-content {
+    grid-column: 1;
+    grid-row: 1;
+
+    justify-self: end;
+    margin-right: 12px;
+
+    text-align: right;
+}
+
+
+/* LTR: Steps 2, 4 on the RIGHT */
+
+.tm-step-right .tm-method-content {
+    grid-column: 3;
+    grid-row: 1;
+
+    justify-self: start;
+    margin-left: 12px;
+
+    text-align: left;
+}
+
+
+/* Hover Effects */
+
+.tm-method-step:hover .tm-method-content {
+    border-color: var(--color-secondary);
+
+    box-shadow:
+        0 8px 24px color-mix(
+            in srgb,
+            var(--color-primary) 10%,
+            transparent
+        );
+}
+
+.tm-step-left:hover .tm-method-content {
+    transform: translateX(-4px);
+}
+
+.tm-step-right:hover .tm-method-content {
+    transform: translateX(4px);
+}
+
+
+/* =====================================================
+   STEP NUMBER
+===================================================== */
+
+.tm-method-number {
+    display: inline-block;
+
+    margin-bottom: 7px;
+
+    color: var(--color-secondary);
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    line-height: 1.4;
+}
+
+
+/* =====================================================
+   STEP HEADING
+===================================================== */
+
+.tm-method-content h3 {
+    margin: 0 0 7px;
+
+    color: var(--text-heading, var(--text));
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+
+/* =====================================================
+   STEP DESCRIPTION
+===================================================== */
+
+.tm-method-content p {
+    margin: 0;
+
+    color: var(--text-muted, var(--text));
+
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+
+/* =====================================================
+   CENTER ICON MARKER
+===================================================== */
+
+.tm-method-marker {
+    position: relative;
+    z-index: 2;
+
+    grid-column: 2;
+    grid-row: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+
+    justify-self: center;
+
+    border: 2px solid var(--color-secondary);
+    border-radius: 50%;
+
+    background: var(--bg);
+    color: var(--color-secondary);
+
+    box-shadow:
+        0 0 0 6px color-mix(
+            in srgb,
+            var(--color-primary) 10%,
+            transparent
+        );
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.tm-method-marker i {
+    width: 23px;
+    height: 23px;
+
+    stroke-width: 2;
+}
+
+.tm-method-step:hover .tm-method-marker {
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: #ffffff;
+
+    transform: scale(1.07);
+}
+
+
+/* Final Step Marker */
+
+.tm-method-marker-final {
+    border-color: var(--color-secondary);
+    background: var(--color-primary);
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   SUPPORTING NOTE
+===================================================== */
+
+.tm-methodology-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    max-width: 800px;
+
+    margin: 35px auto 0;
+    padding: 19px 25px;
+
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-lg, 16px);
+
+    background: var(--soft-bg, var(--bg));
+
+    text-align: left;
+}
+
+.tm-methodology-note-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--color-primary);
+    color: #ffffff;
+}
+
+.tm-methodology-note-icon i {
+    width: 21px;
+    height: 21px;
+}
+
+.tm-methodology-note p {
+    margin: 0;
+
+    color: var(--text-heading, var(--text));
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.65;
+}
+
+.tm-methodology-note p span {
+    color: var(--text-muted, var(--text));
+    font-weight: 400;
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode .tm-methodology {
+    background: var(--bg);
+    color: var(--text);
+}
+
+body.dark-mode .tm-method-content {
+    background: var(--soft-bg, var(--bg));
+    border-color: var(--color-primary);
+}
+
+body.dark-mode .tm-method-step:hover .tm-method-content {
+    border-color: var(--color-secondary);
+}
+
+body.dark-mode .tm-method-content h3,
+body.dark-mode .tm-methodology-heading {
+    color: var(--text-heading, var(--text));
+}
+
+body.dark-mode .tm-method-content p,
+body.dark-mode .tm-methodology-description {
+    color: var(--text-muted, var(--text));
+}
+
+body.dark-mode .tm-method-marker {
+    background: var(--bg);
+    color: var(--color-secondary);
+}
+
+body.dark-mode .tm-method-step:hover .tm-method-marker {
+    background: var(--color-secondary);
+    color: #ffffff;
+}
+
+body.dark-mode .tm-method-marker-final {
+    background: var(--color-primary);
+    color: #ffffff;
+}
+
+body.dark-mode .tm-methodology-note {
+    background: var(--soft-bg, var(--bg));
+    border-color: var(--color-primary);
+}
+
+body.dark-mode .tm-methodology-note p {
+    color: var(--text-heading, var(--text));
+}
+
+body.dark-mode .tm-methodology-note p span {
+    color: var(--text-muted, var(--text));
+}
+
+
+/* =====================================================
+   RTL SUPPORT
+===================================================== */
+
+html[dir="rtl"] .tm-methodology {
+    direction: rtl;
+}
+
+
+/* Keep vertical line centered in RTL */
+
+html[dir="rtl"] .tm-methodology-line {
+    left: 50%;
+    right: auto;
+
+    transform: translateX(50%);
+}
+
+
+/* RTL: Steps 1, 3, 5 on the RIGHT */
+
+html[dir="rtl"] .tm-step-left .tm-method-content {
+    grid-column: 3;
+    grid-row: 1;
+
+    justify-self: start;
+
+    margin-left: 12px;
+    margin-right: 0;
+
+    text-align: right;
+}
+
+
+/* RTL: Steps 2, 4 on the LEFT */
+
+html[dir="rtl"] .tm-step-right .tm-method-content {
+    grid-column: 1;
+    grid-row: 1;
+
+    justify-self: end;
+
+    margin-right: 12px;
+    margin-left: 0;
+
+    text-align: right;
+}
+
+
+/* RTL: Keep all markers centered */
+
+html[dir="rtl"] .tm-method-marker {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+
+/* RTL Hover Direction */
+
+html[dir="rtl"] .tm-step-left:hover .tm-method-content {
+    transform: translateX(4px);
+}
+
+html[dir="rtl"] .tm-step-right:hover .tm-method-content {
+    transform: translateX(-4px);
+}
+
+
+/* RTL Supporting Note */
+
+html[dir="rtl"] .tm-methodology-note {
+    text-align: right;
+}
+
+/* =====================================================
+   TRADEMASTERS — SECTION 7: ABOUT PAGE CTA
+   ASYMMETRICAL LAYOUT
+===================================================== */
+
+.tm-about-cta,
+.tm-about-cta * {
+    box-sizing: border-box;
+}
+
+.tm-about-cta {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    padding: 42px 6.5% 38px;
+
+    background: var(--bg);
+    color: var(--text);
+
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+}
+
+.tm-about-cta-container {
+    position: relative;
+
+    width: 100%;
+    max-width: 1440px;
+
+    margin: 0 auto;
+    padding: 28px 0 0;
+
+    border-top: 2px solid var(--border);
+}
+
+/* Top Accent */
+
+.tm-about-cta-accent {
+    position: absolute;
+    top: -2px;
+    left: 0;
+
+    width: 105px;
+    height: 3px;
+
+    background: var(--color-secondary);
+}
+
+/* Main Layout */
+
+.tm-about-cta-main {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(0, 0.95fr);
+
+    align-items: center;
+
+    gap: 65px;
+
+    padding: 8px 0 28px;
+}
+
+/* Left Heading */
+
+.tm-about-cta-heading {
+    min-width: 0;
+}
+
+/* Tagline */
+
+.tm-about-cta-label {
+display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    width: fit-content;
+    max-width: 100%;
+    margin-bottom: 20px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+
+    color: var(--color-secondary);
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.tm-about-cta-label i {
+    width: 17px;
+    height: 17px;
+
+    flex-shrink: 0;
+
+    color: var(--color-secondary);
+}
+
+/* Heading */
+
+.tm-about-cta-heading h2 {
+    max-width: 570px;
+
+    margin: 0;
+
+    color: var(--text-heading, var(--text));
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(32px, 3.2vw, 45px);
+    font-weight: 700;
+
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+}
+
+.tm-about-cta-heading h2 span {
+    color: var(--color-secondary);
+}
+
+/* Right Content */
+
+.tm-about-cta-details {
+    min-width: 0;
+
+    /* Balanced spacing on the right side */
+    padding-left: 25px;
+
+    border-left: 1px solid var(--border);
+}
+
+/* Description — Extra Line */
+
+.tm-about-cta-description {
+    width: 100%;
+    max-width: 560px;
+
+    margin: 0;
+
+    color: var(--text-muted, var(--text));
+
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+    font-size: 15px;
+    font-weight: 400;
+
+    line-height: 1.8;
+}
+
+/* Buttons */
+
+.tm-about-cta-actions {
+    display: flex;
+    align-items: center;
+
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-top: 23px;
+}
+
+/* Shared Button Styles */
+
+.tm-about-cta-primary,
+.tm-about-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 44px;
+    padding: 11px 20px;
+
+    border: 1px solid transparent;
+    border-radius: var(--radius-pill, 999px);
+
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+    font-size: 14px;
+    font-weight: 700;
+
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.tm-about-cta-primary i,
+.tm-about-cta-secondary i {
+    width: 17px;
+    height: 17px;
+
+    flex-shrink: 0;
+
+    transition: transform 0.3s ease;
+}
+
+/* Primary Button */
+
+.tm-about-cta-primary {
+    background: var(--color-primary);
+    color: #ffffff;
+
+    border-color: var(--color-primary);
+}
+
+.tm-about-cta-primary:hover {
+    background: var(--color-secondary);
+    color: #ffffff;
+
+    border-color: var(--color-secondary);
+
+    transform: translateY(-2px);
+}
+
+.tm-about-cta-primary:hover i {
+    transform: translate(3px, -2px);
+}
+
+/* Secondary Button */
+
+.tm-about-cta-secondary {
+    background: transparent;
+
+    color: var(--text-heading, var(--text));
+
+    border-color: var(--color-primary);
+}
+
+.tm-about-cta-secondary:hover {
+    background: var(--color-secondary);
+    color: #ffffff;
+
+    border-color: var(--color-secondary);
+
+    transform: translateY(-2px);
+}
+
+.tm-about-cta-secondary:hover i {
+    transform: translateX(3px);
+}
+
+/* =====================================================
+   DISCLAIMER — CENTERED
+===================================================== */
+
+.tm-about-cta-footer {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    width: 100%;
+
+    padding: 17px 20px 0;
+
+    border-top: 1px solid var(--border);
+
+    text-align: center;
+}
+
+/* Disclaimer Label */
+
+.tm-about-cta-footer-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    color: var(--text-heading, var(--text));
+
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+.tm-about-cta-footer-label i {
+    width: 15px;
+    height: 15px;
+
+    color: var(--color-secondary);
+
+    flex-shrink: 0;
+}
+
+/* Disclaimer Text */
+
+.tm-about-cta-footer p {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    color: var(--text-muted, var(--text));
+
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+    font-size: 11px;
+    font-weight: 400;
+
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode .tm-about-cta-container {
+    border-top-color: var(--border);
+}
+
+body.dark-mode .tm-about-cta-heading h2 {
+    color: var(--text-heading, var(--text));
+}
+
+body.dark-mode .tm-about-cta-heading h2 span {
+    color: var(--color-secondary);
+}
+
+body.dark-mode .tm-about-cta-details {
+    border-left-color: var(--border);
+}
+
+body.dark-mode .tm-about-cta-footer {
+    border-top-color: var(--border);
+}
+
+body.dark-mode .tm-about-cta-primary {
+    background: var(--color-primary);
+    color: #ffffff;
+
+    border-color: var(--color-primary);
+}
+
+body.dark-mode .tm-about-cta-primary:hover {
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+
+body.dark-mode .tm-about-cta-secondary {
+    color: var(--text-heading, var(--text));
+
+    border-color: var(--color-primary);
+}
+
+body.dark-mode .tm-about-cta-secondary:hover {
+    background: var(--color-secondary);
+    color: #ffffff;
+
+    border-color: var(--color-secondary);
+}
+
+/* =====================================================
+   RTL SUPPORT
+===================================================== */
+
+html[dir="rtl"] .tm-about-cta {
+    direction: rtl;
+}
+
+html[dir="rtl"] .tm-about-cta-accent {
+    left: auto;
+    right: 0;
+}
+
+html[dir="rtl"] .tm-about-cta-details {
+    padding-left: 25px;
+    padding-right: 0;
+
+    border-left: 1px solid var(--border);
+    border-right: none;
+}
+
+html[dir="rtl"] .tm-about-cta-label {
+    letter-spacing: 0;
+}
+
+html[dir="rtl"] .tm-about-cta-primary:hover i {
+    transform: translate(-3px, -2px);
+}
+
+html[dir="rtl"] .tm-about-cta-secondary:hover i {
+    transform: translateX(-3px);
+}
+
+html[dir="rtl"] .tm-about-cta-footer {
+    align-items: center;
+    text-align: center;
+}
+
+html[dir="rtl"] .tm-about-cta-footer p {
+    text-align: center;
+}

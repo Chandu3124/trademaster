@@ -1,0 +1,1129 @@
+/* =====================================================
+   TRADEMASTERS — DETAILING PAGE
+   UPDATED SECTION LAYOUTS
+===================================================== */
+
+.tm-detail-hero,
+.tm-detail-courses,
+.tm-detail-advantages,
+.tm-detail-process,
+.tm-detail-resources,
+.tm-detail-academy,
+.tm-detail-contact,
+.tm-detail-hero *,
+.tm-detail-courses *,
+.tm-detail-advantages *,
+.tm-detail-process *,
+.tm-detail-resources *,
+.tm-detail-academy *,
+.tm-detail-contact * {
+    box-sizing: border-box;
+}
+
+/* =====================================================
+   SHARED SECTION SETTINGS
+===================================================== */
+
+.tm-detail-hero,
+.tm-detail-courses,
+.tm-detail-advantages,
+.tm-detail-process,
+.tm-detail-resources,
+.tm-detail-academy,
+.tm-detail-contact {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+
+    color: var(--text);
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+}
+
+.tm-detail-hero,
+.tm-detail-courses,
+.tm-detail-advantages,
+.tm-detail-process,
+.tm-detail-resources,
+.tm-detail-academy,
+.tm-detail-contact {
+    padding-left: 6.5%;
+    padding-right: 6.5%;
+}
+
+.tm-detail-hero img,
+.tm-detail-courses img,
+.tm-detail-advantages img,
+.tm-detail-academy img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+/* =====================================================
+   SHARED TAGLINE
+===================================================== */
+
+.tm-detail-tagline {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 18px;
+
+    color: var(--color-primary);
+
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.5;
+}
+
+.tm-detail-tagline i,
+.tm-detail-tagline svg {
+    width: 18px;
+    height: 18px;
+
+    flex-shrink: 0;
+
+    color: var(--color-primary);
+    stroke-width: 2;
+}
+
+/* =====================================================
+   SHARED HEADINGS
+===================================================== */
+
+.tm-detail-hero h1,
+.tm-detail-courses h2,
+.tm-detail-advantages h2,
+.tm-detail-process h2,
+.tm-detail-resources h2,
+.tm-detail-academy h2,
+.tm-detail-contact h2 {
+    margin: 0;
+
+    color: var(--text-heading, var(--text));
+
+    font-family: var(--heading-font, "Playfair Display", Georgia, serif);
+    font-size: clamp(32px, 3.3vw, 46px);
+    font-weight: 700;
+    line-height: 1.22;
+    letter-spacing: -0.7px;
+}
+
+.tm-detail-hero h1 span,
+.tm-detail-courses h2 span,
+.tm-detail-advantages h2 span,
+.tm-detail-process h2 span,
+.tm-detail-resources h2 span,
+.tm-detail-academy h2 span,
+.tm-detail-contact h2 span {
+    display: block;
+    margin-top: 4px;
+
+    color: var(--color-secondary);
+}
+
+/* =====================================================
+   SHARED BODY TEXT
+===================================================== */
+
+.tm-detail-hero-content > p,
+.tm-detail-section-intro > p,
+.tm-detail-advantages-description,
+.tm-detail-process-header > p,
+.tm-detail-resources-intro > p,
+.tm-detail-academy-content > p,
+.tm-detail-contact-content > p {
+    color: var(--text-muted, var(--text));
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+/* =====================================================
+   SECTION 1: HERO
+   IMAGE ONLY — NO FLOATING CARD
+===================================================== */
+
+.tm-detail-hero {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    align-items: center;
+    gap: 5%;
+
+    min-height: 590px;
+
+    padding-top: 65px;
+    padding-bottom: 75px;
+
+    background: var(--bg);
+}
+
+.tm-detail-hero-content {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.tm-detail-hero-content > p {
+    margin: 22px 0 0;
+}
+
+.tm-detail-hero-points {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 12px 20px;
+
+    margin-top: 28px;
+}
+
+.tm-detail-hero-points > div {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--text-heading, var(--text));
+
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.tm-detail-hero-points i,
+.tm-detail-hero-points svg {
+    width: 18px;
+    height: 18px;
+
+    color: var(--color-secondary);
+    flex-shrink: 0;
+}
+
+.tm-detail-hero-visual {
+    width: 100%;
+    min-width: 0;
+}
+
+.tm-detail-hero-image {
+    width: 100%;
+    height: 460px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg, 20px);
+}
+
+.tm-detail-hero-image img {
+    object-position: center;
+}
+
+/* =====================================================
+   SECTION 2: COURSES
+   EXPANDED LEFT CONTENT
+   RIGHT CARDS MATCH CONTENT HEIGHT
+===================================================== */
+
+.tm-detail-courses {
+    padding-top: 85px;
+    padding-bottom: 85px;
+
+    background: var(--soft-bg, var(--bg));
+}
+
+.tm-detail-courses-layout {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    align-items: stretch;
+    gap: 35px;
+
+    width: 100%;
+    max-width: 1440px;
+
+    margin: 0 auto;
+}
+
+.tm-detail-section-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    min-width: 0;
+}
+
+.tm-detail-section-intro > p {
+    margin: 18px 0 0;
+}
+
+.tm-detail-section-intro > p + p {
+    margin-top: 12px;
+}
+
+.tm-detail-course-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+
+    align-items: stretch;
+    gap: 18px;
+
+    min-width: 0;
+}
+
+.tm-detail-course-card {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 0;
+
+    overflow: hidden;
+
+    background: var(--bg);
+
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-lg, 20px);
+
+    transition: border-color 0.25s ease;
+}
+
+.tm-detail-course-card:hover {
+    border-color: var(--color-secondary);
+}
+
+.tm-detail-course-image {
+    width: 100%;
+    height: 145px;
+
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.tm-detail-course-image img {
+    transition: transform 0.4s ease;
+}
+
+.tm-detail-course-card:hover .tm-detail-course-image img {
+    transform: scale(1.035);
+}
+
+.tm-detail-course-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    flex: 1;
+
+    padding: 20px 20px 22px;
+}
+
+.tm-detail-card-index {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--color-primary);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    line-height: 1.5;
+}
+
+.tm-detail-course-content h3,
+.tm-detail-resource-card h3 {
+    margin: 0;
+
+    color: var(--text-heading, var(--text));
+
+    font-family: var(--heading-font, "Playfair Display", Georgia, serif);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.tm-detail-course-content p,
+.tm-detail-resource-card > p {
+    margin: 11px 0 0;
+
+    color: var(--text-muted, var(--text));
+
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+/* =====================================================
+   SECTION 3: ADVANTAGES
+   CONTENT LEFT — IMAGE RIGHT
+   BOTH COLUMNS EQUAL HEIGHT
+===================================================== */
+
+.tm-detail-advantages {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    align-items: stretch;
+    gap: 5%;
+
+    padding-top: 85px;
+    padding-bottom: 85px;
+
+    background: var(--bg);
+}
+
+.tm-detail-advantages-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-width: 0;
+    padding: 0;
+}
+
+.tm-detail-advantages-description {
+    margin: 18px 0 0;
+}
+
+.tm-detail-advantages-description + .tm-detail-advantages-description {
+    margin-top: 12px;
+}
+
+.tm-detail-advantage-list {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 25px 22px;
+
+    margin-top: 30px;
+}
+
+.tm-detail-advantage-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    min-width: 0;
+}
+
+.tm-detail-feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    background: var(--soft-bg, var(--bg));
+
+    border: 1px solid var(--color-primary);
+    border-radius: 50%;
+}
+
+.tm-detail-feature-icon i,
+.tm-detail-feature-icon svg {
+    width: 20px;
+    height: 20px;
+
+    color: var(--color-primary);
+}
+
+.tm-detail-advantage-item h3 {
+    margin: 2px 0 0;
+
+    color: var(--text-heading, var(--text));
+
+    font-family: var(--heading-font, "Playfair Display", Georgia, serif);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.tm-detail-advantage-item p {
+    margin: 7px 0 0;
+
+    color: var(--text-muted, var(--text));
+
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+.tm-detail-advantages-image {
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 540px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg, 20px);
+}
+
+.tm-detail-advantages-image img {
+    min-height: 540px;
+    object-position: center;
+}
+
+/* =====================================================
+   SECTION 4: LEARNING PROCESS
+   KEEPING THE PREVIOUS DESIGN
+===================================================== */
+
+.tm-detail-process {
+    padding-top: 85px;
+    padding-bottom: 90px;
+
+    background: var(--soft-bg, var(--bg));
+}
+
+.tm-detail-process-header {
+    width: 100%;
+    max-width: 760px;
+
+    margin: 0 auto 48px;
+
+    text-align: center;
+}
+
+.tm-detail-process-header > p {
+    margin: 18px 0 0;
+}
+
+.tm-detail-process-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr) 36px
+        minmax(0, 1fr) 36px
+        minmax(0, 1fr);
+
+    align-items: stretch;
+    gap: 18px;
+
+    width: 100%;
+    max-width: 1440px;
+
+    margin: 0 auto;
+}
+
+.tm-detail-process-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    min-width: 0;
+
+    padding: 30px 27px;
+
+    background: var(--bg);
+
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-lg, 20px);
+
+    transition: border-color 0.25s ease;
+}
+
+.tm-detail-process-card:hover {
+    border-color: var(--color-secondary);
+}
+
+.tm-detail-process-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    margin-bottom: 22px;
+
+    background: var(--color-primary);
+    color: var(--bg);
+
+    border-radius: 50%;
+
+    font-family: var(--heading-font, "Playfair Display", Georgia, serif);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.tm-detail-process-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 49px;
+    height: 49px;
+
+    margin-bottom: 19px;
+
+    background: var(--soft-bg, var(--bg));
+
+    border: 1px solid var(--color-secondary);
+    border-radius: 14px;
+}
+
+.tm-detail-process-icon i,
+.tm-detail-process-icon svg {
+    width: 24px;
+    height: 24px;
+
+    color: var(--color-secondary);
+}
+
+.tm-detail-process-card h3 {
+    margin: 0;
+
+    color: var(--text-heading, var(--text));
+
+    font-family: var(--heading-font, "Playfair Display", Georgia, serif);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.tm-detail-process-card > p {
+    margin: 14px 0 24px;
+
+    color: var(--text-muted, var(--text));
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.tm-detail-process-meta {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    margin-top: auto;
+    padding-top: 17px;
+
+    border-top: 1px solid var(--border);
+}
+
+.tm-detail-process-meta span {
+    color: var(--color-primary);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    line-height: 1.6;
+}
+
+.tm-detail-process-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--color-secondary);
+}
+
+.tm-detail-process-connector i,
+.tm-detail-process-connector svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* =====================================================
+   SECTION 5: RESOURCES
+   EXPANDED LEFT CONTENT
+   RIGHT CARDS MATCH CONTENT HEIGHT
+===================================================== */
+
+.tm-detail-resources {
+    padding-top: 85px;
+    padding-bottom: 85px;
+
+    background: var(--bg);
+}
+
+.tm-detail-resources-layout {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    align-items: stretch;
+    gap: 35px;
+
+    width: 100%;
+    max-width: 1440px;
+
+    margin: 0 auto;
+}
+
+.tm-detail-resources-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    min-width: 0;
+}
+
+.tm-detail-resources-intro > p {
+    margin: 18px 0 0;
+}
+
+.tm-detail-resources-intro > p + p {
+    margin-top: 12px;
+}
+
+.tm-detail-resources-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+
+    align-items: stretch;
+    gap: 18px;
+
+    min-width: 0;
+}
+
+.tm-detail-resource-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    min-width: 0;
+    min-height: 0;
+
+    padding: 24px 22px 21px;
+
+    background: var(--soft-bg, var(--bg));
+
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-lg, 20px);
+
+    transition: border-color 0.25s ease;
+}
+
+.tm-detail-resource-card:hover {
+    border-color: var(--color-secondary);
+}
+
+.tm-detail-resource-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+
+    margin-bottom: 19px;
+
+    background: var(--bg);
+
+    border: 1px solid var(--color-secondary);
+    border-radius: 13px;
+}
+
+.tm-detail-resource-icon i,
+.tm-detail-resource-icon svg {
+    width: 22px;
+    height: 22px;
+
+    color: var(--color-secondary);
+}
+
+.tm-detail-resource-card .tm-detail-card-index {
+    margin-bottom: 9px;
+}
+
+.tm-detail-resource-card h3 {
+    font-size: 20px;
+}
+
+.tm-detail-resource-card > p {
+    flex: 1;
+    margin-bottom: 22px;
+}
+
+.tm-detail-resource-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    width: 100%;
+
+    margin-top: auto;
+    padding-top: 14px;
+
+    border-top: 1px solid var(--border);
+}
+
+.tm-detail-resource-footer span {
+    color: var(--color-primary);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    line-height: 1.5;
+}
+
+.tm-detail-resource-footer i,
+.tm-detail-resource-footer svg {
+    width: 18px;
+    height: 18px;
+
+    color: var(--color-secondary);
+    flex-shrink: 0;
+}
+
+/* =====================================================
+   SECTION 6: ABOUT ACADEMY
+   IMAGE ONLY — NO FLOATING CARD
+===================================================== */
+
+.tm-detail-academy {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    align-items: stretch;
+    gap: 5%;
+
+    padding-top: 85px;
+    padding-bottom: 85px;
+
+    background: var(--soft-bg, var(--bg));
+}
+
+.tm-detail-academy-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-width: 0;
+}
+
+.tm-detail-academy-content > p {
+    margin: 18px 0 0;
+}
+
+.tm-detail-academy-content > p + p {
+    margin-top: 12px;
+}
+
+.tm-detail-academy-principles {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 13px 20px;
+
+    margin-top: 26px;
+}
+
+.tm-detail-academy-principles > div {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--text-heading, var(--text));
+
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.tm-detail-academy-principles i,
+.tm-detail-academy-principles svg {
+    width: 19px;
+    height: 19px;
+
+    color: var(--color-secondary);
+    flex-shrink: 0;
+}
+
+.tm-detail-academy-visual {
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 500px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg, 20px);
+}
+
+.tm-detail-academy-image {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+
+    overflow: hidden;
+}
+
+.tm-detail-academy-image img {
+    min-height: 500px;
+    object-position: center;
+}
+
+/* =====================================================
+   SECTION 7: CONTACT CTA
+   KEEPING THE PREVIOUS DESIGN
+===================================================== */
+
+.tm-detail-contact {
+    padding-top: 55px;
+    padding-bottom: 80px;
+
+    background: var(--bg);
+}
+
+.tm-detail-contact-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 55px;
+
+    width: 100%;
+    max-width: 1440px;
+
+    margin: 0 auto;
+    padding: 48px 50px;
+
+    background: var(--soft-bg, var(--bg));
+
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-lg, 20px);
+}
+
+.tm-detail-contact-content {
+    flex: 1;
+    min-width: 0;
+    max-width: 850px;
+}
+
+.tm-detail-contact-content > p {
+    margin: 18px 0 0;
+}
+
+.tm-detail-contact-support {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    margin-top: 22px;
+
+    color: var(--text-heading, var(--text));
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+.tm-detail-contact-support i,
+.tm-detail-contact-support svg {
+    width: 19px;
+    height: 19px;
+
+    margin-top: 3px;
+
+    color: var(--color-secondary);
+    flex-shrink: 0;
+}
+
+.tm-detail-contact-action {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 13px;
+
+    width: 220px;
+    flex-shrink: 0;
+}
+
+.tm-detail-contact-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: 100%;
+    min-height: 52px;
+
+    padding: 14px 20px;
+
+    background: var(--color-primary);
+    color: var(--bg);
+
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-pill, 50px);
+
+    font-family: var(--content-font, "Source Sans 3", sans-serif);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    text-align: center;
+    text-decoration: none;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.tm-detail-contact-button:hover {
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: var(--bg);
+}
+
+.tm-detail-contact-button i,
+.tm-detail-contact-button svg {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+}
+
+.tm-detail-contact-button:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 4px;
+}
+
+.tm-detail-contact-action > p {
+    margin: 0;
+
+    color: var(--text-muted, var(--text));
+
+    font-size: 12px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode .tm-detail-hero,
+body.dark-mode .tm-detail-advantages,
+body.dark-mode .tm-detail-resources,
+body.dark-mode .tm-detail-contact {
+    background: var(--bg);
+    color: var(--text);
+}
+
+body.dark-mode .tm-detail-courses,
+body.dark-mode .tm-detail-process,
+body.dark-mode .tm-detail-academy {
+    background: var(--soft-bg, var(--bg));
+    color: var(--text);
+}
+
+body.dark-mode .tm-detail-hero h1,
+body.dark-mode .tm-detail-courses h2,
+body.dark-mode .tm-detail-advantages h2,
+body.dark-mode .tm-detail-process h2,
+body.dark-mode .tm-detail-resources h2,
+body.dark-mode .tm-detail-academy h2,
+body.dark-mode .tm-detail-contact h2 {
+    color: var(--text-heading, var(--text));
+}
+
+body.dark-mode .tm-detail-hero h1 span,
+body.dark-mode .tm-detail-courses h2 span,
+body.dark-mode .tm-detail-advantages h2 span,
+body.dark-mode .tm-detail-process h2 span,
+body.dark-mode .tm-detail-resources h2 span,
+body.dark-mode .tm-detail-academy h2 span,
+body.dark-mode .tm-detail-contact h2 span {
+    color: var(--color-secondary);
+}
+
+body.dark-mode .tm-detail-course-card,
+body.dark-mode .tm-detail-process-card {
+    background: var(--bg);
+}
+
+body.dark-mode .tm-detail-resource-card {
+    background: var(--soft-bg, var(--bg));
+}
+
+body.dark-mode .tm-detail-course-card:hover,
+body.dark-mode .tm-detail-resource-card:hover,
+body.dark-mode .tm-detail-process-card:hover {
+    border-color: var(--color-secondary);
+}
+
+body.dark-mode .tm-detail-contact-card {
+    background: var(--soft-bg, var(--bg));
+    border-color: var(--color-primary);
+}
+
+body.dark-mode .tm-detail-contact-button {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--bg);
+}
+
+body.dark-mode .tm-detail-contact-button:hover {
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: var(--bg);
+}
+
+/* =====================================================
+   RTL SUPPORT
+===================================================== */
+
+html[dir="rtl"] .tm-detail-hero,
+html[dir="rtl"] .tm-detail-courses-layout,
+html[dir="rtl"] .tm-detail-advantages,
+html[dir="rtl"] .tm-detail-resources-layout,
+html[dir="rtl"] .tm-detail-academy,
+html[dir="rtl"] .tm-detail-contact-card {
+    direction: rtl;
+}
+
+html[dir="rtl"] .tm-detail-hero-content,
+html[dir="rtl"] .tm-detail-section-intro,
+html[dir="rtl"] .tm-detail-advantages-content,
+html[dir="rtl"] .tm-detail-resources-intro,
+html[dir="rtl"] .tm-detail-academy-content {
+    text-align: right;
+}
+
+html[dir="rtl"] .tm-detail-hero-points > div,
+html[dir="rtl"] .tm-detail-advantage-item,
+html[dir="rtl"] .tm-detail-academy-principles > div,
+html[dir="rtl"] .tm-detail-contact-support {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .tm-detail-process-layout {
+    direction: rtl;
+}
+
+html[dir="rtl"] .tm-detail-contact-action {
+    direction: rtl;
+}
