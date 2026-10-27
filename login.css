@@ -1,588 +1,1330 @@
 /* =========================================================
-   TRADEMASTERS — LOGIN PAGE
+   TRADEMASTERS — LOGIN & SIGNUP
+   Enhanced Card Height + Readable Typography
 ========================================================= */
 
-body {
+.tm-login-page,
+.tm-login-page * {
+    box-sizing: border-box;
+}
+
+.tm-login-page {
+    --login-primary: var(--color-primary);
+    --login-secondary: var(--color-secondary);
+
+    position: relative;
+    isolation: isolate;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100dvh;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+
     padding: 12px;
     overflow: hidden;
+
+    background: var(--color-background);
+    color: var(--color-text);
+
+    font-family: var(--font-content, "Source Sans 3", sans-serif);
+}
+
+/* =========================================================
+   ANIMATED TRADING BACKGROUND
+========================================================= */
+
+.trading-background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    overflow: hidden;
+    pointer-events: none;
+
     background:
-        linear-gradient(rgba(52, 39, 25, 0.78), rgba(52, 39, 25, 0.78)),
-        url("https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1600&q=80");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+        radial-gradient(
+            circle at 15% 25%,
+            rgba(181, 138, 69, 0.10),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(35, 150, 115, 0.09),
+            transparent 35%
+        ),
+        var(--color-background);
+}
+
+.market-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            var(--color-border) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            var(--color-border) 1px,
+            transparent 1px
+        );
+
+    background-size: 54px 54px;
+    opacity: 0.32;
+
+    mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        #000 15%,
+        #000 85%,
+        transparent
+    );
+}
+
+.market-line {
+    position: absolute;
+
+    width: 150%;
+    height: 200px;
+
+    border-top: 2px solid rgba(35, 150, 115, 0.20);
+    border-radius: 50%;
+
+    transform: rotate(-12deg);
+}
+
+.market-line-one {
+    top: 16%;
+    left: -15%;
+
+    animation: marketLineMove 13s ease-in-out infinite alternate;
+}
+
+.market-line-two {
+    right: -25%;
+    bottom: 8%;
+
+    border-color: rgba(181, 138, 69, 0.18);
+
+    animation: marketLineMove 16s ease-in-out infinite alternate-reverse;
+}
+
+/* CANDLESTICK CHART */
+
+.candlestick-chart {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.24;
+}
+
+.candlestick-chart span {
+    position: absolute;
+
+    left: var(--x);
+    top: calc(50% + var(--y) - 100px);
+
+    width: 7px;
+    height: var(--h);
+
+    border-radius: 2px;
+
+    background: var(--c);
+
+    animation: candlePulse 3s ease-in-out infinite alternate;
+    animation-delay: calc(var(--y) * -0.02);
+}
+
+.candlestick-chart span::before {
+    position: absolute;
+    top: -12px;
+    left: 3px;
+
+    width: 1px;
+    height: calc(var(--h) + 24px);
+
+    background: inherit;
+
+    content: "";
+}
+
+.candlestick-chart span:nth-child(odd) {
+    --c: #c85b58;
+}
+
+.candlestick-chart span:nth-child(even) {
+    --c: #259b77;
+}
+
+/* FLOATING MARKET CARDS */
+
+.floating-market {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 13px 16px;
+
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+
+    background: var(--color-surface);
+    color: var(--color-text-muted);
+
+    box-shadow: var(--shadow-card);
+
+    opacity: 0.75;
+
+    animation: floatingMarket 6s ease-in-out infinite;
+}
+
+.floating-market > i {
+    display: grid;
+    place-items: center;
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 9px;
+
+    background: rgba(35, 150, 115, 0.10);
+    color: #259b77;
+}
+
+.floating-market span {
+    display: block;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+}
+
+.floating-market strong {
+    display: block;
+
+    color: var(--color-heading);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.market-one {
+    top: 18%;
+    left: 7%;
+}
+
+.market-two {
+    right: 7%;
+    bottom: 18%;
+
+    animation-delay: -2s;
+}
+
+.market-three {
+    top: 19%;
+    right: 12%;
+
+    animation-delay: -4s;
+}
+
+/* BACKGROUND GLOW */
+
+.market-glow {
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+    opacity: 0.12;
+
+    animation: glowMove 10s ease-in-out infinite alternate;
+}
+
+.market-glow-one {
+    top: 10%;
+    left: 25%;
+
+    background: #259b77;
+}
+
+.market-glow-two {
+    right: 20%;
+    bottom: 5%;
+
+    background: #b58a45;
+
+    animation-delay: -5s;
+}
+
+/* =========================================================
+   BACKGROUND ANIMATIONS
+========================================================= */
+
+@keyframes floatingMarket {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes candlePulse {
+    from {
+        opacity: 0.55;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes marketLineMove {
+    from {
+        transform: translateX(-2%) rotate(-12deg);
+    }
+
+    to {
+        transform: translateX(3%) rotate(-8deg);
+    }
+}
+
+@keyframes glowMove {
+    from {
+        transform: translate(0, 0) scale(0.9);
+    }
+
+    to {
+        transform: translate(35px, -25px) scale(1.15);
+    }
 }
 
 /* =========================================================
    TOP CONTROLS
 ========================================================= */
 
-.page-controls {
+.tm-login-page .page-controls {
     position: fixed;
-    top: 18px;
-    right: var(--container-padding);
+
+    top: 16px;
+    right: var(--container-padding, 24px);
+
     z-index: 1200;
+
     display: flex;
     align-items: center;
     gap: 9px;
 }
 
-html[dir="rtl"] .page-controls {
+html[dir="rtl"] .tm-login-page .page-controls {
     right: auto;
-    left: var(--container-padding);
+    left: var(--container-padding, 24px);
 }
 
 /* =========================================================
-   CARD — height content ki adjust avutundi
+   MAIN CONTAINER
 ========================================================= */
 
-.container {
+.tm-login-page .container {
+    position: relative;
+    z-index: 2;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     width: 100%;
-    max-width: 350px;
+    max-width: 410px;
+    max-height: 100%;
+
+    margin: auto;
 }
 
-.form-card {
+/* =========================================================
+   FORM CARD — INCREASED SIZE
+========================================================= */
+
+.tm-login-page .form-card {
     display: flex;
     flex-direction: column;
+
     width: 100%;
-    max-height: calc(100dvh - 24px);
-    padding: 14px 16px;
+
+    /* Cards expand naturally but remain within viewport */
+    max-height: calc(100dvh - 28px);
+
+    padding: 18px 22px;
+
+    overflow: hidden;
+
     border: 1px solid var(--color-border);
-    border-radius: 16px;
-    background-color: var(--color-surface);
+    border-radius: 18px;
+
+    background: var(--color-surface);
+
     box-shadow: var(--shadow-card);
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.tm-login-page .logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    margin-bottom: 11px;
+}
+
+.tm-login-page .login-brand {
+    justify-content: center;
+    gap: 9px;
+}
+
+.tm-login-page .login-brand .brand-logo {
+    width: 43px;
+    height: 43px;
+
+    object-fit: contain;
+}
+
+.tm-login-page .login-brand .brand-title {
+    font-size: 18px;
+    line-height: 1.1;
+}
+
+.tm-login-page .login-brand .brand-subtitle {
+    font-size: 6px;
+    letter-spacing: 0.65px;
+}
+
+/* =========================================================
+   AUTH FORMS
+========================================================= */
+
+.tm-login-page .auth-form {
+    display: flex;
+    flex-direction: column;
+
+    flex-shrink: 1;
+
+    min-height: 0;
+    min-width: 0;
+
+    gap: 10px;
+
     overflow: hidden;
 }
 
-.logo-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 8px;
+.tm-login-page .auth-form.hide {
+    display: none !important;
 }
 
-.login-brand {
-    justify-content: center;
-}
+/* FORM HEADING */
 
-.login-brand .brand-logo {
-    width: 40px;
-    height: 40px;
-}
+.tm-login-page .form-title {
+    flex-shrink: 0;
 
-.login-brand .brand-title {
-    font-size: 17px;
-}
+    margin: 0 0 3px;
 
-.login-brand .brand-subtitle {
-    font-size: 5.5px;
-    letter-spacing: 0.6px;
+    color: var(--color-heading);
+
+    text-align: center;
+
+    font-family: var(
+        --font-heading,
+        "Playfair Display",
+        Georgia,
+        serif
+    );
+
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
 }
 
 /* =========================================================
-   FORMS — content madhya equal gap
+   FORM FIELDS
 ========================================================= */
 
-.auth-form {
+.tm-login-page .form-fields {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 8px;
+
+    gap: 10px;
+
     min-height: 0;
 }
 
-.form-title {
-    margin-bottom: 2px;
-    text-align: center;
-    font-family: var(--font-heading);
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 1.2;
-    color: var(--color-heading);
-}
-
-.form-fields {
+.tm-login-page .input-box {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 8px;
+
+    min-width: 0;
+
+    gap: 5px;
 }
 
-.input-box {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.input-row {
+.tm-login-page .input-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 8px;
+
+    gap: 10px;
 }
 
-.input-label {
+/* LABELS */
+
+.tm-login-page .input-label {
     color: var(--color-text);
-    font-size: 11px;
-    font-weight: 500;
-    line-height: 1.2;
+
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.25;
 }
 
-.input-box input,
-.input-box select {
+/* INPUTS */
+
+.tm-login-page .input-box input,
+.tm-login-page .input-box select {
+    display: block;
+
     width: 100%;
-    height: 36px;
-    padding: 8px 10px;
+    height: 41px;
+
+    min-width: 0;
+
+    padding: 8px 12px;
+
     border: 1px solid var(--color-border);
     border-radius: 8px;
-    background-color: var(--color-background);
+
+    background: var(--color-background);
     color: var(--color-text);
-    font-family: var(--font-content);
-    font-size: 12px;
-    transition: var(--transition-fast);
+
+    font-family: var(
+        --font-content,
+        "Source Sans 3",
+        sans-serif
+    );
+
+    font-size: 13px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-.input-box input::placeholder {
+.tm-login-page .input-box input::placeholder {
     color: var(--color-text-muted);
-    opacity: 1;
-    font-size: 11px;
+
+    opacity: 0.85;
+
+    font-size: 12px;
 }
 
-.input-box input:focus,
-.input-box select:focus {
+.tm-login-page .input-box input:focus,
+.tm-login-page .input-box select:focus {
     border-color: var(--color-secondary);
-    box-shadow: 0 0 0 3px rgba(181, 138, 69, 0.12);
+
+    box-shadow: 0 0 0 3px rgba(181, 138, 69, 0.13);
+
     outline: none;
 }
 
-.password-wrap {
+/* =========================================================
+   PASSWORD INPUTS
+========================================================= */
+
+.tm-login-page .password-wrap {
     position: relative;
+
     width: 100%;
 }
 
-.password-wrap input {
+.tm-login-page .password-wrap input {
     padding-right: 42px;
 }
 
-html[dir="rtl"] .password-wrap input {
-    padding-right: 10px;
+html[dir="rtl"] .tm-login-page .password-wrap input {
+    padding-right: 12px;
     padding-left: 42px;
 }
 
-.password-toggle {
+.tm-login-page .password-toggle {
     position: absolute;
+
     top: 50%;
     right: 10px;
+
     z-index: 2;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
+
+    width: 25px;
+    height: 25px;
+
+    padding: 0;
+
     border: none;
     background: transparent;
+
     color: var(--color-text-muted);
+
     cursor: pointer;
+
     transform: translateY(-50%);
 }
 
-.password-toggle:hover {
+.tm-login-page .password-toggle i {
+    font-size: 15px;
+}
+
+.tm-login-page .password-toggle:hover {
     color: var(--color-primary);
 }
 
-html[dir="rtl"] .password-toggle {
+html[dir="rtl"] .tm-login-page .password-toggle {
     right: auto;
     left: 10px;
 }
 
-input[type="password"]::-ms-reveal,
-input[type="password"]::-ms-clear {
+.tm-login-page input[type="password"]::-ms-reveal,
+.tm-login-page input[type="password"]::-ms-clear {
     display: none;
 }
 
-html[dir="rtl"] .input-box {
+/* RTL INPUT ALIGNMENT */
+
+html[dir="rtl"] .tm-login-page .input-box {
     text-align: right;
 }
 
-html[dir="rtl"] .input-box input,
-html[dir="rtl"] .input-box select {
+html[dir="rtl"] .tm-login-page .input-box input,
+html[dir="rtl"] .tm-login-page .input-box select {
     text-align: right;
 }
 
 /* =========================================================
-   REMEMBER / FORGOT
+   REMEMBER ME / FORGOT PASSWORD
 ========================================================= */
 
-.remember-row {
+.tm-login-page .remember-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
+
+    gap: 10px;
+
+    margin-top: 2px;
 }
 
-.remember-me {
+.tm-login-page .remember-me {
     display: flex;
     align-items: center;
-    gap: 6px;
+
+    gap: 7px;
+
     color: var(--color-text-muted);
-    font-size: 11px;
+
+    font-size: 12px;
+
     cursor: pointer;
 }
 
-.remember-me input {
-    width: 13px;
-    height: 13px;
+.tm-login-page .remember-me input {
+    flex-shrink: 0;
+
+    width: 15px;
+    height: 15px;
+
+    margin: 0;
+
     accent-color: var(--color-primary);
+
     cursor: pointer;
 }
 
-.forgot-link {
+.tm-login-page .forgot-link {
     color: var(--color-primary);
-    font-size: 11px;
+
+    font-size: 12px;
     font-weight: 600;
+
     text-decoration: none;
     white-space: nowrap;
 }
 
-.forgot-link:hover {
+.tm-login-page .forgot-link:hover {
     color: var(--color-secondary);
 }
 
 /* =========================================================
-   BUTTONS
+   PRIMARY BUTTON
 ========================================================= */
 
-.main-btn {
+.tm-login-page .main-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
     width: 100%;
-    height: 36px;
+    height: 41px;
+
+    padding: 8px 14px;
+
     border: none;
-    border-radius: 20px;
-    background-color: var(--color-primary);
+    border-radius: 22px;
+
+    background: var(--color-primary);
     color: var(--color-white);
-    font-family: var(--font-content);
-    font-size: 12.5px;
-    font-weight: 600;
+
+    font-family: var(
+        --font-content,
+        "Source Sans 3",
+        sans-serif
+    );
+
+    font-size: 14px;
+    font-weight: 700;
+
     cursor: pointer;
-    transition: var(--transition-fast);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
-.main-btn:hover {
-    background-color: var(--color-secondary);
+.tm-login-page .main-btn:hover {
+    background: var(--color-secondary);
+
+    transform: translateY(-1px);
 }
 
-body.dark-mode .main-btn {
+body.dark-mode .tm-login-page .main-btn {
     color: var(--color-background);
 }
 
-.signup-button {
-    margin-top: 10px;
-}
-
-/* =========================================================
-   SOCIAL LOGIN
-========================================================= */
-
-.social-login {
+.tm-login-page .signup-button {
     margin-top: 2px;
 }
 
-.social-divider {
-    position: relative;
-    margin: 4px 0 6px;
-    text-align: center;
-}
-
-.social-divider::before {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: var(--color-border);
-    content: "";
-}
-
-.social-divider span {
-    position: relative;
-    z-index: 1;
-    padding: 0 8px;
-    background-color: var(--color-surface);
-    color: var(--color-text-muted);
-    font-size: 10px;
-    font-weight: 500;
-}
-
-.social-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    height: 34px;
-    margin-bottom: 6px;
-    padding: 6px 10px;
-    border: 1px solid transparent;
-    border-radius: 10px;
-    font-family: var(--font-content);
-    font-size: 11px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--transition-fast);
-}
-
-.social-btn:last-child {
-    margin-bottom: 0;
-}
-
-.google-btn {
-    border-color: #DCDCDC;
-    background-color: #FFFFFF;
-    color: #222222;
-}
-
-.google-btn:hover {
-    border-color: #CFCFCF;
-    background-color: #F7F7F7;
-}
-
-.apple-btn {
-    border-color: var(--color-black);
-    background-color: var(--color-black);
-    color: var(--color-white);
-}
-
-.apple-btn:hover {
-    background-color: #1A1A1A;
-}
-
-.social-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    line-height: 1;
-}
-
 /* =========================================================
-   FORM SWITCH
+   SOCIAL LOGIN / SIGNUP
 ========================================================= */
 
-.switch {
-    margin-top: 2px;
+.tm-login-page .social-login {
+    flex-shrink: 0;
+
+    margin-top: 1px;
+}
+
+.tm-login-page .social-divider {
+    position: relative;
+
+    margin: 4px 0 8px;
+
     text-align: center;
-    color: var(--color-text-muted);
-    font-size: 11px;
     line-height: 1.2;
 }
 
-.switch-btn {
+.tm-login-page .social-divider::before {
+    position: absolute;
+
+    top: 50%;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background: var(--color-border);
+
+    content: "";
+}
+
+.tm-login-page .social-divider span {
+    position: relative;
+    z-index: 1;
+
+    padding: 0 9px;
+
+    background: var(--color-surface);
+    color: var(--color-text-muted);
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* GOOGLE + APPLE SIDE-BY-SIDE */
+
+.tm-login-page .social-buttons {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+
+    width: 100%;
+}
+
+.tm-login-page .social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    width: 100%;
+    height: 39px;
+
+    min-width: 0;
+
+    padding: 7px 10px;
+
+    border: 1px solid transparent;
+    border-radius: 9px;
+
+    font-family: var(
+        --font-content,
+        "Source Sans 3",
+        sans-serif
+    );
+
+    font-size: 13px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.tm-login-page .social-btn i {
+    flex-shrink: 0;
+
+    font-size: 16px;
+}
+
+.tm-login-page .social-btn:hover {
+    transform: translateY(-1px);
+}
+
+/* GOOGLE */
+
+.tm-login-page .google-btn {
+    border-color: #dedede;
+
+    background: #ffffff;
+    color: #222222;
+}
+
+.tm-login-page .google-btn:hover {
+    border-color: #bdbdbd;
+
+    background: #f7f7f7;
+}
+
+/* APPLE */
+
+.tm-login-page .apple-btn {
+    border-color: #222222;
+
+    background: #222222;
+    color: #ffffff;
+}
+
+.tm-login-page .apple-btn:hover {
+    background: #3a3a3a;
+}
+
+/* =========================================================
+   SWITCH LOGIN / SIGNUP
+========================================================= */
+
+.tm-login-page .switch {
+    flex-shrink: 0;
+
+    margin: 2px 0 0;
+
+    color: var(--color-text-muted);
+
+    text-align: center;
+
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.tm-login-page .switch-btn {
     width: auto;
+
     padding: 0;
     margin-left: 4px;
+
     border: none;
-    background: none;
+    background: transparent;
+
     color: var(--color-primary);
-    font-family: var(--font-content);
-    font-size: 11px;
-    font-weight: 600;
+
+    font-family: var(
+        --font-content,
+        "Source Sans 3",
+        sans-serif
+    );
+
+    font-size: 12px;
+    font-weight: 700;
+
     cursor: pointer;
 }
 
-html[dir="rtl"] .switch-btn {
+.tm-login-page .switch-btn:hover {
+    color: var(--color-secondary);
+}
+
+html[dir="rtl"] .tm-login-page .switch-btn {
     margin-right: 4px;
     margin-left: 0;
 }
 
-.switch-btn:hover {
-    color: var(--color-secondary);
-}
-
-.hide {
-    display: none !important;
-}
-
 /* =========================================================
-   TOAST
+   TOAST NOTIFICATIONS
 ========================================================= */
 
-.toast {
+.tm-login-page .toast {
     position: fixed;
+
     right: 20px;
     bottom: 20px;
+
     z-index: 1300;
+
     max-width: calc(100% - 40px);
+
     padding: 12px 16px;
+
     border-radius: 10px;
-    background-color: var(--color-primary);
+
+    background: var(--color-primary);
     color: var(--color-white);
-    font-size: 12px;
+
+    font-size: 13px;
+
     box-shadow: var(--shadow-card);
+
     opacity: 0;
-    transform: translateY(10px);
+    visibility: hidden;
+
+    transform: translateY(8px);
+
     pointer-events: none;
-    transition: var(--transition-fast);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
 }
 
-.toast.show {
+.tm-login-page .toast.show {
     opacity: 1;
+    visibility: visible;
+
     transform: translateY(0);
 }
 
-.toast.success {
-    background-color: #2E7D32;
+.tm-login-page .toast.success {
+    background: #267a45;
+    color: #ffffff;
 }
 
-.toast.error {
-    background-color: #B3261E;
+.tm-login-page .toast.error {
+    background: #b3261e;
+    color: #ffffff;
 }
 
 /* =========================================================
-   RESPONSIVE
+   MEDIUM HEIGHT SCREENS
+   Slightly compact spacing while preserving readability
 ========================================================= */
 
-@media screen and (max-width: 480px) {
-    body {
-        padding: 8px;
+@media screen and (max-height: 800px) {
+    .tm-login-page .form-card {
+        padding-top: 13px;
+        padding-bottom: 13px;
     }
 
-    .page-controls {
-        top: 12px;
-        right: 14px;
-        gap: 7px;
+    .tm-login-page .logo-wrap {
+        margin-bottom: 7px;
     }
 
-    html[dir="rtl"] .page-controls {
-        right: auto;
-        left: 14px;
+    .tm-login-page .login-brand .brand-logo {
+        width: 37px;
+        height: 37px;
     }
 
-    .icon-button {
-        width: 36px;
-        height: 36px;
-    }
-
-    .container {
-        max-width: 332px;
-    }
-
-    .form-card {
-        max-height: calc(100dvh - 16px);
-        padding: 12px 13px;
-        border-radius: 14px;
-    }
-
-    .login-brand .brand-logo {
-        width: 36px;
-        height: 36px;
-    }
-
-    .login-brand .brand-title {
-        font-size: 15px;
-    }
-
-    .login-brand .brand-subtitle {
-        font-size: 5px;
-    }
-
-    .form-title {
+    .tm-login-page .login-brand .brand-title {
         font-size: 16px;
     }
 
-    .input-label {
-        font-size: 10px;
+    .tm-login-page .form-title {
+        font-size: 20px;
     }
 
-    .input-box input,
-    .input-box select {
-        height: 34px;
-        font-size: 11.5px;
-        padding: 7px 9px;
+    .tm-login-page .auth-form {
+        gap: 8px;
     }
 
-    .password-wrap input {
-        padding-right: 38px;
+    .tm-login-page .form-fields {
+        gap: 8px;
     }
 
-    html[dir="rtl"] .password-wrap input {
-        padding-right: 9px;
-        padding-left: 38px;
+    .tm-login-page .input-box {
+        gap: 4px;
     }
 
-    .password-toggle {
-        right: 8px;
+    .tm-login-page .input-box input,
+    .tm-login-page .input-box select {
+        height: 37px;
     }
 
-    html[dir="rtl"] .password-toggle {
-        right: auto;
-        left: 8px;
+    .tm-login-page .main-btn {
+        height: 37px;
     }
 
-    .input-box input::placeholder {
-        font-size: 10.5px;
-    }
-
-    .remember-me,
-    .forgot-link,
-    .switch {
-        font-size: 10px;
-    }
-
-    .main-btn {
-        height: 34px;
-        font-size: 11.5px;
-    }
-
-    .signup-button {
-        margin-top: 8px;
-    }
-
-    .social-btn {
-        height: 32px;
-        font-size: 10.5px;
-        margin-bottom: 5px;
-    }
-
-    .social-divider span {
-        font-size: 9.5px;
+    .tm-login-page .social-btn {
+        height: 35px;
     }
 }
 
-@media screen and (max-width: 360px) {
-    .container {
-        max-width: 318px;
+/* =========================================================
+   SHORT SCREENS
+========================================================= */
+
+@media screen and (max-height: 680px) {
+    .tm-login-page .form-card {
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
 
-    .form-card {
-        padding: 11px;
+    .tm-login-page .logo-wrap {
+        margin-bottom: 4px;
     }
 
-    .login-brand .brand-logo {
-        width: 34px;
-        height: 34px;
+    .tm-login-page .login-brand .brand-logo {
+        width: 30px;
+        height: 30px;
     }
 
-    .login-brand .brand-title {
+    .tm-login-page .login-brand .brand-title {
         font-size: 14px;
     }
 
-    .form-title {
-        font-size: 15px;
+    .tm-login-page .login-brand .brand-subtitle {
+        font-size: 5px;
     }
 
-    .input-box input,
-    .input-box select {
-        height: 33px;
+    .tm-login-page .form-title {
+        font-size: 17px;
+        margin-bottom: 1px;
+    }
+
+    .tm-login-page .auth-form {
+        gap: 5px;
+    }
+
+    .tm-login-page .form-fields {
+        gap: 5px;
+    }
+
+    .tm-login-page .input-box {
+        gap: 3px;
+    }
+
+    .tm-login-page .input-label {
         font-size: 11px;
     }
 
-    .main-btn,
-    .social-btn {
-        font-size: 10.5px;
+    .tm-login-page .input-box input,
+    .tm-login-page .input-box select {
+        height: 32px;
+        padding: 5px 9px;
+        font-size: 12px;
+    }
+
+    .tm-login-page .input-box input::placeholder {
+        font-size: 11px;
+    }
+
+    .tm-login-page .main-btn {
+        height: 33px;
+        font-size: 12px;
+    }
+
+    .tm-login-page .social-divider {
+        margin: 2px 0 5px;
+    }
+
+    .tm-login-page .social-divider span {
+        font-size: 11px;
+    }
+
+    .tm-login-page .social-btn {
+        height: 31px;
+        font-size: 11px;
+    }
+
+    .tm-login-page .switch,
+    .tm-login-page .switch-btn {
+        font-size: 11px;
+    }
+}
+
+/* =========================================================
+   MOBILE WIDTH
+========================================================= */
+
+@media screen and (max-width: 480px) {
+    .tm-login-page {
+        padding: 8px;
+    }
+
+    .tm-login-page .page-controls {
+        top: 10px;
+        right: 12px;
+        gap: 6px;
+    }
+
+    html[dir="rtl"] .tm-login-page .page-controls {
+        right: auto;
+        left: 12px;
+    }
+
+    .tm-login-page .container {
+        max-width: 370px;
+    }
+
+    .tm-login-page .form-card {
+        max-height: calc(100dvh - 16px);
+
+        padding: 13px 15px;
+
+        border-radius: 15px;
+    }
+
+    .tm-login-page .login-brand {
+        gap: 7px;
+    }
+
+    .tm-login-page .login-brand .brand-logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .tm-login-page .login-brand .brand-title {
+        font-size: 15px;
+    }
+
+    .tm-login-page .login-brand .brand-subtitle {
+        font-size: 5px;
+    }
+
+    .tm-login-page .form-title {
+        font-size: 19px;
+    }
+
+    .tm-login-page .auth-form {
+        gap: 8px;
+    }
+
+    .tm-login-page .form-fields {
+        gap: 8px;
+    }
+
+    .tm-login-page .input-row {
+        gap: 8px;
+    }
+
+    .tm-login-page .input-label {
+        font-size: 12px;
+    }
+
+    .tm-login-page .input-box input,
+    .tm-login-page .input-box select {
+        height: 37px;
+
+        padding: 7px 9px;
+
+        font-size: 12px;
+    }
+
+    .tm-login-page .input-box input::placeholder {
+        font-size: 11px;
+    }
+
+    .tm-login-page .password-wrap input {
+        padding-right: 37px;
+    }
+
+    html[dir="rtl"] .tm-login-page .password-wrap input {
+        padding-right: 9px;
+        padding-left: 37px;
+    }
+
+    .tm-login-page .password-toggle {
+        right: 7px;
+    }
+
+    html[dir="rtl"] .tm-login-page .password-toggle {
+        right: auto;
+        left: 7px;
+    }
+
+    .tm-login-page .remember-me,
+    .tm-login-page .forgot-link {
+        font-size: 11px;
+    }
+
+    .tm-login-page .remember-me input {
+        width: 14px;
+        height: 14px;
+    }
+
+    .tm-login-page .main-btn {
+        height: 37px;
+        font-size: 13px;
+    }
+
+    .tm-login-page .social-divider {
+        margin: 3px 0 6px;
+    }
+
+    .tm-login-page .social-divider span {
+        font-size: 11px;
+    }
+
+    .tm-login-page .social-buttons {
+        gap: 7px;
+    }
+
+    .tm-login-page .social-btn {
+        gap: 6px;
+
+        height: 35px;
+
+        padding: 5px 7px;
+
+        font-size: 12px;
+    }
+
+    .tm-login-page .social-btn i {
+        font-size: 14px;
+    }
+
+    .tm-login-page .switch,
+    .tm-login-page .switch-btn {
+        font-size: 11.5px;
+    }
+
+    .tm-login-page .floating-market {
+        gap: 6px;
+        padding: 8px;
+    }
+
+    .tm-login-page .floating-market > i {
+        width: 24px;
+        height: 24px;
+        font-size: 11px;
+    }
+
+    .tm-login-page .floating-market span {
+        font-size: 8px;
+    }
+
+    .tm-login-page .floating-market strong {
+        font-size: 10px;
+    }
+
+    .tm-login-page .market-one {
+        top: 13%;
+        left: 3%;
+    }
+
+    .tm-login-page .market-two {
+        right: 3%;
+        bottom: 12%;
+    }
+
+    .tm-login-page .market-three {
+        top: 15%;
+        right: 4%;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE WIDTH
+========================================================= */
+
+@media screen and (max-width: 350px) {
+    .tm-login-page .form-card {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .tm-login-page .input-row {
+        gap: 6px;
+    }
+
+    .tm-login-page .input-box input,
+    .tm-login-page .input-box select {
+        padding-right: 7px;
+        padding-left: 7px;
+    }
+
+    .tm-login-page .social-buttons {
+        gap: 5px;
+    }
+
+    .tm-login-page .social-btn {
+        gap: 5px;
+        padding-right: 5px;
+        padding-left: 5px;
+        font-size: 11px;
+    }
+
+    .tm-login-page .social-btn i {
+        font-size: 13px;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .trading-background *,
+    .tm-login-page .social-btn,
+    .tm-login-page .main-btn {
+        animation: none !important;
+        transition: none !important;
     }
 }

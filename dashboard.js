@@ -290,3 +290,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
     refreshIcons();
 });
+
+/* =====================================================
+   TRADEMASTERS DASHBOARD — LOGOUT
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const sidebarLogout = document.getElementById("sidebarLogout");
+    const profileLogout = document.getElementById("profileLogout");
+
+    function handleLogout() {
+        const confirmed = window.confirm(
+            "Are you sure you want to log out?"
+        );
+
+        if (!confirmed) return;
+
+        /*
+         * Demo dashboard:
+         * Redirect to your login page.
+         *
+         * Connect your authentication logout process here
+         * before using this on a live website.
+         */
+
+        window.location.href = "login.html";
+    }
+
+    sidebarLogout?.addEventListener("click", handleLogout);
+
+    profileLogout?.addEventListener("click", handleLogout);
+
+    /* Refresh Lucide icons */
+
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
+
+});

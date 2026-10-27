@@ -523,21 +523,92 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* Initialize Lucide Icons */
+    const methodologySection = document.querySelector(
+        ".tm-methodology"
+    );
+
+    if (!methodologySection) {
+        return;
+    }
+
+
+    /* =====================================================
+       INITIALIZE LUCIDE ICONS
+    ===================================================== */
 
     function initMethodologyIcons() {
+
         if (window.lucide) {
             window.lucide.createIcons();
         }
+
     }
 
     initMethodologyIcons();
 
 
-    /* Refresh icons when theme or direction changes */
+    /* =====================================================
+       RTL / LTR DIRECTION SUPPORT
+       CSS handles the actual card swapping.
+    ===================================================== */
+
+    function updateMethodologyDirection() {
+
+        const direction = document.documentElement.getAttribute("dir");
+
+        if (direction === "rtl") {
+            methodologySection.classList.add(
+                "tm-methodology-rtl"
+            );
+        } else {
+            methodologySection.classList.remove(
+                "tm-methodology-rtl"
+            );
+        }
+
+    }
+
+    updateMethodologyDirection();
+
+
+    /* =====================================================
+       OBSERVE THEME AND DIRECTION CHANGES
+    ===================================================== */
+
+    let previousDirection = document.documentElement.getAttribute("dir");
+    let previousBodyClass = document.body.className;
 
     const methodologyObserver = new MutationObserver(() => {
-        initMethodologyIcons();
+
+        const currentDirection =
+            document.documentElement.getAttribute("dir");
+
+        const currentBodyClass = document.body.className;
+
+        if (currentDirection !== previousDirection) {
+
+            previousDirection = currentDirection;
+
+            updateMethodologyDirection();
+
+            initMethodologyIcons();
+
+        }
+
+        if (currentBodyClass !== previousBodyClass) {
+
+            previousBodyClass = currentBodyClass;
+
+            initMethodologyIcons();
+
+        }
+
+    });
+
+
+    methodologyObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["dir"]
     });
 
     methodologyObserver.observe(document.body, {
@@ -545,22 +616,23 @@ document.addEventListener("DOMContentLoaded", () => {
         attributeFilter: ["class"]
     });
 
-    methodologyObserver.observe(document.documentElement, {
-        attributes: true,
-        attributeFilter: ["dir"]
-    });
 
+    /* =====================================================
+       SCROLL REVEAL ANIMATION
+    ===================================================== */
 
-    /* Scroll Reveal */
-
-    const methodologySection = document.querySelector(
-        ".tm-methodology"
-    );
+    const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
 
     if (
-        methodologySection &&
+        !prefersReducedMotion &&
         "IntersectionObserver" in window
     ) {
+
+        methodologySection.classList.add(
+            "tm-methodology-reveal"
+        );
 
         const methodologyReveal = new IntersectionObserver(
             (entries, observer) => {
@@ -574,6 +646,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         );
 
                         observer.unobserve(entry.target);
+
                     }
 
                 });
@@ -585,6 +658,13 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         methodologyReveal.observe(methodologySection);
+
+    } else {
+
+        methodologySection.classList.add(
+            "tm-methodology-visible"
+        );
+
     }
 
 });

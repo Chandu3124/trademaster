@@ -97,7 +97,7 @@
 
     padding: 13px 17px;
 
-    background: var(--soft-bg, var(--bg));
+    background: var(--color-white);
     color: var(--text);
 
     border: 1px solid var(--color-primary);
@@ -466,7 +466,7 @@ body.dark-mode .tm-contact-image-circle {
 }
 
 body.dark-mode .tm-contact-float-card {
-    background: var(--soft-bg, var(--bg));
+    background: var(--color-black);
     color: var(--text);
 
     border-color: var(--border);
@@ -931,7 +931,9 @@ body.dark-mode .tm-contact-btn-primary:hover i {
     outline: 2px solid var(--color-secondary);
     outline-offset: 4px;
 }
-
+.tm-contact-info-card span{
+    color: var(--color-white);
+}
 
 /* =====================================================
    RTL SUPPORT
@@ -1012,11 +1014,9 @@ body.dark-mode .tm-contact-info-button:hover {
 body.dark-mode .tm-contact-info-button i {
     color: var(--bg);
 }
-
 /* =====================================================
    TRADEMASTERS — SECTION 3: SEND US A MESSAGE
 ===================================================== */
-
 .tm-contact-form-section,
 .tm-contact-form-section * {
     box-sizing: border-box;
@@ -1027,7 +1027,11 @@ body.dark-mode .tm-contact-info-button i {
     isolation: isolate;
 
     width: 100%;
-    padding: 85px 6.5%;
+
+    padding-top: 85px;
+    padding-right: 6.5%;
+    padding-bottom: 85px;
+    padding-left: 6.5%;
 
     background: var(--bg);
     color: var(--text);
@@ -1076,7 +1080,7 @@ body.dark-mode .tm-contact-info-button i {
 }
 
 
-/* TAGLINE WITH ICON */
+/* TAGLINE */
 
 .tm-contact-form-tagline {
     display: inline-flex;
@@ -1085,6 +1089,7 @@ body.dark-mode .tm-contact-info-button i {
 
     width: fit-content;
     max-width: 100%;
+
     margin-bottom: 20px;
     padding: 0;
 
@@ -1093,11 +1098,14 @@ body.dark-mode .tm-contact-info-button i {
     border-radius: 0;
 
     color: var(--color-secondary);
+
     font-family: var(--content-font, "Source Sans 3", sans-serif);
     font-size: 13px;
     font-weight: 700;
+
     letter-spacing: 1.5px;
     line-height: 1.4;
+
     text-transform: uppercase;
 }
 
@@ -1120,7 +1128,6 @@ body.dark-mode .tm-contact-info-button i {
     color: var(--text-heading, var(--text));
 
     font-family: var(--heading-font, "Playfair Display", Georgia, serif);
-
     font-size: clamp(32px, 3.1vw, 45px);
     font-weight: 700;
 
@@ -1144,7 +1151,6 @@ body.dark-mode .tm-contact-info-button i {
 
     font-size: 15px;
     font-weight: 400;
-
     line-height: 1.8;
 }
 
@@ -1158,7 +1164,6 @@ body.dark-mode .tm-contact-info-button i {
 
     display: flex;
     flex-direction: column;
-
     gap: 17px;
 }
 
@@ -1182,7 +1187,6 @@ body.dark-mode .tm-contact-info-button i {
 
     display: flex;
     flex-direction: column;
-
     gap: 8px;
 }
 
@@ -1190,7 +1194,6 @@ body.dark-mode .tm-contact-info-button i {
     color: var(--text-heading, var(--text));
 
     font-family: var(--content-font, "Source Sans 3", sans-serif);
-
     font-size: 13px;
     font-weight: 650;
 
@@ -1230,7 +1233,6 @@ body.dark-mode .tm-contact-info-button i {
     color: var(--text);
 
     font-family: var(--content-font, "Source Sans 3", sans-serif);
-
     font-size: 14px;
     font-weight: 400;
 
@@ -1249,12 +1251,11 @@ body.dark-mode .tm-contact-info-button i {
     min-height: 115px;
 
     resize: vertical;
-
     line-height: 1.7;
 }
 
 
-/* PLACEHOLDER TEXT */
+/* PLACEHOLDER */
 
 .tm-form-group input::placeholder,
 .tm-form-group textarea::placeholder {
@@ -1304,7 +1305,6 @@ body.dark-mode .tm-contact-info-button i {
 
     font-size: 12px;
     font-weight: 500;
-
     line-height: 1.5;
 }
 
@@ -1347,7 +1347,6 @@ body.dark-mode .tm-contact-info-button i {
     margin: 3px 0 0;
 
     accent-color: var(--color-secondary);
-
     cursor: pointer;
 }
 
@@ -1356,7 +1355,6 @@ body.dark-mode .tm-contact-info-button i {
 
     font-size: 13px;
     font-weight: 400;
-
     line-height: 1.7;
 
     cursor: pointer;
@@ -1422,12 +1420,10 @@ body.dark-mode .tm-contact-info-button i {
     color: var(--color-white);
 
     font-family: var(--content-font, "Source Sans 3", sans-serif);
-
     font-size: 14px;
     font-weight: 700;
 
     line-height: 1.4;
-
     cursor: pointer;
 
     transition:
@@ -1489,7 +1485,6 @@ body.dark-mode .tm-contact-info-button i {
 
     font-size: 15px;
     font-weight: 700;
-
     line-height: 1.5;
 }
 
@@ -1505,6 +1500,7 @@ body.dark-mode .tm-contact-info-button i {
 
 /* =====================================================
    RIGHT IMAGE PANEL
+   EQUAL LEFT AND RIGHT PADDING
 ===================================================== */
 
 .tm-contact-form-visual {
@@ -1513,9 +1509,13 @@ body.dark-mode .tm-contact-info-button i {
 
     width: 100%;
     min-width: 0;
-    min-height: 100%;
+    height: fit-content;
+    min-height: 0;
 
     overflow: hidden;
+
+    /* Equal padding on all sides */
+    padding: 28px;
 
     border: 1px solid var(--border);
     border-radius: var(--radius-lg, 20px);
@@ -1527,20 +1527,20 @@ body.dark-mode .tm-contact-info-button i {
 /* IMAGE */
 
 .tm-contact-form-image {
-    position: absolute;
-    inset: 0;
+    position: relative;
+    inset: auto;
 
     z-index: -2;
 
     display: block;
 
     width: 100%;
-    height: 100%;
+    height: 430px;
 
     object-fit: cover;
     object-position: center;
 
-    border-radius: inherit;
+    border-radius: var(--radius-lg, 16px);
 }
 
 
@@ -1550,9 +1550,12 @@ body.dark-mode .tm-contact-info-button i {
 
 .tm-contact-form-image-overlay {
     position: absolute;
-    inset: 0;
+
+    inset: 28px;
 
     z-index: -1;
+
+    border-radius: var(--radius-lg, 16px);
 
     background: linear-gradient(
         180deg,
@@ -1561,6 +1564,8 @@ body.dark-mode .tm-contact-info-button i {
         color-mix(in srgb, var(--bg) 80%, transparent) 68%,
         var(--bg) 100%
     );
+
+    pointer-events: none;
 }
 
 
@@ -1572,14 +1577,17 @@ body.dark-mode .tm-contact-info-button i {
     position: relative;
 
     width: 100%;
-    min-height: 100%;
+    min-height: 0;
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: flex-start;
 
-    padding: 38px;
+    /* Gap between image and content */
+    margin-top: 28px;
+
+    padding: 0;
 }
 
 
@@ -1621,7 +1629,6 @@ body.dark-mode .tm-contact-info-button i {
     color: var(--text-heading, var(--text));
 
     font-family: var(--heading-font, "Playfair Display", Georgia, serif);
-
     font-size: clamp(30px, 3.1vw, 44px);
     font-weight: 700;
 
@@ -1649,7 +1656,6 @@ body.dark-mode .tm-contact-info-button i {
 
     font-size: 14px;
     font-weight: 400;
-
     line-height: 1.9;
 }
 
@@ -1694,7 +1700,6 @@ body.dark-mode .tm-contact-info-button i {
     color: var(--bg);
 
     font-family: var(--heading-font, "Playfair Display", Georgia, serif);
-
     font-size: 15px;
     font-weight: 700;
 }
@@ -1730,13 +1735,10 @@ body.dark-mode .tm-contact-form-section {
     color: var(--text);
 }
 
-
-/* Light border in dark mode */
-
 body.dark-mode .tm-form-group input,
 body.dark-mode .tm-form-group select,
 body.dark-mode .tm-form-group textarea {
-    background: var(--soft-bg, var(--bg));
+    background: var(--color-black);
     color: var(--text);
 
     border-color: #D8D8D8;
@@ -1744,7 +1746,7 @@ body.dark-mode .tm-form-group textarea {
 
 body.dark-mode .tm-form-group input::placeholder,
 body.dark-mode .tm-form-group textarea::placeholder {
-    color: var(--text-muted, var(--text));
+    color: var(--color-black);
     opacity: 0.85;
 }
 
@@ -2504,7 +2506,7 @@ html[dir="rtl"] .tm-map-caption {
     border-radius: 50%;
 
     background: var(--color-primary);
-    color: var(--bg);
+    color: var(--color-white);
 }
 
 .tm-faq-toggle svg {
@@ -2922,297 +2924,677 @@ html[dir="rtl"] .tm-contact-cta-actions {
 }
 
 /* =====================================================
-   TRADEMASTERS CONTACT PAGE — RESPONSIVE MEDIA QUERIES
+   SAMSUNG GALAXY S8+ / MOBILE VERSION
+   360px–740px
+   Includes CTA vertical alignment fix
 ===================================================== */
 
+@media screen and (min-width: 360px) and (max-width: 740px) {
 
-/* =====================================================
-   EXTRA SMALL MOBILE — UP TO 359px
-===================================================== */
+    /* ==============================
+       COMMON SECTION PADDING
+    ============================== */
 
-@media screen and (max-width: 359px) {
+    .tm-contact-hero,
+    .tm-contact-info,
+    .tm-contact-form-section,
+    .tm-visit-academy,
+    .tm-faq,
+    .tm-contact-cta {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
 
-    /* CONTACT HERO */
+    .tm-contact-hero *,
+    .tm-contact-info *,
+    .tm-contact-form-section *,
+    .tm-visit-academy *,
+    .tm-faq *,
+    .tm-contact-cta * {
+        box-sizing: border-box;
+        min-width: 0;
+    }
+
+    /* ==============================
+       SECTION 1 — CONTACT HERO
+    ============================== */
 
     .tm-contact-hero {
         height: auto;
-        min-height: auto;
+        min-height: 0;
         max-height: none;
         grid-template-columns: minmax(0, 1fr);
-        gap: 28px;
-        padding: 45px 5%;
+        gap: 30px;
+        padding-top: 36px;
+        padding-bottom: 44px;
         overflow: hidden;
     }
 
     .tm-contact-visual {
-        grid-row: 1;
-        min-height: 270px;
+        width: 100%;
         height: auto;
+        min-height: 0;
+        padding: 12px 8px 20px;
     }
 
     .tm-contact-image-circle {
-        width: min(75%, 240px);
+        width: min(76vw, 300px);
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .tm-contact-card-top {
+        top: 8%;
+        left: 0;
+    }
+
+    .tm-contact-card-bottom {
+        right: 0;
+        bottom: 4%;
+    }
+
+    .tm-contact-float-card {
+        max-width: 78%;
+        gap: 8px;
+        padding: 9px 11px;
+    }
+
+    .tm-contact-card-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 9px;
+        flex-shrink: 0;
+    }
+
+    .tm-contact-card-icon i {
+        width: 18px;
+        height: 18px;
+    }
+
+    .tm-contact-card-title {
+        font-size: 12px;
+    }
+
+    .tm-contact-card-text {
+        font-size: 10px;
+        overflow-wrap: anywhere;
     }
 
     .tm-contact-content {
+        width: 100%;
         max-width: 100%;
-        justify-self: stretch;
+    }
+
+    .tm-contact-tagline,
+    .tm-contact-info-tagline,
+    .tm-contact-form-tagline,
+    .tm-visit-tagline,
+    .tm-faq-tagline,
+    .tm-contact-cta-tagline {
+        max-width: 100%;
+        font-size: 11px;
+        letter-spacing: 1px;
+        margin-bottom: 14px;
+        overflow-wrap: anywhere;
     }
 
     .tm-contact-heading {
-        font-size: 30px;
+        font-size: clamp(30px, 8vw, 38px);
         letter-spacing: -0.5px;
+        margin-bottom: 16px;
+        overflow-wrap: anywhere;
     }
 
     .tm-contact-description {
-        font-size: 14px;
+        font-size: 15px;
         line-height: 1.7;
+        overflow-wrap: anywhere;
     }
 
     .tm-contact-buttons {
         width: 100%;
-        flex-direction: column;
-        align-items: stretch;
+        flex-wrap: wrap;
         gap: 10px;
+        margin-top: 22px;
     }
 
     .tm-contact-btn {
-        width: 100%;
-        min-height: 45px;
-        padding: 11px 15px;
+        max-width: 100%;
+        padding: 12px 16px;
         font-size: 13px;
+        overflow-wrap: anywhere;
     }
 
-    .tm-contact-float-card {
-        max-width: 165px;
-        gap: 7px;
-        padding: 9px 10px;
+    .tm-contact-supporting-text {
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-top: 20px;
     }
 
-    .tm-contact-card-icon {
-        width: 32px;
-        height: 32px;
-    }
-
-
-    /* CONTACT INFORMATION */
+    /* ==============================
+       SECTION 2 — CONTACT INFO
+    ============================== */
 
     .tm-contact-info {
-        padding: 45px 5%;
+        padding-top: 54px;
+        padding-bottom: 58px;
     }
 
-    .tm-contact-info-grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 13px;
-    }
-
-    .tm-contact-info-card {
-        padding: 19px 16px;
+    .tm-contact-info-header {
+        width: 100%;
+        margin-bottom: 30px;
     }
 
     .tm-contact-info-heading {
-        font-size: 29px;
+        font-size: clamp(29px, 7.5vw, 36px);
+        letter-spacing: -0.4px;
+        overflow-wrap: anywhere;
+    }
+
+    .tm-contact-info-description {
+        font-size: 14px;
+        line-height: 1.7;
+        overflow-wrap: anywhere;
+    }
+
+    .tm-contact-info-grid {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .tm-contact-info-card {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .tm-contact-info-card-top {
+        margin-bottom: 17px;
     }
 
     .tm-contact-info-card h3 {
-        font-size: 17px;
+        font-size: 18px;
+        overflow-wrap: anywhere;
     }
 
+    .tm-contact-info-card-description {
+        font-size: 14px;
+        overflow-wrap: anywhere;
+    }
 
-    /* CONTACT FORM */
+    .tm-contact-info-email a {
+        font-size: 12px;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    /* ==============================
+       SECTION 3 — CONTACT FORM
+    ============================== */
 
     .tm-contact-form-section {
-        padding: 45px 5%;
+        padding-top: 54px;
+        padding-bottom: 58px;
     }
 
-    .tm-contact-form-layout {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 28px;
+    .tm-contact-form-header {
+        width: 100%;
+        margin-bottom: 22px;
     }
 
     .tm-contact-form-header h2 {
-        font-size: 29px;
+        font-size: clamp(29px, 7.5vw, 36px);
+        overflow-wrap: anywhere;
+    }
+
+    .tm-contact-form-header > p {
+        font-size: 14px;
+        line-height: 1.7;
+        overflow-wrap: anywhere;
+    }
+
+    .tm-contact-form-layout {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
     }
 
     .tm-form-row {
         grid-template-columns: minmax(0, 1fr);
-        gap: 14px;
+        gap: 15px;
+    }
+
+    .tm-enquiry-form {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .tm-form-group {
+        width: 100%;
+        min-width: 0;
     }
 
     .tm-form-group input,
     .tm-form-group select,
     .tm-form-group textarea {
+        width: 100%;
         max-width: 100%;
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .tm-contact-form-visual {
-        min-height: 360px;
-        height: 360px;
+        width: 100%;
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .tm-contact-form-image {
+        width: 100%;
+        height: clamp(230px, 68vw, 320px);
+    }
+
+    .tm-contact-form-image-overlay {
+        inset: 16px;
     }
 
     .tm-contact-form-visual-content {
-        padding: 22px;
+        margin-top: 20px;
     }
 
     .tm-contact-form-visual-content h3 {
-        font-size: 27px;
+        font-size: clamp(27px, 7vw, 34px);
+        overflow-wrap: anywhere;
     }
 
+    .tm-contact-form-visual-content > p {
+        font-size: 13px;
+        line-height: 1.75;
+        overflow-wrap: anywhere;
+    }
 
-    /* VISIT ACADEMY */
+    /* ==============================
+       SECTION 4 — VISIT ACADEMY
+    ============================== */
 
     .tm-visit-academy {
-        padding: 45px 5%;
+        padding-top: 54px;
+        padding-bottom: 58px;
     }
 
     .tm-visit-layout {
+        width: 100%;
         grid-template-columns: minmax(0, 1fr);
         gap: 28px;
     }
 
-    .tm-visit-map-wrapper {
-        min-height: 300px;
+    .tm-visit-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
     }
 
     .tm-visit-content > h2 {
-        font-size: 29px;
+        font-size: clamp(29px, 7.5vw, 36px);
+        overflow-wrap: anywhere;
+    }
+
+    .tm-visit-description {
+        font-size: 14px;
+        line-height: 1.75;
+        overflow-wrap: anywhere;
+    }
+
+    .tm-visit-map-wrapper {
+        width: 100%;
+        min-height: 340px;
+    }
+
+    .tm-map-caption {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .tm-map-caption-icon {
+        flex: 0 0 36px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .tm-map-caption > div > span {
+        overflow-wrap: anywhere;
+    }
+
+    .tm-visit-detail {
+        gap: 11px;
+        padding: 13px 0;
+    }
+
+    .tm-visit-detail-icon {
+        flex: 0 0 38px;
+        width: 38px;
+        height: 38px;
+    }
+
+    .tm-visit-detail-text h3,
+    .tm-visit-detail-text p {
+        overflow-wrap: anywhere;
     }
 
     .tm-visit-directions-btn {
         width: 100%;
+        max-width: 100%;
+        justify-content: center;
+        padding: 13px 18px;
     }
 
-
-    /* FAQ */
+    /* ==============================
+       SECTION 5 — FAQ
+    ============================== */
 
     .tm-faq {
-        padding: 45px 5%;
+        padding-top: 54px;
+        padding-bottom: 58px;
     }
 
-    .tm-faq-grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 13px;
+    .tm-faq-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .tm-faq-header {
+        width: 100%;
+        margin-bottom: 30px;
     }
 
     .tm-faq-header h2 {
-        font-size: 29px;
+        font-size: clamp(29px, 7.5vw, 36px);
+        overflow-wrap: anywhere;
+    }
+
+    .tm-faq-header > p {
+        font-size: 14px;
+        line-height: 1.7;
+        overflow-wrap: anywhere;
+    }
+
+    .tm-faq-grid {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .tm-faq-card {
+        width: 100%;
+        min-width: 0;
     }
 
     .tm-faq-question {
-        grid-template-columns: 30px minmax(0, 1fr) 28px;
-        gap: 8px;
-        padding: 15px 11px;
-    }
-
-    .tm-faq-number {
-        width: 30px;
-        height: 30px;
+        gap: 10px;
+        padding: 16px;
     }
 
     .tm-faq-question-text {
-        font-size: 13px;
-    }
-
-    .tm-faq-toggle {
-        width: 28px;
-        height: 28px;
+        overflow-wrap: anywhere;
     }
 
     .tm-faq-answer {
-        padding: 0 12px 17px 49px;
+        padding: 0 16px 20px;
     }
 
-    html[dir="rtl"] .tm-faq-answer {
-        padding: 0 49px 17px 12px;
+    .tm-faq-answer p {
+        font-size: 14px;
+        overflow-wrap: anywhere;
     }
 
-
-    /* FINAL CTA */
+    /* ==============================
+       SECTION 6 — FINAL CONTACT CTA
+       Vertical layout:
+       Tagline
+       Heading
+       Description
+       Buttons
+       Note
+    ============================== */
 
     .tm-contact-cta {
-        padding: 40px 5% 50px;
+        width: 100%;
+        padding: 42px 20px 50px;
+        overflow: hidden;
     }
 
     .tm-contact-cta-card {
+        display: flex;
         flex-direction: column;
         align-items: stretch;
-        gap: 23px;
-        padding: 24px 17px;
+        justify-content: flex-start;
+        gap: 20px;
+
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 0 auto;
+        padding: 24px 18px;
+
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    /*
+       Allow CTA content children to stack in the
+       requested order with the buttons before note.
+    */
+
+    .tm-contact-cta-content {
+        display: contents;
+    }
+
+    .tm-contact-cta-tagline {
+        order: 1;
+
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+
+        font-size: 10px;
+        line-height: 1.6;
+        letter-spacing: 1px;
+        overflow-wrap: anywhere;
+    }
+
+    .tm-contact-cta-tagline i,
+    .tm-contact-cta-tagline svg {
+        flex: 0 0 18px;
+        width: 18px;
+        height: 18px;
     }
 
     .tm-contact-cta-content h2 {
-        font-size: 28px;
+        order: 2;
+
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+
+        font-size: clamp(27px, 7.2vw, 34px);
+        line-height: 1.25;
+        letter-spacing: -0.4px;
+
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    .tm-contact-cta-content h2 span {
+        display: block;
+        max-width: 100%;
+        margin-top: 4px;
+        overflow-wrap: anywhere;
+    }
+
+    .tm-contact-cta-description {
+        order: 3;
+
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+
+        font-size: 14px;
+        line-height: 1.75;
+
+        overflow-wrap: anywhere;
+        word-break: normal;
     }
 
     .tm-contact-cta-actions {
+        order: 4;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+
+        gap: 12px;
+
         width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 0;
+        flex-shrink: 1;
     }
 
     .tm-contact-cta-primary,
     .tm-contact-cta-secondary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
         width: 100%;
-        min-height: 46px;
-        padding: 12px 15px;
+        max-width: 100%;
+        min-width: 0;
+        min-height: 48px;
+
+        padding: 12px 14px;
+
         font-size: 13px;
+        line-height: 1.5;
+        text-align: center;
+
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    .tm-contact-cta-primary i,
+    .tm-contact-cta-primary svg,
+    .tm-contact-cta-secondary i,
+    .tm-contact-cta-secondary svg {
+        flex: 0 0 17px;
+        width: 17px;
+        height: 17px;
+    }
+
+    .tm-contact-cta-support {
+        order: 5;
+
+        display: flex;
+        align-items: flex-start;
+        gap: 9px;
+
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 0;
+    }
+
+    .tm-contact-cta-support i,
+    .tm-contact-cta-support svg {
+        flex: 0 0 18px;
+        width: 18px;
+        height: 18px;
+        margin-top: 3px;
+    }
+
+    .tm-contact-cta-support p {
+        flex: 1;
+        min-width: 0;
+        margin: 0;
+
+        font-size: 12px;
+        line-height: 1.7;
+
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    /* ==============================
+       RTL SUPPORT
+    ============================== */
+
+    html[dir="rtl"] .tm-contact-card-top {
+        right: 0;
+        left: auto;
+    }
+
+    html[dir="rtl"] .tm-contact-card-bottom {
+        left: 0;
+        right: auto;
+    }
+
+    html[dir="rtl"] .tm-contact-cta-tagline,
+    html[dir="rtl"] .tm-contact-cta-support {
+        text-align: right;
+    }
+
+    html[dir="rtl"] .tm-contact-cta-primary,
+    html[dir="rtl"] .tm-contact-cta-secondary {
+        text-align: center;
     }
 }
-
-
 /* =====================================================
-   MOBILE — 360px TO 767px
+   IPAD MINI
+   768px–820px
 ===================================================== */
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (min-width: 768px) and (max-width: 820px) {
 
-    /* CONTACT HERO */
+    .tm-contact-hero,
+    .tm-contact-info,
+    .tm-contact-form-section,
+    .tm-visit-academy,
+    .tm-faq,
+    .tm-contact-cta {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
 
     .tm-contact-hero {
         height: auto;
-        min-height: auto;
+        min-height: 0;
         max-height: none;
-        grid-template-columns: minmax(0, 1fr);
-        gap: 32px;
-        padding: 50px 6%;
-        overflow: hidden;
-    }
-
-    .tm-contact-visual {
-        grid-row: 1;
-        height: auto;
-        min-height: 320px;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 28px;
+        padding-top: 44px;
+        padding-bottom: 48px;
     }
 
     .tm-contact-image-circle {
-        width: min(76%, 285px);
-    }
-
-    .tm-contact-content {
-        max-width: 100%;
-        justify-self: stretch;
-    }
-
-    .tm-contact-heading {
-        font-size: clamp(31px, 7vw, 39px);
-    }
-
-    .tm-contact-description {
-        font-size: 15px;
-    }
-
-    .tm-contact-buttons {
-        gap: 11px;
-        margin-top: 23px;
-    }
-
-    .tm-contact-btn {
-        min-height: 46px;
-        padding: 12px 17px;
+        width: min(100%, 300px);
     }
 
     .tm-contact-float-card {
-        max-width: 190px;
-        gap: 9px;
+        gap: 8px;
         padding: 10px 12px;
     }
 
@@ -3221,207 +3603,34 @@ html[dir="rtl"] .tm-contact-cta-actions {
         height: 36px;
     }
 
-
-    /* CONTACT INFORMATION */
-
-    .tm-contact-info {
-        padding: 55px 6%;
+    .tm-contact-card-title {
+        font-size: 12px;
     }
 
-    .tm-contact-info-grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 15px;
+    .tm-contact-card-text {
+        font-size: 10px;
+        overflow-wrap: anywhere;
     }
 
-    .tm-contact-info-heading {
-        font-size: clamp(30px, 6.5vw, 38px);
-    }
-
-    .tm-contact-info-card {
-        padding: 22px 20px;
-    }
-
-
-    /* CONTACT FORM */
-
-    .tm-contact-form-section {
-        padding: 55px 6%;
-    }
-
-    .tm-contact-form-layout {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 32px;
-    }
-
-    .tm-contact-form-header h2 {
-        font-size: clamp(30px, 6.5vw, 39px);
-    }
-
-    .tm-form-row {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 15px;
-    }
-
-    .tm-form-group input,
-    .tm-form-group select {
-        min-height: 47px;
-        max-width: 100%;
-    }
-
-    .tm-form-group textarea {
-        min-height: 115px;
-        max-width: 100%;
-    }
-
-    .tm-contact-form-visual {
-        min-height: 410px;
-        height: 410px;
-    }
-
-    .tm-contact-form-visual-content {
-        padding: 27px;
-    }
-
-    .tm-contact-form-visual-content h3 {
-        font-size: clamp(28px, 6vw, 36px);
-    }
-
-
-    /* VISIT ACADEMY */
-
-    .tm-visit-academy {
-        padding: 55px 6%;
-    }
-
-    .tm-visit-layout {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 32px;
-    }
-
-    .tm-visit-map-wrapper {
-        min-height: 350px;
-    }
-
-    .tm-visit-content > h2 {
-        font-size: clamp(30px, 6.5vw, 40px);
-    }
-
-    .tm-visit-directions-btn {
-        max-width: 100%;
-    }
-
-
-    /* FAQ */
-
-    .tm-faq {
-        padding: 55px 6%;
-    }
-
-    .tm-faq-grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 15px;
-    }
-
-    .tm-faq-header h2 {
-        font-size: clamp(30px, 6.5vw, 40px);
-    }
-
-    .tm-faq-question {
-        grid-template-columns: 34px minmax(0, 1fr) 32px;
-        gap: 10px;
-        padding: 18px 15px;
-    }
-
-    .tm-faq-number {
-        width: 34px;
-        height: 34px;
-    }
-
-    .tm-faq-question-text {
-        font-size: 14px;
-    }
-
-    .tm-faq-toggle {
-        width: 32px;
-        height: 32px;
-    }
-
-    .tm-faq-answer {
-        padding: 0 16px 20px 59px;
-    }
-
-    html[dir="rtl"] .tm-faq-answer {
-        padding: 0 59px 20px 16px;
-    }
-
-
-    /* FINAL CTA */
-
-    .tm-contact-cta {
-        padding: 45px 6% 55px;
-    }
-
-    .tm-contact-cta-card {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 27px;
-        padding: 30px 23px;
-    }
-
-    .tm-contact-cta-content h2 {
-        font-size: clamp(29px, 6.5vw, 38px);
-    }
-
-    .tm-contact-cta-actions {
-        width: 100%;
-    }
-
-    .tm-contact-cta-primary,
-    .tm-contact-cta-secondary {
-        min-height: 48px;
-    }
-}
-
-
-/* =====================================================
-   IPAD MINI — 768px TO 820px
-===================================================== */
-
-@media screen and (min-width: 768px) and (max-width: 820px) {
-
-    /* CONTACT HERO */
-
-    .tm-contact-hero {
-        height: auto;
-        min-height: 680px;
-        max-height: none;
-        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-        gap: 4%;
-        padding: 45px 5%;
-    }
-
-    .tm-contact-image-circle {
-        width: min(100%, 300px);
+    .tm-contact-content {
+        max-width: none;
+        min-width: 0;
     }
 
     .tm-contact-heading {
-        font-size: 35px;
+        font-size: clamp(31px, 4.2vw, 36px);
     }
 
     .tm-contact-description {
         font-size: 14px;
     }
 
-    .tm-contact-btn {
-        padding: 12px 16px;
-        font-size: 13px;
-    }
-
-
-    /* CONTACT INFORMATION */
-
-    .tm-contact-info {
-        padding: 65px 5%;
+    .tm-contact-info,
+    .tm-contact-form-section,
+    .tm-visit-academy,
+    .tm-faq {
+        padding-top: 64px;
+        padding-bottom: 68px;
     }
 
     .tm-contact-info-grid {
@@ -3430,129 +3639,114 @@ html[dir="rtl"] .tm-contact-cta-actions {
     }
 
     .tm-contact-info-card {
-        padding: 22px 18px;
+        padding: 20px 17px;
     }
 
-
-    /* CONTACT FORM */
-
-    .tm-contact-form-section {
-        padding: 65px 5%;
+    .tm-contact-info-email a {
+        overflow-wrap: anywhere;
     }
 
     .tm-contact-form-layout {
         grid-template-columns: minmax(0, 1fr);
-        gap: 32px;
-    }
-
-    .tm-form-row {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 15px;
+        gap: 30px;
     }
 
     .tm-contact-form-visual {
-        min-height: 430px;
-        height: 430px;
+        padding: 22px;
     }
 
+    .tm-contact-form-image {
+        height: 360px;
+    }
 
-    /* VISIT ACADEMY */
-
-    .tm-visit-academy {
-        padding: 65px 5%;
+    .tm-contact-form-image-overlay {
+        inset: 22px;
     }
 
     .tm-visit-layout {
         grid-template-columns: minmax(0, 1fr);
-        gap: 32px;
+        gap: 30px;
     }
 
     .tm-visit-map-wrapper {
-        min-height: 400px;
-    }
-
-
-    /* FAQ */
-
-    .tm-faq {
-        padding: 65px 5%;
+        min-height: 420px;
     }
 
     .tm-faq-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-    }
-
-    .tm-faq-question {
-        grid-template-columns: 32px minmax(0, 1fr) 30px;
-        gap: 9px;
-        padding: 17px 12px;
-    }
-
-    .tm-faq-question-text {
-        font-size: 13px;
-    }
-
-    .tm-faq-answer {
-        padding: 0 14px 20px 53px;
-    }
-
-    html[dir="rtl"] .tm-faq-answer {
-        padding: 0 53px 20px 14px;
-    }
-
-
-    /* FINAL CTA */
-
-    .tm-contact-cta {
-        padding: 50px 5% 65px;
+        gap: 16px;
     }
 
     .tm-contact-cta-card {
-        gap: 25px;
-        padding: 32px 28px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+        padding: 32px;
     }
 
-    .tm-contact-cta-content h2 {
-        font-size: 32px;
+    .tm-contact-cta-actions {
+        flex-wrap: wrap;
     }
 }
-
-
 /* =====================================================
-   IPAD PRO — 821px TO 1024px
+   IPAD PRO 11" / TABLET LANDSCAPE
+   821px–1024px
 ===================================================== */
 
 @media screen and (min-width: 821px) and (max-width: 1024px) {
 
-    /* CONTACT HERO */
+    .tm-contact-hero,
+    .tm-contact-info,
+    .tm-contact-form-section,
+    .tm-visit-academy,
+    .tm-faq,
+    .tm-contact-cta {
+        padding-left: 36px;
+        padding-right: 36px;
+    }
 
     .tm-contact-hero {
-        min-height: 650px;
-        max-height: 820px;
-        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-        gap: 4%;
-        padding-right: 5%;
-        padding-left: 5%;
+        height: auto;
+        min-height: 600px;
+        max-height: none;
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+        gap: 30px;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 
     .tm-contact-image-circle {
-        width: min(100%, 340px);
+        width: min(100%, 350px);
+    }
+
+    .tm-contact-float-card {
+        gap: 9px;
+        padding: 11px 13px;
+    }
+
+    .tm-contact-card-title {
+        font-size: 12px;
+    }
+
+    .tm-contact-card-text {
+        font-size: 10px;
+        overflow-wrap: anywhere;
+    }
+
+    .tm-contact-content {
+        max-width: none;
+        min-width: 0;
     }
 
     .tm-contact-heading {
-        font-size: clamp(34px, 3.7vw, 41px);
+        font-size: clamp(34px, 3.8vw, 40px);
     }
 
-    .tm-contact-description {
-        font-size: 15px;
-    }
-
-
-    /* CONTACT INFORMATION */
-
-    .tm-contact-info {
-        padding: 70px 5%;
+    .tm-contact-info,
+    .tm-contact-form-section,
+    .tm-visit-academy,
+    .tm-faq {
+        padding-top: 70px;
+        padding-bottom: 74px;
     }
 
     .tm-contact-info-grid {
@@ -3560,28 +3754,40 @@ html[dir="rtl"] .tm-contact-cta-actions {
         gap: 18px;
     }
 
-
-    /* CONTACT FORM */
-
-    .tm-contact-form-section {
-        padding: 70px 5%;
+    .tm-contact-info-card {
+        padding: 22px 20px;
     }
 
     .tm-contact-form-layout {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 35px;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+        gap: 26px;
+    }
+
+    .tm-form-row {
+        gap: 13px;
+    }
+
+    .tm-form-group input,
+    .tm-form-group select,
+    .tm-form-group textarea {
+        padding-left: 12px;
+        padding-right: 12px;
     }
 
     .tm-contact-form-visual {
-        min-height: 470px;
-        height: 470px;
+        padding: 18px;
     }
 
+    .tm-contact-form-image {
+        height: 390px;
+    }
 
-    /* VISIT ACADEMY */
+    .tm-contact-form-image-overlay {
+        inset: 18px;
+    }
 
-    .tm-visit-academy {
-        padding: 70px 5%;
+    .tm-contact-form-visual-content h3 {
+        font-size: clamp(28px, 3vw, 34px);
     }
 
     .tm-visit-layout {
@@ -3590,18 +3796,7 @@ html[dir="rtl"] .tm-contact-cta-actions {
     }
 
     .tm-visit-map-wrapper {
-        min-height: 540px;
-    }
-
-    .tm-visit-content > h2 {
-        font-size: 35px;
-    }
-
-
-    /* FAQ */
-
-    .tm-faq {
-        padding: 70px 5%;
+        min-height: 520px;
     }
 
     .tm-faq-grid {
@@ -3609,160 +3804,24 @@ html[dir="rtl"] .tm-contact-cta-actions {
         gap: 16px;
     }
 
-    .tm-faq-question {
-        grid-template-columns: 34px minmax(0, 1fr) 32px;
-        gap: 10px;
-        padding: 18px 15px;
-    }
-
-    .tm-faq-answer {
-        padding: 0 16px 22px 59px;
-    }
-
-    html[dir="rtl"] .tm-faq-answer {
-        padding: 0 59px 22px 16px;
-    }
-
-
-    /* FINAL CTA */
-
-    .tm-contact-cta {
-        padding: 50px 5% 70px;
-    }
-
     .tm-contact-cta-card {
-        gap: 30px;
-        padding: 35px 30px;
-    }
-
-    .tm-contact-cta-content h2 {
-        font-size: 35px;
+        gap: 28px;
+        padding: 34px;
     }
 }
-
-
 /* =====================================================
-   SMALL LAPTOPS — 1025px TO 1200px
+   NEST HUB — 1024px × 600px
 ===================================================== */
 
-@media screen and (min-width: 1025px) and (max-width: 1200px) {
-
-    /* CONTACT HERO */
-
-    .tm-contact-hero {
-        gap: 4.5%;
-        padding-right: 5%;
-        padding-left: 5%;
-    }
-
-    .tm-contact-image-circle {
-        width: min(100%, 370px);
-    }
-
-    .tm-contact-heading {
-        font-size: clamp(36px, 3.3vw, 43px);
-    }
-
-
-    /* CONTACT INFORMATION */
-
-    .tm-contact-info {
-        padding-right: 5%;
-        padding-left: 5%;
-    }
-
-    .tm-contact-info-grid {
-        gap: 14px;
-    }
-
-    .tm-contact-info-card {
-        padding: 22px 16px;
-    }
-
-
-    /* CONTACT FORM */
-
-    .tm-contact-form-section {
-        padding-right: 5%;
-        padding-left: 5%;
-    }
-
-    .tm-contact-form-layout {
-        gap: 30px;
-    }
-
-    .tm-contact-form-visual-content {
-        padding: 30px;
-    }
-
-
-    /* VISIT ACADEMY */
-
-    .tm-visit-academy {
-        padding-right: 5%;
-        padding-left: 5%;
-    }
-
-    .tm-visit-layout {
-        gap: 32px;
-    }
-
-    .tm-visit-map-wrapper {
-        min-height: 560px;
-    }
-
-
-    /* FAQ */
-
-    .tm-faq {
-        padding-right: 5%;
-        padding-left: 5%;
-    }
-
-    .tm-faq-question {
-        gap: 11px;
-        padding-right: 18px;
-        padding-left: 18px;
-    }
-
-    .tm-faq-answer {
-        padding-right: 18px;
-        padding-left: 67px;
-    }
-
-    html[dir="rtl"] .tm-faq-answer {
-        padding-right: 67px;
-        padding-left: 18px;
-    }
-
-
-    /* FINAL CTA */
-
-    .tm-contact-cta {
-        padding-right: 5%;
-        padding-left: 5%;
-    }
-
-    .tm-contact-cta-card {
-        gap: 35px;
-        padding: 40px 35px;
-    }
-}
-
-
-/* =====================================================
-   NEST HUB / SHORT LANDSCAPE SCREENS
-===================================================== */
-
-@media screen and (min-width: 1000px) and (max-width: 1100px)
-and (min-height: 550px) and (max-height: 650px) {
+@media screen and (width: 1024px) and (height: 600px) {
 
     .tm-contact-hero {
         height: auto;
-        min-height: 600px;
+        min-height: 540px;
         max-height: none;
-        padding-top: 35px;
-        padding-bottom: 35px;
+        padding-top: 28px;
+        padding-bottom: 28px;
+        gap: 28px;
     }
 
     .tm-contact-image-circle {
@@ -3770,8 +3829,17 @@ and (min-height: 550px) and (max-height: 650px) {
     }
 
     .tm-contact-heading {
-        font-size: 36px;
-        margin-bottom: 15px;
+        font-size: 34px;
+        margin-bottom: 14px;
+    }
+
+    .tm-contact-tagline {
+        margin-bottom: 12px;
+    }
+
+    .tm-contact-description {
+        font-size: 14px;
+        line-height: 1.6;
     }
 
     .tm-contact-buttons {
@@ -3782,36 +3850,45 @@ and (min-height: 550px) and (max-height: 650px) {
         margin-top: 16px;
     }
 
-    .tm-contact-form-section {
-        padding-top: 60px;
-        padding-bottom: 60px;
+    .tm-contact-info,
+    .tm-contact-form-section,
+    .tm-visit-academy,
+    .tm-faq {
+        padding-top: 48px;
+        padding-bottom: 52px;
     }
 
-    .tm-contact-form-visual {
-        min-height: 480px;
+    .tm-contact-info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tm-contact-form-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+        gap: 24px;
+    }
+
+    .tm-contact-form-image {
+        height: 330px;
+    }
+
+    .tm-visit-layout {
+        gap: 24px;
     }
 
     .tm-visit-map-wrapper {
-        min-height: 470px;
-    }
-
-    .tm-contact-cta {
-        padding-top: 40px;
-        padding-bottom: 50px;
+        min-height: 440px;
     }
 
     .tm-contact-cta-card {
-        padding-top: 30px;
-        padding-bottom: 30px;
+        padding: 28px;
     }
 }
-
-
 /* =====================================================
-   LARGE DESKTOPS — 1920px AND ABOVE
+   1920px LARGE DESKTOP
+   Equal left and right padding
 ===================================================== */
 
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1600px) {
 
     .tm-contact-hero,
     .tm-contact-info,
@@ -3819,97 +3896,65 @@ and (min-height: 550px) and (max-height: 650px) {
     .tm-visit-academy,
     .tm-faq,
     .tm-contact-cta {
-        padding-right: max(6.5%, calc((100% - 1600px) / 2));
         padding-left: max(6.5%, calc((100% - 1600px) / 2));
+        padding-right: max(6.5%, calc((100% - 1600px) / 2));
     }
 
     .tm-contact-hero {
-        gap: 6%;
+        column-gap: clamp(64px, 5vw, 100px);
     }
 
     .tm-contact-image-circle {
-        width: min(100%, 480px);
+        width: min(100%, 500px);
     }
 
-    .tm-contact-heading {
-        font-size: 50px;
+    .tm-contact-content {
+        max-width: 700px;
+    }
+
+    .tm-contact-info-header,
+    .tm-contact-form-layout,
+    .tm-visit-layout,
+    .tm-faq-container,
+    .tm-contact-cta-card {
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .tm-contact-info-grid {
-        gap: 22px;
+        gap: 24px;
+    }
+
+    .tm-contact-info-card {
+        padding: 28px 24px;
     }
 
     .tm-contact-form-layout {
-        gap: 55px;
+        gap: 56px;
+    }
+
+    .tm-contact-form-visual {
+        padding: 32px;
+    }
+
+    .tm-contact-form-image {
+        height: 480px;
+    }
+
+    .tm-contact-form-image-overlay {
+        inset: 32px;
     }
 
     .tm-visit-layout {
         gap: 60px;
     }
 
+    .tm-visit-map-wrapper {
+        min-height: 650px;
+    }
+
     .tm-faq-grid {
         gap: 24px;
-    }
-
-    .tm-contact-cta-card {
-        gap: 65px;
-        padding: 55px 60px;
-    }
-}
-
-
-/* =====================================================
-   RTL RESPONSIVE ADJUSTMENTS
-===================================================== */
-
-@media screen and (max-width: 767px) {
-
-    html[dir="rtl"] .tm-contact-hero {
-        direction: rtl;
-    }
-
-    html[dir="rtl"] .tm-contact-card-top {
-        left: auto;
-        right: 0;
-    }
-
-    html[dir="rtl"] .tm-contact-card-bottom {
-        right: auto;
-        left: 0;
-    }
-
-    html[dir="rtl"] .tm-contact-content,
-    html[dir="rtl"] .tm-contact-form-header,
-    html[dir="rtl"] .tm-visit-content {
-        text-align: right;
-    }
-
-    html[dir="rtl"] .tm-contact-form-visual-content,
-    html[dir="rtl"] .tm-contact-cta-card {
-        text-align: right;
-    }
-
-    html[dir="rtl"] .tm-contact-cta-actions {
-        width: 100%;
-    }
-}
-
-
-/* =====================================================
-   REDUCED MOTION ACCESSIBILITY
-===================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .tm-contact-btn,
-    .tm-contact-info-button,
-    .tm-enquiry-submit,
-    .tm-visit-directions-btn,
-    .tm-faq-card,
-    .tm-contact-cta-primary,
-    .tm-contact-cta-secondary {
-        scroll-behavior: auto;
-        transition: none;
-        animation: none;
     }
 }

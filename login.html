@@ -19,23 +19,88 @@
     <link rel="stylesheet" href="login.css">
 </head>
 
-<body>
+<body class="tm-login-page">
+
+    <!-- ANIMATED TRADING BACKGROUND -->
+    <div class="trading-background" aria-hidden="true">
+
+        <div class="market-grid"></div>
+
+        <div class="market-line market-line-one"></div>
+        <div class="market-line market-line-two"></div>
+
+        <div class="candlestick-chart">
+            <span style="--h:42px;--y:90px;--x:3%;--c:1"></span>
+            <span style="--h:65px;--y:45px;--x:10%;--c:2"></span>
+            <span style="--h:35px;--y:80px;--x:17%;--c:1"></span>
+            <span style="--h:75px;--y:15px;--x:24%;--c:2"></span>
+            <span style="--h:50px;--y:65px;--x:31%;--c:1"></span>
+            <span style="--h:80px;--y:5px;--x:38%;--c:2"></span>
+            <span style="--h:45px;--y:50px;--x:45%;--c:1"></span>
+            <span style="--h:68px;--y:25px;--x:52%;--c:2"></span>
+            <span style="--h:38px;--y:90px;--x:59%;--c:1"></span>
+            <span style="--h:72px;--y:30px;--x:66%;--c:2"></span>
+            <span style="--h:48px;--y:60px;--x:73%;--c:1"></span>
+            <span style="--h:85px;--y:0px;--x:80%;--c:2"></span>
+            <span style="--h:44px;--y:55px;--x:87%;--c:1"></span>
+            <span style="--h:62px;--y:25px;--x:94%;--c:2"></span>
+        </div>
+
+        <div class="floating-market market-one">
+            <i class="fa-solid fa-arrow-trend-up"></i>
+            <span>MARKET TREND</span>
+            <strong>+2.84%</strong>
+        </div>
+
+        <div class="floating-market market-two">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>LIVE ANALYSIS</span>
+            <strong>Trading Skills</strong>
+        </div>
+
+        <div class="floating-market market-three">
+            <i class="fa-solid fa-chart-column"></i>
+            <span>LEARN THE MARKET</span>
+        </div>
+
+        <div class="market-glow market-glow-one"></div>
+        <div class="market-glow market-glow-two"></div>
+
+    </div>
+
+    <!-- TOP CONTROLS -->
     <div class="page-controls">
-        <button type="button" class="icon-button js-rtl-toggle"
-            aria-label="Switch text direction" title="Switch text direction">
+
+        <button type="button"
+            class="icon-button js-rtl-toggle"
+            aria-label="Switch text direction"
+            title="Switch text direction">
+
             <i data-lucide="arrow-left-right"></i>
         </button>
 
-        <button type="button" class="icon-button js-theme-toggle"
-            aria-label="Switch to dark mode" title="Toggle dark mode">
+        <button type="button"
+            class="icon-button js-theme-toggle"
+            aria-label="Switch to dark mode"
+            title="Toggle dark mode">
+
             <i data-lucide="moon"></i>
         </button>
+
     </div>
 
-    <div class="container">
+    <!-- AUTHENTICATION CARD -->
+    <main class="container">
+
         <div class="form-card">
+
+            <!-- LOGO -->
             <div class="logo-wrap">
-                <a href="index.html" class="brand login-brand" aria-label="TradeMasters Home">
+
+                <a href="index.html"
+                    class="brand login-brand"
+                    aria-label="TradeMasters Home">
+
                     <img
                         id="brandLogo"
                         src="logo_light.png"
@@ -44,6 +109,7 @@
                     >
 
                     <span class="brand-text">
+
                         <span class="brand-title">
                             <span class="brand-trade">TRADE</span><span class="brand-masters">MASTERS</span>
                         </span>
@@ -51,17 +117,24 @@
                         <span class="brand-subtitle">
                             STOCK MARKET TRADING ACADEMY
                         </span>
+
                     </span>
+
                 </a>
+
             </div>
 
             <!-- LOGIN FORM -->
             <form id="loginForm" class="auth-form">
+
                 <h2 class="form-title">Student Login</h2>
 
                 <div class="form-fields">
+
                     <div class="input-box">
-                        <label for="loginEmail" class="input-label">Email Address</label>
+                        <label for="loginEmail" class="input-label">
+                            Email Address
+                        </label>
 
                         <input
                             type="email"
@@ -74,9 +147,12 @@
                     </div>
 
                     <div class="input-box">
-                        <label for="loginPassword" class="input-label">Password</label>
+                        <label for="loginPassword" class="input-label">
+                            Password
+                        </label>
 
                         <div class="password-wrap">
+
                             <input
                                 type="password"
                                 id="loginPassword"
@@ -86,63 +162,111 @@
                                 required
                             >
 
-                            <button type="button" class="password-toggle"
+                            <button
+                                type="button"
+                                class="password-toggle"
                                 data-target="loginPassword"
-                                aria-label="Show password" aria-pressed="false">
+                                aria-label="Show password"
+                                aria-pressed="false">
+
                                 <i class="fa-regular fa-eye"></i>
+
                             </button>
+
                         </div>
                     </div>
 
                     <div class="remember-row">
+
                         <label class="remember-me" for="rememberMe">
-                            <input type="checkbox" id="rememberMe" name="rememberMe">
+
+                            <input
+                                type="checkbox"
+                                id="rememberMe"
+                                name="rememberMe"
+                            >
+
                             <span>Remember me</span>
+
                         </label>
 
-                        <a href="#" class="forgot-link" id="forgotPasswordLink">
+                        <a href="#"
+                            class="forgot-link"
+                            id="forgotPasswordLink">
+
                             Forgot password?
+
                         </a>
+
                     </div>
+
                 </div>
 
-                <button type="submit" class="main-btn">Login</button>
+                <button type="submit" class="main-btn">
+                    Login
+                </button>
 
+                <!-- SOCIAL LOGIN -->
                 <div class="social-login">
+
                     <div class="social-divider">
                         <span>or continue with</span>
                     </div>
 
-                    <button type="button" class="social-btn google-btn" id="googleLogin">
-                        <span class="social-icon">
-                            <i class="fa-brands fa-google"></i>
-                        </span>
-                        Continue with Google
-                    </button>
+                    <div class="social-buttons">
 
-                    <button type="button" class="social-btn apple-btn" id="appleLogin">
-                        <span class="social-icon">
+                        <button
+                            type="button"
+                            class="social-btn google-btn"
+                            id="googleLogin"
+                            aria-label="Continue with Google">
+
+                            <i class="fa-brands fa-google"></i>
+                            <span>Google</span>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="social-btn apple-btn"
+                            id="appleLogin"
+                            aria-label="Continue with Apple">
+
                             <i class="fa-brands fa-apple"></i>
-                        </span>
-                        Continue with Apple
-                    </button>
+                            <span>Apple</span>
+
+                        </button>
+
+                    </div>
+
                 </div>
 
                 <p class="switch">
                     New Student?
-                    <button type="button" class="switch-btn" id="showSignupBtn">
+
+                    <button
+                        type="button"
+                        class="switch-btn"
+                        id="showSignupBtn">
+
                         Create Account
+
                     </button>
                 </p>
+
             </form>
 
             <!-- SIGNUP FORM -->
             <form id="signupForm" class="auth-form hide">
+
                 <h2 class="form-title">Create Account</h2>
 
                 <div class="form-fields">
+
                     <div class="input-box">
-                        <label for="signupName" class="input-label">Full Name</label>
+                        <label for="signupName" class="input-label">
+                            Full Name
+                        </label>
 
                         <input
                             type="text"
@@ -155,7 +279,9 @@
                     </div>
 
                     <div class="input-box">
-                        <label for="signupEmail" class="input-label">Email Address</label>
+                        <label for="signupEmail" class="input-label">
+                            Email Address
+                        </label>
 
                         <input
                             type="email"
@@ -168,35 +294,49 @@
                     </div>
 
                     <div class="input-row">
+
                         <div class="input-box">
-                            <label for="signupPhone" class="input-label">Phone Number</label>
+                            <label for="signupPhone" class="input-label">
+                                Phone Number
+                            </label>
 
                             <input
                                 type="tel"
                                 id="signupPhone"
                                 name="phone"
-                                placeholder="Enter phone number"
+                                placeholder="Phone number"
                                 autocomplete="tel"
                                 required
                             >
                         </div>
 
                         <div class="input-box">
-                            <label for="signupExperience" class="input-label">Experience</label>
+                            <label for="signupExperience" class="input-label">
+                                Experience
+                            </label>
 
-                            <select id="signupExperience" name="experience" required>
+                            <select
+                                id="signupExperience"
+                                name="experience"
+                                required>
+
                                 <option value="">Select</option>
                                 <option value="beginner">Beginner</option>
                                 <option value="intermediate">Intermediate</option>
                                 <option value="advanced">Advanced</option>
+
                             </select>
                         </div>
+
                     </div>
 
                     <div class="input-box">
-                        <label for="signupPassword" class="input-label">Create Password</label>
+                        <label for="signupPassword" class="input-label">
+                            Create Password
+                        </label>
 
                         <div class="password-wrap">
+
                             <input
                                 type="password"
                                 id="signupPassword"
@@ -206,50 +346,121 @@
                                 required
                             >
 
-                            <button type="button" class="password-toggle"
+                            <button
+                                type="button"
+                                class="password-toggle"
                                 data-target="signupPassword"
-                                aria-label="Show password" aria-pressed="false">
+                                aria-label="Show password"
+                                aria-pressed="false">
+
                                 <i class="fa-regular fa-eye"></i>
+
                             </button>
+
                         </div>
                     </div>
+
+                    <!-- CONFIRM PASSWORD -->
+                    <div class="input-box">
+                        <label for="confirmPassword" class="input-label">
+                            Confirm Password
+                        </label>
+
+                        <div class="password-wrap">
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Confirm your password"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-target="confirmPassword"
+                                aria-label="Show password"
+                                aria-pressed="false">
+
+                                <i class="fa-regular fa-eye"></i>
+
+                            </button>
+
+                        </div>
+                    </div>
+
                 </div>
 
-                <button type="submit" class="main-btn signup-button">Register</button>
+                <button type="submit" class="main-btn signup-button">
+                    Register
+                </button>
 
+                <!-- SOCIAL SIGNUP -->
                 <div class="social-login">
+
                     <div class="social-divider">
                         <span>or continue with</span>
                     </div>
 
-                    <button type="button" class="social-btn google-btn" id="googleSignup">
-                        <span class="social-icon">
-                            <i class="fa-brands fa-google"></i>
-                        </span>
-                        Continue with Google
-                    </button>
+                    <div class="social-buttons">
 
-                    <button type="button" class="social-btn apple-btn" id="appleSignup">
-                        <span class="social-icon">
+                        <button
+                            type="button"
+                            class="social-btn google-btn"
+                            id="googleSignup"
+                            aria-label="Sign up with Google">
+
+                            <i class="fa-brands fa-google"></i>
+                            <span>Google</span>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="social-btn apple-btn"
+                            id="appleSignup"
+                            aria-label="Sign up with Apple">
+
                             <i class="fa-brands fa-apple"></i>
-                        </span>
-                        Continue with Apple
-                    </button>
+                            <span>Apple</span>
+
+                        </button>
+
+                    </div>
+
                 </div>
 
                 <p class="switch">
                     Already have an account?
-                    <button type="button" class="switch-btn" id="showLoginBtn">
+
+                    <button
+                        type="button"
+                        class="switch-btn"
+                        id="showLoginBtn">
+
                         Login
+
                     </button>
                 </p>
-            </form>
-        </div>
-    </div>
 
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+            </form>
+
+        </div>
+
+    </main>
+
+    <!-- TOAST -->
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite">
+    </div>
 
     <script src="main.js"></script>
     <script src="login.js"></script>
+
 </body>
 </html>

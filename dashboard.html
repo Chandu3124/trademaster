@@ -22,72 +22,145 @@
 <body>
 
 <div class="dashboard-layout">
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
 
-    <!-- ================= SIDEBAR ================= -->
-    <aside class="sidebar" id="sidebar">
+    <!-- BRAND -->
+    <a href="index.html"
+       class="dashboard-brand"
+       aria-label="TradeMasters Home">
 
-        <a href="index.html" class="dashboard-brand" aria-label="TradeMasters Home">
-            <img
-                src="logo_light.png"
-                alt="TradeMasters Logo"
-                class="dashboard-brand-logo"
-                id="brandLogo"
-            >
+        <img
+            src="logo_light.png"
+            alt="TradeMasters Logo"
+            class="dashboard-brand-logo"
+            id="brandLogo"
+        >
 
-            <span class="dashboard-brand-text">
-                <span class="dashboard-brand-title">
-                    <span class="brand-trade">TRADE</span><span class="brand-masters">MASTERS</span>
-                </span>
+        <span class="dashboard-brand-text">
 
-                <span class="dashboard-brand-subtitle">
-                    STOCK MARKET TRADING ACADEMY
-                </span>
+            <span class="dashboard-brand-title">
+                <span class="brand-trade">TRADE</span><span class="brand-masters">MASTERS</span>
             </span>
-        </a>
 
-        <p class="sidebar-label">LEARNING SPACE</p>
+            <span class="dashboard-brand-subtitle">
+                STOCK MARKET TRADING ACADEMY
+            </span>
 
-        <nav class="sidebar-nav" aria-label="Dashboard learning navigation">
-            <button class="nav-link active" data-section="overview" type="button">
-                <i data-lucide="layout-dashboard"></i> Overview
-            </button>
+        </span>
+    </a>
 
-            <button class="nav-link" data-section="courses" type="button">
-                <i data-lucide="book-open"></i> My Courses
-            </button>
 
-            <button class="nav-link" data-section="recordings" type="button">
-                <i data-lucide="play-square"></i> Recorded Classes
-            </button>
+    <!-- SIDEBAR LABEL -->
+    <p class="sidebar-label">LEARNING SPACE</p>
 
-            <button class="nav-link" data-section="schedule" type="button">
-                <i data-lucide="calendar-days"></i> Class Schedule
-            </button>
 
-            <button class="nav-link" data-section="portfolio" type="button">
-                <i data-lucide="chart-no-axes-combined"></i> Mock Portfolio
-            </button>
+    <!-- NAVIGATION -->
+    <nav class="sidebar-nav" aria-label="Dashboard learning navigation">
 
-            <button class="nav-link" data-section="progress" type="button">
-                <i data-lucide="trending-up"></i> Learning Progress
-            </button>
-        </nav>
+        <button
+            class="nav-link active"
+            data-section="overview"
+            type="button"
+        >
+            <i data-lucide="layout-dashboard"></i>
+            <span>Overview</span>
+        </button>
 
-        <div class="sidebar-help">
-            <i data-lucide="messages-square"></i>
+        <button
+            class="nav-link"
+            data-section="courses"
+            type="button"
+        >
+            <i data-lucide="book-open"></i>
+            <span>My Courses</span>
+        </button>
 
-            <h3>Need a hand?</h3>
-            <p>Our learning support team is here to help.</p>
+        <button
+            class="nav-link"
+            data-section="recordings"
+            type="button"
+        >
+            <i data-lucide="play-square"></i>
+            <span>Recorded Classes</span>
+        </button>
 
-            <button class="support-button" data-section="support" type="button">
-                Get Support <i data-lucide="arrow-up-right"></i>
-            </button>
-        </div>
+        <button
+            class="nav-link"
+            data-section="schedule"
+            type="button"
+        >
+            <i data-lucide="calendar-days"></i>
+            <span>Class Schedule</span>
+        </button>
 
-        <div class="sidebar-footer">
-            &copy; <span id="dashboardYear"></span> TradeMasters
-        </div>
-    </aside>
+        <button
+            class="nav-link"
+            data-section="portfolio"
+            type="button"
+        >
+            <i data-lucide="chart-no-axes-combined"></i>
+            <span>Mock Portfolio</span>
+        </button>
+
+        <button
+            class="nav-link"
+            data-section="progress"
+            type="button"
+        >
+            <i data-lucide="trending-up"></i>
+            <span>Learning Progress</span>
+        </button>
+
+    </nav>
+
+
+    <!-- ACCOUNT NAVIGATION -->
+    <div class="sidebar-account-nav">
+
+
+
+        <button
+            class="nav-link logout-link"
+            id="sidebarLogout"
+            type="button"
+        >
+            <i data-lucide="log-out"></i>
+            <span>Logout</span>
+        </button>
+
+    </div>
+
+
+    <!-- SUPPORT -->
+    <div class="sidebar-help">
+
+        <i data-lucide="messages-square"></i>
+
+        <h3>Need a hand?</h3>
+
+        <p>
+            Our learning support team is here to help.
+        </p>
+
+        <button
+            class="support-button"
+            data-section="support"
+            type="button"
+        >
+            Get Support
+            <i data-lucide="arrow-up-right"></i>
+        </button>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <div class="sidebar-footer">
+        &copy; <span id="dashboardYear"></span> TradeMasters
+    </div>
+
+</aside>
 
     <!-- ================= MAIN CONTENT ================= -->
     <main class="main-content">
@@ -418,9 +491,15 @@
 
             <div class="course-cards">
                 <article class="panel course-card">
-                    <div class="course-art large-art">
-                        <i data-lucide="chart-no-axes-combined"></i>
-                    </div>
+                    
+                    <div class="course-image">
+    <img
+        src="https://images.openai.com/static-rsc-4/JDD_KZqg-OgM51xsMx3N-E5wj3m3MjLxe-irCbHEp6JYtlFd1Fo4OnHWx-4D1xLPYpxIVf6ldwC_4GSKAKGzXFxLslfF42cSrUgaN3lCDduRqnG3swMYS5Vr3g9q23dDb-7soHRnDNFb8EWMJfRVf9G4we-1X-smY3qQYZNTvtcYUa5Rv9GhLYVUzo_90B4j?purpose=fullsize"
+        alt="Stock market fundamentals and financial data"
+        loading="lazy"
+    >
+    <span class="course-level">LEVEL 01</span>
+</div>
 
                     <small>TECHNICAL ANALYSIS</small>
                     <h3>Technical Analysis Essentials</h3>
@@ -439,9 +518,14 @@
                 </article>
 
                 <article class="panel course-card">
-                    <div class="course-art large-art second-art">
-                        <i data-lucide="landmark"></i>
-                    </div>
+                    <div class="course-image">
+    <img
+        src="https://images.openai.com/static-rsc-4/QwW_vwx7zYRGDZoqPeGCjJU3XRwGpCmwvZPpWY0uxjEV4lOGmXQKWGJLcQUMEqGsKWPyrdunWwSTxtNS3MKySGzQq5a1Uu4-JZEdunizbjAxDKxe90_B5N8u35DxQ4vPzld9rz8NOt1FaSLcZ1rAKN35G5xp0qRdyQatumoUTsAQ7bUw6ushEAOwasjLH8qX?purpose=fullsize"
+        alt="Stock market charts and trading analysis"
+        loading="lazy"
+    >
+    <span class="course-level">LEVEL 02</span>
+</div>
 
                     <small>MARKET FOUNDATIONS</small>
                     <h3>Stock Market Fundamentals</h3>
@@ -460,9 +544,14 @@
                 </article>
 
                 <article class="panel course-card">
-                    <div class="course-art large-art third-art">
-                        <i data-lucide="shield-check"></i>
-                    </div>
+                   <div class="course-image">
+    <img
+        src="https://images.openai.com/static-rsc-4/BJ-U22MtbP4esnGbjBWQTCLuUOoWDpfBkog8c1RCeJhUyZSC9oR0AbSFvb1U4PzH0mhJ0im64qW-quvAkdBrmLIlHxtjPpspCIo3lBBOdi4rQoXb0V2pwE5FNfcCuK3I_agYWacPTjU-YayeQYHndthdc8nhh-QZ1xtMvbZRIyd2hhC2VXHYNe144mNoX3q0?purpose=fullsize"
+        alt="Stock market candlestick chart and technical analysis"
+        loading="lazy"
+    >
+    <span class="course-level">LEVEL 03</span>
+</div>
 
                     <small>RISK MANAGEMENT</small>
                     <h3>Trading Risk Management</h3>

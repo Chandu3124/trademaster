@@ -3512,7 +3512,6 @@ html[dir="rtl"] .tm-instructor-button {
 html[dir="rtl"] .tm-instructor-button:hover i {
     transform: translate(-2px, -2px);
 }
-
 /* =====================================================
    TRADEMASTERS — SECTION 6: LEARNING METHODOLOGY
 ===================================================== */
@@ -3556,29 +3555,24 @@ html[dir="rtl"] .tm-instructor-button:hover i {
 .tm-methodology-label {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 9px;
 
-    width: fit-content;
-    max-width: 100%;
     margin-bottom: 20px;
-    padding: 0;
-
-    background: transparent;
-    border: none;
-    border-radius: 0;
 
     color: var(--color-secondary);
-    font-family: var(--content-font, "Source Sans 3", sans-serif);
+
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 1.5px;
     line-height: 1.4;
+
     text-transform: uppercase;
 }
 
 .tm-methodology-label i {
-    width: 17px;
-    height: 17px;
+    width: 18px;
+    height: 18px;
     flex-shrink: 0;
 }
 
@@ -3587,7 +3581,7 @@ html[dir="rtl"] .tm-instructor-button:hover i {
 
     color: var(--text-heading, var(--text));
 
-    font-family: "Playfair Display", Georgia, serif;
+    font-family: var(--heading-font, "Playfair Display", Georgia, serif);
     font-size: clamp(32px, 3.2vw, 46px);
     font-weight: 700;
     line-height: 1.2;
@@ -3613,29 +3607,38 @@ html[dir="rtl"] .tm-instructor-button:hover i {
 
 
 /* =====================================================
-   FLOWCHART TIMELINE
+   TIMELINE CONTAINER
 ===================================================== */
 
 .tm-methodology-timeline {
     position: relative;
+    isolation: isolate;
 
     display: flex;
     flex-direction: column;
 
     width: 100%;
     max-width: 1000px;
+
     margin: 0 auto;
 }
 
 
-/* Center Connecting Line */
+/* =====================================================
+   CENTER VERTICAL LINE
+   Line stays behind the icon circles
+===================================================== */
 
 .tm-methodology-line {
     position: absolute;
 
-    top: 48px;
-    bottom: 48px;
+    top: 75px;
+    bottom: 75px;
+
     left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 0;
 
     width: 2px;
 
@@ -3648,7 +3651,6 @@ html[dir="rtl"] .tm-instructor-button:hover i {
         transparent 100%
     );
 
-    transform: translateX(-50%);
     pointer-events: none;
 }
 
@@ -3659,9 +3661,15 @@ html[dir="rtl"] .tm-instructor-button:hover i {
 
 .tm-method-step {
     position: relative;
+    z-index: 1;
 
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 76px minmax(0, 1fr);
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        76px
+        minmax(0, 1fr);
+
     align-items: center;
 
     width: 100%;
@@ -3675,6 +3683,7 @@ html[dir="rtl"] .tm-instructor-button:hover i {
 
 .tm-method-content {
     position: relative;
+    z-index: 1;
 
     width: 100%;
     max-width: 390px;
@@ -3693,43 +3702,44 @@ html[dir="rtl"] .tm-instructor-button:hover i {
 }
 
 
-/* LTR: Steps 1, 3, 5 on the LEFT */
+/* LTR: STEPS 1, 3, 5 — LEFT */
 
 .tm-step-left .tm-method-content {
     grid-column: 1;
     grid-row: 1;
 
     justify-self: end;
+
     margin-right: 12px;
+    margin-left: 0;
 
     text-align: right;
 }
 
 
-/* LTR: Steps 2, 4 on the RIGHT */
+/* LTR: STEPS 2, 4 — RIGHT */
 
 .tm-step-right .tm-method-content {
     grid-column: 3;
     grid-row: 1;
 
     justify-self: start;
+
     margin-left: 12px;
+    margin-right: 0;
 
     text-align: left;
 }
 
 
-/* Hover Effects */
+/* =====================================================
+   CONTENT HOVER
+===================================================== */
 
 .tm-method-step:hover .tm-method-content {
     border-color: var(--color-secondary);
 
-    box-shadow:
-        0 8px 24px color-mix(
-            in srgb,
-            var(--color-primary) 10%,
-            transparent
-        );
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
 .tm-step-left:hover .tm-method-content {
@@ -3768,7 +3778,7 @@ html[dir="rtl"] .tm-instructor-button:hover i {
 
     color: var(--text-heading, var(--text));
 
-    font-family: "Playfair Display", Georgia, serif;
+    font-family: var(--heading-font, "Playfair Display", Georgia, serif);
     font-size: 23px;
     font-weight: 700;
     line-height: 1.3;
@@ -3790,7 +3800,7 @@ html[dir="rtl"] .tm-instructor-button:hover i {
 
 
 /* =====================================================
-   CENTER ICON MARKER
+   CENTER ICON MARKERS
 ===================================================== */
 
 .tm-method-marker {
@@ -3812,15 +3822,11 @@ html[dir="rtl"] .tm-instructor-button:hover i {
     border: 2px solid var(--color-secondary);
     border-radius: 50%;
 
+    /* Opaque background hides the line behind each circle */
     background: var(--bg);
     color: var(--color-secondary);
 
-    box-shadow:
-        0 0 0 6px color-mix(
-            in srgb,
-            var(--color-primary) 10%,
-            transparent
-        );
+    box-shadow: 0 0 0 6px var(--bg);
 
     transition:
         background 0.3s ease,
@@ -3836,6 +3842,9 @@ html[dir="rtl"] .tm-instructor-button:hover i {
     stroke-width: 2;
 }
 
+
+/* Marker hover */
+
 .tm-method-step:hover .tm-method-marker {
     background: var(--color-secondary);
     border-color: var(--color-secondary);
@@ -3845,11 +3854,11 @@ html[dir="rtl"] .tm-instructor-button:hover i {
 }
 
 
-/* Final Step Marker */
+/* Final marker */
 
 .tm-method-marker-final {
-    border-color: var(--color-secondary);
     background: var(--color-primary);
+    border-color: var(--color-primary);
     color: #ffffff;
 }
 
@@ -3862,14 +3871,16 @@ html[dir="rtl"] .tm-instructor-button:hover i {
     display: flex;
     align-items: center;
     justify-content: center;
+
     gap: 14px;
 
+    width: 100%;
     max-width: 800px;
 
     margin: 35px auto 0;
     padding: 19px 25px;
 
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--border);
     border-radius: var(--radius-lg, 16px);
 
     background: var(--soft-bg, var(--bg));
@@ -3884,6 +3895,7 @@ html[dir="rtl"] .tm-instructor-button:hover i {
 
     width: 42px;
     height: 42px;
+
     flex-shrink: 0;
 
     border-radius: 50%;
@@ -3922,43 +3934,52 @@ body.dark-mode .tm-methodology {
     color: var(--text);
 }
 
+body.dark-mode .tm-methodology-heading,
+body.dark-mode .tm-method-content h3 {
+    color: var(--text-heading, var(--text));
+}
+
+body.dark-mode .tm-methodology-heading span {
+    color: var(--color-secondary);
+}
+
+body.dark-mode .tm-methodology-description,
+body.dark-mode .tm-method-content p {
+    color: var(--text-muted, var(--text));
+}
+
 body.dark-mode .tm-method-content {
     background: var(--soft-bg, var(--bg));
-    border-color: var(--color-primary);
+    border-color: var(--border);
 }
 
 body.dark-mode .tm-method-step:hover .tm-method-content {
     border-color: var(--color-secondary);
 }
 
-body.dark-mode .tm-method-content h3,
-body.dark-mode .tm-methodology-heading {
-    color: var(--text-heading, var(--text));
-}
-
-body.dark-mode .tm-method-content p,
-body.dark-mode .tm-methodology-description {
-    color: var(--text-muted, var(--text));
-}
-
 body.dark-mode .tm-method-marker {
     background: var(--bg);
     color: var(--color-secondary);
+
+    /* Preserve separation between the line and circle */
+    box-shadow: 0 0 0 6px var(--bg);
 }
 
 body.dark-mode .tm-method-step:hover .tm-method-marker {
     background: var(--color-secondary);
+    border-color: var(--color-secondary);
     color: #ffffff;
 }
 
 body.dark-mode .tm-method-marker-final {
     background: var(--color-primary);
+    border-color: var(--color-primary);
     color: #ffffff;
 }
 
 body.dark-mode .tm-methodology-note {
     background: var(--soft-bg, var(--bg));
-    border-color: var(--color-primary);
+    border-color: var(--border);
 }
 
 body.dark-mode .tm-methodology-note p {
@@ -3972,6 +3993,8 @@ body.dark-mode .tm-methodology-note p span {
 
 /* =====================================================
    RTL SUPPORT
+   Steps 1, 3, 5 move RIGHT
+   Steps 2, 4 move LEFT
 ===================================================== */
 
 html[dir="rtl"] .tm-methodology {
@@ -3979,17 +4002,24 @@ html[dir="rtl"] .tm-methodology {
 }
 
 
-/* Keep vertical line centered in RTL */
+/* Keep timeline direction predictable */
+
+html[dir="rtl"] .tm-methodology-timeline {
+    direction: ltr;
+}
+
+
+/* Center line remains exactly in the middle */
 
 html[dir="rtl"] .tm-methodology-line {
     left: 50%;
     right: auto;
 
-    transform: translateX(50%);
+    transform: translateX(-50%);
 }
 
 
-/* RTL: Steps 1, 3, 5 on the RIGHT */
+/* STEP 1, 3, 5: LEFT CONTENT MOVES TO RIGHT */
 
 html[dir="rtl"] .tm-step-left .tm-method-content {
     grid-column: 3;
@@ -4004,7 +4034,7 @@ html[dir="rtl"] .tm-step-left .tm-method-content {
 }
 
 
-/* RTL: Steps 2, 4 on the LEFT */
+/* STEP 2, 4: RIGHT CONTENT MOVES TO LEFT */
 
 html[dir="rtl"] .tm-step-right .tm-method-content {
     grid-column: 1;
@@ -4019,7 +4049,7 @@ html[dir="rtl"] .tm-step-right .tm-method-content {
 }
 
 
-/* RTL: Keep all markers centered */
+/* All markers remain centered */
 
 html[dir="rtl"] .tm-method-marker {
     grid-column: 2;
@@ -4027,7 +4057,7 @@ html[dir="rtl"] .tm-method-marker {
 }
 
 
-/* RTL Hover Direction */
+/* RTL hover direction */
 
 html[dir="rtl"] .tm-step-left:hover .tm-method-content {
     transform: translateX(4px);
@@ -4038,11 +4068,79 @@ html[dir="rtl"] .tm-step-right:hover .tm-method-content {
 }
 
 
-/* RTL Supporting Note */
+/* Supporting note */
 
 html[dir="rtl"] .tm-methodology-note {
+    direction: rtl;
     text-align: right;
 }
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+.tm-methodology .tm-methodology-header,
+.tm-methodology .tm-method-step,
+.tm-methodology .tm-methodology-note {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tm-methodology.tm-methodology-reveal
+.tm-methodology-header,
+.tm-methodology.tm-methodology-reveal
+.tm-method-step,
+.tm-methodology.tm-methodology-reveal
+.tm-methodology-note {
+    opacity: 0;
+    transform: translateY(18px);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.tm-methodology.tm-methodology-visible
+.tm-methodology-header,
+.tm-methodology.tm-methodology-visible
+.tm-method-step,
+.tm-methodology.tm-methodology-visible
+.tm-methodology-note {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tm-methodology.tm-methodology-visible
+.tm-method-step:nth-of-type(2) {
+    transition-delay: 0.08s;
+}
+
+.tm-methodology.tm-methodology-visible
+.tm-method-step:nth-of-type(3) {
+    transition-delay: 0.16s;
+}
+
+.tm-methodology.tm-methodology-visible
+.tm-method-step:nth-of-type(4) {
+    transition-delay: 0.24s;
+}
+
+.tm-methodology.tm-methodology-visible
+.tm-method-step:nth-of-type(5) {
+    transition-delay: 0.32s;
+}
+
+.tm-methodology.tm-methodology-visible
+.tm-method-step:nth-of-type(6) {
+    transition-delay: 0.40s;
+}
+
+.tm-methodology.tm-methodology-visible
+.tm-methodology-note {
+    transition-delay: 0.48s;
+}
+
 
 /* =====================================================
    TRADEMASTERS — SECTION 7: ABOUT PAGE CTA
@@ -4456,76 +4554,32 @@ html[dir="rtl"] .tm-about-cta-footer p {
 }
 
 /* =====================================================
-   TRADEMASTERS ABOUT PAGE
-   RESPONSIVE MEDIA QUERIES
+   TRADEMASTERS ABOUT PAGE — RESPONSIVE MEDIA QUERIES
 ===================================================== */
 
 
 /* =====================================================
-   COMMON RESPONSIVE SAFETY
-===================================================== */
-
-.tm-about-hero,
-.tm-identity,
-.tm-mission,
-.tm-different,
-.tm-instructors,
-.tm-methodology,
-.tm-about-cta {
-    width: 100%;
-    max-width: 100%;
-}
-
-.tm-about-hero *,
-.tm-identity *,
-.tm-mission *,
-.tm-different *,
-.tm-instructors *,
-.tm-methodology *,
-.tm-about-cta * {
-    min-width: 0;
-}
-
-.tm-about-hero img,
-.tm-identity img,
-.tm-mission img,
-.tm-different img,
-.tm-instructors img,
-.tm-methodology img,
-.tm-about-cta img {
-    max-width: 100%;
-}
-
-.tm-about-hero a,
-.tm-about-cta a {
-    overflow-wrap: anywhere;
-}
-
-
-/* =====================================================
-   SAMSUNG GALAXY S8+
+   SAMSUNG GALAXY S8+ / MOBILE
    360px - 740px
 ===================================================== */
 
 @media screen and (min-width: 360px) and (max-width: 740px) {
 
-    /* ---------------------------------------------
+    /* =========================
        SECTION 1: ABOUT HERO
-    --------------------------------------------- */
+    ========================= */
 
     .tm-about-hero {
         height: auto;
-        min-height: 0;
+        min-height: auto;
         max-height: none;
-
-        padding: 115px 6.5% 55px;
+        padding: 70px 6.5%;
         overflow: hidden;
     }
 
     .tm-about-hero-container {
         grid-template-columns: minmax(0, 1fr);
         gap: 35px;
-
         height: auto;
     }
 
@@ -4535,21 +4589,20 @@ html[dir="rtl"] .tm-about-cta-footer p {
     }
 
     .tm-about-hero-label {
-        margin-bottom: 15px;
         font-size: 11px;
-        letter-spacing: 1.1px;
+        letter-spacing: 1px;
+        gap: 7px;
+        margin-bottom: 16px;
     }
 
     .tm-about-hero-title {
-        margin-bottom: 17px;
-
-        font-size: clamp(32px, 8vw, 39px);
+        font-size: clamp(30px, 8vw, 38px);
         line-height: 1.2;
         letter-spacing: -0.7px;
+        margin-bottom: 18px;
     }
 
     .tm-about-hero-description {
-        max-width: 100%;
         margin-bottom: 22px;
     }
 
@@ -4559,19 +4612,24 @@ html[dir="rtl"] .tm-about-cta-footer p {
     }
 
     .tm-about-hero-actions {
-        gap: 10px;
-        margin-bottom: 20px;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        margin-bottom: 22px;
     }
 
     .tm-about-btn {
-        min-height: 44px;
-        padding: 11px 16px;
-        font-size: 12px;
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
     }
 
     .tm-about-hero-note {
+        width: 100%;
         align-items: flex-start;
-        font-size: 11px;
+        gap: 9px;
+        font-size: 12px;
     }
 
     .tm-about-hero-visual {
@@ -4582,19 +4640,16 @@ html[dir="rtl"] .tm-about-cta-footer p {
 
     .tm-about-image-card {
         width: 94%;
-        height: 390px;
-
+        height: 400px;
         min-height: 0;
         max-height: none;
-
-        border-radius: 42% 48% 18px 18px / 23% 25% 18px 18px;
+        border-radius: 40% 45% 18px 18px / 20% 22% 18px 18px;
     }
 
     .tm-about-image-caption {
-        right: 13px;
-        bottom: 13px;
-        left: 13px;
-
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
         gap: 10px;
         padding: 12px;
     }
@@ -4602,67 +4657,56 @@ html[dir="rtl"] .tm-about-cta-footer p {
     .tm-about-caption-icon {
         width: 38px;
         height: 38px;
-    }
-
-    .tm-about-caption-icon i {
-        width: 18px;
-        height: 18px;
-    }
-
-    .tm-about-caption-content > span {
-        font-size: 9px;
-        letter-spacing: 1px;
+        flex-shrink: 0;
     }
 
     .tm-about-caption-content h3 {
-        font-size: 16px;
+        font-size: 17px;
     }
 
     .tm-about-caption-content p {
-        font-size: 10px;
+        font-size: 11px;
     }
 
 
-    /* ---------------------------------------------
+    /* =========================
        SECTION 2: WHO WE ARE
-    --------------------------------------------- */
+    ========================= */
 
     .tm-identity {
-        padding: 60px 6.5%;
+        padding: 65px 6.5%;
     }
 
     .tm-identity-layout {
         grid-template-columns: minmax(0, 1fr);
-        gap: 30px;
+        gap: 32px;
     }
 
     .tm-identity-visual {
-        height: 390px;
-        border-radius: 17px;
+        height: 400px;
+        min-height: 0;
+        border-radius: 18px;
     }
 
     .tm-identity-image-icon {
-        top: 15px;
-        right: 15px;
-
-        width: 45px;
-        height: 45px;
+        top: 16px;
+        right: 16px;
+        width: 46px;
+        height: 46px;
     }
 
     .tm-identity-image-caption {
+        left: 18px;
         right: 18px;
         bottom: 20px;
-        left: 18px;
     }
 
     .tm-identity-image-label {
-        margin-bottom: 9px;
         font-size: 10px;
         letter-spacing: 1.5px;
     }
 
     .tm-identity-image-caption h3 {
-        margin-bottom: 9px;
         font-size: 26px;
     }
 
@@ -4672,38 +4716,39 @@ html[dir="rtl"] .tm-about-cta-footer p {
     }
 
     .tm-identity-content {
-        max-width: 100%;
+        width: 100%;
+        min-width: 0;
     }
 
     .tm-identity-label {
-        margin-bottom: 14px;
         font-size: 11px;
-        letter-spacing: 1.1px;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
     }
 
     .tm-identity-heading {
-        margin-bottom: 14px;
-
-        font-size: clamp(30px, 7.5vw, 38px);
+        font-size: clamp(29px, 7.5vw, 36px);
         line-height: 1.2;
-        letter-spacing: -0.7px;
+        letter-spacing: -0.6px;
     }
 
     .tm-identity-description {
-        margin-bottom: 22px;
+        margin-bottom: 23px;
     }
 
     .tm-identity-description p {
         font-size: 14px;
-        line-height: 1.7;
+        line-height: 1.75;
     }
 
-    .tm-identity-principles-heading {
-        margin-bottom: 15px;
+    .tm-identity-principles-title {
+        font-size: 10px;
+        letter-spacing: 1px;
     }
 
     .tm-identity-principles-heading h3 {
         font-size: 25px;
+        line-height: 1.3;
     }
 
     .tm-identity-principles-grid {
@@ -4713,46 +4758,45 @@ html[dir="rtl"] .tm-about-cta-footer p {
 
     .tm-identity-principle {
         min-height: 0;
-        padding: 16px;
+        padding: 17px;
     }
 
     .tm-identity-principle-top {
         margin-bottom: 12px;
     }
 
-    .tm-identity-principle-icon {
-        width: 36px;
-        height: 36px;
-    }
-
     .tm-identity-principle-content h4 {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .tm-identity-principle-content p {
         font-size: 13px;
-        line-height: 1.65;
+        line-height: 1.7;
     }
 
     .tm-identity-bottom-note {
         align-items: flex-start;
         gap: 10px;
-
         margin-top: 18px;
-        padding-top: 15px;
+        padding-top: 16px;
+    }
+
+    .tm-identity-bottom-note svg {
+        flex-shrink: 0;
     }
 
     .tm-identity-bottom-note p {
         font-size: 13px;
+        line-height: 1.7;
     }
 
 
-    /* ---------------------------------------------
+    /* =========================
        SECTION 3: MISSION & VISION
-    --------------------------------------------- */
+    ========================= */
 
     .tm-mission {
-        padding: 60px 6.5%;
+        padding: 65px 6.5%;
     }
 
     .tm-mission-header {
@@ -4760,105 +4804,123 @@ html[dir="rtl"] .tm-about-cta-footer p {
     }
 
     .tm-mission-label {
-        margin-bottom: 14px;
         font-size: 11px;
-        letter-spacing: 1.1px;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
     }
 
     .tm-mission-heading {
-        margin-bottom: 14px;
-
-        font-size: clamp(30px, 7.5vw, 38px);
+        font-size: clamp(29px, 7.5vw, 36px);
         line-height: 1.2;
-        letter-spacing: -0.7px;
+        letter-spacing: -0.6px;
     }
 
     .tm-mission-description {
         font-size: 14px;
-        line-height: 1.7;
+        line-height: 1.75;
     }
 
     .tm-mission-grid {
         grid-template-columns: minmax(0, 1fr);
-        gap: 15px;
+        gap: 16px;
     }
 
     .tm-mission-card {
         min-height: 0;
-        padding: 22px 19px 19px;
+        padding: 22px 20px;
     }
 
     .tm-mission-card-top {
         margin-bottom: 22px;
+        gap: 12px;
     }
 
     .tm-mission-icon {
         width: 48px;
         height: 48px;
+        flex-shrink: 0;
     }
 
     .tm-mission-icon svg {
-        width: 23px;
-        height: 23px;
+        width: 24px;
+        height: 24px;
     }
 
     .tm-mission-number {
-        font-size: 32px;
+        font-size: 31px;
+    }
+
+    .tm-mission-card-label {
+        font-size: 10px;
+        letter-spacing: 1.2px;
     }
 
     .tm-mission-card h3 {
         font-size: 25px;
+        line-height: 1.3;
     }
 
     .tm-mission-card > p {
-        margin-bottom: 20px;
         font-size: 14px;
-        line-height: 1.7;
+        line-height: 1.75;
+        margin-bottom: 20px;
     }
 
     .tm-mission-card-bottom {
-        padding-top: 14px;
+        gap: 10px;
+        padding-top: 15px;
         font-size: 12px;
     }
 
-    .tm-mission-footer {
-        align-items: flex-start;
-        gap: 13px;
+    .tm-mission-card-bottom span {
+        min-width: 0;
+    }
 
-        margin-top: 20px;
-        padding: 17px;
+    .tm-mission-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        margin-top: 22px;
+        padding: 20px;
     }
 
     .tm-mission-footer-icon {
-        width: 42px;
-        height: 42px;
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
     }
 
-    .tm-mission-footer-icon svg {
-        width: 21px;
-        height: 21px;
+    .tm-mission-footer-content {
+        width: 100%;
     }
 
     .tm-mission-footer-content h4 {
-        font-size: 18px;
+        font-size: 19px;
     }
 
     .tm-mission-footer-content p {
         font-size: 13px;
-        line-height: 1.65;
+        line-height: 1.7;
     }
 
     .tm-mission-footer-mark {
-        display: none;
+        align-self: flex-start;
+        width: 36px;
+        height: 36px;
+    }
+
+    .tm-mission-footer-mark svg {
+        width: 28px;
+        height: 28px;
     }
 
 
-    /* ---------------------------------------------
+    /* =========================
        SECTION 4: WHAT MAKES US DIFFERENT
-    --------------------------------------------- */
+    ========================= */
 
     .tm-different {
-        padding: 60px 6.5%;
+        padding: 65px 6.5%;
     }
 
     .tm-different-header {
@@ -4866,22 +4928,20 @@ html[dir="rtl"] .tm-about-cta-footer p {
     }
 
     .tm-different-label {
-        margin-bottom: 14px;
         font-size: 11px;
-        letter-spacing: 1.1px;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
     }
 
     .tm-different-heading {
-        margin-bottom: 14px;
-
-        font-size: clamp(30px, 7.5vw, 38px);
+        font-size: clamp(29px, 7.5vw, 36px);
         line-height: 1.2;
-        letter-spacing: -0.7px;
+        letter-spacing: -0.6px;
     }
 
     .tm-different-description {
         font-size: 14px;
-        line-height: 1.7;
+        line-height: 1.75;
     }
 
     .tm-different-layout {
@@ -4891,16 +4951,18 @@ html[dir="rtl"] .tm-about-cta-footer p {
 
     .tm-different-feature-panel {
         min-height: 0;
-        padding: 21px;
+        padding: 22px 20px;
     }
 
     .tm-different-panel-top {
-        margin-bottom: 25px;
+        gap: 12px;
+        margin-bottom: 24px;
     }
 
     .tm-different-panel-icon {
-        width: 49px;
-        height: 49px;
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
     }
 
     .tm-different-panel-icon svg {
@@ -4908,12 +4970,21 @@ html[dir="rtl"] .tm-about-cta-footer p {
         height: 25px;
     }
 
+    .tm-different-panel-number {
+        font-size: 10px;
+    }
+
     .tm-different-panel-content {
         margin-bottom: 22px;
     }
 
+    .tm-different-panel-eyebrow {
+        font-size: 10px;
+        letter-spacing: 1.2px;
+    }
+
     .tm-different-panel-content h3 {
-        font-size: 28px;
+        font-size: 27px;
         line-height: 1.25;
     }
 
@@ -4922,58 +4993,18 @@ html[dir="rtl"] .tm-about-cta-footer p {
         line-height: 1.75;
     }
 
-    .tm-different-journey {
-        width: 100%;
-    }
-
-    .tm-different-journey-item {
-        gap: 12px;
-    }
-
-    .tm-different-panel-footer {
-        gap: 12px;
-    }
-
     .tm-different-features {
         grid-template-columns: minmax(0, 1fr);
         gap: 13px;
     }
 
-    .tm-different-card {
-        min-height: 0;
-        padding: 19px;
-    }
 
-    .tm-different-card-top {
-        gap: 12px;
-    }
-
-    .tm-different-card-icon {
-        width: 43px;
-        height: 43px;
-    }
-
-    .tm-different-bottom {
-        gap: 13px;
-        padding: 17px;
-    }
-
-    .tm-different-bottom-icon {
-        width: 42px;
-        height: 42px;
-    }
-
-    .tm-different-bottom-mark {
-        display: none;
-    }
-
-
-    /* ---------------------------------------------
+    /* =========================
        SECTION 5: INSTRUCTORS
-    --------------------------------------------- */
+    ========================= */
 
     .tm-instructors {
-        padding: 60px 6.5%;
+        padding: 65px 6.5%;
     }
 
     .tm-instructors-header {
@@ -4981,20 +5012,20 @@ html[dir="rtl"] .tm-about-cta-footer p {
     }
 
     .tm-instructors-label {
-        margin-bottom: 14px;
         font-size: 11px;
-        letter-spacing: 1.1px;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
     }
 
     .tm-instructors-heading {
-        font-size: clamp(30px, 7.5vw, 38px);
+        font-size: clamp(29px, 7.5vw, 36px);
         line-height: 1.2;
-        letter-spacing: -0.7px;
+        letter-spacing: -0.6px;
     }
 
     .tm-instructors-description {
         font-size: 14px;
-        line-height: 1.7;
+        line-height: 1.75;
     }
 
     .tm-instructors-grid {
@@ -5003,65 +5034,31 @@ html[dir="rtl"] .tm-about-cta-footer p {
     }
 
     .tm-instructor-card {
-        width: 100%;
-        min-width: 0;
-    }
-
-    .tm-instructor-profile {
-        gap: 13px;
-    }
-
-    .tm-instructor-image {
-        width: 100px;
-        height: 100px;
-        flex-shrink: 0;
-    }
-
-    .tm-instructor-name {
-        font-size: 20px;
-        line-height: 1.3;
-    }
-
-    .tm-instructor-role {
-        font-size: 13px;
-        line-height: 1.5;
+        padding: 22px 20px;
     }
 
     .tm-instructor-detail {
+        grid-template-columns: 27px minmax(0, 1fr);
         gap: 10px;
-    }
-
-    .tm-instructor-detail-icon {
-        flex-shrink: 0;
-    }
-
-    .tm-instructor-detail-content {
-        min-width: 0;
-        overflow-wrap: anywhere;
-    }
-
-    .tm-instructor-expertise {
-        gap: 7px;
-    }
-
-    .tm-instructor-button {
-        max-width: 100%;
+        margin-bottom: 14px;
     }
 
     .tm-instructors-note {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 10px;
         margin-top: 22px;
-        padding: 16px;
-        font-size: 13px;
-        line-height: 1.7;
+        text-align: left;
     }
 
 
-    /* ---------------------------------------------
+    /* =========================
        SECTION 6: LEARNING METHODOLOGY
-    --------------------------------------------- */
+    ========================= */
 
     .tm-methodology {
-        padding: 60px 6.5%;
+        padding: 65px 6.5%;
     }
 
     .tm-methodology-header {
@@ -5069,25 +5066,24 @@ html[dir="rtl"] .tm-about-cta-footer p {
     }
 
     .tm-methodology-label {
-        margin-bottom: 14px;
         font-size: 11px;
-        letter-spacing: 1.1px;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
     }
 
     .tm-methodology-heading {
-        font-size: clamp(30px, 7.5vw, 38px);
+        font-size: clamp(29px, 7.5vw, 36px);
         line-height: 1.2;
-        letter-spacing: -0.7px;
+        letter-spacing: -0.6px;
     }
 
     .tm-methodology-description {
         font-size: 14px;
-        line-height: 1.7;
+        line-height: 1.75;
     }
 
     .tm-methodology-timeline {
-        padding-left: 0;
-        padding-right: 0;
+        max-width: 100%;
     }
 
     .tm-methodology-line {
@@ -5095,365 +5091,742 @@ html[dir="rtl"] .tm-about-cta-footer p {
     }
 
     .tm-method-step {
-        width: 100%;
-        margin-bottom: 20px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 15px;
+        min-height: 0;
+        padding: 20px 0;
     }
 
     .tm-method-content {
         width: 100%;
-        max-width: 100%;
-        padding: 19px;
-    }
-
-    .tm-method-number {
-        font-size: 13px;
-    }
-
-    .tm-method-marker {
-        width: 42px;
-        height: 42px;
-    }
-
-    .tm-method-marker-final {
-        width: 46px;
-        height: 46px;
+        min-width: 0;
     }
 
     .tm-methodology-note {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
         gap: 12px;
-        margin-top: 20px;
-        padding: 17px;
+        margin-top: 25px;
+        padding: 18px;
+        text-align: left;
     }
 
     .tm-methodology-note-icon {
-        width: 42px;
-        height: 42px;
         flex-shrink: 0;
     }
 
 
-    /* ---------------------------------------------
+    /* =========================
        SECTION 7: ABOUT PAGE CTA
-    --------------------------------------------- */
+    ========================= */
 
     .tm-about-cta {
-        padding: 55px 6.5%;
-    }
-
-    .tm-about-cta-container {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 22px;
-    }
-
-    .tm-about-cta-accent {
-        display: none;
+        padding: 65px 6.5%;
     }
 
     .tm-about-cta-main {
-        width: 100%;
-        min-width: 0;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+        padding: 0 0 22px;
     }
 
     .tm-about-cta-heading {
-        font-size: clamp(30px, 7.5vw, 38px);
+        font-size: clamp(29px, 7.5vw, 36px);
         line-height: 1.2;
-        letter-spacing: -0.7px;
+        letter-spacing: -0.6px;
     }
 
     .tm-about-cta-label {
-        margin-bottom: 14px;
         font-size: 11px;
-        letter-spacing: 1.1px;
-    }
-
-    .tm-about-cta-details {
-        gap: 12px;
+        letter-spacing: 1px;
     }
 
     .tm-about-cta-description {
         font-size: 14px;
-        line-height: 1.7;
+        line-height: 1.75;
+    }
+
+    .tm-about-cta-details {
+        min-width: 0;
+        padding-left: 0;
+        border-left: none;
+        padding-top: 20px;
+        border-top: 1px solid var(--border);
+    }
+
+    .tm-about-cta-actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .tm-about-cta-actions a,
+    .tm-about-cta-actions button {
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE SCREENS
+   360px - 400px
+===================================================== */
+
+@media screen and (min-width: 360px) and (max-width: 400px) {
+
+    .tm-about-hero {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .tm-about-hero-title {
+        font-size: 30px;
+    }
+
+    .tm-about-image-card {
+        width: 96%;
+        height: 340px;
+    }
+
+    .tm-about-image-caption {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .tm-about-caption-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .tm-about-caption-content h3 {
+        font-size: 15px;
+    }
+
+    .tm-identity-visual {
+        height: 340px;
+    }
+
+    .tm-identity-image-caption {
+        left: 14px;
+        right: 14px;
+        bottom: 16px;
+    }
+
+    .tm-identity-image-caption h3 {
+        font-size: 23px;
+    }
+
+    .tm-identity-principle {
+        padding: 15px;
+    }
+
+    .tm-mission-card,
+    .tm-different-feature-panel,
+    .tm-instructor-card {
+        padding: 19px 16px;
+    }
+
+    .tm-mission-card h3 {
+        font-size: 23px;
+    }
+
+    .tm-different-panel-content h3 {
+        font-size: 25px;
+    }
+
+}
+
+
+/* =========================================================
+   TRADEMASTERS ABOUT PAGE — IPAD MINI RESPONSIVE VERSION
+   Screen Width: 768px–820px
+========================================================= */
+
+@media screen and (min-width: 768px) and (max-width: 820px) {
+
+
+    /* =====================================================
+       GLOBAL SECTION SPACING
+    ===================================================== */
+
+    .tm-about-hero,
+    .tm-identity,
+    .tm-mission,
+    .tm-different,
+    .tm-instructors,
+    .tm-methodology,
+    .tm-about-cta {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tm-identity,
+    .tm-mission,
+    .tm-different {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .tm-instructors {
+        padding: 40px 5% 65px;
+    }
+
+    .tm-methodology {
+        padding: 45px 5% 60px;
+    }
+
+    .tm-about-cta {
+        padding: 40px 5% 35px;
+    }
+
+
+    /* =====================================================
+       SECTION 1 — ABOUT HERO
+    ===================================================== */
+
+    .tm-about-hero {
+        height: auto;
+        min-height: 650px;
+        max-height: none;
+        padding: 55px 5%;
+        overflow: hidden;
+    }
+
+    .tm-about-hero-container {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: center;
+        gap: 28px;
+        height: auto;
+    }
+
+    .tm-about-hero-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .tm-about-hero-title {
+        font-size: clamp(34px, 4.5vw, 42px);
+        line-height: 1.2;
+        overflow-wrap: anywhere;
+    }
+
+    .tm-about-hero-description {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .tm-about-hero-visual {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .tm-about-image-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .tm-about-hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .tm-about-hero-note {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* =====================================================
+       SECTION 2 — WHO WE ARE / IDENTITY
+    ===================================================== */
+
+    .tm-identity-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .tm-identity-layout {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        align-items: center;
+        gap: 28px;
+    }
+
+    .tm-identity-visual {
+        width: 100%;
+        height: 520px;
+        min-width: 0;
+    }
+
+    .tm-identity-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .tm-identity-content {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .tm-identity-heading {
+        font-size: clamp(30px, 3.8vw, 38px);
+        line-height: 1.2;
+    }
+
+    .tm-identity-description {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .tm-identity-principles-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .tm-identity-principle {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .tm-identity-bottom-note {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* =====================================================
+       SECTION 3 — MISSION & VISION
+
+       First 2 cards: equal width and height
+       Third card: same width, centered
+    ===================================================== */
+
+    .tm-mission-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .tm-mission-header {
+        width: 100%;
+        max-width: 680px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tm-mission-heading {
+        font-size: clamp(32px, 4vw, 40px);
+        line-height: 1.2;
+    }
+
+    .tm-mission-description {
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tm-mission-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .tm-mission-card {
+        width: 100%;
+        min-width: 0;
+        min-height: 365px;
+        height: 100%;
+    }
+
+    .tm-mission-card:nth-child(3) {
+        grid-column: 1 / -1;
+        width: calc((100% - 20px) / 2);
+        justify-self: center;
+    }
+
+    .tm-mission-footer {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* =====================================================
+       SECTION 4 — WHAT MAKES US DIFFERENT
+
+       First row:
+       Large feature panel covers the entire available width.
+
+       Below the panel:
+       6 feature cards, 2 per row, 3 rows total.
+    ===================================================== */
+
+    .tm-different-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .tm-different-header {
+        width: 100%;
+        max-width: 680px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tm-different-heading {
+        font-size: clamp(32px, 4vw, 40px);
+        line-height: 1.2;
+    }
+
+    .tm-different-description {
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Main layout: panel first, cards underneath */
+
+    .tm-different-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        align-items: stretch;
+        gap: 22px;
+        width: 100%;
+    }
+
+    /* Large left-side panel becomes full width */
+
+    .tm-different-feature-panel {
+        grid-column: 1 / -1;
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+        height: auto;
+        padding: 28px;
+    }
+
+    .tm-different-panel-content {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .tm-different-journey {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .tm-different-panel-footer {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Six cards below the panel: 2 columns */
+
+    .tm-different-features {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch;
+        align-content: stretch;
+        gap: 16px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .tm-different-card {
+        width: 100%;
+        min-width: 0;
+        height: 100%;
+    }
+
+    .tm-different-bottom {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* =====================================================
+       SECTION 5 — MEET OUR INSTRUCTORS
+
+       First 2 cards: equal width and height
+       Third card: same width, centered
+    ===================================================== */
+
+    .tm-instructors-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .tm-instructors-header {
+        width: 100%;
+        max-width: 680px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tm-instructors-heading {
+        font-size: clamp(32px, 4vw, 40px);
+        line-height: 1.2;
+    }
+
+    .tm-instructors-description {
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tm-instructors-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch;
+        gap: 22px;
+        width: 100%;
+    }
+
+    .tm-instructor-card {
+        width: 100%;
+        min-width: 0;
+        height: 100%;
+    }
+
+    .tm-instructor-card:nth-child(3) {
+        grid-column: 1 / -1;
+        width: calc((100% - 22px) / 2);
+        justify-self: center;
+    }
+
+    .tm-instructors-note {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* =====================================================
+       SECTION 6 — LEARNING METHODOLOGY
+    ===================================================== */
+
+    .tm-methodology-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .tm-methodology-header {
+        width: 100%;
+        max-width: 680px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tm-methodology-heading {
+        font-size: clamp(32px, 4vw, 40px);
+        line-height: 1.2;
+    }
+
+    .tm-methodology-description {
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tm-methodology-timeline {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .tm-methodology-note {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* =====================================================
+       SECTION 7 — ABOUT CTA
+    ===================================================== */
+
+    .tm-about-cta-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .tm-about-cta-main {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+        align-items: center;
+        gap: 28px;
+    }
+
+    .tm-about-cta-heading {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .tm-about-cta-details {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .tm-about-cta-description {
+        width: 100%;
+        max-width: 100%;
     }
 
     .tm-about-cta-actions {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .tm-about-cta-primary,
-    .tm-about-cta-secondary {
-        max-width: 100%;
-        min-height: 44px;
-        padding: 11px 16px;
-        font-size: 12px;
-    }
-
-    .tm-about-cta-footer {
-        flex-wrap: wrap;
         gap: 12px;
     }
 
-    .tm-about-cta-footer-label {
-        font-size: 11px;
+
+    /* =====================================================
+       COMMON RESPONSIVE SAFETY
+    ===================================================== */
+
+    .tm-about-hero *,
+    .tm-identity *,
+    .tm-mission *,
+    .tm-different *,
+    .tm-instructors *,
+    .tm-methodology *,
+    .tm-about-cta * {
+        box-sizing: border-box;
+    }
+
+    .tm-about-hero img,
+    .tm-identity img,
+    .tm-mission img,
+    .tm-different img,
+    .tm-instructors img,
+    .tm-methodology img,
+    .tm-about-cta img {
+        max-width: 100%;
+    }
+
+    .tm-about-hero-container > *,
+    .tm-identity-layout > *,
+    .tm-different-layout > *,
+    .tm-about-cta-main > * {
+        min-width: 0;
     }
 
 
-    /* ---------------------------------------------
+    /* =====================================================
        RTL SUPPORT
-    --------------------------------------------- */
+    ===================================================== */
 
-    html[dir="rtl"] .tm-about-hero-container,
-    html[dir="rtl"] .tm-identity-layout,
-    html[dir="rtl"] .tm-different-layout,
-    html[dir="rtl"] .tm-about-cta-container {
+    html[dir="rtl"] .tm-mission-grid,
+    html[dir="rtl"] .tm-different-features,
+    html[dir="rtl"] .tm-instructors-grid {
         direction: rtl;
     }
 
-    html[dir="rtl"] .tm-identity-image-icon {
-        right: auto;
-        left: 15px;
+    html[dir="rtl"] .tm-mission-card:nth-child(3),
+    html[dir="rtl"] .tm-instructor-card:nth-child(3) {
+        justify-self: center;
     }
 
-    html[dir="rtl"] .tm-identity-image-caption {
-        text-align: right;
-    }
 }
 
-
 /* =====================================================
-   SMALL TABLET / LARGE PHONE
-   741px - 767px
+   iPAD PRO 11"
+   821px - 1024px
 ===================================================== */
 
-@media screen and (min-width: 741px) and (max-width: 767px) {
-
-    .tm-about-hero,
-    .tm-identity,
-    .tm-mission,
-    .tm-different,
-    .tm-instructors,
-    .tm-methodology,
-    .tm-about-cta {
-        padding-left: 6.5%;
-        padding-right: 6.5%;
-    }
-
-    .tm-about-hero {
-        height: auto;
-        min-height: 0;
-        max-height: none;
-        padding-top: 110px;
-        padding-bottom: 50px;
-    }
-
-    .tm-about-hero-container,
-    .tm-identity-layout,
-    .tm-different-layout,
-    .tm-about-cta-container {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 30px;
-        height: auto;
-    }
-
-    .tm-about-hero-title,
-    .tm-identity-heading,
-    .tm-mission-heading,
-    .tm-different-heading,
-    .tm-instructors-heading,
-    .tm-methodology-heading,
-    .tm-about-cta-heading {
-        font-size: 38px;
-    }
-
-    .tm-about-image-card {
-        width: 85%;
-        height: 420px;
-        min-height: 0;
-        max-height: none;
-    }
-
-    .tm-identity-visual {
-        height: 430px;
-    }
-
-    .tm-identity-principles-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .tm-mission-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .tm-different-features {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .tm-instructors-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .tm-mission-card {
-        min-height: 0;
-    }
-
-    .tm-different-feature-panel {
-        min-height: 0;
-    }
-}
-
-
-/* =====================================================
-   iPAD MINI
-   768px - 820px
-===================================================== */
-
-@media screen and (min-width: 768px) and (max-width: 820px) {
-
-    .tm-about-hero,
-    .tm-identity,
-    .tm-mission,
-    .tm-different,
-    .tm-instructors,
-    .tm-methodology,
-    .tm-about-cta {
-        padding-left: 6.5%;
-        padding-right: 6.5%;
-    }
+@media screen and (min-width: 821px) and (max-width: 1024px) {
 
     /* ABOUT HERO */
 
     .tm-about-hero {
         height: auto;
-        min-height: 0;
+        min-height: 650px;
         max-height: none;
-        padding-top: 115px;
-        padding-bottom: 60px;
+        padding: 65px 6.5%;
     }
 
     .tm-about-hero-container {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
         gap: 4%;
         height: auto;
     }
 
     .tm-about-hero-title {
-        font-size: clamp(32px, 4.5vw, 40px);
-        letter-spacing: -0.8px;
-    }
-
-    .tm-about-hero-description p {
-        font-size: 13px;
-    }
-
-    .tm-about-hero-actions {
-        gap: 9px;
-    }
-
-    .tm-about-btn {
-        padding: 11px 14px;
-        font-size: 12px;
+        font-size: clamp(36px, 4vw, 43px);
     }
 
     .tm-about-image-card {
-        width: 100%;
-        height: 440px;
+        width: 94%;
+        height: 510px;
         min-height: 0;
-        max-height: none;
     }
 
-    .tm-about-image-caption {
-        right: 12px;
-        bottom: 14px;
-        left: 12px;
-        gap: 9px;
-        padding: 12px;
-    }
-
-    .tm-about-caption-icon {
-        width: 37px;
-        height: 37px;
-    }
-
-    .tm-about-caption-content h3 {
-        font-size: 16px;
-    }
-
-    .tm-about-caption-content p {
-        font-size: 10px;
+    .tm-about-hero-description p {
+        font-size: 14px;
     }
 
 
     /* WHO WE ARE */
 
     .tm-identity {
-        padding-top: 70px;
-        padding-bottom: 70px;
+        padding: 75px 6.5%;
     }
 
     .tm-identity-layout {
-        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
         gap: 4%;
     }
 
     .tm-identity-visual {
-        height: 540px;
+        height: 600px;
     }
 
     .tm-identity-heading {
-        font-size: 35px;
-        letter-spacing: -0.8px;
+        font-size: 38px;
     }
 
     .tm-identity-principles-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
+        gap: 11px;
     }
 
     .tm-identity-principle {
-        min-height: 175px;
-        padding: 13px;
+        padding: 15px;
     }
 
     .tm-identity-principle-content h4 {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .tm-identity-principle-content p {
-        font-size: 12px;
+        font-size: 13px;
     }
 
 
     /* MISSION & VISION */
 
-    .tm-mission,
-    .tm-different,
-    .tm-instructors,
-    .tm-methodology,
-    .tm-about-cta {
-        padding-top: 70px;
-        padding-bottom: 70px;
-    }
-
-    .tm-mission-heading,
-    .tm-different-heading,
-    .tm-instructors-heading,
-    .tm-methodology-heading {
-        font-size: 37px;
+    .tm-mission {
+        padding: 75px 6.5%;
     }
 
     .tm-mission-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 15px;
     }
 
     .tm-mission-card {
-        min-height: 330px;
-        padding: 21px 18px;
+        min-height: 355px;
+        padding: 23px 19px;
     }
 
     .tm-mission-card h3 {
-        font-size: 25px;
+        font-size: 26px;
     }
 
     .tm-mission-card > p {
@@ -5463,177 +5836,9 @@ html[dir="rtl"] .tm-about-cta-footer p {
 
     /* WHAT MAKES US DIFFERENT */
 
-    .tm-different-layout {
-        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-        gap: 15px;
+    .tm-different {
+        padding: 75px 6.5%;
     }
-
-    .tm-different-feature-panel {
-        padding: 19px;
-    }
-
-    .tm-different-panel-content h3 {
-        font-size: 27px;
-    }
-
-    .tm-different-panel-content p {
-        font-size: 13px;
-        line-height: 1.7;
-    }
-
-    .tm-different-features {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 12px;
-    }
-
-    .tm-different-card {
-        padding: 17px;
-    }
-
-
-    /* INSTRUCTORS */
-
-    .tm-instructors-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-    }
-
-    .tm-instructor-card {
-        padding: 20px;
-    }
-
-    .tm-instructor-name {
-        font-size: 20px;
-    }
-
-
-    /* METHODOLOGY */
-
-    .tm-methodology-timeline {
-        width: 100%;
-    }
-
-    .tm-method-step {
-        max-width: 100%;
-    }
-
-    .tm-method-content {
-        max-width: 100%;
-    }
-
-
-    /* CTA */
-
-    .tm-about-cta-container {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
-        gap: 25px;
-    }
-
-    .tm-about-cta-heading {
-        font-size: 35px;
-    }
-}
-
-
-/* =====================================================
-   iPAD PRO 11"
-   821px - 1024px
-===================================================== */
-
-@media screen and (min-width: 821px) and (max-width: 1024px) {
-
-    .tm-about-hero,
-    .tm-identity,
-    .tm-mission,
-    .tm-different,
-    .tm-instructors,
-    .tm-methodology,
-    .tm-about-cta {
-        padding-left: 6.5%;
-        padding-right: 6.5%;
-    }
-
-    /* ABOUT HERO */
-
-    .tm-about-hero {
-        height: 90vh;
-        min-height: 620px;
-        max-height: 850px;
-    }
-
-    .tm-about-hero-container {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
-        gap: 4%;
-    }
-
-    .tm-about-hero-title {
-        font-size: clamp(36px, 4vw, 43px);
-    }
-
-    .tm-about-hero-description p {
-        font-size: 14px;
-    }
-
-    .tm-about-image-card {
-        width: 100%;
-        height: 78%;
-        min-height: 420px;
-        max-height: 620px;
-    }
-
-
-    /* WHO WE ARE */
-
-    .tm-identity-layout {
-        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-        gap: 4%;
-    }
-
-    .tm-identity-visual {
-        height: 590px;
-    }
-
-    .tm-identity-heading {
-        font-size: 38px;
-    }
-
-    .tm-identity-principles-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 11px;
-    }
-
-    .tm-identity-principle {
-        min-height: 165px;
-        padding: 14px;
-    }
-
-    .tm-identity-principle-content h4 {
-        font-size: 15px;
-    }
-
-    .tm-identity-principle-content p {
-        font-size: 13px;
-    }
-
-
-    /* MISSION & VISION */
-
-    .tm-mission-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 14px;
-    }
-
-    .tm-mission-card {
-        min-height: 360px;
-        padding: 22px 18px;
-    }
-
-    .tm-mission-card h3 {
-        font-size: 25px;
-    }
-
-
-    /* WHAT MAKES US DIFFERENT */
 
     .tm-different-layout {
         grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
@@ -5641,176 +5846,101 @@ html[dir="rtl"] .tm-about-cta-footer p {
     }
 
     .tm-different-feature-panel {
-        padding: 22px;
+        padding: 24px 21px;
+    }
+
+    .tm-different-panel-content h3 {
+        font-size: 30px;
+    }
+
+    .tm-different-panel-content p {
+        font-size: 14px;
     }
 
     .tm-different-features {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-    }
-
-    .tm-different-card {
-        padding: 17px;
+        gap: 13px;
     }
 
 
     /* INSTRUCTORS */
 
+    .tm-instructors {
+        padding: 75px 6.5%;
+    }
+
     .tm-instructors-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 15px;
+        gap: 16px;
     }
 
     .tm-instructor-card {
-        padding: 19px;
+        padding: 22px 18px;
     }
 
 
-    /* METHODOLOGY */
+    /* LEARNING METHODOLOGY */
 
-    .tm-methodology-timeline {
-        width: 100%;
+    .tm-methodology {
+        padding: 75px 6.5%;
     }
 
     .tm-method-step {
-        max-width: 100%;
+        grid-template-columns: minmax(0, 1fr) 68px minmax(0, 1fr);
     }
 
 
-    /* CTA */
+    /* ABOUT CTA */
 
-    .tm-about-cta-container {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
-        gap: 25px;
-    }
-
-    .tm-about-cta-heading {
-        font-size: 38px;
-    }
-}
-
-
-/* =====================================================
-   NEST HUB
-   1024px WIDE × 600px HIGH
-===================================================== */
-
-@media screen and (width: 1024px) and (height: 600px) {
-
-    .tm-about-hero {
-        height: auto;
-        min-height: 600px;
-        max-height: none;
-
-        padding-top: 100px;
-        padding-bottom: 35px;
-    }
-
-    .tm-about-hero-container {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
-        gap: 4%;
-    }
-
-    .tm-about-hero-title {
-        font-size: 36px;
-        line-height: 1.15;
-    }
-
-    .tm-about-hero-label {
-        margin-bottom: 12px;
-        font-size: 11px;
-    }
-
-    .tm-about-hero-description {
-        margin-bottom: 16px;
-    }
-
-    .tm-about-hero-description p {
-        font-size: 12px;
-        line-height: 1.6;
-    }
-
-    .tm-about-hero-actions {
-        margin-bottom: 14px;
-    }
-
-    .tm-about-btn {
-        min-height: 41px;
-        padding: 9px 13px;
-    }
-
-    .tm-about-image-card {
-        height: 410px;
-        min-height: 0;
-        max-height: none;
-    }
-
-    .tm-about-caption-content h3 {
-        font-size: 15px;
-    }
-
-    .tm-about-caption-content p {
-        font-size: 10px;
-    }
-}
-
-
-/* =====================================================
-   LARGE DESKTOP
-   1920px AND ABOVE
-===================================================== */
-
-@media screen and (min-width: 1920px) {
-
-    .tm-about-hero,
-    .tm-identity,
-    .tm-mission,
-    .tm-different,
-    .tm-instructors,
-    .tm-methodology,
     .tm-about-cta {
-        padding-left: 6.5%;
-        padding-right: 6.5%;
+        padding: 75px 6.5%;
     }
 
-    .tm-about-hero-container,
-    .tm-identity-container,
-    .tm-mission-container,
-    .tm-different-container,
-    .tm-instructors-container,
-    .tm-methodology-container,
-    .tm-about-cta-container {
-        max-width: 1600px;
-        margin-left: auto;
-        margin-right: auto;
+    .tm-about-cta-main {
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: 35px;
     }
 
-    .tm-about-hero-title {
-        font-size: clamp(52px, 3.2vw, 62px);
+    .tm-about-cta-details {
+        padding-left: 20px;
     }
 
-    .tm-identity-heading,
-    .tm-mission-heading,
-    .tm-different-heading,
-    .tm-instructors-heading,
-    .tm-methodology-heading,
-    .tm-about-cta-heading {
-        font-size: clamp(47px, 2.8vw, 56px);
+}
+
+
+/* =====================================================
+   RTL RESPONSIVE ADJUSTMENTS
+===================================================== */
+
+@media screen and (min-width: 360px) and (max-width: 740px) {
+
+    html[dir="rtl"] .tm-about-hero-actions,
+    html[dir="rtl"] .tm-about-cta-actions {
+        flex-direction: column;
+        align-items: stretch;
     }
 
-    .tm-about-hero-description p,
-    .tm-identity-description p,
-    .tm-mission-description,
-    .tm-different-description,
-    .tm-instructors-description,
-    .tm-methodology-description,
-    .tm-about-cta-description {
-        font-size: 16px;
+    html[dir="rtl"] .tm-identity-bottom-note,
+    html[dir="rtl"] .tm-mission-footer,
+    html[dir="rtl"] .tm-instructors-note,
+    html[dir="rtl"] .tm-methodology-note {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .tm-about-image-card {
-        max-width: 680px;
+    html[dir="rtl"] .tm-about-cta-details {
+        padding-right: 0;
+        padding-left: 0;
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid var(--border);
     }
+
+    html[dir="rtl"] .tm-identity-image-icon {
+        right: auto;
+        left: 16px;
+    }
+
 }
 
 
@@ -5820,16 +5950,15 @@ html[dir="rtl"] .tm-about-cta-footer p {
 
 @media (prefers-reduced-motion: reduce) {
 
-    .tm-about-hero *,
-    .tm-identity *,
-    .tm-mission *,
-    .tm-different *,
-    .tm-instructors *,
-    .tm-methodology *,
-    .tm-about-cta * {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+    .tm-about-hero-content,
+    .tm-about-hero-visual,
+    .tm-identity-visual,
+    .tm-identity-content,
+    .tm-mission-header,
+    .tm-mission-card,
+    .tm-mission-footer {
+        transition: none;
+        transform: none;
     }
+
 }

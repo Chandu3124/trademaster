@@ -19,7 +19,9 @@
 .tm-detail-contact * {
     box-sizing: border-box;
 }
-
+.tm-detail-hero{
+    height: 90vh;
+}
 /* =====================================================
    SHARED SECTION SETTINGS
 ===================================================== */

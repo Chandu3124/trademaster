@@ -587,6 +587,9 @@
    TRADEMASTERS — SECTION 2
    MARKET KNOWLEDGE AT A GLANCE
 ========================================= */
+/* =====================================================
+   TRADEMASTERS — MARKET KNOWLEDGE SECTION
+===================================================== */
 
 .tm-market-knowledge,
 .tm-market-knowledge * {
@@ -600,504 +603,739 @@
     width: 100%;
     padding: 85px 6.5%;
 
-    overflow: hidden;
-
     background: var(--bg);
     color: var(--text);
 
     font-family: var(--content-font, "Source Sans 3", sans-serif);
+
+    overflow: hidden;
 }
 
-/* =========================================
+
+/* =====================================================
    MAIN CONTAINER
-========================================= */
+===================================================== */
 
 .tm-market-knowledge-container {
     width: 100%;
     max-width: 1600px;
+
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.tm-market-heading {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto 48px;
+
+    text-align: center;
+}
+
+
+/* EYEBROW */
+
+.tm-market-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+
+    color: var(--color-secondary);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+    line-height: 1.5;
+
+    text-transform: uppercase;
+}
+
+.tm-market-eyebrow i {
+    width: 19px;
+    height: 19px;
+
+    color: var(--color-secondary);
+
+    stroke-width: 2;
+}
+
+
+/* HEADING */
+
+.tm-market-heading h2 {
+    max-width: 800px;
+
+    margin: 0 auto 18px;
+
+    color: var(--text-heading, var(--text));
+
+    font-family: var(--heading-font, "Playfair Display", Georgia, serif);
+
+    font-size: clamp(34px, 3.3vw, 52px);
+    font-weight: 700;
+
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+}
+
+.tm-market-heading h2 span {
+    display: inline;
+
+    color: var(--color-secondary);
+}
+
+
+/* DESCRIPTION */
+
+.tm-market-heading > p {
+    max-width: 730px;
+
     margin: 0 auto;
 
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    align-items: center;
+    color: var(--text-muted);
 
-    gap: 50px;
+    font-size: 17px;
+    font-weight: 400;
+
+    line-height: 1.8;
 }
 
-/* =========================================
-   LEFT SIDE — CARDS GRID
-========================================= */
 
-.tm-market-knowledge-grid {
+/* =====================================================
+   MAIN CONTENT LAYOUT
+===================================================== */
+
+.tm-market-content {
+    display: grid;
+
+    grid-template-columns: 0.92fr 1.28fr;
+
+    gap: 28px;
+
+    align-items: stretch;
+
     width: 100%;
-    min-width: 0;
-
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 18px;
 }
 
-/* =========================================
-   LEARNING CARDS
-========================================= */
 
-.tm-market-topic-card {
+/* =====================================================
+   LEFT VISUAL
+===================================================== */
+
+.tm-market-visual {
     position: relative;
     isolation: isolate;
 
+    width: 100%;
     min-width: 0;
-    min-height: 255px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    padding: 23px 21px 19px;
-
-    background: var(--soft-bg);
-    color: var(--text);
-
-    /* CLEAR, VISIBLE BORDER */
-    border: 1px solid var(--color-primary);
-    border-radius: var(--radius-lg, 18px);
-
-    outline: 1px solid transparent;
-    outline-offset: -1px;
+    min-height: 510px;
 
     overflow: hidden;
 
-    transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
+    border-radius: var(--radius-lg, 18px);
+
+    background: var(--soft-bg);
+
+    animation: tmMarketFadeUp 0.8s ease both;
 }
 
-/* SUBTLE DECORATIVE DETAIL */
 
-.tm-market-topic-card::before {
-    content: "";
+/* MAIN IMAGE */
 
+.tm-market-main-image {
     position: absolute;
-    z-index: -1;
+    inset: 0;
 
-    top: -38px;
-    right: -38px;
+    width: 100%;
+    height: 100%;
 
-    width: 100px;
-    height: 100px;
+    display: block;
 
-    border: 1px solid var(--border);
-    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.7s ease;
+}
+
+.tm-market-visual:hover .tm-market-main-image {
+    transform: scale(1.045);
+}
+
+
+/* IMAGE OVERLAY */
+
+.tm-market-visual-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background: linear-gradient(
+        180deg,
+        rgba(8, 28, 52, 0.02) 25%,
+        rgba(8, 28, 52, 0.12) 55%,
+        rgba(8, 28, 52, 0.72) 100%
+    );
 
     pointer-events: none;
 }
 
-/* CARD HOVER */
 
-.tm-market-topic-card:hover {
-    transform: translateY(-4px);
+/* =====================================================
+   FLOATING LEARNING BADGE
+===================================================== */
 
-    border-color: var(--color-primary);
+.tm-market-learning-badge {
+    position: absolute;
 
-    box-shadow: 0 8px 24px
-        color-mix(in srgb, var(--color-primary) 10%, transparent);
-}
+    left: 22px;
+    right: 22px;
+    bottom: 22px;
 
-/* =========================================
-   CARD TOP
-========================================= */
-
-.tm-market-topic-card-top {
-    width: 100%;
+    z-index: 2;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
 
-    margin-bottom: 22px;
+    gap: 15px;
+
+    padding: 17px 19px;
+
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: var(--radius-lg, 18px);
+
+    background: rgba(9, 28, 48, 0.83);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    color: #ffffff;
 }
 
-/* NUMBER */
 
-.tm-market-topic-number {
-    color: var(--text-muted);
+/* BADGE ICON */
 
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-/* ICON */
-
-.tm-market-topic-icon {
-    width: 46px;
-    height: 46px;
+.tm-market-badge-icon {
     flex-shrink: 0;
+
+    width: 47px;
+    height: 47px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: var(--bg);
-    color: var(--color-primary);
+    border-radius: 14px;
 
-    border: 1px solid var(--border);
-    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.12);
+
+    color: var(--color-secondary);
+}
+
+.tm-market-badge-icon i {
+    width: 23px;
+    height: 23px;
+
+    stroke-width: 1.8;
+}
+
+
+/* BADGE TEXT */
+
+.tm-market-badge-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    min-width: 0;
+}
+
+.tm-market-badge-content span {
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+    line-height: 1.5;
+}
+
+.tm-market-badge-content strong {
+    color: #ffffff;
+
+    font-family: var(--heading-font, "Playfair Display", Georgia, serif);
+
+    font-size: 20px;
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+
+/* =====================================================
+   RIGHT SIDE — IMAGE TOPICS
+===================================================== */
+
+.tm-market-topics {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+    min-width: 0;
+}
+
+
+/* =====================================================
+   INDIVIDUAL IMAGE TOPIC
+   Image-based layout, NOT a standard content card
+===================================================== */
+
+.tm-market-topic {
+    position: relative;
+    isolation: isolate;
+
+    min-width: 0;
+    min-height: 246px;
+
+    display: flex;
+    align-items: flex-end;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-lg, 18px);
+
+    background: var(--soft-bg);
+
+    cursor: pointer;
+
+    animation: tmMarketFadeUp 0.8s ease both;
+}
+
+
+/* TOPIC IMAGE */
+
+.tm-market-topic-image {
+    position: absolute;
+    inset: 0;
+
+    z-index: -2;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
 
     transition:
-        background-color 0.25s ease,
-        color 0.25s ease,
-        border-color 0.25s ease;
+        transform 0.65s ease,
+        filter 0.5s ease;
 }
 
-.tm-market-topic-icon i {
-    width: 22px;
-    height: 22px;
+
+/* TOPIC IMAGE OVERLAY */
+
+.tm-market-topic-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: -1;
+
+    background: linear-gradient(
+        180deg,
+        rgba(7, 24, 43, 0.02) 0%,
+        rgba(7, 24, 43, 0.16) 35%,
+        rgba(7, 24, 43, 0.92) 100%
+    );
+
+    transition: background 0.4s ease;
 }
 
-/* ICON HOVER */
 
-.tm-market-topic-card:hover .tm-market-topic-icon {
-    background: var(--color-secondary);
-    color: #ffffff;
-    border-color: var(--color-secondary);
+/* IMAGE HOVER EFFECT */
+
+.tm-market-topic:hover .tm-market-topic-image {
+    transform: scale(1.07);
 }
 
-/* =========================================
-   CARD HEADING
-========================================= */
+.tm-market-topic:hover .tm-market-topic-overlay {
+    background: linear-gradient(
+        180deg,
+        rgba(7, 24, 43, 0.08) 0%,
+        rgba(7, 24, 43, 0.30) 35%,
+        rgba(7, 24, 43, 0.96) 100%
+    );
+}
 
-.tm-market-topic-card h3 {
-    margin: 0 0 9px;
 
-    color: var(--text-heading, var(--text));
+/* =====================================================
+   TOPIC CONTENT
+===================================================== */
 
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: 20px;
+.tm-market-topic-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    padding: 22px 48px 22px 23px;
+}
+
+
+/* TOPIC NUMBER */
+
+.tm-market-topic-number {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--color-secondary);
+
+    font-family: var(--heading-font, "Playfair Display", Georgia, serif);
+
+    font-size: 30px;
     font-weight: 700;
-    line-height: 1.35;
-    letter-spacing: -0.3px;
+
+    line-height: 1.2;
 }
 
-/* =========================================
-   CARD DESCRIPTION
-========================================= */
 
-.tm-market-topic-card > p {
-    margin: 0 0 20px;
+/* TOPIC TITLE */
 
-    color: var(--text-muted);
+.tm-market-topic-content h3 {
+    margin: 0 0 7px;
+
+    color: #ffffff;
+
+    font-family: var(--heading-font, "Playfair Display", Georgia, serif);
+
+    font-size: clamp(17px, 1.35vw, 22px);
+    font-weight: 700;
+
+    line-height: 1.35;
+
+    overflow-wrap: break-word;
+}
+
+
+/* TOPIC DESCRIPTION */
+
+.tm-market-topic-content p {
+    max-width: 350px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.91);
 
     font-size: 14px;
     font-weight: 400;
-    line-height: 1.7;
+
+    line-height: 1.55;
 }
 
-/* =========================================
-   CARD FOOTER
-========================================= */
 
-.tm-market-topic-card-footer {
+/* =====================================================
+   TOPIC ARROW
+===================================================== */
+
+.tm-market-topic-arrow {
+    position: absolute;
+
+    right: 18px;
+    bottom: 23px;
+
+    z-index: 3;
+
+    width: 29px;
+    height: 29px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.tm-market-topic-arrow i {
+    width: 23px;
+    height: 23px;
+
+    stroke-width: 1.8;
+}
+
+.tm-market-topic:hover .tm-market-topic-arrow {
+    color: var(--color-secondary);
+
+    transform: translate(3px, -3px);
+}
+
+
+/* =====================================================
+   FOUNDATION BANNER
+===================================================== */
+
+.tm-market-foundation {
+    position: relative;
+
     width: 100%;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
 
-    gap: 8px;
+    gap: 22px;
 
-    margin-top: auto;
-    padding-top: 13px;
+    margin-top: 20px;
+    padding: 20px 26px;
 
-    border-top: 1px solid var(--border);
+    border: 1px solid var(--border);
 
-    color: var(--color-secondary);
+    border-radius: var(--radius-lg, 18px);
 
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 1.5;
+    background: var(--soft-bg);
+
+    transition:
+        border-color 0.3s ease,
+        transform 0.3s ease;
+
+    animation: tmMarketFadeUp 0.9s ease both;
 }
 
-.tm-market-topic-card-footer span {
-    min-width: 0;
+.tm-market-foundation:hover {
+    border-color: var(--color-secondary);
+
+    transform: translateY(-2px);
 }
 
-.tm-market-topic-card-footer i {
-    width: 17px;
-    height: 17px;
+
+/* FOUNDATION ICON */
+
+.tm-market-foundation-icon {
     flex-shrink: 0;
 
-    transition: transform 0.25s ease;
-}
+    width: 60px;
+    height: 60px;
 
-.tm-market-topic-card:hover .tm-market-topic-card-footer i {
-    transform: translate(3px, -3px);
-}
-
-/* =========================================
-   RIGHT SIDE — INTRO CONTENT
-========================================= */
-
-.tm-market-knowledge-intro {
-    width: 100%;
-    max-width: 500px;
-    min-width: 0;
-
-    justify-self: end;
-}
-
-/* SECTION LABEL */
-
-.tm-market-knowledge-label {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 9px;
+    justify-content: center;
 
-    width: fit-content;
-    max-width: 100%;
-    margin-bottom: 20px;
-    padding: 0;
+    border-radius: 50%;
 
-    background: transparent;
-    border: none;
-    border-radius: 0;
+    background: var(--bg);
 
     color: var(--color-secondary);
-    font-family: var(--content-font, "Source Sans 3", sans-serif);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    line-height: 1.4;
-    text-transform: uppercase;
 }
 
-.tm-market-knowledge-label i {
-    width: 18px;
-    height: 18px;
+.tm-market-foundation-icon i {
+    width: 29px;
+    height: 29px;
+
+    stroke-width: 1.8;
+}
+
+
+/* FOUNDATION DIVIDER */
+
+.tm-market-foundation-divider {
     flex-shrink: 0;
+
+    width: 1px;
+    height: 48px;
+
+    background: var(--border);
 }
 
-/* =========================================
-   SECTION HEADING
-========================================= */
 
-.tm-market-knowledge-heading {
-    margin: 0 0 18px;
+/* FOUNDATION CONTENT */
+
+.tm-market-foundation-content {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.tm-market-foundation-content h3 {
+    margin: 0 0 5px;
 
     color: var(--text-heading, var(--text));
 
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: clamp(36px, 3.2vw, 52px);
+    font-family: var(--heading-font, "Playfair Display", Georgia, serif);
+
+    font-size: 21px;
     font-weight: 700;
-    line-height: 1.16;
-    letter-spacing: -1.2px;
+
+    line-height: 1.4;
 }
 
-.tm-market-knowledge-heading span {
-    color: var(--color-secondary);
-}
-
-/* =========================================
-   DESCRIPTION
-========================================= */
-
-.tm-market-knowledge-description {
-    max-width: 460px;
-
-    margin: 0 0 25px;
+.tm-market-foundation-content p {
+    margin: 0;
 
     color: var(--text-muted);
 
     font-size: 15px;
     font-weight: 400;
-    line-height: 1.8;
-}
 
-/* =========================================
-   CTA BUTTON
-========================================= */
-
-.tm-market-knowledge-button {
-    width: fit-content;
-    min-height: 47px;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    padding: 12px 22px;
-
-    background: var(--color-primary);
-    color: #ffffff;
-
-    border: 1px solid var(--color-primary);
-    border-radius: var(--radius-pill, 999px);
-
-    font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
-
-    transition:
-        background-color 0.25s ease,
-        border-color 0.25s ease,
-        color 0.25s ease;
-}
-
-.tm-market-knowledge-button:hover {
-    background: var(--color-secondary);
-    border-color: var(--color-secondary);
-    color: #ffffff;
-}
-
-.tm-market-knowledge-button i {
-    width: 17px;
-    height: 17px;
-    flex-shrink: 0;
-}
-
-/* =========================================
-   FOUNDATION NOTE
-========================================= */
-
-.tm-market-knowledge-note {
-    display: flex;
-    align-items: flex-start;
-    gap: 13px;
-
-    margin-top: 30px;
-    padding-top: 21px;
-
-    border-top: 1px solid var(--border);
-}
-
-.tm-market-knowledge-note-icon {
-    width: 43px;
-    height: 43px;
-    flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: var(--soft-bg);
-    color: var(--color-secondary);
-
-    border: 1px solid var(--border);
-    border-radius: 12px;
-}
-
-.tm-market-knowledge-note-icon i {
-    width: 21px;
-    height: 21px;
-}
-
-.tm-market-knowledge-note strong {
-    display: block;
-    margin-bottom: 5px;
-
-    color: var(--text-heading, var(--text));
-
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 1.5;
-}
-
-.tm-market-knowledge-note p {
-    max-width: 330px;
-    margin: 0;
-
-    color: var(--text-muted);
-
-    font-size: 13px;
     line-height: 1.7;
 }
 
-/* =========================================
+
+/* FOUNDATION LINK */
+
+.tm-market-foundation-link {
+    flex-shrink: 0;
+
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: var(--color-secondary);
+
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.tm-market-foundation-link i {
+    width: 23px;
+    height: 23px;
+
+    stroke-width: 2;
+}
+
+.tm-market-foundation-link:hover {
+    background: var(--color-primary);
+
+    color: #ffffff;
+
+    transform: translateX(4px);
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes tmMarketFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================================================
    DARK MODE
-========================================= */
+===================================================== */
 
-body.dark-mode .tm-market-topic-card {
-    background: var(--soft-bg);
-    border-color: var(--border);
-}
-
-body.dark-mode .tm-market-topic-card:hover {
-    border-color: var(--color-primary);
-}
-
-body.dark-mode .tm-market-topic-icon {
+body.dark-mode .tm-market-knowledge {
     background: var(--bg);
+    color: var(--text);
+}
+
+body.dark-mode .tm-market-heading h2 {
+    color: var(--text-heading, var(--text));
+}
+
+body.dark-mode .tm-market-heading h2 span {
     color: var(--color-secondary);
 }
 
-body.dark-mode .tm-market-topic-card:hover .tm-market-topic-icon {
-    background: var(--color-secondary);
-    color: #ffffff;
+body.dark-mode .tm-market-heading > p {
+    color: var(--text-muted);
+}
+
+body.dark-mode .tm-market-eyebrow {
+    color: var(--color-secondary);
+}
+
+body.dark-mode .tm-market-visual {
+    background: var(--soft-bg);
+}
+
+body.dark-mode .tm-market-foundation {
+    background: var(--soft-bg);
+
+    border-color: var(--border);
+}
+
+body.dark-mode .tm-market-foundation:hover {
     border-color: var(--color-secondary);
 }
 
-/* =========================================
+body.dark-mode .tm-market-foundation-icon {
+    background: var(--bg);
+
+    color: var(--color-secondary);
+}
+
+body.dark-mode .tm-market-foundation-divider {
+    background: var(--border);
+}
+
+body.dark-mode .tm-market-foundation-content h3 {
+    color: var(--text-heading, var(--text));
+}
+
+body.dark-mode .tm-market-foundation-content p {
+    color: var(--text-muted);
+}
+
+body.dark-mode .tm-market-foundation-link {
+    color: var(--color-secondary);
+}
+
+
+/* =====================================================
    RTL SUPPORT
-========================================= */
+===================================================== */
 
-html[dir="rtl"] .tm-market-knowledge-label,
-html[dir="rtl"] .tm-market-knowledge-note,
-html[dir="rtl"] .tm-market-topic-card,
-html[dir="rtl"] .tm-market-topic-card-top,
-html[dir="rtl"] .tm-market-topic-card-footer {
-    direction: rtl;
+html[dir="rtl"] .tm-market-topic-content {
+    padding: 22px 23px 22px 48px;
 }
 
-html[dir="rtl"] .tm-market-knowledge-intro,
-html[dir="rtl"] .tm-market-topic-card {
-    text-align: right;
-}
-
-html[dir="rtl"] .tm-market-knowledge-intro {
-    justify-self: start;
-}
-
-html[dir="rtl"] .tm-market-topic-card::before {
+html[dir="rtl"] .tm-market-topic-arrow {
     right: auto;
-    left: -38px;
+    left: 18px;
 }
 
-html[dir="rtl"] .tm-market-topic-card:hover
-.tm-market-topic-card-footer i {
-    transform: translate(-3px, -3px);
+html[dir="rtl"] .tm-market-foundation-link:hover {
+    transform: translateX(-4px);
 }
 
-/* =========================================
-   SCROLL REVEAL
-========================================= */
 
-.tm-market-knowledge .tm-reveal {
-    opacity: 0;
-    transform: translateY(18px);
-
-    transition:
-        opacity 0.55s ease,
-        transform 0.55s ease;
-}
-
-.tm-market-knowledge .tm-reveal.tm-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.tm-market-knowledge .tm-reveal-delay-1 {
-    transition-delay: 0.08s;
-}
-
-.tm-market-knowledge .tm-reveal-delay-2 {
-    transition-delay: 0.16s;
-}
-
-.tm-market-knowledge .tm-reveal-delay-3 {
-    transition-delay: 0.24s;
-}
 
 /* =====================================================
    TRADEMASTERS — SECTION 3: CHOOSE YOUR SKILL LEVEL
@@ -3338,10 +3576,8 @@ html[dir="rtl"] .tm-featured-bottom-link:hover i {
             color-mix(in srgb, var(--color-secondary) 0%, transparent);
     }
 }
-
 /* =====================================================
-   TRADEMASTERS — SECTION 5
-   CIRCULAR LEARNING ANIMATION
+   TRADEMASTERS — SECTION 5: INSTRUCTOR EXPERTISE
 ===================================================== */
 
 .tm-instructor-expertise,
@@ -3352,8 +3588,10 @@ html[dir="rtl"] .tm-featured-bottom-link:hover i {
 .tm-instructor-expertise {
     position: relative;
     isolation: isolate;
+
     width: 100%;
     padding: 85px 6.5%;
+
     overflow: hidden;
 
     background: var(--bg);
@@ -3362,9 +3600,15 @@ html[dir="rtl"] .tm-featured-bottom-link:hover i {
     font-family: var(--content-font, "Source Sans 3", sans-serif);
 }
 
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
 .tm-instructor-container {
     width: 100%;
     max-width: 1600px;
+
     margin: 0 auto;
 }
 
@@ -3374,929 +3618,599 @@ html[dir="rtl"] .tm-featured-bottom-link:hover i {
 ===================================================== */
 
 .tm-instructor-header {
-    max-width: 850px;
-    margin: 0 auto 48px;
+    width: 100%;
+    max-width: 920px;
+
+    margin: 0 auto 42px;
+
     text-align: center;
 }
+
+
+/* LABEL */
 
 .tm-instructor-label {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+
     gap: 9px;
 
-    width: fit-content;
-    max-width: 100%;
-    margin-bottom: 20px;
-    padding: 0;
-
-    background: transparent;
-    border: none;
-    border-radius: 0;
+    margin-bottom: 17px;
 
     color: var(--color-secondary);
-    font-family: var(--content-font, "Source Sans 3", sans-serif);
+
     font-size: 13px;
     font-weight: 700;
-    letter-spacing: 1.5px;
-    line-height: 1.4;
+
+    letter-spacing: 1.6px;
+    line-height: 1.5;
+
     text-transform: uppercase;
 }
 
 .tm-instructor-label i {
-    width: 17px;
-    height: 17px;
-    stroke-width: 2.2;
+    width: 19px;
+    height: 19px;
+
+    flex-shrink: 0;
+
+    color: var(--color-secondary);
 }
 
+
+/* HEADING */
+
 .tm-instructor-header h2 {
-    margin: 0;
+    max-width: 850px;
+
+    margin: 0 auto 17px;
 
     color: var(--text-heading, var(--text));
 
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: clamp(36px, 3.2vw, 52px);
+    font-family: var(--heading-font, "Playfair Display", Georgia, serif);
+
+    font-size: clamp(35px, 3.4vw, 52px);
     font-weight: 700;
-    line-height: 1.16;
-    letter-spacing: -1.2px;
+
+    line-height: 1.2;
+    letter-spacing: -0.8px;
 }
 
 .tm-instructor-header h2 span {
     display: block;
+
     color: var(--color-secondary);
 }
 
-.tm-instructor-header p {
-    max-width: 760px;
-    margin: 19px auto 0;
+
+/* DESCRIPTION */
+
+.tm-instructor-header > p {
+    max-width: 820px;
+
+    margin: 0 auto;
 
     color: var(--text-muted, var(--text));
 
     font-size: 16px;
     font-weight: 400;
+
     line-height: 1.8;
 }
 
 
 /* =====================================================
-   MAIN LAYOUT
+   FOUR IMAGE LAYOUT
 ===================================================== */
 
-.tm-instructor-main {
+.tm-instructor-image-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    align-items: stretch;
-    gap: 32px;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
 
     width: 100%;
 }
 
 
 /* =====================================================
-   LEFT SIDE — EXPERTISE CARDS
+   IMAGE ITEM
 ===================================================== */
 
-.tm-expertise-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-
-    min-width: 0;
-    height: 100%;
-}
-
-.tm-expertise-card {
+.tm-instructor-image-card {
     position: relative;
-    display: flex;
-    flex-direction: column;
+    isolation: isolate;
 
+    display: flex;
+    align-items: flex-end;
+
+    width: 100%;
     min-width: 0;
-    min-height: 225px;
-    padding: 23px 22px 19px;
+    min-height: 370px;
 
     overflow: hidden;
 
-    background: var(--soft-bg, var(--bg));
-    border: 1px solid var(--border, rgba(120, 130, 150, 0.3));
-    border-radius: var(--radius-lg, 20px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg, 18px);
+
+    background: var(--soft-bg);
+    color: #ffffff;
+
+    text-decoration: none;
+
+    box-shadow: 0 8px 24px rgba(20, 40, 75, 0.06);
 
     transition:
-        transform 0.35s ease,
-        border-color 0.35s ease,
-        box-shadow 0.35s ease,
-        background 0.35s ease;
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
 }
 
-.tm-expertise-card::before {
-    content: "";
+
+/* IMAGE */
+
+.tm-instructor-card-image {
     position: absolute;
+    inset: 0;
 
-    top: 0;
-    left: 22px;
+    z-index: -2;
 
-    width: 42px;
-    height: 3px;
+    display: block;
 
-    background: var(--color-secondary);
-    border-radius: 0 0 5px 5px;
+    width: 100%;
+    height: 100%;
 
-    transform: scaleX(0);
-    transform-origin: left;
+    object-fit: cover;
+    object-position: center;
 
-    transition: transform 0.35s ease;
+    transition: transform 0.7s ease;
 }
 
-.tm-expertise-card:hover {
-    transform: translateY(-5px);
+
+/* OVERLAY */
+
+.tm-instructor-image-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: -1;
+
+    background: linear-gradient(
+        180deg,
+        rgba(5, 22, 42, 0.02) 0%,
+        rgba(5, 22, 42, 0.15) 30%,
+        rgba(5, 22, 42, 0.68) 58%,
+        rgba(5, 22, 42, 0.97) 100%
+    );
+
+    transition: background 0.4s ease;
+}
+
+
+/* HOVER */
+
+.tm-instructor-image-card:hover {
+    transform: translateY(-6px);
 
     border-color: var(--color-secondary);
 
-    box-shadow: 0 15px 35px rgba(20, 50, 90, 0.08);
+    box-shadow: 0 18px 38px rgba(20, 40, 75, 0.16);
 }
 
-.tm-expertise-card:hover::before {
-    transform: scaleX(1);
+.tm-instructor-image-card:hover .tm-instructor-card-image {
+    transform: scale(1.08);
 }
 
-.tm-expertise-card-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 12px;
-    margin-bottom: 22px;
+.tm-instructor-image-card:hover .tm-instructor-image-overlay {
+    background: linear-gradient(
+        180deg,
+        rgba(5, 22, 42, 0.08) 0%,
+        rgba(5, 22, 42, 0.24) 30%,
+        rgba(5, 22, 42, 0.78) 58%,
+        rgba(5, 22, 42, 0.98) 100%
+    );
 }
 
-.tm-expertise-icon {
+
+/* =====================================================
+   IMAGE CONTENT
+===================================================== */
+
+.tm-instructor-card-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    padding: 24px 22px 25px;
+}
+
+
+/* ICON */
+
+.tm-instructor-card-icon {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    width: 46px;
-    height: 46px;
-    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
 
-    color: var(--color-primary);
+    margin-bottom: 18px;
 
-    background: color-mix(
-        in srgb,
-        var(--color-primary) 10%,
-        transparent
-    );
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
 
-    border: 1px solid color-mix(
-        in srgb,
-        var(--color-primary) 18%,
-        transparent
-    );
+    background: var(--color-primary);
+    color: #ffffff;
 
-    border-radius: 14px;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.16);
 
     transition:
-        color 0.3s ease,
         background 0.3s ease,
         transform 0.3s ease;
 }
 
-.tm-expertise-icon i {
-    width: 22px;
-    height: 22px;
+.tm-instructor-card-icon i {
+    width: 25px;
+    height: 25px;
+
     stroke-width: 1.8;
 }
 
-.tm-expertise-card:hover .tm-expertise-icon {
-    color: #ffffff;
+.tm-instructor-image-card:hover .tm-instructor-card-icon {
     background: var(--color-secondary);
-    border-color: var(--color-secondary);
-    transform: rotate(-5deg);
+
+    transform: translateY(-3px);
 }
 
-.tm-expertise-number {
-    color: var(--text-muted, var(--text));
-    opacity: 0.65;
 
-    font-size: 12px;
+/* NUMBER */
+
+.tm-instructor-card-number {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--color-secondary);
+
+    font-size: 11px;
     font-weight: 800;
-    letter-spacing: 1px;
+
+    letter-spacing: 1.5px;
 }
 
-.tm-expertise-card h3 {
-    margin: 0 0 10px;
 
-    color: var(--text-heading, var(--text));
+/* TITLE */
 
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: clamp(17px, 1.35vw, 21px);
+.tm-instructor-card-content h3 {
+    margin: 0 0 9px;
+
+    color: #ffffff;
+
+    font-family: var(--heading-font, "Playfair Display", Georgia, serif);
+
+    font-size: clamp(17px, 1.4vw, 22px);
     font-weight: 700;
+
     line-height: 1.35;
+
+    overflow-wrap: break-word;
 }
 
-.tm-expertise-card p {
-    margin: 0 0 20px;
 
-    color: var(--text-muted, var(--text));
+/* DESCRIPTION */
+
+.tm-instructor-card-content p {
+    max-width: 290px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.9);
 
     font-size: 14px;
-    line-height: 1.75;
+    font-weight: 400;
+
+    line-height: 1.65;
 }
 
-.tm-expertise-card-bottom {
+
+/* BOTTOM LINK */
+
+.tm-instructor-card-bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    gap: 10px;
-    margin-top: auto;
-    padding-top: 13px;
+    gap: 8px;
 
-    border-top: 1px solid var(--border, rgba(120, 130, 150, 0.25));
+    margin-top: 19px;
+    padding-top: 14px;
 
-    color: var(--color-secondary);
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+
+    color: #ffffff;
 
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: 0.15px;
+
+    line-height: 1.5;
 }
 
-.tm-expertise-card-bottom i {
-    width: 16px;
-    height: 16px;
+.tm-instructor-card-bottom span {
+    min-width: 0;
+}
+
+.tm-instructor-card-bottom i {
+    width: 19px;
+    height: 19px;
+
     flex-shrink: 0;
+
+    color: var(--color-secondary);
 
     transition: transform 0.3s ease;
 }
 
-.tm-expertise-card:hover .tm-expertise-card-bottom i {
+.tm-instructor-image-card:hover .tm-instructor-card-bottom i {
     transform: translate(3px, -3px);
 }
 
 
 /* =====================================================
-   DARK MODE — CARD BORDERS
+   FOUNDATION BANNER
 ===================================================== */
 
-body.dark-mode .tm-expertise-card {
-    background: color-mix(
-        in srgb,
-        var(--soft-bg, var(--bg)) 90%,
-        var(--color-primary) 10%
-    );
-
-    border-color: rgba(170, 190, 220, 0.28);
-}
-
-body.dark-mode .tm-expertise-card:hover {
-    border-color: var(--color-secondary);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-}
-
-body.dark-mode .tm-expertise-card-bottom {
-    border-top-color: rgba(170, 190, 220, 0.2);
-}
-
-
-/* =====================================================
-   RIGHT SIDE — CIRCULAR VISUAL
-===================================================== */
-
-.tm-circle-visual {
+.tm-instructor-foundation {
     position: relative;
     isolation: isolate;
 
     display: flex;
     align-items: center;
-    justify-content: center;
 
-    min-width: 0;
-    min-height: 100%;
-    padding: 20px;
+    gap: 22px;
+
+    width: 100%;
+
+    margin-top: 25px;
+    padding: 23px 25px;
 
     overflow: hidden;
 
-    background: var(--soft-bg, var(--bg));
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg, 18px);
 
-    border: 1px solid var(--border, rgba(120, 130, 150, 0.3));
-    border-radius: var(--radius-lg, 20px);
+    background: var(--soft-bg);
+
+    transition: border-color 0.3s ease;
 }
 
-.tm-circle-visual-inner {
-    position: relative;
-    isolation: isolate;
-
-    width: min(100%, 510px);
-    aspect-ratio: 1 / 1;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin: auto;
+.tm-instructor-foundation:hover {
+    border-color: var(--color-secondary);
 }
 
 
-/* =====================================================
-   CIRCULAR BACKGROUND
-===================================================== */
+/* DECORATIVE BACKGROUND */
 
-.tm-circle-glow {
-    position: absolute;
-    z-index: -2;
+.tm-instructor-foundation::after {
+    content: "";
 
-    width: 68%;
-    aspect-ratio: 1 / 1;
-
-    border-radius: 50%;
-
-    background: radial-gradient(
-        circle,
-        color-mix(
-            in srgb,
-            var(--color-secondary) 19%,
-            transparent
-        ) 0%,
-        color-mix(
-            in srgb,
-            var(--color-primary) 9%,
-            transparent
-        ) 48%,
-        transparent 74%
-    );
-
-    filter: blur(12px);
-
-    animation: tm-glow-breathe 5s ease-in-out infinite;
-}
-
-.tm-circle-grid {
-    position: absolute;
-    z-index: -3;
-    inset: 0;
-
-    opacity: 0.34;
-
-    background-image: radial-gradient(
-        color-mix(in srgb, var(--color-primary) 35%, transparent) 1px,
-        transparent 1px
-    );
-
-    background-size: 22px 22px;
-
-    mask-image: radial-gradient(
-        circle,
-        #000 0%,
-        transparent 76%
-    );
-
-    -webkit-mask-image: radial-gradient(
-        circle,
-        #000 0%,
-        transparent 76%
-    );
-}
-
-
-/* =====================================================
-   ROTATING ORBITS
-===================================================== */
-
-.tm-orbit {
     position: absolute;
 
-    left: 50%;
-    top: 50%;
+    top: 0;
+    right: 5%;
 
-    aspect-ratio: 1 / 1;
+    z-index: -1;
 
-    border: 1px solid color-mix(
-        in srgb,
-        var(--color-primary) 22%,
-        transparent
+    width: 190px;
+    height: 100%;
+
+    opacity: 0.08;
+
+    background-image: repeating-linear-gradient(
+        90deg,
+        var(--color-secondary) 0 2px,
+        transparent 2px 13px
     );
 
-    border-radius: 50%;
-
-    transform: translate(-50%, -50%);
+    clip-path: polygon(
+        0 85%,
+        8% 70%,
+        16% 78%,
+        24% 55%,
+        32% 65%,
+        40% 43%,
+        48% 52%,
+        56% 28%,
+        64% 38%,
+        72% 17%,
+        80% 26%,
+        88% 5%,
+        100% 12%,
+        100% 100%,
+        0 100%
+    );
 
     pointer-events: none;
 }
 
-.tm-orbit-outer {
-    width: 84%;
 
-    border-style: dashed;
-    border-color: color-mix(
-        in srgb,
-        var(--color-secondary) 48%,
-        transparent
-    );
+/* FOUNDATION ICON */
 
-    animation: tm-orbit-rotate 32s linear infinite;
-}
-
-.tm-orbit-middle {
-    width: 68%;
-
-    border-color: color-mix(
-        in srgb,
-        var(--color-primary) 30%,
-        transparent
-    );
-
-    animation: tm-orbit-rotate-reverse 24s linear infinite;
-}
-
-.tm-orbit-inner {
-    width: 51%;
-
-    border-style: dashed;
-    border-color: color-mix(
-        in srgb,
-        var(--color-secondary) 35%,
-        transparent
-    );
-
-    animation: tm-orbit-rotate 19s linear infinite;
-}
-
-
-/* =====================================================
-   ORBITING DOTS
-===================================================== */
-
-.tm-orbit-dot {
-    position: absolute;
-
-    display: block;
-
-    width: 10px;
-    height: 10px;
-
-    border: 2px solid var(--bg);
-    border-radius: 50%;
-
-    background: var(--color-secondary);
-
-    box-shadow: 0 0 15px color-mix(
-        in srgb,
-        var(--color-secondary) 55%,
-        transparent
-    );
-}
-
-.tm-orbit-dot-one {
-    top: 12%;
-    left: 15%;
-}
-
-.tm-orbit-dot-two {
-    right: 7%;
-    bottom: 24%;
-
-    width: 8px;
-    height: 8px;
-
-    background: var(--color-primary);
-}
-
-.tm-orbit-dot-three {
-    top: 19%;
-    right: 15%;
-
-    width: 9px;
-    height: 9px;
-}
-
-.tm-orbit-dot-four {
-    bottom: 8%;
-    left: 48%;
-
-    width: 7px;
-    height: 7px;
-
-    background: var(--color-primary);
-}
-
-
-/* =====================================================
-   CENTER CIRCLE
-===================================================== */
-
-.tm-circle-center {
+.tm-instructor-foundation-icon {
     position: relative;
-    z-index: 2;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 40%;
-    aspect-ratio: 1 / 1;
-
-    border-radius: 50%;
-
-    background: var(--bg);
-
-    border: 1px solid color-mix(
-        in srgb,
-        var(--color-secondary) 45%,
-        var(--border, transparent)
-    );
-
-    box-shadow:
-        0 0 0 8px color-mix(
-            in srgb,
-            var(--color-secondary) 5%,
-            transparent
-        ),
-        0 0 0 17px color-mix(
-            in srgb,
-            var(--color-primary) 5%,
-            transparent
-        ),
-        0 18px 50px rgba(0, 0, 0, 0.07);
-
-    animation: tm-center-float 5s ease-in-out infinite;
-}
-
-.tm-center-ring {
-    position: absolute;
-    inset: 7px;
-
-    border: 1px dashed color-mix(
-        in srgb,
-        var(--color-secondary) 40%,
-        transparent
-    );
-
-    border-radius: 50%;
-
-    animation: tm-orbit-rotate 28s linear infinite;
-}
-
-.tm-center-content {
-    position: relative;
-    z-index: 2;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
-    padding: 12px;
-
-    text-align: center;
-}
-
-.tm-center-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 36px;
-    height: 36px;
-
-    margin-bottom: 9px;
-
-    color: #ffffff;
-    background: var(--color-primary);
-
-    border-radius: 50%;
-}
-
-.tm-center-icon i {
-    width: 18px;
-    height: 18px;
-    stroke-width: 2;
-}
-
-.tm-center-eyebrow {
-    margin-bottom: 8px;
-
-    color: var(--color-secondary);
-
-    font-size: 8px;
-    font-weight: 800;
-    letter-spacing: 1.3px;
-}
-
-.tm-center-content h3 {
-    margin: 0;
-
-    color: var(--text-heading, var(--text));
-
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: clamp(18px, 2vw, 27px);
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.5px;
-}
-
-.tm-center-content h3 span {
-    color: var(--color-secondary);
-}
-
-.tm-center-content p {
-    margin: 9px 0 0;
-
-    color: var(--text-muted, var(--text));
-
-    font-size: 10px;
-    line-height: 1.5;
-}
-
-
-/* =====================================================
-   FLOATING LABELS
-===================================================== */
-
-.tm-circle-label {
-    position: absolute;
-    z-index: 4;
-
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    padding: 11px 14px;
-
-    background: var(--bg);
-
-    border: 1px solid var(--border, rgba(120, 130, 150, 0.3));
-    border-radius: 14px;
-
-    box-shadow: 0 10px 28px rgba(25, 45, 75, 0.08);
-
-    animation: tm-label-float 5s ease-in-out infinite;
-}
-
-.tm-circle-label-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 34px;
-    height: 34px;
-    flex-shrink: 0;
-
-    color: var(--color-secondary);
-
-    background: color-mix(
-        in srgb,
-        var(--color-secondary) 11%,
-        transparent
-    );
-
-    border-radius: 10px;
-}
-
-.tm-circle-label-icon i {
-    width: 17px;
-    height: 17px;
-    stroke-width: 1.9;
-}
-
-.tm-circle-label > div {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-}
-
-.tm-circle-label strong {
-    color: var(--text-heading, var(--text));
-
-    font-size: 12px;
-    font-weight: 800;
-    line-height: 1.3;
-    white-space: nowrap;
-}
-
-.tm-circle-label small {
-    color: var(--text-muted, var(--text));
-
-    font-size: 10px;
-    line-height: 1.4;
-    white-space: nowrap;
-}
-
-.tm-circle-label-top {
-    top: 5%;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    animation-delay: -1s;
-}
-
-.tm-circle-label-right {
-    top: 50%;
-    right: -1%;
-
-    transform: translateY(-50%);
-
-    animation-delay: -2.2s;
-}
-
-.tm-circle-label-bottom {
-    bottom: 4%;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    animation-delay: -3.3s;
-}
-
-.tm-circle-label-left {
-    top: 50%;
-    left: -1%;
-
-    transform: translateY(-50%);
-
-    animation-delay: -0.6s;
-}
-
-
-/* =====================================================
-   DECORATIVE MARKERS
-===================================================== */
-
-.tm-circle-marker {
-    position: absolute;
     z-index: 1;
 
-    width: 6px;
-    height: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+
+    flex-shrink: 0;
 
     border-radius: 50%;
 
-    background: var(--color-secondary);
-
-    box-shadow: 0 0 12px color-mix(
-        in srgb,
-        var(--color-secondary) 45%,
-        transparent
-    );
-}
-
-.tm-circle-marker-one {
-    top: 22%;
-    left: 30%;
-
-    animation: tm-marker-pulse 2.5s ease-in-out infinite;
-}
-
-.tm-circle-marker-two {
-    top: 31%;
-    right: 22%;
-
-    animation: tm-marker-pulse 3s ease-in-out infinite -1s;
-}
-
-.tm-circle-marker-three {
-    right: 31%;
-    bottom: 22%;
-
-    animation: tm-marker-pulse 2.8s ease-in-out infinite -1.6s;
-}
-
-.tm-circle-marker-four {
-    bottom: 31%;
-    left: 22%;
-
-    animation: tm-marker-pulse 3.2s ease-in-out infinite -0.7s;
-}
-
-
-/* =====================================================
-   DARK MODE — CIRCULAR VISUAL
-===================================================== */
-
-body.dark-mode .tm-circle-visual {
-    background: color-mix(
-        in srgb,
-        var(--soft-bg, var(--bg)) 92%,
-        var(--color-primary) 8%
-    );
-
-    border-color: rgba(170, 190, 220, 0.28);
-}
-
-body.dark-mode .tm-circle-label {
     background: var(--bg);
-    border-color: rgba(170, 190, 220, 0.28);
-
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+    color: var(--color-secondary);
 }
 
-body.dark-mode .tm-circle-center {
-    box-shadow:
-        0 0 0 8px rgba(255, 255, 255, 0.025),
-        0 0 0 17px rgba(255, 255, 255, 0.02),
-        0 18px 50px rgba(0, 0, 0, 0.25);
+.tm-instructor-foundation-icon i {
+    width: 29px;
+    height: 29px;
+
+    stroke-width: 1.8;
 }
 
 
-/* =====================================================
-   SCROLL REVEAL
-===================================================== */
+/* DIVIDER */
 
-.tm-instructor-expertise .tm-reveal {
-    opacity: 0;
-    transform: translateY(22px);
+.tm-instructor-foundation-divider {
+    width: 1px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    background: var(--border);
+}
+
+
+/* TEXT */
+
+.tm-instructor-foundation-content {
+    position: relative;
+    z-index: 1;
+
+    flex: 1;
+    min-width: 0;
+}
+
+.tm-instructor-foundation-content h3 {
+    margin: 0 0 5px;
+
+    color: var(--text-heading, var(--text));
+
+    font-family: var(--heading-font, "Playfair Display", Georgia, serif);
+
+    font-size: 22px;
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+.tm-instructor-foundation-content p {
+    margin: 0;
+
+    color: var(--text-muted, var(--text));
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* LINK */
+
+.tm-instructor-foundation-link {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    color: var(--color-secondary);
+
+    text-decoration: none;
 
     transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
-.tm-instructor-expertise .tm-reveal.tm-visible {
-    opacity: 1;
-    transform: translateY(0);
+.tm-instructor-foundation-link i {
+    width: 24px;
+    height: 24px;
+
+    stroke-width: 1.8;
 }
 
-.tm-expertise-card:nth-child(2) {
-    transition-delay: 0.08s;
-}
+.tm-instructor-foundation-link:hover {
+    background: var(--color-primary);
+    color: #ffffff;
 
-.tm-expertise-card:nth-child(3) {
-    transition-delay: 0.16s;
-}
-
-.tm-expertise-card:nth-child(4) {
-    transition-delay: 0.24s;
+    transform: translateX(4px);
 }
 
 
 /* =====================================================
-   ANIMATIONS
+   DARK MODE
 ===================================================== */
 
-@keyframes tm-orbit-rotate {
-    from {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-
-    to {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
+body.dark-mode .tm-instructor-expertise {
+    background: var(--bg);
+    color: var(--text);
 }
 
-@keyframes tm-orbit-rotate-reverse {
-    from {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-
-    to {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
+body.dark-mode .tm-instructor-header h2 {
+    color: var(--text-heading, var(--text));
 }
 
-@keyframes tm-center-float {
-    0%,
-    100% {
-        translate: 0 0;
-    }
-
-    50% {
-        translate: 0 -5px;
-    }
+body.dark-mode .tm-instructor-header h2 span {
+    color: var(--color-secondary);
 }
 
-@keyframes tm-label-float {
-    0%,
-    100% {
-        margin-top: 0;
-    }
-
-    50% {
-        margin-top: -5px;
-    }
+body.dark-mode .tm-instructor-header > p {
+    color: var(--text-muted, var(--text));
 }
 
-@keyframes tm-glow-breathe {
-    0%,
-    100% {
-        opacity: 0.65;
-        transform: scale(0.95);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scale(1.08);
-    }
+body.dark-mode .tm-instructor-label {
+    color: var(--color-secondary);
 }
 
-@keyframes tm-marker-pulse {
-    0%,
-    100% {
-        opacity: 0.45;
-        transform: scale(0.8);
-    }
+body.dark-mode .tm-instructor-image-card {
+    border-color: var(--border);
+}
 
-    50% {
-        opacity: 1;
-        transform: scale(1.5);
-    }
+body.dark-mode .tm-instructor-image-card:hover {
+    border-color: var(--color-secondary);
+}
+
+body.dark-mode .tm-instructor-foundation {
+    background: var(--soft-bg);
+    border-color: var(--border);
+}
+
+body.dark-mode .tm-instructor-foundation:hover {
+    border-color: var(--color-secondary);
+}
+
+body.dark-mode .tm-instructor-foundation-icon {
+    background: var(--bg);
+    color: var(--color-secondary);
+}
+
+body.dark-mode .tm-instructor-foundation-divider {
+    background: var(--border);
+}
+
+body.dark-mode .tm-instructor-foundation-content h3 {
+    color: var(--text-heading, var(--text));
+}
+
+body.dark-mode .tm-instructor-foundation-content p {
+    color: var(--text-muted, var(--text));
 }
 
 
@@ -4304,20 +4218,27 @@ body.dark-mode .tm-circle-center {
    RTL SUPPORT
 ===================================================== */
 
-html[dir="rtl"] .tm-expertise-card::before {
-    left: auto;
-    right: 22px;
-
-    transform-origin: right;
+html[dir="rtl"] .tm-instructor-card-content {
+    text-align: right;
 }
 
-html[dir="rtl"] .tm-expertise-card-bottom i {
+html[dir="rtl"] .tm-instructor-card-bottom {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .tm-instructor-card-bottom i {
     transform: scaleX(-1);
 }
 
-html[dir="rtl"] .tm-expertise-card:hover .tm-expertise-card-bottom i {
+html[dir="rtl"] .tm-instructor-image-card:hover
+.tm-instructor-card-bottom i {
     transform: scaleX(-1) translate(3px, -3px);
 }
+
+html[dir="rtl"] .tm-instructor-foundation-link:hover {
+    transform: translateX(-4px);
+}
+
 
 /* =====================================================
    TRADEMASTERS — SECTION 6: MOCK PORTFOLIO
@@ -6902,71 +6823,84 @@ html[dir="rtl"] .tm-cta-primary-btn:hover i {
 
 /* =========================================================
    TRADEMASTERS HOME 2 — RESPONSIVE MEDIA QUERIES
-   Devices:
-   1. Samsung Galaxy S8+  : 360px–740px
-   2. Small Tablet Range  : 741px–767px
-   3. iPad Mini           : 768px–820px
-   4. iPad Pro 11"        : 821px–1024px
-   5. Nest Hub            : 1024px × 600px
-   6. Large Desktop       : 1920px and above
-
-   Important:
-   - Equal left/right section padding
-   - Correct content alignment
-   - No changes to theme colors or fonts
+   Add this code at the END of home2(2).css
 ========================================================= */
 
 
 /* =========================================================
-   COMMON RESPONSIVE SAFETY
+   LARGE DESKTOP — 1440px TO 1920px
 ========================================================= */
 
-.tm-home2,
-.tm-market-knowledge,
-.tm-skill-levels,
-.tm-course-spotlight,
-.tm-instructor-expertise,
-.tm-mock-portfolio,
-.tm-free-resources,
-.tm-final-cta {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 100%;
-}
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
 
-.tm-home2 *,
-.tm-market-knowledge *,
-.tm-skill-levels *,
-.tm-course-spotlight *,
-.tm-instructor-expertise *,
-.tm-mock-portfolio *,
-.tm-free-resources *,
-.tm-final-cta * {
-    box-sizing: border-box;
-}
+    .tm-home2,
+    .tm-market-knowledge,
+    .tm-skill-levels,
+    .tm-course-spotlight,
+    .tm-instructor-expertise,
+    .tm-mock-portfolio,
+    .tm-free-resources,
+    .tm-final-cta {
+        padding-left: 6.5%;
+        padding-right: 6.5%;
+    }
 
-.tm-home2-container,
-.tm-market-knowledge-container,
-.tm-skill-levels-container,
-.tm-course-spotlight-container,
-.tm-instructor-container,
-.tm-mock-container,
-.tm-resources-container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    min-width: 0;
+    .tm-home2-container {
+        max-width: 1600px;
+        gap: 55px;
+    }
+
+    .tm-market-knowledge-container,
+    .tm-skill-levels-container,
+    .tm-course-spotlight-container,
+    .tm-instructor-container,
+    .tm-mock-container,
+    .tm-resources-container {
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tm-home2-content h1 {
+        font-size: clamp(42px, 3.2vw, 58px);
+    }
+
+    .tm-market-card {
+        max-width: 650px;
+    }
+
+    .tm-market-content {
+        gap: 32px;
+    }
+
+    .tm-market-visual {
+        min-height: 540px;
+    }
+
+    .tm-market-topic {
+        min-height: 260px;
+    }
+
+    .tm-skill-levels-grid {
+        gap: 25px;
+    }
+
+    .tm-instructor-image-grid {
+        gap: 24px;
+    }
+
+    .tm-resources-grid {
+        gap: 24px;
+    }
 }
 
 
 /* =========================================================
-   1. SAMSUNG GALAXY S8+
-   Width: 360px–740px
+   TABLET LANDSCAPE / SMALL DESKTOP
+   1025px TO 1439px
 ========================================================= */
 
-@media screen and (min-width: 360px) and (max-width: 740px) {
-
-    /* ---------- COMMON SECTION SPACING ---------- */
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
 
     .tm-home2,
     .tm-market-knowledge,
@@ -6980,41 +6914,631 @@ html[dir="rtl"] .tm-cta-primary-btn:hover i {
         padding-right: 5%;
     }
 
+    .tm-home2 {
+        height: auto;
+        min-height: 90vh;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .tm-home2-container {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .tm-market-card {
+        padding: 20px;
+    }
+
+    .tm-home2-content h1 {
+        font-size: clamp(36px, 3.2vw, 46px);
+    }
+
+    .tm-market-content {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 22px;
+    }
+
+    .tm-market-visual {
+        min-height: 480px;
+    }
+
+    .tm-market-topics {
+        gap: 14px;
+    }
+
+    .tm-market-topic {
+        min-height: 225px;
+    }
+
+    .tm-market-topic-content {
+        padding: 18px 38px 18px 18px;
+    }
+
+    html[dir="rtl"] .tm-market-topic-content {
+        padding: 18px 18px 18px 38px;
+    }
+
+    .tm-market-topic-content h3 {
+        font-size: 19px;
+    }
+
+    .tm-market-topic-content p {
+        font-size: 13px;
+    }
+
+    .tm-skill-levels-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .tm-skill-card {
+        padding: 22px 19px;
+    }
+
+    .tm-skill-card-content h3 {
+        font-size: 22px;
+    }
+
+    .tm-featured-course {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    }
+
+    .tm-featured-visual {
+        min-height: 590px;
+        padding: 24px 20px;
+    }
+
+    .tm-instructor-image-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .tm-instructor-image-card {
+        min-width: 0;
+    }
+
+    .tm-mock-container {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .tm-resources-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .tm-final-cta-card {
+        grid-template-columns: minmax(0, 1.4fr) minmax(230px, 0.8fr);
+    }
+}
+
+
+/* =========================================================
+   iPAD PRO 11"
+   821px TO 1024px
+========================================================= */
+
+@media screen and (min-width: 821px) and (max-width: 1024px) {
+
+    /* Equal side spacing for all sections */
+
+    .tm-home2,
     .tm-market-knowledge,
     .tm-skill-levels,
     .tm-course-spotlight,
     .tm-instructor-expertise,
     .tm-mock-portfolio,
-    .tm-free-resources {
+    .tm-free-resources,
+    .tm-final-cta {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    /* HOME 2 HERO */
+
+    .tm-home2 {
+        height: auto;
+        min-height: 90vh;
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+
+    .tm-home2-container {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 24px;
+    }
+
+    .tm-market-card {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .tm-market-header {
+        gap: 8px;
+        margin-bottom: 17px;
+    }
+
+    .tm-market-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .tm-market-title h3 {
+        font-size: 15px;
+    }
+
+    .tm-market-title p {
+        font-size: 11px;
+    }
+
+    .tm-live-status {
+        font-size: 8px;
+        letter-spacing: 0.4px;
+    }
+
+    .tm-market-info h2 {
+        font-size: 27px;
+    }
+
+    .tm-chart-area {
+        height: 155px;
+    }
+
+    .tm-market-insight {
+        gap: 9px;
+        margin-top: 15px;
+        padding-top: 13px;
+    }
+
+    .tm-insight-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .tm-market-insight p {
+        font-size: 10px;
+    }
+
+    .tm-home2-tagline {
+        font-size: 11px;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+    }
+
+    .tm-home2-content h1 {
+        font-size: clamp(32px, 4vw, 42px);
+        line-height: 1.2;
+        letter-spacing: -0.8px;
+        margin-bottom: 18px;
+    }
+
+    .tm-home2-description {
+        font-size: 14px;
+        line-height: 1.75;
+        margin-bottom: 20px;
+    }
+
+    .tm-home2-buttons {
+        gap: 10px;
+        margin-bottom: 22px;
+    }
+
+    .tm-home2-btn-primary,
+    .tm-home2-btn-secondary {
+        min-height: 45px;
+        padding: 11px 15px;
+        font-size: 12px;
+    }
+
+    .tm-home2-highlights {
+        gap: 12px;
+    }
+
+    .tm-home2-highlights > div {
+        font-size: 10px;
+    }
+
+
+    /* MARKET KNOWLEDGE */
+
+    .tm-market-knowledge,
+    .tm-skill-levels,
+    .tm-course-spotlight,
+    .tm-instructor-expertise {
         padding-top: 65px;
         padding-bottom: 65px;
     }
 
-    .tm-home2-container,
-    .tm-market-knowledge-container,
-    .tm-skill-levels-container,
-    .tm-course-spotlight-container,
-    .tm-instructor-container,
-    .tm-mock-container,
-    .tm-resources-container {
-        width: 100%;
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
+    .tm-market-heading,
+    .tm-skill-levels-header,
+    .tm-course-spotlight-header,
+    .tm-instructor-header,
+    .tm-resources-header {
+        margin-bottom: 35px;
+    }
+
+    .tm-market-heading h2,
+    .tm-skill-levels-heading,
+    .tm-course-spotlight-heading,
+    .tm-instructor-header h2,
+    .tm-resources-title {
+        font-size: clamp(30px, 3.8vw, 40px);
+        line-height: 1.2;
+        letter-spacing: -0.6px;
+    }
+
+    .tm-market-heading > p,
+    .tm-skill-levels-description,
+    .tm-course-spotlight-intro,
+    .tm-instructor-header > p,
+    .tm-resources-description {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .tm-market-content {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 16px;
+    }
+
+    .tm-market-visual {
+        min-height: 450px;
+    }
+
+    .tm-market-learning-badge {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        gap: 10px;
+        padding: 13px;
+    }
+
+    .tm-market-badge-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .tm-market-badge-content strong {
+        font-size: 16px;
+    }
+
+    .tm-market-topics {
+        gap: 12px;
+    }
+
+    .tm-market-topic {
+        min-height: 215px;
+    }
+
+    .tm-market-topic-content {
+        padding: 15px 32px 15px 15px;
+    }
+
+    html[dir="rtl"] .tm-market-topic-content {
+        padding: 15px 15px 15px 32px;
+    }
+
+    .tm-market-topic-number {
+        font-size: 25px;
+    }
+
+    .tm-market-topic-content h3 {
+        font-size: 17px;
+    }
+
+    .tm-market-topic-content p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .tm-market-topic-arrow {
+        right: 8px;
+        bottom: 14px;
+    }
+
+    html[dir="rtl"] .tm-market-topic-arrow {
+        right: auto;
+        left: 8px;
+    }
+
+    .tm-market-foundation {
+        gap: 15px;
+        margin-top: 16px;
+        padding: 16px;
+    }
+
+    .tm-market-foundation-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .tm-market-foundation-content h3 {
+        font-size: 18px;
+    }
+
+    .tm-market-foundation-content p {
+        font-size: 13px;
     }
 
 
-    /* =====================================================
-       HOME 2 HERO
-    ===================================================== */
+    /* SKILL LEVELS */
+
+    .tm-skill-levels-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .tm-skill-card {
+        padding: 23px 20px;
+    }
+
+    .tm-skill-card-top {
+        gap: 10px;
+        margin-bottom: 22px;
+    }
+
+    .tm-skill-card-content h3 {
+        font-size: 22px;
+    }
+
+    .tm-skill-card-description {
+        font-size: 13px;
+    }
+
+    .tm-skill-learn li {
+        font-size: 12px;
+    }
+
+    .tm-skill-levels-bottom {
+        gap: 12px;
+        padding: 17px;
+    }
+
+    .tm-skill-levels-bottom p {
+        font-size: 12px;
+    }
+
+
+    /* FEATURED COURSE */
+
+    .tm-featured-course {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .tm-featured-visual {
+        min-height: 550px;
+        padding: 22px 17px;
+    }
+
+    .tm-featured-course-title {
+        font-size: 30px;
+    }
+
+    .tm-featured-course-description {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .tm-featured-details {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .tm-chart-bottom {
+        gap: 12px;
+    }
+
+
+    /* INSTRUCTOR EXPERTISE */
+
+    .tm-instructor-image-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .tm-instructor-image-card {
+        min-height: 300px;
+    }
+
+
+    /* MOCK PORTFOLIO */
+
+    .tm-mock-portfolio {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .tm-mock-container {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 25px;
+    }
+
+    .tm-mock-content > h2 {
+        font-size: clamp(30px, 3.5vw, 38px);
+        line-height: 1.2;
+    }
+
+    .tm-mock-description {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .tm-mock-features {
+        gap: 13px;
+    }
+
+
+    /* FREE RESOURCES */
+
+    .tm-free-resources {
+        padding-top: 55px;
+        padding-bottom: 60px;
+    }
+
+    .tm-resources-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+
+    /* FINAL CTA */
+
+    .tm-final-cta {
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+
+    .tm-final-cta-card {
+        grid-template-columns: minmax(0, 1fr) minmax(200px, 0.8fr);
+        min-height: 290px;
+        gap: 20px;
+    }
+}
+
+
+/* =========================================================
+   NEST HUB — 1024px × 600px
+   Place after the iPad Pro media query
+========================================================= */
+
+@media screen and (width: 1024px) and (height: 600px) {
+
+    .tm-home2 {
+        height: auto;
+        min-height: 600px;
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+
+    .tm-home2-container {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 25px;
+    }
+
+    .tm-market-card {
+        padding: 17px;
+    }
+
+    .tm-chart-area {
+        height: 125px;
+    }
+
+    .tm-market-insight {
+        margin-top: 12px;
+        padding-top: 11px;
+    }
+
+    .tm-home2-content h1 {
+        font-size: 37px;
+        line-height: 1.15;
+        margin-bottom: 14px;
+    }
+
+    .tm-home2-description {
+        font-size: 13px;
+        line-height: 1.65;
+        margin-bottom: 16px;
+    }
+
+    .tm-home2-buttons {
+        margin-bottom: 17px;
+    }
+
+    .tm-home2-highlights {
+        gap: 9px;
+    }
+
+    .tm-home2-highlights > div {
+        font-size: 10px;
+    }
+
+    .tm-market-knowledge,
+    .tm-skill-levels,
+    .tm-course-spotlight,
+    .tm-instructor-expertise {
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+
+    .tm-market-heading,
+    .tm-skill-levels-header,
+    .tm-course-spotlight-header,
+    .tm-instructor-header,
+    .tm-resources-header {
+        margin-bottom: 25px;
+    }
+
+    .tm-market-visual {
+        min-height: 380px;
+    }
+
+    .tm-market-topic {
+        min-height: 180px;
+    }
+
+    .tm-skill-card {
+        padding: 19px;
+    }
+
+    .tm-featured-visual {
+        min-height: 490px;
+    }
+
+    .tm-instructor-image-card {
+        min-height: 270px;
+    }
+
+    .tm-mock-portfolio {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .tm-free-resources {
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+
+    .tm-final-cta {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .tm-final-cta-card {
+        min-height: 260px;
+    }
+}
+
+
+/* =========================================================
+   iPAD MINI
+   768px TO 820px
+========================================================= */
+
+@media screen and (min-width: 768px) and (max-width: 820px) {
+
+    /* Consistent left and right spacing */
+
+    .tm-home2,
+    .tm-market-knowledge,
+    .tm-skill-levels,
+    .tm-course-spotlight,
+    .tm-instructor-expertise,
+    .tm-mock-portfolio,
+    .tm-free-resources,
+    .tm-final-cta {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+
+    /* HOME 2 HERO */
 
     .tm-home2 {
         height: auto;
         min-height: 0;
-        max-height: none;
         padding-top: 55px;
         padding-bottom: 55px;
-        overflow: hidden;
     }
 
     .tm-home2-container {
@@ -7023,132 +7547,457 @@ html[dir="rtl"] .tm-cta-primary-btn:hover i {
     }
 
     .tm-home2-content {
-        grid-row: 1;
-        width: 100%;
-        max-width: 100%;
-        text-align: left;
+        order: 1;
     }
 
     .tm-home2-visual {
-        grid-row: 2;
+        order: 2;
         width: 100%;
+    }
+
+    .tm-market-card {
+        width: 100%;
+        max-width: 650px;
+        padding: 22px;
+    }
+
+    .tm-chart-area {
+        height: 190px;
+    }
+
+    .tm-home2-content h1 {
+        max-width: 680px;
+        font-size: clamp(38px, 5vw, 46px);
+        line-height: 1.18;
+    }
+
+    .tm-home2-description {
+        max-width: 650px;
+    }
+
+    .tm-home2-highlights {
+        gap: 14px;
+    }
+
+
+    /* SECTION SPACING */
+
+    .tm-market-knowledge,
+    .tm-skill-levels,
+    .tm-course-spotlight,
+    .tm-instructor-expertise {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .tm-market-heading,
+    .tm-skill-levels-header,
+    .tm-course-spotlight-header,
+    .tm-instructor-header,
+    .tm-resources-header {
+        margin-bottom: 32px;
+    }
+
+    .tm-market-heading h2,
+    .tm-skill-levels-heading,
+    .tm-course-spotlight-heading,
+    .tm-instructor-header h2,
+    .tm-resources-title {
+        font-size: clamp(31px, 4.5vw, 40px);
+        line-height: 1.2;
+        letter-spacing: -0.5px;
+    }
+
+
+    /* MARKET KNOWLEDGE */
+
+    .tm-market-content {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .tm-market-visual {
+        min-height: 420px;
+    }
+
+    .tm-market-topics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+        gap: 16px;
+    }
+
+    .tm-market-topic {
+        min-height: 240px;
+    }
+
+    .tm-market-topic-content {
+        padding: 18px 40px 18px 18px;
+    }
+
+    html[dir="rtl"] .tm-market-topic-content {
+        padding: 18px 18px 18px 40px;
+    }
+
+    .tm-market-topic-content h3 {
+        font-size: 19px;
+    }
+
+    .tm-market-topic-content p {
+        font-size: 13px;
+    }
+
+    .tm-market-foundation {
+        gap: 14px;
+        padding: 18px;
+    }
+
+    .tm-market-foundation-content h3 {
+        font-size: 19px;
+    }
+
+
+    /* SKILL LEVELS */
+
+    .tm-skill-levels-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 17px;
+    }
+
+    .tm-skill-card {
+        padding: 22px 19px;
+    }
+
+    .tm-skill-card-content h3 {
+        font-size: 22px;
+    }
+
+    .tm-skill-levels-bottom {
+        flex-wrap: wrap;
+        gap: 13px;
+    }
+
+    .tm-skill-levels-bottom p {
+        font-size: 13px;
+    }
+
+
+    /* FEATURED COURSE */
+
+    .tm-featured-course {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .tm-featured-visual {
+        min-height: 480px;
+        padding: 25px;
+    }
+
+    .tm-featured-course-content {
+        padding: 28px;
+    }
+
+    .tm-featured-details {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+
+    /* INSTRUCTOR EXPERTISE */
+
+    .tm-instructor-image-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 17px;
+    }
+
+    .tm-instructor-image-card {
+        min-height: 320px;
+    }
+
+
+    /* MOCK PORTFOLIO */
+
+    .tm-mock-portfolio {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .tm-mock-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .tm-mock-content > h2 {
+        font-size: clamp(32px, 4.5vw, 40px);
+    }
+
+
+    /* FREE RESOURCES */
+
+    .tm-free-resources {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .tm-resources-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 17px;
+    }
+
+
+    /* FINAL CTA */
+
+    .tm-final-cta {
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+
+    .tm-final-cta-card {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+        padding: 30px;
+    }
+}
+
+
+/* =====================================================
+   TRADEMASTERS HOME 2 — MOBILE VERSION
+   Samsung Galaxy S8+ : 360px - 740px
+===================================================== */
+
+@media screen and (min-width: 360px) and (max-width: 740px) {
+
+    /* =====================================================
+       COMMON SECTION SETTINGS
+    ===================================================== */
+
+    .tm-home2,
+    .tm-market-knowledge,
+    .tm-skill-levels,
+    .tm-course-spotlight,
+    .tm-instructor-expertise,
+    .tm-mock-portfolio,
+    .tm-free-resources,
+    .tm-final-cta {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .tm-home2,
+    .tm-market-knowledge,
+    .tm-skill-levels,
+    .tm-course-spotlight,
+    .tm-instructor-expertise,
+    .tm-mock-portfolio,
+    .tm-free-resources,
+    .tm-final-cta {
+        padding-left: 6.5%;
+        padding-right: 6.5%;
+    }
+
+    .tm-home2 *,
+    .tm-market-knowledge *,
+    .tm-skill-levels *,
+    .tm-course-spotlight *,
+    .tm-instructor-expertise *,
+    .tm-mock-portfolio *,
+    .tm-free-resources *,
+    .tm-final-cta * {
         min-width: 0;
+    }
+
+
+    /* =====================================================
+       SECTION 1 — HOME 2 HERO
+    ===================================================== */
+
+    .tm-home2 {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+
+        padding-top: 45px;
+        padding-bottom: 45px;
+
+        display: block;
+    }
+
+    .tm-home2-container {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 30px;
+
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .tm-home2-content {
+        order: 1;
+        width: 100%;
+    }
+
+    .tm-home2-visual {
+        order: 2;
+        width: 100%;
+        max-width: 100%;
     }
 
     .tm-home2-tagline {
         max-width: 100%;
+
         font-size: 11px;
         letter-spacing: 1px;
         line-height: 1.6;
-        margin-bottom: 15px;
-    }
 
-    .tm-home2-tagline svg {
-        width: 15px;
-        height: 15px;
+        white-space: normal;
     }
 
     .tm-home2-content h1 {
-        font-size: clamp(32px, 8vw, 42px);
-        line-height: 1.2;
-        letter-spacing: -0.7px;
+        width: 100%;
+
         margin-bottom: 17px;
+
+        font-size: clamp(29px, 8vw, 36px);
+        line-height: 1.2;
+        letter-spacing: -0.6px;
+
+        overflow-wrap: anywhere;
+    }
+
+    .tm-home2-content h1 span {
         overflow-wrap: anywhere;
     }
 
     .tm-home2-content h1 .tm-heading-secondary {
         font-size: 0.55em;
+        line-height: 1.5;
         letter-spacing: 0;
     }
 
     .tm-home2-description {
         max-width: 100%;
-        font-size: 14px;
-        line-height: 1.75;
+
         margin-bottom: 22px;
+
+        font-size: 14px;
+        line-height: 1.8;
     }
+
+
+    /* HERO BUTTONS
+       Vertical layout; preserve original button shape.
+    */
 
     .tm-home2-buttons {
         display: flex;
         flex-direction: column;
         align-items: stretch;
+
+        flex-wrap: nowrap;
+        gap: 12px;
+
         width: 100%;
-        gap: 11px;
-        margin-bottom: 23px;
+        margin-bottom: 24px;
     }
 
     .tm-home2-btn-primary,
     .tm-home2-btn-secondary {
         width: 100%;
-        min-height: 47px;
-        justify-content: center;
-        padding: 12px 16px;
+        max-width: 100%;
+
+        flex: 0 0 auto;
+
+        white-space: normal;
+        text-align: center;
     }
 
     .tm-home2-highlights {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
         gap: 12px;
+        width: 100%;
     }
 
     .tm-home2-highlights > div {
+        display: flex;
+        align-items: flex-start;
+
+        gap: 8px;
+        width: 100%;
+
         font-size: 12px;
-        line-height: 1.5;
+        line-height: 1.6;
     }
+
+    .tm-home2-highlights svg {
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+
+
+    /* HERO MARKET DASHBOARD */
 
     .tm-market-card {
         width: 100%;
         max-width: 100%;
-        padding: 18px 15px;
-        border-radius: 17px;
+
+        padding: 17px 14px;
     }
 
     .tm-market-header {
-        gap: 8px;
+        align-items: flex-start;
+        gap: 10px;
+
         margin-bottom: 18px;
     }
 
     .tm-market-title {
-        gap: 8px;
+        flex: 1;
+        gap: 9px;
     }
 
     .tm-market-icon {
         width: 36px;
         height: 36px;
-        border-radius: 10px;
-    }
-
-    .tm-market-icon svg {
-        width: 18px;
-        height: 18px;
+        flex-shrink: 0;
     }
 
     .tm-market-title h3 {
         font-size: 15px;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
     }
 
     .tm-market-title p {
-        font-size: 10px;
+        font-size: 11px;
+        overflow-wrap: anywhere;
     }
 
     .tm-live-status {
+        flex-shrink: 0;
         gap: 5px;
+
         font-size: 8px;
-        letter-spacing: 0.3px;
+        letter-spacing: 0;
     }
 
     .tm-market-info {
         align-items: flex-start;
-        gap: 8px;
+        flex-wrap: wrap;
+
+        gap: 10px;
     }
 
     .tm-market-info h2 {
-        font-size: clamp(23px, 6vw, 29px);
+        font-size: 25px;
+        overflow-wrap: anywhere;
     }
 
     .tm-market-change {
-        font-size: 10px;
-        gap: 4px;
+        font-size: 11px;
     }
 
     .tm-chart-area {
@@ -7166,8 +8015,9 @@ html[dir="rtl"] .tm-cta-primary-btn:hover i {
     }
 
     .tm-chart-footer {
+        align-items: flex-start;
         flex-wrap: wrap;
-        gap: 8px;
+        gap: 9px;
     }
 
     .tm-chart-legend {
@@ -7175,111 +8025,198 @@ html[dir="rtl"] .tm-cta-primary-btn:hover i {
     }
 
     .tm-chart-period {
-        font-size: 8px;
+        font-size: 9px;
     }
 
     .tm-market-insight {
         align-items: flex-start;
-        gap: 9px;
+        gap: 10px;
+
         margin-top: 16px;
         padding-top: 14px;
     }
 
     .tm-insight-icon {
-        width: 34px;
-        height: 34px;
+        width: 35px;
+        height: 35px;
+        flex-shrink: 0;
     }
 
     .tm-market-insight h4 {
         font-size: 12px;
+        line-height: 1.5;
     }
 
     .tm-market-insight p {
-        font-size: 10px;
-        line-height: 1.6;
+        font-size: 11px;
+        line-height: 1.7;
+        overflow-wrap: anywhere;
     }
 
 
     /* =====================================================
        SECTION 2 — MARKET KNOWLEDGE
+       Main image + 4 topic images = 5 images vertically
     ===================================================== */
 
+    .tm-market-knowledge {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
     .tm-market-knowledge-container {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 32px;
-    }
-
-    .tm-market-knowledge-grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 14px;
-    }
-
-    .tm-market-topic-card {
-        min-height: 0;
-        padding: 21px 19px;
-    }
-
-    .tm-market-topic-card-top {
-        margin-bottom: 17px;
-    }
-
-    .tm-market-topic-icon {
-        width: 42px;
-        height: 42px;
-    }
-
-    .tm-market-topic-card h3 {
-        font-size: 19px;
-    }
-
-    .tm-market-topic-card > p {
-        font-size: 13px;
-        margin-bottom: 17px;
-    }
-
-    .tm-market-knowledge-intro {
+        width: 100%;
         max-width: 100%;
-        justify-self: stretch;
     }
 
-    .tm-market-knowledge-label {
-        font-size: 11px;
+    .tm-market-heading {
+        margin-bottom: 28px;
+    }
+
+    .tm-market-eyebrow {
+        flex-wrap: wrap;
+        gap: 7px;
+
+        margin-bottom: 13px;
+
+        font-size: 10px;
         letter-spacing: 1px;
-        margin-bottom: 15px;
+        line-height: 1.6;
     }
 
-    .tm-market-knowledge-heading {
-        font-size: clamp(30px, 7.5vw, 40px);
-        line-height: 1.2;
-        letter-spacing: -0.6px;
-        margin-bottom: 15px;
+    .tm-market-heading h2 {
+        margin-bottom: 14px;
+
+        font-size: clamp(27px, 7.5vw, 34px);
+        line-height: 1.25;
+        letter-spacing: -0.5px;
+
+        overflow-wrap: anywhere;
     }
 
-    .tm-market-knowledge-description {
-        max-width: 100%;
+    .tm-market-heading > p {
         font-size: 14px;
-        line-height: 1.75;
+        line-height: 1.8;
     }
 
-    .tm-market-knowledge-button {
+    /* Main visual first, topics below */
+
+    .tm-market-content {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 18px;
+        width: 100%;
+    }
+
+    .tm-market-visual {
+        order: 1;
+
+        width: 100%;
+        min-height: 320px;
+
+        border-radius: var(--radius-lg, 18px);
+    }
+
+    /* The four topic images stack vertically */
+
+    .tm-market-topics {
+        order: 2;
+
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto;
+
+        gap: 16px;
+
+        width: 100%;
+    }
+
+    .tm-market-topic {
+        width: 100%;
+        min-height: 240px;
+        height: auto;
+    }
+
+    .tm-market-topic-image {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+    .tm-market-topic-content {
         max-width: 100%;
+        padding: 20px 20px 22px;
     }
 
-    .tm-market-knowledge-note {
+    .tm-market-topic-content h3 {
+        font-size: 19px;
+        line-height: 1.4;
+    }
+
+    .tm-market-topic-content p {
+        max-width: 100%;
+
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .tm-market-topic-arrow {
+        right: 14px;
+        bottom: 15px;
+    }
+
+    /* Foundation note: icon, content, link vertically */
+
+    .tm-market-foundation {
+        display: flex;
+        flex-direction: column;
         align-items: flex-start;
-        gap: 11px;
-        margin-top: 24px;
-        padding-top: 17px;
+
+        gap: 15px;
+
+        margin-top: 20px;
+        padding: 20px 16px;
+
+        width: 100%;
     }
 
-    .tm-market-knowledge-note-icon {
-        width: 38px;
-        height: 38px;
+    .tm-market-foundation-icon {
+        width: 48px;
+        height: 48px;
+
+        flex-shrink: 0;
     }
 
-    .tm-market-knowledge-note p {
-        max-width: 100%;
-        font-size: 12px;
+    .tm-market-foundation-divider {
+        display: none;
+    }
+
+    .tm-market-foundation-content {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    .tm-market-foundation-content h3 {
+        font-size: 19px;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+
+    .tm-market-foundation-content p {
+        font-size: 14px;
+        line-height: 1.8;
+        overflow-wrap: anywhere;
+    }
+
+    .tm-market-foundation-link {
+        align-self: flex-start;
+
+        width: 43px;
+        height: 43px;
+        flex-shrink: 0;
     }
 
 
@@ -7287,26 +8224,32 @@ html[dir="rtl"] .tm-cta-primary-btn:hover i {
        SECTION 3 — SKILL LEVELS
     ===================================================== */
 
+    .tm-skill-levels {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
     .tm-skill-levels-header {
-        margin-bottom: 32px;
+        margin-bottom: 30px;
     }
 
     .tm-skill-levels-label {
         font-size: 11px;
         letter-spacing: 1px;
-        margin-bottom: 15px;
+        line-height: 1.6;
     }
 
     .tm-skill-levels-heading {
-        font-size: clamp(30px, 7.5vw, 40px);
-        line-height: 1.2;
-        letter-spacing: -0.6px;
+        font-size: clamp(28px, 7.5vw, 35px);
+        line-height: 1.25;
+        letter-spacing: -0.5px;
+
+        overflow-wrap: anywhere;
     }
 
     .tm-skill-levels-description {
         font-size: 14px;
-        line-height: 1.75;
-        margin-top: 15px;
+        line-height: 1.8;
     }
 
     .tm-skill-levels-grid {
@@ -7315,163 +8258,108 @@ html[dir="rtl"] .tm-cta-primary-btn:hover i {
     }
 
     .tm-skill-card {
+        width: 100%;
         min-height: 0;
-        padding: 22px 19px;
+        padding: 22px 18px;
     }
 
     .tm-skill-card-top {
-        gap: 10px;
+        gap: 12px;
         margin-bottom: 22px;
-    }
-
-    .tm-skill-level-number {
-        font-size: 22px;
-    }
-
-    .tm-skill-card-icon {
-        width: 44px;
-        height: 44px;
     }
 
     .tm-skill-card-content h3 {
         font-size: 22px;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
     }
 
     .tm-skill-card-description {
         font-size: 13px;
+        line-height: 1.8;
     }
 
-    .tm-skill-learn {
-        padding-top: 17px;
+    .tm-skill-card-button {
+        width: 100%;
+        max-width: 100%;
+
+        white-space: normal;
+        overflow-wrap: anywhere;
     }
 
-    .tm-skill-learn ul {
-        gap: 11px;
-    }
-
-    .tm-skill-learn li {
-        font-size: 12px;
-    }
-
-    .tm-skill-card-footer {
-        padding-top: 20px;
-    }
+    /* Note: icon → text → link */
 
     .tm-skill-levels-bottom {
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 12px;
-        padding: 18px;
+
+        gap: 14px;
+
+        margin-top: 22px;
+        padding: 18px 15px;
+
+        width: 100%;
+    }
+
+    .tm-skill-bottom-icon {
+        width: 43px;
+        height: 43px;
+        flex-shrink: 0;
     }
 
     .tm-skill-levels-bottom p {
-        font-size: 12px;
+        width: 100%;
+        flex: 0 0 auto;
+
+        font-size: 13px;
+        line-height: 1.8;
+
+        overflow-wrap: anywhere;
     }
 
     .tm-skill-bottom-link {
         align-self: flex-start;
+
+        max-width: 100%;
+        flex-shrink: 0;
+
+        white-space: normal;
+        line-height: 1.6;
     }
 
 
     /* =====================================================
-       SECTION 4 — FEATURED COURSE SPOTLIGHT
+       SECTION 4 — COURSE SPOTLIGHT
     ===================================================== */
+
+    .tm-course-spotlight {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
 
     .tm-course-spotlight-header {
         margin-bottom: 30px;
     }
 
-    .tm-course-spotlight-label {
-        font-size: 11px;
-        letter-spacing: 1px;
-        margin-bottom: 15px;
-    }
-
     .tm-course-spotlight-heading {
-        font-size: clamp(30px, 7.5vw, 40px);
-        line-height: 1.2;
-        letter-spacing: -0.6px;
-    }
-
-    .tm-course-spotlight-intro {
-        font-size: 14px;
-        line-height: 1.75;
-        margin-top: 15px;
+        font-size: clamp(28px, 7.5vw, 35px);
+        line-height: 1.25;
+        overflow-wrap: anywhere;
     }
 
     .tm-featured-course {
-        grid-template-columns: minmax(0, 1fr);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 24px;
     }
 
+    .tm-featured-course-content,
     .tm-featured-visual {
-        min-height: 430px;
-        padding: 20px 16px;
-    }
-
-    .tm-chart-topbar {
-        gap: 8px;
-    }
-
-    .tm-chart-brand {
-        gap: 8px;
-    }
-
-    .tm-chart-brand-icon {
-        width: 35px;
-        height: 35px;
-    }
-
-    .tm-chart-brand-title {
-        font-size: 10px;
-    }
-
-    .tm-chart-brand-subtitle {
-        font-size: 8px;
-        letter-spacing: 0.6px;
-    }
-
-    .tm-chart-live-indicator {
-        padding: 7px 8px;
-        font-size: 8px;
-        letter-spacing: 0.2px;
-    }
-
-    .tm-chart-information {
-        align-items: flex-start;
-        gap: 8px;
-        margin-top: 30px;
-    }
-
-    .tm-chart-information h3 {
-        font-size: 24px;
-    }
-
-    .tm-chart-information p {
-        font-size: 11px;
-    }
-
-    .tm-chart-timeframe {
-        font-size: 8px;
-    }
-
-    .tm-chart-stage {
-        min-height: 190px;
-        margin-top: 20px;
-    }
-
-    .tm-featured-content {
-        min-width: 0;
-        padding: 22px 17px;
-    }
-
-    .tm-featured-course-title {
-        font-size: 25px;
-        line-height: 1.25;
-    }
-
-    .tm-featured-course-description {
-        font-size: 13px;
-        line-height: 1.75;
+        width: 100%;
+        max-width: 100%;
     }
 
     .tm-featured-details {
@@ -7479,47 +8367,109 @@ html[dir="rtl"] .tm-cta-primary-btn:hover i {
         gap: 12px;
     }
 
-    .tm-featured-detail {
-        min-width: 0;
-    }
-
-    .tm-featured-explore {
-        margin-top: 24px;
-    }
-
-    .tm-featured-topic-list {
-        gap: 9px;
-    }
-
-    .tm-featured-topic {
-        gap: 9px;
-        padding: 12px;
-    }
+    /* Main course buttons vertically */
 
     .tm-featured-actions {
+        display: flex;
         flex-direction: column;
         align-items: stretch;
-        gap: 10px;
+
+        gap: 11px;
+
+        width: 100%;
     }
 
     .tm-featured-primary-button,
     .tm-featured-secondary-button {
         width: 100%;
-        justify-content: center;
+        max-width: 100%;
+
+        flex: 0 0 auto;
+
+        white-space: normal;
+        text-align: center;
     }
+
+    /* Information note icon + content */
 
     .tm-featured-note {
-        align-items: flex-start;
-    }
-
-    .tm-featured-bottom {
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
+
+        gap: 10px;
+
+        margin-top: 19px;
+        width: 100%;
+    }
+
+    .tm-featured-note > i {
+        width: 17px;
+        height: 17px;
+
+        flex-shrink: 0;
+        margin-top: 0;
+    }
+
+    .tm-featured-note p {
+        width: 100%;
+        flex: 0 0 auto;
+
+        font-size: 12px;
+        line-height: 1.8;
+
+        overflow-wrap: anywhere;
+    }
+
+    /* Bottom note: icon → content → link */
+
+    .tm-featured-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
         gap: 15px;
+
+        margin-top: 22px;
+        padding: 18px 15px;
+
+        width: 100%;
+    }
+
+    .tm-featured-bottom-left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 12px;
+
+        width: 100%;
+    }
+
+    .tm-featured-bottom-icon {
+        width: 45px;
+        height: 45px;
+        flex-shrink: 0;
+    }
+
+    .tm-featured-bottom-left h4 {
+        font-size: 16px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+
+    .tm-featured-bottom-left p {
+        font-size: 12px;
+        line-height: 1.8;
+        overflow-wrap: anywhere;
     }
 
     .tm-featured-bottom-link {
         align-self: flex-start;
+        max-width: 100%;
+
+        white-space: normal;
+        line-height: 1.6;
     }
 
 
@@ -7527,70 +8477,46 @@ html[dir="rtl"] .tm-cta-primary-btn:hover i {
        SECTION 5 — INSTRUCTOR EXPERTISE
     ===================================================== */
 
+    .tm-instructor-expertise {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
     .tm-instructor-header {
         margin-bottom: 30px;
     }
 
-    .tm-instructor-label {
-        font-size: 11px;
-        letter-spacing: 1px;
-        margin-bottom: 15px;
-    }
-
     .tm-instructor-header h2 {
-        font-size: clamp(30px, 7.5vw, 40px);
-        line-height: 1.2;
-        letter-spacing: -0.6px;
+        font-size: clamp(28px, 7.5vw, 35px);
+        line-height: 1.25;
+        overflow-wrap: anywhere;
     }
 
-    .tm-instructor-header p {
-        font-size: 14px;
-        line-height: 1.75;
-    }
-
-    .tm-instructor-main {
+    .tm-instructor-image-grid {
         grid-template-columns: minmax(0, 1fr);
-        gap: 30px;
+        gap: 20px;
     }
 
-    .tm-expertise-grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 14px;
-    }
-
-    .tm-expertise-card {
-        min-width: 0;
-        padding: 20px 18px;
-    }
-
-    .tm-expertise-card h3 {
-        font-size: 19px;
-    }
-
-    .tm-expertise-card p {
-        font-size: 13px;
-        line-height: 1.7;
-    }
-
-    .tm-circle-visual {
+    .tm-instructor-image-card {
         width: 100%;
-        max-width: 420px;
-        margin-left: auto;
-        margin-right: auto;
-        transform: scale(0.88);
-        transform-origin: center center;
+        max-width: 100%;
     }
 
-    .tm-circle-label {
-        max-width: 135px;
+    .tm-instructor-image-card img {
+        max-width: 100%;
     }
 
-    .tm-circle-label strong {
-        font-size: 11px;
+    .tm-instructor-card-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
     }
 
-    .tm-circle-label small {
-        font-size: 9px;
+    .tm-instructor-foundation-link {
+        max-width: 100%;
+
+        white-space: normal;
+        line-height: 1.6;
     }
 
 
@@ -7598,174 +8524,70 @@ html[dir="rtl"] .tm-cta-primary-btn:hover i {
        SECTION 6 — MOCK PORTFOLIO
     ===================================================== */
 
-    .tm-mock-container {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 32px;
+    .tm-mock-portfolio {
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
-    .tm-mock-content {
+    .tm-mock-container {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 28px;
+    }
+
+    .tm-mock-content,
+    .tm-mock-visual {
         width: 100%;
         max-width: 100%;
     }
 
     .tm-mock-label {
+        max-width: 100%;
+
         font-size: 11px;
         letter-spacing: 1px;
-        margin-bottom: 15px;
+        line-height: 1.6;
+
+        white-space: normal;
     }
 
     .tm-mock-content > h2 {
-        font-size: clamp(30px, 7.5vw, 40px);
-        line-height: 1.2;
-        letter-spacing: -0.6px;
+        font-size: clamp(28px, 7.5vw, 35px);
+        line-height: 1.25;
+        letter-spacing: -0.5px;
+
+        overflow-wrap: anywhere;
     }
 
     .tm-mock-description {
         font-size: 14px;
-        line-height: 1.75;
-    }
-
-    .tm-mock-features {
-        gap: 0;
+        line-height: 1.8;
     }
 
     .tm-mock-feature {
-        gap: 12px;
-        padding: 15px 0;
-    }
-
-    .tm-mock-feature-icon {
-        width: 40px;
-        height: 40px;
-        flex-shrink: 0;
-    }
-
-    .tm-mock-feature-text h3 {
-        font-size: 15px;
-    }
-
-    .tm-mock-feature-text p {
-        font-size: 12px;
-        line-height: 1.65;
-    }
-
-    .tm-mock-actions {
-        flex-direction: column;
-        align-items: stretch;
+        grid-template-columns: 38px minmax(0, 1fr);
         gap: 10px;
     }
 
-    .tm-mock-btn {
+    .tm-mock-feature h3,
+    .tm-mock-feature p {
+        overflow-wrap: anywhere;
+    }
+
+    .tm-mock-features {
         width: 100%;
-        justify-content: center;
-    }
-
-    .tm-mock-disclaimer {
-        align-items: flex-start;
-        font-size: 11px;
-        line-height: 1.6;
-    }
-
-    .tm-mock-visual {
-        width: 100%;
-        min-width: 0;
-    }
-
-    .tm-mock-market-image {
-        min-height: 300px;
-        padding: 18px 15px;
-    }
-
-    .tm-mock-image-top {
-        gap: 9px;
-    }
-
-    .tm-mock-image-brand {
-        gap: 8px;
-    }
-
-    .tm-mock-brand-icon {
-        width: 35px;
-        height: 35px;
-    }
-
-    .tm-mock-image-brand strong {
-        font-size: 11px;
-    }
-
-    .tm-mock-image-brand > div > span {
-        font-size: 9px;
-    }
-
-    .tm-mock-image-badge {
-        font-size: 9px;
-        padding: 7px 8px;
-    }
-
-    .tm-mock-image-chart {
-        margin-top: 22px;
-    }
-
-    .tm-mock-image-floating {
-        max-width: 78%;
-        padding: 10px;
-        gap: 8px;
-    }
-
-    .tm-mock-floating-icon {
-        width: 32px;
-        height: 32px;
-        flex-shrink: 0;
-    }
-
-    .tm-mock-image-floating strong,
-    .tm-mock-image-bottom strong {
-        font-size: 11px;
-    }
-
-    .tm-mock-image-floating > div:last-child span {
-        font-size: 9px;
-    }
-
-    .tm-mock-image-bottom {
-        gap: 9px;
-        padding: 12px;
-    }
-
-    .tm-mock-image-bottom-icon {
-        width: 34px;
-        height: 34px;
-        flex-shrink: 0;
-    }
-
-    .tm-mock-image-bottom p {
-        font-size: 10px;
     }
 
 
     /* =====================================================
-       SECTION 7 — FREE LEARNING RESOURCES
+       SECTION 7 — FREE RESOURCES
     ===================================================== */
 
-    .tm-resources-header {
-        margin-bottom: 30px;
-    }
-
-    .tm-resources-label {
-        font-size: 11px;
-        letter-spacing: 1px;
-        margin-bottom: 15px;
-    }
-
-    .tm-resources-title {
-        font-size: clamp(30px, 7.5vw, 40px);
-        line-height: 1.2;
-        letter-spacing: -0.6px;
-    }
-
-    .tm-resources-description {
-        font-size: 14px;
-        line-height: 1.75;
+    .tm-free-resources {
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     .tm-resources-grid {
@@ -7773,44 +8595,21 @@ html[dir="rtl"] .tm-cta-primary-btn:hover i {
         gap: 17px;
     }
 
-    .tm-resource-card {
-        min-width: 0;
+    .tm-resource-card,
+    .tm-resource-item {
+        width: 100%;
+        max-width: 100%;
     }
 
-    .tm-resource-image {
-        height: 190px;
+    .tm-resource-card h3,
+    .tm-resource-card p,
+    .tm-resource-item h3,
+    .tm-resource-item p {
+        overflow-wrap: anywhere;
     }
 
-    .tm-resource-content {
-        padding: 19px 17px;
-    }
-
-    .tm-resource-content h3 {
-        font-size: 19px;
-        line-height: 1.35;
-    }
-
-    .tm-resource-content p {
-        font-size: 13px;
-        line-height: 1.7;
-    }
-
-    .tm-resource-link {
-        gap: 9px;
-        font-size: 12px;
-    }
-
-    .tm-resources-footer {
-        margin-top: 28px;
-        gap: 15px;
-    }
-
-    .tm-resources-footer > p {
-        font-size: 12px;
-        line-height: 1.65;
-    }
-
-    .tm-resources-button {
+    .tm-resource-card img,
+    .tm-resource-item img {
         max-width: 100%;
     }
 
@@ -7825,85 +8624,239 @@ html[dir="rtl"] .tm-cta-primary-btn:hover i {
     }
 
     .tm-final-cta-card {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 25px;
-        padding: 30px 20px;
-    }
-
-    .tm-cta-left,
-    .tm-cta-right {
-        width: 100%;
-        min-width: 0;
-    }
-
-    .tm-cta-label {
-        font-size: 11px;
-        letter-spacing: 1px;
-        margin-bottom: 15px;
-    }
-
-    .tm-cta-heading {
-        font-size: clamp(29px, 7.5vw, 39px);
-        line-height: 1.2;
-        letter-spacing: -0.5px;
-    }
-
-    .tm-cta-description {
-        font-size: 14px;
-        line-height: 1.75;
-    }
-
-    .tm-cta-buttons {
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        gap: 11px;
-    }
 
-    .tm-cta-primary-btn,
-    .tm-cta-secondary-btn {
+        gap: 22px;
+
         width: 100%;
-        justify-content: center;
+        max-width: 100%;
+
+        padding: 22px 16px;
     }
 
-    .tm-cta-support {
-        flex-wrap: wrap;
-        gap: 9px;
-        font-size: 12px;
+    .tm-final-cta-card > * {
+        max-width: 100%;
     }
 
-    .tm-cta-visual {
-        width: 100%;
-        max-width: 300px;
-        margin-left: auto;
-        margin-right: auto;
-        transform: scale(0.88);
-        transform-origin: center center;
+    .tm-final-cta-card h2 {
+        font-size: clamp(27px, 7.5vw, 34px);
+        line-height: 1.25;
+
+        overflow-wrap: anywhere;
     }
 
+    .tm-final-cta-card p {
+        font-size: 14px;
+        line-height: 1.8;
 
-    /* ---------- RTL SUPPORT ---------- */
-
-    html[dir="rtl"] .tm-home2-content,
-    html[dir="rtl"] .tm-market-knowledge-intro,
-    html[dir="rtl"] .tm-skill-card,
-    html[dir="rtl"] .tm-mock-content,
-    html[dir="rtl"] .tm-resource-card,
-    html[dir="rtl"] .tm-cta-left {
-        text-align: right;
+        overflow-wrap: anywhere;
     }
 
-    html[dir="rtl"] .tm-home2-buttons,
-    html[dir="rtl"] .tm-mock-actions,
-    html[dir="rtl"] .tm-cta-buttons {
+    /* CTA buttons vertically */
+
+    .tm-final-cta-card .tm-final-cta-buttons {
+        display: flex;
+        flex-direction: column;
         align-items: stretch;
+
+        gap: 12px;
+        width: 100%;
+    }
+
+    .tm-final-cta-card .tm-final-cta-buttons a,
+    .tm-final-cta-card .tm-final-cta-buttons button {
+        width: 100%;
+        max-width: 100%;
+
+        white-space: normal;
+        text-align: center;
+    }
+
+
+    /* =====================================================
+       PREVENT HORIZONTAL OVERFLOW
+    ===================================================== */
+
+    .tm-home2-container,
+    .tm-market-knowledge-container,
+    .tm-market-content,
+    .tm-market-topics,
+    .tm-featured-course,
+    .tm-mock-container,
+    .tm-final-cta-card {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .tm-home2 img,
+    .tm-market-knowledge img,
+    .tm-skill-levels img,
+    .tm-course-spotlight img,
+    .tm-instructor-expertise img,
+    .tm-mock-portfolio img,
+    .tm-free-resources img,
+    .tm-final-cta img {
+        max-width: 100%;
+    }
+
+}
+
+
+/* =====================================================
+   EXTRA SMALL MOBILE — 360px TO 400px
+===================================================== */
+
+@media screen and (min-width: 360px) and (max-width: 400px) {
+
+    .tm-home2-container {
+        gap: 25px;
+    }
+
+    .tm-home2-content h1 {
+        font-size: 29px;
+        letter-spacing: -0.5px;
+    }
+
+    .tm-home2-tagline {
+        font-size: 10px;
+        letter-spacing: 0.7px;
+    }
+
+    .tm-market-card {
+        padding: 14px 11px;
+    }
+
+    .tm-market-title h3 {
+        font-size: 14px;
+    }
+
+    .tm-live-status {
+        font-size: 7px;
+    }
+
+    .tm-chart-area {
+        height: 135px;
+    }
+
+    .tm-market-visual {
+        min-height: 300px;
+    }
+
+    .tm-market-topic {
+        min-height: 220px;
+    }
+
+    .tm-market-foundation,
+    .tm-skill-levels-bottom,
+    .tm-featured-bottom {
+        padding: 16px 12px;
+    }
+
+    .tm-featured-bottom-left {
+        gap: 10px;
+    }
+
+}
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+   360px TO 400px
+========================================================= */
+
+@media screen and (min-width: 360px) and (max-width: 400px) {
+
+    .tm-home2,
+    .tm-market-knowledge,
+    .tm-skill-levels,
+    .tm-course-spotlight,
+    .tm-instructor-expertise,
+    .tm-mock-portfolio,
+    .tm-free-resources,
+    .tm-final-cta {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .tm-home2 {
+        padding-top: 36px;
+        padding-bottom: 36px;
+    }
+
+    .tm-home2-container {
+        gap: 23px;
+    }
+
+    .tm-home2-content h1 {
+        font-size: 31px;
+        letter-spacing: -0.5px;
+    }
+
+    .tm-home2-tagline {
+        font-size: 9px;
+        letter-spacing: 0.5px;
+    }
+
+    .tm-market-card {
+        padding: 13px;
+    }
+
+    .tm-market-title h3 {
+        font-size: 13px;
+    }
+
+    .tm-live-status {
+        font-size: 6px;
+        letter-spacing: 0;
+    }
+
+    .tm-chart-area {
+        height: 125px;
+    }
+
+    .tm-market-visual {
+        min-height: 290px;
+    }
+
+    .tm-market-topic {
+        min-height: 220px;
+    }
+
+    .tm-market-topic-content h3 {
+        font-size: 18px;
+    }
+
+    .tm-market-foundation {
+        padding: 14px;
+    }
+
+    .tm-skill-card {
+        padding: 18px 15px;
+    }
+
+    .tm-featured-visual {
+        min-height: 390px;
+        padding: 16px 12px;
+    }
+
+    .tm-featured-course-content {
+        padding: 19px 14px;
+    }
+
+    .tm-instructor-image-card {
+        min-height: 285px;
+    }
+
+    .tm-final-cta-card {
+        padding: 21px 15px;
     }
 }
 
 
 /* =========================================================
-   2. SMALL TABLET RANGE
-   Width: 741px–767px
+   GAP BETWEEN MOBILE AND TABLET
+   741px TO 767px
 ========================================================= */
 
 @media screen and (min-width: 741px) and (max-width: 767px) {
@@ -7916,1542 +8869,40 @@ html[dir="rtl"] .tm-cta-primary-btn:hover i {
     .tm-mock-portfolio,
     .tm-free-resources,
     .tm-final-cta {
-        padding-left: 5%;
-        padding-right: 5%;
+        padding-left: 24px;
+        padding-right: 24px;
     }
 
     .tm-home2 {
         height: auto;
         min-height: 0;
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
-
-    .tm-home2-container,
-    .tm-market-knowledge-container,
-    .tm-mock-container {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 35px;
-    }
-
-    .tm-home2-content {
-        grid-row: 1;
-    }
-
-    .tm-home2-visual {
-        grid-row: 2;
-    }
-
-    .tm-market-card {
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .tm-market-knowledge-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .tm-skill-levels-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .tm-course-spotlight-header,
-    .tm-instructor-header,
-    .tm-resources-header {
-        margin-bottom: 35px;
-    }
-
-    .tm-featured-course {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
-    .tm-featured-visual {
-        min-height: 460px;
-    }
-
-    .tm-instructor-main {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 35px;
-    }
-
-    .tm-expertise-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .tm-circle-visual {
-        width: 100%;
-        max-width: 460px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .tm-resources-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .tm-final-cta-card {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 30px;
-        padding: 35px 28px;
-    }
-
-    .tm-cta-visual {
-        width: 100%;
-        max-width: 330px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-
-/* =========================================================
-   3. iPAD MINI
-   Width: 768px–820px
-========================================================= */
-
-@media screen and (min-width: 768px) and (max-width: 820px) {
-
-    /* Equal section padding */
-
-    .tm-home2,
-    .tm-market-knowledge,
-    .tm-skill-levels,
-    .tm-course-spotlight,
-    .tm-instructor-expertise,
-    .tm-mock-portfolio,
-    .tm-free-resources,
-    .tm-final-cta {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-
-    .tm-market-knowledge,
-    .tm-skill-levels,
-    .tm-course-spotlight,
-    .tm-instructor-expertise,
-    .tm-mock-portfolio,
-    .tm-free-resources {
-        padding-top: 70px;
-        padding-bottom: 70px;
-    }
-
-    /* ---------- HOME 2 HERO ---------- */
-
-    .tm-home2 {
-        height: auto;
-        min-height: 0;
-        max-height: none;
-        padding-top: 65px;
-        padding-bottom: 65px;
+        padding-top: 45px;
+        padding-bottom: 45px;
     }
 
     .tm-home2-container {
         grid-template-columns: minmax(0, 1fr);
-        gap: 35px;
-    }
-
-    .tm-home2-content {
-        grid-row: 1;
-        max-width: 700px;
-    }
-
-    .tm-home2-visual {
-        grid-row: 2;
-    }
-
-    .tm-home2-content h1 {
-        max-width: 700px;
-        font-size: clamp(38px, 5.2vw, 46px);
-        line-height: 1.2;
-    }
-
-    .tm-home2-description {
-        max-width: 650px;
-    }
-
-    .tm-market-card {
-        max-width: 620px;
-    }
-
-    .tm-chart-area {
-        height: 190px;
-    }
-
-    /* ---------- SECTION 2 ---------- */
-
-    .tm-market-knowledge-container {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 35px;
-    }
-
-    .tm-market-knowledge-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-    }
-
-    .tm-market-knowledge-intro {
-        max-width: 100%;
-        justify-self: stretch;
-    }
-
-    .tm-market-knowledge-heading {
-        font-size: clamp(36px, 5vw, 44px);
-    }
-
-    .tm-market-topic-card {
-        min-height: 235px;
-        padding: 22px 20px;
-    }
-
-    /* ---------- SECTION 3 ---------- */
-
-    .tm-skill-levels-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 17px;
-    }
-
-    .tm-skill-card {
-        padding: 23px 20px;
-    }
-
-    .tm-skill-levels-bottom {
-        flex-wrap: wrap;
-        gap: 14px;
-    }
-
-    /* ---------- SECTION 4 ---------- */
-
-    .tm-featured-course {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
-    .tm-featured-visual {
-        min-height: 500px;
-    }
-
-    .tm-featured-content {
-        padding: 28px;
-    }
-
-    .tm-featured-details {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    /* ---------- SECTION 5 ---------- */
-
-    .tm-instructor-main {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 35px;
-    }
-
-    .tm-expertise-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-    }
-
-    .tm-circle-visual {
-        width: 100%;
-        max-width: 470px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* ---------- SECTION 6 ---------- */
-
-    .tm-mock-container {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 35px;
-    }
-
-    .tm-mock-content {
-        max-width: 100%;
-    }
-
-    .tm-mock-visual {
-        width: 100%;
-        max-width: 650px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .tm-mock-market-image {
-        min-height: 400px;
-    }
-
-    /* ---------- SECTION 7 ---------- */
-
-    .tm-resources-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-    }
-
-    .tm-resource-image {
-        height: 190px;
-    }
-
-    /* ---------- SECTION 8 ---------- */
-
-    .tm-final-cta-card {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 30px;
-        padding: 38px 30px;
-    }
-
-    .tm-cta-visual {
-        width: 100%;
-        max-width: 340px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-
-/* =========================================================
-   4. iPAD PRO 11"
-   Width: 821px–1024px
-========================================================= */
-
-@media screen and (min-width: 821px) and (max-width: 1024px) {
-
-    /* Equal left and right padding */
-
-    .tm-home2,
-    .tm-market-knowledge,
-    .tm-skill-levels,
-    .tm-course-spotlight,
-    .tm-instructor-expertise,
-    .tm-mock-portfolio,
-    .tm-free-resources,
-    .tm-final-cta {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-
-    .tm-market-knowledge,
-    .tm-skill-levels,
-    .tm-course-spotlight,
-    .tm-instructor-expertise,
-    .tm-mock-portfolio,
-    .tm-free-resources {
-        padding-top: 75px;
-        padding-bottom: 75px;
-    }
-
-    /* ---------- HOME 2 HERO ---------- */
-
-    .tm-home2 {
-        height: auto;
-        min-height: 0;
-        max-height: none;
-        padding-top: 70px;
-        padding-bottom: 70px;
-    }
-
-    .tm-home2-container {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        gap: 30px;
-    }
-
-    .tm-home2-content h1 {
-        font-size: clamp(34px, 4.2vw, 43px);
-        line-height: 1.2;
-        letter-spacing: -0.8px;
-    }
-
-    .tm-home2-description {
-        font-size: 14px;
-        line-height: 1.75;
-    }
-
-    .tm-home2-buttons {
-        gap: 10px;
-    }
-
-    .tm-home2-btn-primary,
-    .tm-home2-btn-secondary {
-        padding: 12px 17px;
-    }
-
-    .tm-home2-highlights {
-        gap: 12px;
-    }
-
-    .tm-home2-highlights > div {
-        font-size: 10px;
-    }
-
-    .tm-market-card {
-        padding: 20px 17px;
-    }
-
-    .tm-chart-area {
-        height: 155px;
-    }
-
-    .tm-market-title h3 {
-        font-size: 15px;
-    }
-
-    /* ---------- SECTION 2 ---------- */
-
-    .tm-market-knowledge-container {
-        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
         gap: 28px;
     }
 
-    .tm-market-knowledge-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 13px;
-    }
-
-    .tm-market-topic-card {
-        min-height: 245px;
-        padding: 19px 15px;
-    }
-
-    .tm-market-topic-card h3 {
-        font-size: 18px;
-    }
-
-    .tm-market-topic-card > p {
-        font-size: 12px;
-    }
-
-    .tm-market-knowledge-heading {
-        font-size: clamp(33px, 4vw, 42px);
-    }
-
-    .tm-market-knowledge-description {
-        font-size: 14px;
-    }
-
-    /* ---------- SECTION 3 ---------- */
-
-    .tm-skill-levels-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 14px;
-    }
-
-    .tm-skill-card {
-        padding: 22px 16px;
-    }
-
-    .tm-skill-card-top {
-        gap: 8px;
-    }
-
-    .tm-skill-level-name {
-        font-size: 9px;
-        letter-spacing: 0.8px;
-    }
-
-    .tm-skill-card-content h3 {
-        font-size: 20px;
-    }
-
-    .tm-skill-card-description,
-    .tm-skill-learn li {
-        font-size: 12px;
-    }
-
-    .tm-skill-card-button {
-        padding: 12px;
-        font-size: 12px;
-    }
-
-    .tm-skill-levels-bottom {
-        flex-wrap: wrap;
-    }
-
-    /* ---------- SECTION 4 ---------- */
-
-    .tm-featured-course {
-        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-    }
-
-    .tm-featured-visual {
-        min-height: 600px;
-        padding: 22px 17px;
-    }
-
-    .tm-chart-information {
-        margin-top: 32px;
-    }
-
-    .tm-chart-information h3 {
-        font-size: 25px;
-    }
-
-    .tm-chart-stage {
-        min-height: 240px;
-    }
-
-    .tm-featured-content {
-        padding: 24px 20px;
-    }
-
-    .tm-featured-course-title {
-        font-size: 27px;
-    }
-
-    .tm-featured-course-description {
-        font-size: 13px;
-    }
-
-    .tm-featured-details {
+    .tm-market-content,
+    .tm-mock-container {
         grid-template-columns: minmax(0, 1fr);
-        gap: 11px;
     }
 
-    .tm-featured-topic {
-        gap: 8px;
-        padding: 11px;
-    }
-
-    .tm-featured-actions {
-        flex-wrap: wrap;
-    }
-
-    /* ---------- SECTION 5 ---------- */
-
-    .tm-instructor-main {
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-        gap: 25px;
-    }
-
-    .tm-expertise-grid {
+    .tm-market-topics {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 13px;
+        grid-template-rows: auto;
     }
 
-    .tm-expertise-card {
-        padding: 19px 15px;
-    }
-
-    .tm-expertise-card h3 {
-        font-size: 17px;
-    }
-
-    .tm-expertise-card p {
-        font-size: 12px;
-    }
-
-    .tm-circle-visual {
-        width: 100%;
-        max-width: 390px;
-        margin-left: auto;
-        margin-right: auto;
-        transform: scale(0.9);
-        transform-origin: center center;
-    }
-
-    /* ---------- SECTION 6 ---------- */
-
-    .tm-mock-container {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        gap: 28px;
-    }
-
-    .tm-mock-content > h2 {
-        font-size: clamp(33px, 4vw, 42px);
-    }
-
-    .tm-mock-feature {
-        gap: 10px;
-    }
-
-    .tm-mock-feature-icon {
-        width: 38px;
-        height: 38px;
-    }
-
-    .tm-mock-feature-text h3 {
-        font-size: 14px;
-    }
-
-    .tm-mock-feature-text p {
-        font-size: 12px;
-    }
-
-    .tm-mock-market-image {
-        min-height: 350px;
-        padding: 18px 14px;
-    }
-
-    .tm-mock-image-floating {
-        max-width: 85%;
-    }
-
-    /* ---------- SECTION 7 ---------- */
-
+    .tm-skill-levels-grid,
+    .tm-instructor-image-grid,
     .tm-resources-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
     }
 
-    .tm-resource-image {
-        height: 190px;
-    }
-
-    .tm-resource-content {
-        padding: 19px 16px;
-    }
-
-    .tm-resource-content h3 {
-        font-size: 18px;
-    }
-
-    .tm-resource-content p {
-        font-size: 12px;
-    }
-
-    /* ---------- SECTION 8 ---------- */
-
+    .tm-featured-course,
     .tm-final-cta-card {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
-        gap: 20px;
-        padding: 30px 24px;
-    }
-
-    .tm-cta-heading {
-        font-size: clamp(30px, 3.8vw, 40px);
-    }
-
-    .tm-cta-description {
-        font-size: 13px;
-    }
-
-    .tm-cta-buttons {
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .tm-cta-primary-btn,
-    .tm-cta-secondary-btn {
-        padding: 12px 15px;
-    }
-
-    .tm-cta-visual {
-        width: 100%;
-        max-width: 320px;
-        margin-left: auto;
-        margin-right: auto;
-        transform: scale(0.9);
-        transform-origin: center center;
+        grid-template-columns: minmax(0, 1fr);
     }
 }
-
-
-/* =========================================================
-   5. NEST HUB
-   Exact viewport: 1024px × 600px
-
-   This block is intentionally placed AFTER the iPad Pro
-   media query so its settings override overlapping rules.
-========================================================= */
-
-@media screen and (width: 1024px) and (height: 600px) {
-
-    /* Equal horizontal spacing */
-
-    .tm-home2,
-    .tm-market-knowledge,
-    .tm-skill-levels,
-    .tm-course-spotlight,
-    .tm-instructor-expertise,
-    .tm-mock-portfolio,
-    .tm-free-resources,
-    .tm-final-cta {
-        padding-left: 4%;
-        padding-right: 4%;
-    }
-
-    /* ---------- HOME 2 HERO ---------- */
-
-    .tm-home2 {
-        height: auto;
-        min-height: 600px;
-        max-height: none;
-        padding-top: 35px;
-        padding-bottom: 35px;
-    }
-
-    .tm-home2-container {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        gap: 26px;
-    }
-
-    .tm-home2-content h1 {
-        font-size: 36px;
-        line-height: 1.15;
-        margin-bottom: 15px;
-    }
-
-    .tm-home2-tagline {
-        font-size: 10px;
-        letter-spacing: 0.8px;
-        margin-bottom: 13px;
-    }
-
-    .tm-home2-description {
-        font-size: 13px;
-        line-height: 1.65;
-        margin-bottom: 17px;
-    }
-
-    .tm-home2-buttons {
-        gap: 9px;
-        margin-bottom: 17px;
-    }
-
-    .tm-home2-btn-primary,
-    .tm-home2-btn-secondary {
-        min-height: 43px;
-        padding: 10px 14px;
-        font-size: 12px;
-    }
-
-    .tm-home2-highlights {
-        gap: 9px;
-    }
-
-    .tm-home2-highlights > div {
-        font-size: 9px;
-    }
-
-    .tm-market-card {
-        padding: 16px 15px;
-    }
-
-    .tm-market-header {
-        margin-bottom: 13px;
-    }
-
-    .tm-market-icon {
-        width: 34px;
-        height: 34px;
-    }
-
-    .tm-market-title h3 {
-        font-size: 14px;
-    }
-
-    .tm-market-title p {
-        font-size: 10px;
-    }
-
-    .tm-market-info {
-        margin-bottom: 10px;
-    }
-
-    .tm-market-info h2 {
-        font-size: 27px;
-    }
-
-    .tm-chart-area {
-        height: 115px;
-    }
-
-    .tm-chart-footer {
-        margin-top: 7px;
-    }
-
-    .tm-market-insight {
-        margin-top: 12px;
-        padding-top: 11px;
-    }
-
-    .tm-insight-icon {
-        width: 32px;
-        height: 32px;
-    }
-
-    .tm-market-insight h4 {
-        font-size: 11px;
-    }
-
-    .tm-market-insight p {
-        font-size: 10px;
-        line-height: 1.45;
-    }
-
-    /* ---------- SECTION 2 ---------- */
-
-    .tm-market-knowledge,
-    .tm-skill-levels,
-    .tm-course-spotlight,
-    .tm-instructor-expertise,
-    .tm-mock-portfolio,
-    .tm-free-resources {
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-
-    .tm-market-knowledge-container {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
-        gap: 24px;
-    }
-
-    .tm-market-knowledge-grid {
-        gap: 11px;
-    }
-
-    .tm-market-topic-card {
-        min-height: 210px;
-        padding: 16px 13px;
-    }
-
-    .tm-market-topic-card-top {
-        margin-bottom: 13px;
-    }
-
-    .tm-market-topic-icon {
-        width: 38px;
-        height: 38px;
-    }
-
-    .tm-market-topic-card h3 {
-        font-size: 16px;
-        margin-bottom: 7px;
-    }
-
-    .tm-market-topic-card > p {
-        font-size: 11px;
-        line-height: 1.55;
-        margin-bottom: 13px;
-    }
-
-    .tm-market-topic-card-footer {
-        font-size: 10px;
-    }
-
-    .tm-market-knowledge-label {
-        font-size: 10px;
-        margin-bottom: 12px;
-    }
-
-    .tm-market-knowledge-heading {
-        font-size: 34px;
-        line-height: 1.15;
-        margin-bottom: 12px;
-    }
-
-    .tm-market-knowledge-description {
-        font-size: 12px;
-        line-height: 1.6;
-        margin-bottom: 17px;
-    }
-
-    .tm-market-knowledge-note {
-        margin-top: 18px;
-        padding-top: 14px;
-        gap: 10px;
-    }
-
-    .tm-market-knowledge-note-icon {
-        width: 34px;
-        height: 34px;
-    }
-
-    .tm-market-knowledge-note strong {
-        font-size: 12px;
-    }
-
-    .tm-market-knowledge-note p {
-        font-size: 11px;
-        line-height: 1.5;
-    }
-
-    /* ---------- SECTION 3 ---------- */
-
-    .tm-skill-levels-header {
-        margin-bottom: 28px;
-    }
-
-    .tm-skill-levels-heading {
-        font-size: 35px;
-    }
-
-    .tm-skill-levels-description {
-        font-size: 12px;
-        margin-top: 12px;
-    }
-
-    .tm-skill-levels-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 13px;
-    }
-
-    .tm-skill-card {
-        padding: 18px 15px;
-    }
-
-    .tm-skill-card-top {
-        margin-bottom: 19px;
-    }
-
-    .tm-skill-level-number {
-        font-size: 20px;
-    }
-
-    .tm-skill-level-name {
-        font-size: 8px;
-        letter-spacing: 0.6px;
-    }
-
-    .tm-skill-card-icon {
-        width: 40px;
-        height: 40px;
-    }
-
-    .tm-skill-card-content h3 {
-        font-size: 18px;
-    }
-
-    .tm-skill-card-description,
-    .tm-skill-learn li {
-        font-size: 11px;
-        line-height: 1.55;
-    }
-
-    .tm-skill-learn ul {
-        gap: 8px;
-    }
-
-    .tm-skill-card-footer {
-        padding-top: 17px;
-    }
-
-    .tm-skill-card-button {
-        min-height: 42px;
-        padding: 10px;
-        font-size: 11px;
-    }
-
-    .tm-skill-levels-bottom {
-        margin-top: 18px;
-        padding: 15px 18px;
-        gap: 12px;
-    }
-
-    .tm-skill-levels-bottom p,
-    .tm-skill-bottom-link {
-        font-size: 11px;
-    }
-
-    /* ---------- SECTION 4 ---------- */
-
-    .tm-course-spotlight-header {
-        margin-bottom: 28px;
-    }
-
-    .tm-course-spotlight-heading {
-        font-size: 35px;
-    }
-
-    .tm-course-spotlight-intro {
-        font-size: 12px;
-        margin-top: 12px;
-    }
-
-    .tm-featured-course {
-        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-    }
-
-    .tm-featured-visual {
-        min-height: 500px;
-        padding: 18px 14px;
-    }
-
-    .tm-chart-information {
-        margin-top: 26px;
-    }
-
-    .tm-chart-information h3 {
-        font-size: 23px;
-    }
-
-    .tm-chart-information p {
-        font-size: 11px;
-    }
-
-    .tm-chart-stage {
-        min-height: 200px;
-        margin-top: 18px;
-    }
-
-    .tm-featured-content {
-        padding: 19px 17px;
-    }
-
-    .tm-featured-course-title {
-        font-size: 23px;
-    }
-
-    .tm-featured-course-description {
-        font-size: 11px;
-        line-height: 1.6;
-    }
-
-    .tm-featured-details {
-        gap: 9px;
-    }
-
-    .tm-featured-detail-label {
-        font-size: 9px;
-    }
-
-    .tm-featured-detail strong {
-        font-size: 11px;
-    }
-
-    .tm-featured-explore {
-        margin-top: 17px;
-    }
-
-    .tm-featured-topic {
-        padding: 9px;
-        font-size: 10px;
-    }
-
-    .tm-featured-actions {
-        gap: 8px;
-    }
-
-    .tm-featured-primary-button,
-    .tm-featured-secondary-button {
-        min-height: 40px;
-        padding: 9px 12px;
-        font-size: 11px;
-    }
-
-    .tm-featured-note {
-        margin-top: 12px;
-    }
-
-    .tm-featured-bottom {
-        padding-top: 14px;
-        gap: 12px;
-    }
-
-    /* ---------- SECTION 5 ---------- */
-
-    .tm-instructor-header {
-        margin-bottom: 27px;
-    }
-
-    .tm-instructor-header h2 {
-        font-size: 35px;
-    }
-
-    .tm-instructor-header p {
-        font-size: 12px;
-    }
-
-    .tm-instructor-main {
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-        gap: 22px;
-    }
-
-    .tm-expertise-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 11px;
-    }
-
-    .tm-expertise-card {
-        padding: 16px 13px;
-    }
-
-    .tm-expertise-icon {
-        width: 38px;
-        height: 38px;
-    }
-
-    .tm-expertise-card h3 {
-        font-size: 15px;
-    }
-
-    .tm-expertise-card p {
-        font-size: 10px;
-        line-height: 1.5;
-    }
-
-    .tm-circle-visual {
-        max-width: 360px;
-        transform: scale(0.82);
-        transform-origin: center center;
-    }
-
-    /* ---------- SECTION 6 ---------- */
-
-    .tm-mock-container {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        gap: 24px;
-    }
-
-    .tm-mock-content > h2 {
-        font-size: 34px;
-    }
-
-    .tm-mock-description {
-        font-size: 12px;
-        line-height: 1.65;
-    }
-
-    .tm-mock-feature {
-        gap: 9px;
-        padding: 12px 0;
-    }
-
-    .tm-mock-feature-icon {
-        width: 34px;
-        height: 34px;
-    }
-
-    .tm-mock-feature-text h3 {
-        font-size: 12px;
-    }
-
-    .tm-mock-feature-text p {
-        font-size: 10px;
-        line-height: 1.5;
-    }
-
-    .tm-mock-actions {
-        gap: 8px;
-    }
-
-    .tm-mock-btn {
-        padding: 10px 13px;
-        font-size: 11px;
-    }
-
-    .tm-mock-disclaimer {
-        font-size: 10px;
-        line-height: 1.5;
-    }
-
-    .tm-mock-market-image {
-        min-height: 310px;
-        padding: 15px 12px;
-    }
-
-    .tm-mock-image-chart {
-        margin-top: 18px;
-    }
-
-    .tm-mock-image-floating {
-        padding: 9px;
-    }
-
-    .tm-mock-image-bottom {
-        padding: 10px;
-    }
-
-    /* ---------- SECTION 7 ---------- */
-
-    .tm-resources-header {
-        margin-bottom: 28px;
-    }
-
-    .tm-resources-title {
-        font-size: 35px;
-    }
-
-    .tm-resources-description {
-        font-size: 12px;
-    }
-
-    .tm-resources-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 15px;
-    }
-
-    .tm-resource-image {
-        height: 160px;
-    }
-
-    .tm-resource-content {
-        padding: 16px 13px;
-    }
-
-    .tm-resource-content h3 {
-        font-size: 16px;
-    }
-
-    .tm-resource-content p {
-        font-size: 11px;
-        line-height: 1.55;
-    }
-
-    .tm-resource-link {
-        font-size: 11px;
-    }
-
-    .tm-resources-footer {
-        margin-top: 22px;
-    }
-
-    .tm-resources-footer > p {
-        font-size: 11px;
-    }
-
-    /* ---------- SECTION 8 ---------- */
-
-    .tm-final-cta {
-        padding-top: 35px;
-        padding-bottom: 35px;
-    }
-
-    .tm-final-cta-card {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
-        gap: 18px;
-        padding: 24px 20px;
-    }
-
-    .tm-cta-heading {
-        font-size: 32px;
-        line-height: 1.15;
-    }
-
-    .tm-cta-description {
-        font-size: 12px;
-        line-height: 1.6;
-    }
-
-    .tm-cta-buttons {
-        gap: 8px;
-    }
-
-    .tm-cta-primary-btn,
-    .tm-cta-secondary-btn {
-        padding: 10px 12px;
-        font-size: 11px;
-    }
-
-    .tm-cta-support {
-        font-size: 10px;
-    }
-
-    .tm-cta-visual {
-        max-width: 280px;
-        transform: scale(0.82);
-        transform-origin: center center;
-    }
-}
-
-
-/* =========================================================
-   6. LARGE DESKTOP
-   Width: 1920px and above
-========================================================= */
-
-@media screen and (min-width: 1920px) {
-
-    /* Consistent, equal horizontal spacing */
-
-    .tm-home2,
-    .tm-market-knowledge,
-    .tm-skill-levels,
-    .tm-course-spotlight,
-    .tm-instructor-expertise,
-    .tm-mock-portfolio,
-    .tm-free-resources,
-    .tm-final-cta {
-        padding-left: 6.5%;
-        padding-right: 6.5%;
-    }
-
-    /* ---------- HOME 2 HERO ---------- */
-
-    .tm-home2 {
-        height: 90vh;
-        min-height: 720px;
-        max-height: 1000px;
-    }
-
-    .tm-home2-container {
-        max-width: 1700px;
-        gap: 70px;
-    }
-
-    .tm-home2-content h1 {
-        font-size: clamp(54px, 3.2vw, 68px);
-        line-height: 1.15;
-    }
-
-    .tm-home2-description {
-        max-width: 680px;
-        font-size: 17px;
-        line-height: 1.85;
-    }
-
-    .tm-home2-tagline {
-        font-size: 14px;
-    }
-
-    .tm-home2-btn-primary,
-    .tm-home2-btn-secondary {
-        min-height: 54px;
-        padding: 15px 26px;
-        font-size: 15px;
-    }
-
-    .tm-home2-highlights {
-        gap: 22px;
-    }
-
-    .tm-home2-highlights > div {
-        font-size: 13px;
-    }
-
-    .tm-market-card {
-        max-width: 650px;
-        padding: 28px;
-        border-radius: 24px;
-    }
-
-    .tm-chart-area {
-        height: 220px;
-    }
-
-    /* ---------- SECTION 2 ---------- */
-
-    .tm-market-knowledge,
-    .tm-skill-levels,
-    .tm-course-spotlight,
-    .tm-instructor-expertise,
-    .tm-mock-portfolio,
-    .tm-free-resources {
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
-
-    .tm-market-knowledge-container,
-    .tm-skill-levels-container,
-    .tm-course-spotlight-container,
-    .tm-instructor-container,
-    .tm-mock-container,
-    .tm-resources-container {
-        max-width: 1700px;
-    }
-
-    .tm-market-knowledge-container {
-        gap: 70px;
-    }
-
-    .tm-market-knowledge-grid {
-        gap: 22px;
-    }
-
-    .tm-market-topic-card {
-        min-height: 280px;
-        padding: 28px 25px;
-    }
-
-    .tm-market-topic-card h3 {
-        font-size: 23px;
-    }
-
-    .tm-market-topic-card > p {
-        font-size: 15px;
-    }
-
-    .tm-market-knowledge-heading,
-    .tm-skill-levels-heading,
-    .tm-course-spotlight-heading,
-    .tm-instructor-header h2,
-    .tm-resources-title {
-        font-size: clamp(52px, 3.1vw, 64px);
-    }
-
-    .tm-market-knowledge-description,
-    .tm-skill-levels-description,
-    .tm-course-spotlight-intro,
-    .tm-instructor-header p,
-    .tm-resources-description {
-        font-size: 17px;
-    }
-
-    /* ---------- SECTION 3 ---------- */
-
-    .tm-skill-levels-grid {
-        gap: 28px;
-    }
-
-    .tm-skill-card {
-        padding: 32px 30px 28px;
-    }
-
-    .tm-skill-card-content h3 {
-        font-size: 27px;
-    }
-
-    .tm-skill-card-description,
-    .tm-skill-learn li {
-        font-size: 15px;
-    }
-
-    .tm-skill-card-button {
-        min-height: 54px;
-        font-size: 15px;
-    }
-
-    /* ---------- SECTION 4 ---------- */
-
-    .tm-featured-visual {
-        min-height: 680px;
-        padding: 32px;
-    }
-
-    .tm-chart-information h3 {
-        font-size: 38px;
-    }
-
-    .tm-chart-information p {
-        font-size: 15px;
-    }
-
-    .tm-chart-stage {
-        min-height: 320px;
-    }
-
-    .tm-featured-content {
-        padding: 38px;
-    }
-
-    .tm-featured-course-title {
-        font-size: 38px;
-    }
-
-    .tm-featured-course-description {
-        font-size: 16px;
-        line-height: 1.8;
-    }
-
-    /* ---------- SECTION 5 ---------- */
-
-    .tm-instructor-main {
-        gap: 60px;
-    }
-
-    .tm-expertise-grid {
-        gap: 22px;
-    }
-
-    .tm-expertise-card {
-        padding: 28px;
-    }
-
-    .tm-expertise-card h3 {
-        font-size: 22px;
-    }
-
-    .tm-expertise-card p {
-        font-size: 15px;
-        line-height: 1.8;
-    }
-
-    .tm-circle-visual {
-        max-width: 560px;
-    }
-
-    /* ---------- SECTION 6 ---------- */
-
-    .tm-mock-container {
-        gap: 70px;
-    }
-
-    .tm-mock-content > h2 {
-        font-size: clamp(52px, 3.1vw, 64px);
-    }
-
-    .tm-mock-description {
-        font-size: 17px;
-        line-height: 1.85;
-    }
-
-    .tm-mock-feature {
-        gap: 16px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-
-    .tm-mock-feature-icon {
-        width: 48px;
-        height: 48px;
-    }
-
-    .tm-mock-feature-text h3 {
-        font-size: 18px;
-    }
-
-    .tm-mock-feature-text p {
-        font-size: 15px;
-        line-height: 1.8;
-    }
-
-    .tm-mock-market-image {
-        min-height: 480px;
-        padding: 28px;
-    }
-
-    /* ---------- SECTION 7 ---------- */
-
-    .tm-resources-grid {
-        gap: 26px;
-    }
-
-    .tm-resource-image {
-        height: 250px;
-    }
-
-    .tm-resource-content {
-        padding: 27px;
-    }
-
-    .tm-resource-content h3 {
-        font-size: 24px;
-    }
-
-    .tm-resource-content p {
-        font-size: 15px;
-        line-height: 1.8;
-    }
-
-    /* ---------- SECTION 8 ---------- */
-
-    .tm-final-cta-card {
-        max-width: 1700px;
-        margin-left: auto;
-        margin-right: auto;
-        gap: 70px;
-        padding: 65px;
-    }
-
-    .tm-cta-heading {
-        font-size: clamp(50px, 3vw, 64px);
-    }
-
-    .tm-cta-description {
-        font-size: 17px;
-        line-height: 1.85;
-    }
-
-    .tm-cta-primary-btn,
-    .tm-cta-secondary-btn {
-        min-height: 54px;
-        padding: 15px 25px;
-        font-size: 15px;
-    }
-
-    .tm-cta-visual {
-        max-width: 470px;
-    }
-}
-
-
-/* =========================================================
-   RESPONSIVE CSS END
-========================================================= */

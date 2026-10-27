@@ -772,7 +772,7 @@ body.dark-mode .footer-contact-list a:hover {
 .footer-bottom {
     padding-block: 20px;
     border-top: 1px solid var(--color-border);
-    background-color: var(--color-surface);
+    background-color: var(--color-footer-background);
 }
 
 .footer-bottom-container {
